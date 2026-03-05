@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, FileText, HelpCircle, Info, ArrowLeft, Clock } from 'lucide-react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, FileText, HelpCircle, Info, ArrowLeft, Clock, GripVertical } from 'lucide-react';
 import { Language } from '../data/curriculum';
 import VirtualLab from './VirtualLab';
 import ChemistryInteractive from './ChemistryInteractive';
@@ -29,10 +29,48 @@ import { InclinedPlaneSimulation } from './InclinedPlaneSimulation';
 import { BarMagnetSimulation } from './BarMagnetSimulation';
 import { PendulumSimulation } from './PendulumSimulation';
 
-export default function LessonView({ lesson, language, onBack }: { lesson: any, language: Language, onBack: () => void }) {
+export default function LessonView({ lesson, language, onBack, subjectId, selectedClass }: { lesson: any, language: Language, onBack: () => void, subjectId?: string | null, selectedClass?: string }) {
   const [activeTab, setActiveTab] = useState<'read' | 'experiment' | 'quiz' | 'glossary' | 'sample_questions'>('read');
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(320);
+  const isResizing = useRef(false);
+
+  const isEnglishSubject = subjectId === 'sub-english';
+  const glossaryLabel = isEnglishSubject 
+    ? { en: 'Characters', ml: 'കഥാപാത്രങ്ങൾ' }
+    : { en: 'Glossary', ml: 'പദസൂചിക' };
+
+  const startResizing = useCallback(() => {
+    isResizing.current = true;
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', stopResizing);
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  }, []);
+
+  const stopResizing = useCallback(() => {
+    isResizing.current = false;
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', stopResizing);
+    document.body.style.cursor = 'default';
+    document.body.style.userSelect = 'auto';
+  }, []);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!isResizing.current) return;
+    const newWidth = window.innerWidth - e.clientX;
+    if (newWidth > 200 && newWidth < 600) {
+      setSidebarWidth(newWidth);
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', stopResizing);
+    };
+  }, [handleMouseMove, stopResizing]);
 
   const renderInline = (str: any) => {
     if (!str) return '';
@@ -369,22 +407,16 @@ export default function LessonView({ lesson, language, onBack }: { lesson: any, 
   };
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full flex-col lg:flex-row">
       {/* Main Lesson Content */}
-      <div className="flex-1 overflow-y-auto p-8">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-8">
         <div className="max-w-3xl mx-auto">
-          <button 
-            onClick={onBack} 
-            className="mb-6 text-brand-primary dark:text-slate-300 hover:text-brand-teal dark:hover:text-brand-teal font-bold flex items-center gap-2 transition-colors bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 w-fit"
-          >
-            <ArrowLeft className="w-4 h-4" /> 
-            {language === 'en' ? 'Back to Chapters' : language === 'ml' ? 'അധ്യായങ്ങളിലേക്ക് മടങ്ങുക' : 'Back / മടങ്ങുക'}
-          </button>
-
           {/* Hero Section */}
           <div className="mb-8">
             <div className="flex items-center gap-2 text-sm text-brand-teal font-bold mb-3">
-              <span className="bg-brand-teal/10 dark:bg-brand-teal/20 px-2 py-1 rounded-md">Class 10</span>
+              <span className="bg-brand-teal/10 dark:bg-brand-teal/20 px-2 py-1 rounded-md">
+                {selectedClass === '11' ? 'Class 11' : 'Class 10'}
+              </span>
               <span className="text-slate-400 dark:text-slate-500">•</span>
               <span className="text-slate-600 dark:text-slate-400 flex items-center gap-1"><Clock className="w-4 h-4" /> {lesson.estimated_time_mins} mins</span>
             </div>
@@ -410,24 +442,24 @@ export default function LessonView({ lesson, language, onBack }: { lesson: any, 
           </div>
 
           {/* Tabs */}
-          <div className="flex border-b border-slate-200 dark:border-slate-700 mb-8">
+          <div className="flex border-b border-slate-200 dark:border-slate-700 mb-6 sm:mb-8 overflow-x-auto scrollbar-hide sticky top-0 bg-white dark:bg-slate-900 z-10 -mx-4 sm:-mx-8 px-4 sm:px-8">
             <button
               onClick={() => setActiveTab('read')}
-              className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 ${activeTab === 'read' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'read' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <FileText className="w-4 h-4" />
               {language === 'en' ? 'Read' : language === 'ml' ? 'വായിക്കുക' : 'Read / വായിക്കുക'}
             </button>
             <button
               onClick={() => setActiveTab('experiment')}
-              className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 ${activeTab === 'experiment' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'experiment' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <FlaskConical className="w-4 h-4" />
               {language === 'en' ? 'Experiment' : language === 'ml' ? 'പരീക്ഷണം' : 'Experiment / പരീക്ഷണം'}
             </button>
             <button
               onClick={() => setActiveTab('quiz')}
-              className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 ${activeTab === 'quiz' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'quiz' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <HelpCircle className="w-4 h-4" />
               {language === 'en' ? 'Quiz' : language === 'ml' ? 'ക്വിസ്' : 'Quiz / ക്വിസ്'}
@@ -435,7 +467,7 @@ export default function LessonView({ lesson, language, onBack }: { lesson: any, 
             {lesson.sample_questions && (
               <button
                 onClick={() => setActiveTab('sample_questions')}
-                className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 ${activeTab === 'sample_questions' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'sample_questions' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
               >
                 <HelpCircle className="w-4 h-4" />
                 {language === 'en' ? 'Sample Questions' : language === 'ml' ? 'മാതൃകാ ചോദ്യങ്ങൾ' : 'Sample Questions / മാതൃകാ ചോദ്യങ്ങൾ'}
@@ -443,10 +475,10 @@ export default function LessonView({ lesson, language, onBack }: { lesson: any, 
             )}
             <button
               onClick={() => setActiveTab('glossary')}
-              className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors flex items-center gap-2 lg:hidden ${activeTab === 'glossary' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 lg:hidden whitespace-nowrap ${activeTab === 'glossary' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <BookOpen className="w-4 h-4" />
-              {language === 'en' ? 'Glossary' : language === 'ml' ? 'പദസൂചിക' : 'Glossary / പദസൂചിക'}
+              {renderInline(glossaryLabel)}
             </button>
           </div>
 
@@ -550,7 +582,7 @@ import QuizView from './QuizView';
                 {lesson.glossary.map((item: any, idx: number) => (
                   <div key={idx} className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-bold text-slate-900 dark:text-slate-100">{renderInline(item.term)}</h4>
+                      <h4 className="font-bold text-slate-900 dark:text-white">{renderInline(item.term)}</h4>
                       <button className="text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Pronounce">
                         <Volume2 className="w-4 h-4" />
                       </button>
@@ -567,18 +599,31 @@ import QuizView from './QuizView';
       </div>
 
       {/* Right Sidebar: Glossary & Tools */}
-      <div className="w-80 lg:w-72 bg-white dark:bg-slate-800 border-l border-slate-200 dark:border-slate-700 flex-shrink-0 overflow-y-auto transition-colors duration-300 hidden lg:block">
+      <div 
+        className="bg-white dark:bg-slate-800 border-l border-slate-200 dark:border-slate-700 flex-shrink-0 overflow-y-auto transition-colors duration-300 hidden lg:flex flex-col relative"
+        style={{ width: sidebarWidth }}
+      >
+        {/* Resize Handle */}
+        <div 
+          onMouseDown={startResizing}
+          className="absolute left-0 top-0 bottom-0 w-1 cursor-col-resize hover:bg-indigo-500/50 transition-colors group z-20"
+        >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-200 dark:bg-slate-700 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <GripVertical className="w-3 h-3 text-slate-400" />
+          </div>
+        </div>
+
         <div className="p-6">
           <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
-            {language === 'en' ? 'Glossary' : language === 'ml' ? 'പദസൂചിക' : 'Glossary / പദസൂചിക'}
+            {renderInline(glossaryLabel)}
           </h3>
           
           <div className="space-y-4">
             {lesson.glossary.map((item: any, idx: number) => (
               <div key={idx} className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-bold text-slate-900 dark:text-slate-100">{renderInline(item.term)}</h4>
+                  <h4 className="font-bold text-slate-900 dark:text-white">{renderInline(item.term)}</h4>
                   <button className="text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Pronounce">
                     <Volume2 className="w-4 h-4" />
                   </button>

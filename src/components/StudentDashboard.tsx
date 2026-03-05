@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookOpen, Home, BrainCircuit, LogOut, Globe, Menu, X } from 'lucide-react';
+import { BookOpen, Home, BrainCircuit, LogOut, Globe, Menu, X, ArrowLeft } from 'lucide-react';
 import { sslcCurriculum, Language } from '../data/curriculum';
 import { plusOneCurriculum } from '../data/plusone_curriculum';
 import SubjectGrid from './SubjectGrid';
@@ -110,37 +110,57 @@ export default function StudentDashboard({ selectedClass, language, setLanguage,
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Topbar */}
-        <div className="bg-white dark:bg-slate-900 px-4 md:px-8 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 shadow-sm z-10 transition-colors duration-300">
-          <div className="flex items-center gap-3">
-            <button onClick={() => setIsSidebarOpen(true)} className="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">
-              <Menu className="w-6 h-6" />
+        <div className="bg-white dark:bg-slate-900 px-3 md:px-8 py-2.5 md:py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 shadow-sm z-20 transition-colors duration-300">
+          <div className="flex items-center gap-1.5 sm:gap-3">
+            <button onClick={() => setIsSidebarOpen(true)} className="md:hidden p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            <h2 className="font-display text-lg md:text-xl font-bold truncate max-w-[200px] md:max-w-xl text-brand-primary dark:text-white">
+            
+            {(activeSubject || activeLesson || !selectedSubjectId) && (
+              <button 
+                onClick={activeLesson ? handleBackToChapters : activeSubject ? handleBackToSubjects : onChangeClass}
+                className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-colors"
+                title={activeLesson ? (language === 'en' ? 'Back to Chapters' : 'മടങ്ങുക') : activeSubject ? (language === 'en' ? 'Back to Subjects' : 'മടങ്ങുക') : (language === 'en' ? 'Back to Class Selection' : 'മടങ്ങുക')}
+              >
+                <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            )}
+
+            <h2 className="font-display text-sm sm:text-base md:text-xl font-bold truncate max-w-[100px] xs:max-w-[140px] sm:max-w-[200px] md:max-w-xl text-brand-primary dark:text-white">
               {activeLesson ? renderInline(activeLesson.title) : activeSubject ? renderInline(activeSubject.title) : (language === 'en' ? 'Dashboard' : language === 'ml' ? 'ഡാഷ്‌ബോർഡ്' : 'Dashboard / ഡാഷ്‌ബോർഡ്')}
             </h2>
           </div>
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-1 md:gap-4">
             <ThemeToggle />
             <button
               onClick={cycleLanguage}
-              className="flex items-center gap-2 px-2 md:px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-xs md:text-sm font-bold text-slate-600 dark:text-slate-300"
+              className="flex items-center gap-1 md:gap-2 px-1.5 md:px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-[10px] md:text-sm font-bold text-slate-600 dark:text-slate-300"
+              title="Change Language"
             >
-              <Globe className="w-4 h-4" />
-              <span className="hidden md:inline">{getLanguageLabel()}</span>
+              <Globe className="w-3.5 h-3.5 md:w-4 h-4" />
+              <span className="hidden sm:inline">{getLanguageLabel()}</span>
             </button>
-            <span className="hidden md:inline bg-brand-accent text-brand-primary dark:text-slate-900 text-xs font-extrabold px-3 py-1 rounded-full">SSLC 2025</span>
+            <span className="hidden md:inline bg-brand-accent text-brand-primary dark:text-slate-900 text-[10px] md:text-xs font-extrabold px-2 md:px-3 py-1 rounded-full whitespace-nowrap">SSLC 2025</span>
           </div>
         </div>
 
         {/* Scrollable Area */}
-        <div className="flex-1 overflow-y-auto p-4 md:p-8">
-          {activeLesson && activeSubject ? (
-            <LessonView lesson={activeLesson} language={language} onBack={handleBackToChapters} />
-          ) : activeSubject ? (
-            <ChapterList subject={activeSubject} language={language} onSelectLesson={handleSelectLesson} onBack={handleBackToSubjects} />
-          ) : (
-            <SubjectGrid subjects={curriculum} language={language} onSelectSubject={handleSelectSubject} />
-          )}
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-3 sm:p-4 md:p-8">
+            {activeLesson && activeSubject ? (
+              <LessonView 
+                lesson={activeLesson} 
+                language={language} 
+                onBack={handleBackToChapters} 
+                subjectId={selectedSubjectId}
+                selectedClass={selectedClass}
+              />
+            ) : activeSubject ? (
+              <ChapterList subject={activeSubject} language={language} onSelectLesson={handleSelectLesson} onBack={handleBackToSubjects} />
+            ) : (
+              <SubjectGrid subjects={curriculum} language={language} onSelectSubject={handleSelectSubject} />
+            )}
+          </div>
         </div>
       </div>
     </div>

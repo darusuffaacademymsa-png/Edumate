@@ -5,6 +5,7 @@ import { plusOneEnglishUnit3 } from './plusone_english_unit3';
 import { plusOneEnglishUnit4 } from './plusone_english_unit4';
 import { plusOneEnglishUnit5 } from './plusone_english_unit5';
 import { plusOneEnglishUnit6 } from './plusone_english_unit6';
+import { plusOneAccountancyUnit1 } from './plusone_accountancy_unit1';
 
 export const plusOneCurriculum: Subject[] = [
   {
@@ -42,6 +43,19 @@ export const plusOneCurriculum: Subject[] = [
         id: "u-eng-6",
         title: { en: "Leaps and Bounds", ml: "കുതിച്ചുചാട്ടങ്ങൾ" },
         lessons: [plusOneEnglishUnit6]
+      }
+    ]
+  },
+  {
+    id: "sub-accountancy",
+    title: { en: "Accountancy", ml: "അക്കൗണ്ടൻസി" },
+    icon: "📊",
+    color: "bg-[#00c853]",
+    units: [
+      {
+        id: "u-acc-1",
+        title: { en: "Introduction to Accounting", ml: "അക്കൗണ്ടിംഗിലേക്ക് പരിചയം" },
+        lessons: [plusOneAccountancyUnit1]
       }
     ]
   },
