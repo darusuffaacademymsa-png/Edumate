@@ -16,7 +16,15 @@ export const englishLesson4BreakingBarriers: Lesson = {
       { type: 'p', en: "He returned to India and founded Bollant Industries to employ disabled individuals, sharing three lessons: show compassion, remove loneliness, and remember that doing good benefits you first.", ml: "അവൻ ഇന്ത്യയിലേക്ക് മടങ്ങുകയും വികലാംഗരായ വ്യക്തികൾക്ക് തൊഴിൽ നൽകുന്നതിനായി ബൊള്ളന്റ് ഇൻഡസ്ട്രീസ് സ്ഥാപിക്കുകയും ചെയ്തു, ഒപ്പം മൂന്ന് പാഠങ്ങൾ പങ്കുവെക്കുകയും ചെയ്തു: അനുകമ്പ കാണിക്കുക, ഏകാന്തത ഒഴിവാക്കുക, നല്ലത് ചെയ്യുന്നത് ആദ്യം നിങ്ങൾക്ക് തന്നെ ഗുണം ചെയ്യുമെന്ന് ഓർക്കുക." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "Srikanth Bolla", ml: "ശ്രീകാന്ത് ബൊള്ള" },
+      definition: {
+        en: "He is an inspiring entrepreneur who was born visually impaired to a poor farming family. Despite facing extreme isolation and being made to sit on the last bench at school, he persevered and excelled in his studies. When the government denied him the opportunity to study science, he fought a legal battle and won, scoring an impressive 98% in his exams. He became the first international blind student in MIT's history after Indian engineering schools rejected him. Rejecting corporate life in America, he returned to India to build Bollant Industries, a successful platform that rehabilitates and employs disabled individuals.",
+        ml: "ഒരു ദരിദ്ര കർഷക കുടുംബത്തിൽ കാഴ്ച വൈകല്യത്തോടെ ജനിച്ച പ്രചോദനം നൽകുന്ന ഒരു സംരംഭകനാണദ്ദേഹം. കടുത്ത ഒറ്റപ്പെടൽ നേരിട്ടിട്ടും സ്കൂളിലെ അവസാന ബെഞ്ചിലിരുത്തിയിട്ടും, അദ്ദേഹം നിരന്തരം പരിശ്രമിക്കുകയും പഠനത്തിൽ മികവ് പുലർത്തുകയും ചെയ്തു. സയൻസ് പഠിക്കാനുള്ള അവസരം സർക്കാർ നിഷേധിച്ചപ്പോൾ, അദ്ദേഹം നിയമപോരാട്ടം നടത്തി വിജയിക്കുകയും, പരീക്ഷകളിൽ മികച്ച രീതിയിൽ 98% മാർക്ക് നേടുകയും ചെയ്തു. ഇന്ത്യൻ എഞ്ചിനീയറിംഗ് കോളേജുകൾ അദ്ദേഹത്തെ നിരസിച്ചതിനെ തുടർന്ന് എംഐടിയുടെ (MIT) ചരിത്രത്തിലെ ആദ്യത്തെ അന്തർദ്ദേശീയ അന്ധനായ വിദ്യാർത്ഥിയായി അദ്ദേഹം മാറി. അമേരിക്കയിലെ കോർപ്പറേറ്റ് ജീവിതം നിരസിച്ചുകൊണ്ട്, വികലാംഗരായ വ്യക്തികളെ പുനരധിവസിപ്പിക്കുകയും അവർക്ക് തൊഴിൽ നൽകുകയും ചെയ്യുന്ന വിജയകരമായ ഒരു പ്ലാറ്റ്ഫോമായ ബൊള്ളന്റ് ഇൻഡസ്ട്രീസ് കെട്ടിപ്പടുക്കുന്നതിനായി അദ്ദേഹം ഇന്ത്യയിലേക്ക് മടങ്ങി."
+      }
+    }
+  ],
   quiz: []
 };
 
@@ -36,7 +44,15 @@ export const englishLesson5PhoenixRises: Lesson = {
       { type: 'p', en: "He placed his patent in the public domain and works with women's self-help groups, aiming to generate one million jobs for women in India while prioritizing impact over retail.", ml: "അവൻ തന്റെ പേറ്റന്റ് പൊതുമണ്ഡലത്തിൽ ലഭ്യമാക്കുകയും വനിതാ സ്വാശ്രയ സംഘങ്ങളുമായി ചേർന്ന് പ്രവർത്തിക്കുകയും ചെയ്തു, ഇന്ത്യയിലെ സ്ത്രീകൾക്ക് പത്ത് ലക്ഷം തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കാൻ ലക്ഷ്യമിടുന്ന അദ്ദേഹം വിൽപ്പനയേക്കാളുപരി അത് വരുത്തുന്ന സ്വാധീനത്തിനാണ് മുൻഗണന നൽകുന്നത്." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "Bablu (Arunachalam Muruganantham)", ml: "ബബ്ലു (അരുണാചലം മുരുഗാനന്ദം)" },
+      definition: {
+        en: "He is a welder from a poor family who drops out of school to support his mother after his father dies. Appalled by the exorbitant cost of sanitary pads, he begins obsessively experimenting to create affordable napkins for his wife and poor women. His unorthodox experiments alienate him from his village and cause his wife and mother to momentarily leave him. Through years of trial and error, he successfully designs low-cost machines for defibration, compression, and sterilization of pinewood pulp. He eventually becomes a highly successful social entrepreneur, placing his patent in the public domain to empower women's self-help groups across India.",
+        ml: "പിതാവിന്റെ മരണശേഷം അമ്മയെ സഹായിക്കാൻ സ്കൂൾ പഠനം ഉപേക്ഷിച്ച ദരിദ്ര കുടുംബത്തിൽ നിന്നുള്ള ഒരു വെൽഡറാണദ്ദേഹം. സാനിറ്ററി പാഡുകളുടെ അമിതമായ വില കണ്ട് നടുങ്ങിയ അദ്ദേഹം, തന്റെ ഭാര്യക്കും പാവപ്പെട്ട സ്ത്രീകൾക്കുമായി താങ്ങാനാവുന്ന വിലയിലുള്ള നാപ്കിനുകൾ നിർമ്മിക്കുന്നതിനായി കടുത്ത പരീക്ഷണങ്ങൾ ആരംഭിക്കുന്നു. അദ്ദേഹത്തിന്റെ അസാധാരണമായ പരീക്ഷണങ്ങൾ സ്വന്തം ഗ്രാമത്തിൽ നിന്ന് അദ്ദേഹത്തെ അകറ്റുകയും, ഭാര്യക്കും അമ്മയ്ക്കും അദ്ദേഹത്തെ തൽക്കാലം വിട്ടുപോകേണ്ടി വരികയും ചെയ്യുന്നു. വർഷങ്ങൾ നീണ്ട പരീക്ഷണങ്ങളിലൂടെയും പരാജയങ്ങളിലൂടെയും, പൈൻ മരത്തിന്റെ പൾപ്പിൽ നിന്ന് നാരുകൾ വേർതിരിക്കുന്നതിനും അമർത്തുന്നതിനും അണുവിമുക്തമാക്കുന്നതിനുമുള്ള കുറഞ്ഞ ചിലവിലുള്ള യന്ത്രങ്ങൾ അദ്ദേഹം വിജയകരമായി രൂപകൽപ്പന ചെയ്യുന്നു. ഒടുവിൽ അദ്ദേഹം വളരെ വിജയകരമായ ഒരു സാമൂഹിക സംരംഭകനായി മാറുകയും, ഇന്ത്യയിലുടനീളമുള്ള വനിതാ സ്വാശ്രയ സംഘങ്ങളെ ശാക്തീകരിക്കുന്നതിനായി തന്റെ പേറ്റന്റ് പൊതുമണ്ഡലത്തിൽ ലഭ്യമാക്കുകയും ചെയ്യുന്നു."
+      }
+    }
+  ],
   quiz: []
 };
 

@@ -16,7 +16,22 @@ export const englishLesson13BelovedBoles: Lesson = {
       { type: 'p', en: "Ashamed of his lack of empathy, the student agrees to regularly write the imaginary letters back and forth, and in return, Teresa begins mending the holes in his socks and shirts.", ml: "തന്റെ സഹാനുഭൂതിയില്ലായ്മയിൽ ലജ്ജിച്ച്, സാങ്കൽപ്പിക കത്തുകൾ അങ്ങോട്ടും ഇങ്ങോട്ടും സ്ഥിരമായി എഴുതാമെന്ന് ആ വിദ്യാർത്ഥി സമ്മതിക്കുന്നു, ഇതിന് പകരമായി തെരേസ അയാളുടെ സോക്സുകളിലെയും ഷർട്ടുകളിലെയും ദ്വാരങ്ങൾ തുന്നിച്ചേർക്കാൻ തുടങ്ങുന്നു." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "'Mr Student' (The Narrator)", ml: "'മിസ്റ്റർ സ്റ്റുഡന്റ്' (കഥാകാരൻ)" },
+      definition: {
+        en: "He is a Moscow student who lives next door to Teresa. Initially, he is judgmental and despises Teresa for her coarse appearance and voice. He is shocked and angry when he discovers that Teresa has been inventing a relationship with a lover named Boles, accusing her of lying. However, upon realizing that she is desperately lonely and needs the illusion of being loved, he feels ashamed of his lack of empathy. He eventually becomes a compassionate companion, regularly writing imaginary letters for her, and in return, Teresa mends his clothes.",
+        ml: "തെരേസയുടെ അയൽവാസിയായി താമസിക്കുന്ന ഒരു മോസ്കോ വിദ്യാർത്ഥിയാണദ്ദേഹം. തുടക്കത്തിൽ, തെരേസയുടെ പരുക്കനായ രൂപവും ശബ്ദവും കണ്ട് അയാൾ അവളെ വിധിക്കുകയും വെറുക്കുകയും ചെയ്യുന്നു. ബോൾസ് എന്ന കാമുകനുമായുള്ള ബന്ധം തെരേസ കെട്ടിച്ചമച്ചതാണെന്ന് മനസ്സിലാക്കുമ്പോൾ അയാൾ ഞെട്ടുകയും ദേഷ്യപ്പെടുകയും അവളെ നുണയത്തി എന്ന് കുറ്റപ്പെടുത്തുകയും ചെയ്യുന്നു. എന്നാൽ, അവൾ അങ്ങേയറ്റം ഏകാന്തയാണെന്നും സ്നേഹിക്കപ്പെടുന്നുവെന്ന മിഥ്യാധാരണ അവൾക്ക് ആവശ്യമാണെന്നും മനസ്സിലാക്കുമ്പോൾ അയാൾക്ക് തന്റെ സഹാനുഭൂതിയില്ലായ്മയിൽ ലജ്ജ തോന്നുന്നു. ഒടുവിൽ അയാൾ അവൾക്ക് സഹാനുഭൂതിയുള്ള ഒരു കൂട്ടുകാരനായി മാറുകയും, അവൾക്കായി സ്ഥിരമായി സാങ്കൽപ്പിക കത്തുകൾ എഴുതുകയും ചെയ്യുന്നു, ഇതിന് പകരമായി തെരേസ അയാളുടെ വസ്ത്രങ്ങൾ തുന്നിച്ചേർത്തു നൽകുന്നു."
+      }
+    },
+    {
+      term: { en: "Teresa", ml: "തെരേസ" },
+      definition: {
+        en: "She is the narrator's neighbor, a woman with a coarse appearance, bushy black eyebrows, and a thick bass voice. She is profoundly lonely and invents a romantic relationship with a lover named Boles to cope with her isolation. She asks the student to write letters to and from Boles, finding comfort in the illusion of being loved. When the student discovers her secret and accuses her of lying, she breaks down and explains her desperate need for someone to care for her. She eventually forms a bond with the student, mending his clothes in exchange for his help in maintaining her imaginary relationship.",
+        ml: "കഥാകാരന്റെ അയൽവാസിയായ ഇവർ പരുക്കനായ രൂപവും, തിങ്ങിയ കറുത്ത പുരികങ്ങളും, കനത്ത ശബ്ദവുമുള്ള ഒരു സ്ത്രീയാണ്. അങ്ങേയറ്റം ഏകാന്തയായ അവർ, തന്റെ ഒറ്റപ്പെടലിനെ മറികടക്കാൻ ബോൾസ് എന്ന കാമുകനുമായുള്ള പ്രണയബന്ധം കെട്ടിച്ചമയ്ക്കുന്നു. സ്നേഹിക്കപ്പെടുന്നുവെന്ന മിഥ്യാധാരണയിൽ ആശ്വാസം കണ്ടെത്തുന്നതിനായി, ബോൾസിലേക്ക് കത്തുകൾ എഴുതാനും അവനിൽ നിന്ന് മറുപടി എഴുതാനും അവർ വിദ്യാർത്ഥിയോട് ആവശ്യപ്പെടുന്നു. വിദ്യാർത്ഥി അവരുടെ രഹസ്യം കണ്ടെത്തുകയും നുണ പറയുകയാണെന്ന് കുറ്റപ്പെടുത്തുകയും ചെയ്യുമ്പോൾ, അവർ പൊട്ടിക്കരയുകയും തന്നെ സ്നേഹിക്കാൻ ഒരാളുണ്ടെന്നുള്ള അവരുടെ തീവ്രമായ ആവശ്യത്തെക്കുറിച്ച് വിശദീകരിക്കുകയും ചെയ്യുന്നു. ഒടുവിൽ അവർ വിദ്യാർത്ഥിയുമായി ഒരു ബന്ധം സ്ഥാപിക്കുകയും, തന്റെ സാങ്കൽപ്പിക ബന്ധം നിലനിർത്താൻ സഹായിക്കുന്നതിന് പകരമായി അയാളുടെ വസ്ത്രങ്ങൾ തുന്നിച്ചേർത്തു നൽകുകയും ചെയ്യുന്നു."
+      }
+    }
+  ],
   quiz: []
 };
 
@@ -36,7 +51,15 @@ export const englishLesson14PreferenceNationale: Lesson = {
       { type: 'p', en: "The narrator maintains her dignity, telling the cashier she wouldn't be working in a supermarket if she had the narrator's brain, and notes that her mother-in-law had previously used the exact same racist insult (\"Go back to your jungle!\").", ml: "കഥാകാരി തന്റെ അന്തസ്സ് കാത്തുസൂക്ഷിച്ചുകൊണ്ട്, കാഷ്യർക്ക് തന്റെ ബുദ്ധിയുണ്ടായിരുന്നെങ്കിൽ ഒരു സൂപ്പർമാർക്കറ്റിൽ ജോലി ചെയ്യേണ്ടിവരില്ലായിരുന്നു എന്ന് പറയുന്നു, കൂടാതെ തന്റെ അമ്മായിയമ്മയും മുമ്പ് ഇതേ വംശീയ അധിക്ഷേപം (\"നിന്റെ കാട്ടിലേക്ക് തിരിച്ചുപോ!\") ഉപയോഗിച്ചിട്ടുണ്ടെന്നും അവർ സൂചിപ്പിക്കുന്നു." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "The Narrator", ml: "കഥാകാരി" },
+      definition: {
+        en: "She is a Senegalese woman living in France who is married to a French man. She faces severe discrimination due to a law called 'Préférence Nationale' which delays citizenship and basic rights for foreign women married to French men. Despite her French educational qualifications, she is repeatedly rejected for jobs, such as at a bakery and as a tutor, because of her race and origin. She maintains her dignity and intelligence in the face of racist insults, such as being told to go back to her 'jungle' and being rejected for not being a 'European-type person'.",
+        ml: "ഫ്രഞ്ചുകാരനെ വിവാഹം കഴിച്ച, ഫ്രാൻസിൽ താമസിക്കുന്ന ഒരു സെനഗലീസ് സ്ത്രീയാണിവർ. ഫ്രഞ്ചുകാരെ വിവാഹം കഴിക്കുന്ന വിദേശ വനിതകൾക്ക് പൗരത്വവും അടിസ്ഥാന അവകാശങ്ങളും വൈകിപ്പിക്കുന്ന 'പ്രിഫറൻസ് നാഷണൽ' എന്ന നിയമം കാരണം അവർ കടുത്ത വിവേചനം നേരിടുന്നു. തന്റെ ഫ്രഞ്ച് വിദ്യാഭ്യാസ യോഗ്യതകൾ ഉണ്ടായിരുന്നിട്ടും, വംശത്തിന്റെയും ഉത്ഭവത്തിന്റെയും പേരിൽ ബേക്കറിയിലും ട്യൂഷൻ ടീച്ചറായും ജോലി ലഭിക്കാതെ അവർ പലതവണ നിരസിക്കപ്പെടുന്നു. 'നിന്റെ കാട്ടിലേക്ക് തിരിച്ചുപോ' എന്ന് പറയുന്നതും 'യൂറോപ്യൻ പോലെയുള്ള ഒരാളെ' വേണമെന്ന് പറഞ്ഞ് നിരസിക്കുന്നതുമായ വംശീയ അധിക്ഷേപങ്ങളെ അവർ അന്തസ്സോടെയും ബുദ്ധിയോടെയും നേരിടുന്നു."
+      }
+    }
+  ],
   quiz: []
 };
 
@@ -56,6 +79,14 @@ export const englishLesson15Mirror: Lesson = {
       { type: 'p', en: "The woman rewards the mirror with tears, deeply distressed as she watches a young girl drown in the reflection while a \"terrible fish\" of an old woman rises toward her day after day.", ml: "ഒരു കൊച്ചുപെൺകുട്ടി പ്രതിഫലനത്തിൽ മുങ്ങിമരിക്കുന്നതും ഒരു വൃദ്ധയായ സ്ത്രീയുടെ \"ഭയാനകമായ മത്സ്യം\" ദിവസവും തനിക്ക് നേരെ ഉയർന്നുവരുന്നതും കാണുമ്പോൾ കടുത്ത അസ്വസ്ഥതയോടെ ആ സ്ത്രീ കണ്ണാടിക്ക് പ്രതിഫലമായി കണ്ണുനീർ നൽകുന്നു." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "The Mirror", ml: "കണ്ണാടി" },
+      definition: {
+        en: "The mirror is the narrator of the poem, describing itself as 'silver and exact'. It is an impartial observer that reflects everything it sees exactly as it is, without love or dislike. It acts like 'the eye of a little god' and spends its time observing a pink, speckled wall. In the second stanza, it transforms into a lake, where it faithfully reflects the aging woman who looks into it. It is a symbol of truth and the inevitable passage of time, showing the woman her true self, which she finds distressing.",
+        ml: "ഈ കവിതയുടെ ആഖ്യാതാവായ കണ്ണാടി, തന്നെത്തന്നെ 'വെള്ളിയുടെ നിറമുള്ളതും കൃത്യതയുള്ളതും' എന്ന് വിശേഷിപ്പിക്കുന്നു. ഇഷ്ടമോ അനിഷ്ടമോ കൂടാതെ, താൻ കാണുന്നതെന്തും ഉള്ളതുപോലെ പ്രതിഫലിപ്പിക്കുന്ന നിഷ്പക്ഷമായ ഒരു നിരീക്ഷകനാണത്. 'ഒരു ചെറിയ ദൈവത്തിന്റെ കണ്ണ്' പോലെ പ്രവർത്തിക്കുന്ന അത്, പിങ്ക് നിറത്തിലുള്ള, പുള്ളികളുള്ള ഒരു ചുവര് നിരീക്ഷിച്ചുകൊണ്ട് സമയം ചെലവഴിക്കുന്നു. രണ്ടാമത്തെ ഖണ്ഡികയിൽ, അത് ഒരു തടാകമായി മാറുകയും, അതിലേക്ക് നോക്കുന്ന വൃദ്ധയായ സ്ത്രീയെ വിശ്വസ്തതയോടെ പ്രതിഫലിപ്പിക്കുകയും ചെയ്യുന്നു. സത്യത്തിന്റെയും കാലത്തിന്റെ അനിവാര്യമായ ഒഴുക്കിന്റെയും പ്രതീകമായ അത്, ആ സ്ത്രീക്ക് അവരുടെ യഥാർത്ഥ രൂപം കാണിച്ചുകൊടുക്കുന്നു, ഇത് അവരെ അങ്ങേയറ്റം അസ്വസ്ഥയാക്കുന്നു."
+      }
+    }
+  ],
   quiz: []
 };

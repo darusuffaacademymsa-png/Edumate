@@ -16,7 +16,22 @@ export const englishLesson10Shakuntalam: Lesson = {
       { type: 'p', en: "When a bee attacks Shakuntala, her friends tease her to call upon King Dushyanta, the protector of the grove, to save her.", ml: "ഒരു വണ്ട് ശകുന്തളയെ ആക്രമിക്കുമ്പോൾ, അവളെ രക്ഷിക്കാൻ വനത്തിന്റെ സംരക്ഷകനായ ദുഷ്യന്ത മഹാരാജാവിനെ വിളിക്കാൻ തോഴിമാർ അവളെ കളിയാക്കുന്നു." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "King Dushyanta", ml: "ദുഷ്യന്ത മഹാരാജാവ്" },
+      definition: {
+        en: "He is a royal warrior who is initially seen fiercely pursuing a deer in his chariot. He demonstrates respect and humility when he halts his hunt at the request of two hermits. He deliberately sets aside his royal jewels and bow so as not to disturb the peaceful hermitage. Upon entering the grove, he is captivated by the beauty of Shakuntala and secretly observes her tender care for the plants. He is recognized by Shakuntala's friends as the protector of the grove who can save her from a dreadful bee attack.",
+        ml: "തേരിൽ ഒരു മാനിനെ ക്രൂരമായി പിന്തുടരുന്നതായി തുടക്കത്തിൽ കാണുന്ന ഒരു രാജകീയ യോദ്ധാവാണദ്ദേഹം. രണ്ട് സന്യാസിമാരുടെ അഭ്യർത്ഥനപ്രകാരം തന്റെ വേട്ടയാടൽ നിർത്തുമ്പോൾ അദ്ദേഹം ആദരവും വിനയവും പ്രകടിപ്പിക്കുന്നു. സമാധാനപരമായ ആശ്രമത്തിന് ശല്യമാകാതിരിക്കാൻ അദ്ദേഹം തന്റെ രാജകീയ ആഭരണങ്ങളും വില്ലും ബോധപൂർവ്വം മാറ്റിവെക്കുന്നു. കാവിലേക്ക് പ്രവേശിച്ചയുടനെ, ശകുന്തളയുടെ സൗന്ദര്യത്തിൽ ആകൃഷ്ടനായ അദ്ദേഹം, അവൾ സസ്യങ്ങളെ സ്നേഹത്തോടെ പരിപാലിക്കുന്നത് രഹസ്യമായി നിരീക്ഷിക്കുന്നു. ഭയപ്പെടുത്തുന്ന വണ്ടിന്റെ ആക്രമണത്തിൽ നിന്ന് അവളെ രക്ഷിക്കാൻ കഴിയുന്ന വനത്തിന്റെ സംരക്ഷകനായി ശകുന്തളയുടെ തോഴിമാർ അദ്ദേഹത്തെ തിരിച്ചറിയുന്നു."
+      }
+    },
+    {
+      term: { en: "Shakuntala", ml: "ശകുന്തള" },
+      definition: {
+        en: "She is the foster daughter of Sage Kanva who acts as the guardian of the hermitage. She possesses a deep, sisterly affection for the trees and creepers, lovingly watering them even when they are out of season. Her friends playfully compare her delicate beauty to a jasmine blossom and tease her about her impending marriage. She finds joy in observing nature, comparing a jasmine vine clinging to a mango tree to a newlywed couple. She becomes visibly annoyed and frightened when a bee leaves a vine and begins flying into her face.",
+        ml: "ആശ്രമത്തിന്റെ കാവലാളായി പ്രവർത്തിക്കുന്ന കണ്വ മഹർഷിയുടെ വളർത്തുപുത്രിയാണവൾ. മരങ്ങളോടും വള്ളികളോടും ആഴത്തിലുള്ള, സഹോദരിയെപ്പോലെയുള്ള സ്നേഹമുള്ള അവൾ, പൂക്കേണ്ട കാലമല്ലെങ്കിൽപോലും സ്നേഹത്തോടെ അവയെ നനയ്ക്കുന്നു. അവളുടെ ലോലമായ സൗന്ദര്യത്തെ തോഴിമാർ തമാശയായി ഒരു മുല്ലപ്പൂവിനോട് ഉപമിക്കുകയും, വരാനിരിക്കുന്ന വിവാഹത്തെക്കുറിച്ച് പറഞ്ഞ് അവളെ കളിയാക്കുകയും ചെയ്യുന്നു. പ്രകൃതിയെ നിരീക്ഷിക്കുന്നതിൽ സന്തോഷം കണ്ടെത്തുന്ന അവൾ, മാവിൽ പറ്റിപ്പിടിച്ചിരിക്കുന്ന ഒരു മുല്ലവള്ളിയെ നവദമ്പതികളോട് ഉപമിക്കുന്നു. ഒരു വണ്ട് വള്ളിയിൽ നിന്ന് പറന്ന് തന്റെ മുഖത്തേക്ക് വരുമ്പോൾ അവൾ വല്ലാതെ അസ്വസ്ഥയാവുകയും ഭയപ്പെടുകയും ചെയ്യുന്നു."
+      }
+    }
+  ],
   quiz: []
 };
 
@@ -36,7 +51,15 @@ export const englishLesson11TrillsAndThrills: Lesson = {
       { type: 'p', en: "He realized he was just two inches away from falling down a 300-foot vertical cliff into the roaring Kali river, demonstrating the unique hazards of his hobby.", ml: "അലറിയൊഴുകുന്ന കാളി നദിയിലേക്ക് 300 അടി കുത്തനെയുള്ള കൊക്കയിൽ നിന്ന് താഴേക്ക് വീഴാൻ താൻ വെറും രണ്ട് ഇഞ്ച് മാത്രം അകലെയായിരുന്നുവെന്ന് അദ്ദേഹം തിരിച്ചറിഞ്ഞു, ഇത് അദ്ദേഹത്തിന്റെ വിനോദത്തിന്റെ സവിശേഷമായ അപകടങ്ങളെ കാണിക്കുന്നു." }
     ]
   },
-  glossary: [],
+  glossary: [
+    {
+      term: { en: "Salim Ali", ml: "സാലിം അലി" },
+      definition: {
+        en: "He is a renowned Indian ornithologist who finds deep pleasure and elation in exploring bird life. He often discovers that birds behave in unusual ways that contradict traditional textbook accounts. Though he considers birdwatching a peaceful hobby, he recounts facing numerous hazardous situations during his field studies. He describes terrifying encounters, such as fleeing from a wild tusker and nearly falling down a steep cliff in the Himalayas. Ultimately, he views his lifelong passion for chasing birds as a deeply rewarding form of escapism.",
+        ml: "പക്ഷികളുടെ ജീവിതത്തെക്കുറിച്ച് പര്യവേക്ഷണം ചെയ്യുന്നതിൽ വലിയ സന്തോഷവും ഉന്മേഷവും കണ്ടെത്തുന്ന പ്രശസ്തനായ ഒരു ഇന്ത്യൻ പക്ഷിശാസ്ത്രജ്ഞനാണദ്ദേഹം. പരമ്പരാഗത പാഠപുസ്തക വിവരണങ്ങൾക്ക് വിരുദ്ധമായി, പക്ഷികൾ അസാധാരണമായ രീതികളിൽ പെരുമാറുന്നത് അദ്ദേഹം പലപ്പോഴും കണ്ടെത്തുന്നു. പക്ഷിനിരീക്ഷണം ഒരു സമാധാനപരമായ വിനോദമായി കണക്കാക്കുന്നുണ്ടെങ്കിലും, തന്റെ ഫീൽഡ് പഠനങ്ങൾക്കിടയിൽ നിരവധി അപകടകരമായ സാഹചര്യങ്ങൾ നേരിട്ടതായി അദ്ദേഹം വിവരിക്കുന്നു. ഒരു കാട്ടാനയിൽ നിന്നോടി രക്ഷപ്പെടുന്നതും, ഹിമാലയത്തിലെ കുത്തനെയുള്ള കൊക്കയിൽ നിന്ന് ഏതാണ്ട് താഴേക്ക് വീഴാൻ പോയതും പോലുള്ള ഭയപ്പെടുത്തുന്ന അനുഭവങ്ങൾ അദ്ദേഹം വിവരിക്കുന്നു. ഒടുവിൽ, പക്ഷികളെ പിന്തുടരുക എന്ന തന്റെ ജീവിതകാലം മുഴുവനുമുള്ള ആഗ്രഹത്തെ, വളരെ പ്രതിഫലദായകമായ ഒരുതരം ഒളിച്ചോട്ടമായി അദ്ദേഹം കാണുന്നു."
+      }
+    }
+  ],
   quiz: []
 };
 
