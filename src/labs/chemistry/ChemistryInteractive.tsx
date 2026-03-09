@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Activity, Beaker, Info } from 'lucide-react';
-import { Language } from '../data/curriculum';
+import { Language } from '../../data/curriculum';
 
 export default function ChemistryInteractive({ language }: { language: Language }) {
   const [activeIsomer, setActiveIsomer] = useState<'chain' | 'position' | 'functional' | 'metamerism'>('chain');

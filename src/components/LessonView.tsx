@@ -7,9 +7,9 @@ import VirtualLab from './VirtualLab';
 import ChemistryInteractive from './ChemistryInteractive';
 import SoundWavesInteractive from './SoundWavesInteractive';
 import { SwingAnimation } from './SwingAnimation';
-import { LensSimulation } from './LensSimulation';
+import { LensSimulation } from '../labs/optics/LensSimulation';
 import { NewtonDisc } from './NewtonDisc';
-import { PrismSimulation } from './PrismSimulation';
+import { PrismSimulation } from '../labs/optics/PrismSimulation';
 import { RainbowSimulation } from './RainbowSimulation';
 import { EyeDefectSimulation } from './EyeDefectSimulation';
 import { RightHandThumbRuleSimulation } from './RightHandThumbRuleSimulation';
@@ -20,15 +20,15 @@ import { FlemingLeftHandSimulation } from './FlemingLeftHandSimulation';
 import { JoulesLawSimulation } from './JoulesLawSimulation';
 import { PowerCalculationSimulation } from './PowerCalculationSimulation';
 import { LampComparisonSimulation } from './LampComparisonSimulation';
-import QuizView from './QuizView';
-import { GeneratorSimulation } from './GeneratorSimulation';
-import { TransformerSimulation } from './TransformerSimulation';
+import QuizEngine from './quiz/QuizEngine';
+import { GeneratorSimulation } from '../labs/physics/GeneratorSimulation';
+import { TransformerSimulation } from '../labs/physics/TransformerSimulation';
 import { HouseholdCircuitSimulation } from './HouseholdCircuitSimulation';
-import { LeverSimulation } from './LeverSimulation';
-import { PulleySimulation } from './PulleySimulation';
+import { LeverSimulation } from '../labs/mechanics/LeverSimulation';
+import { PulleySimulation } from '../labs/mechanics/PulleySimulation';
 import { GearSimulation } from './GearSimulation';
 import { InclinedPlaneSimulation } from './InclinedPlaneSimulation';
-import { BarMagnetSimulation } from './BarMagnetSimulation';
+import { BarMagnetSimulation } from '../labs/physics/BarMagnetSimulation';
 import { PendulumSimulation } from './PendulumSimulation';
 
 export default function LessonView({ lesson, language, onBack, subjectId, selectedClass }: { lesson: any, language: Language, onBack: () => void, subjectId?: string | null, selectedClass?: string }) {
@@ -585,7 +585,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             )}
 
             {activeTab === 'quiz' && (
-              <QuizView questions={lesson.quiz} language={language} />
+              <QuizEngine questions={lesson.quiz} language={language} />
             )}
 
             {activeTab === 'sample_questions' && lesson.sample_questions && (

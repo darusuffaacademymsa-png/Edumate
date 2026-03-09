@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { BookOpen, Home, BrainCircuit, LogOut, Globe, Menu, X, ArrowLeft } from 'lucide-react';
-import { sslcCurriculum, Language } from '../data/curriculum';
-import { plusOneCurriculum } from '../data/plusone_curriculum';
-import SubjectGrid from './SubjectGrid';
-import ChapterList from './ChapterList';
-import LessonView from './LessonView';
-import ThemeToggle from './ThemeToggle';
-import TextSizeToggle from './TextSizeToggle';
+import { sslcCurriculum, Language } from '../../data/curriculum';
+import { plusOneCurriculum } from '../../data/plusone_curriculum';
+import SubjectGrid from '../SubjectGrid';
+import ChapterList from '../ChapterList';
+import LessonView from '../LessonView';
+import ThemeToggle from '../ThemeToggle';
+import TextSizeToggle from '../TextSizeToggle';
 
 export default function StudentDashboard({ selectedClass, language, setLanguage, onChangeClass }: { selectedClass: string, language: Language, setLanguage: (l: Language) => void, onChangeClass: () => void }) {
   const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(null);

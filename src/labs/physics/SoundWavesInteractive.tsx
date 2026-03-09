@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Volume2, Activity, Info, Play, Pause, RefreshCw } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { motion, AnimatePresence } from 'motion/react';
-import { Language } from '../data/curriculum';
+import { Language } from '../../data/curriculum';
 
 export default function SoundWavesInteractive({ language }: { language: Language }) {
   const [frequency, setFrequency] = useState(2);
