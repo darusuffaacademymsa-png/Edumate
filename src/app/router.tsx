@@ -3,8 +3,8 @@ import App from '../App';
 import HomePage from '../pages/Home/HomePage';
 import DashboardLayout from '../components/navigation/DashboardLayout';
 import SSLCHome from '../pages/sslc/SSLCHome';
-import MathematicsHome from '../pages/sslc/mathematics/MathematicsHome';
-import ChapterPage from '../pages/sslc/mathematics/ChapterPage';
+import SSLCSubjectHome from '../pages/sslc/SubjectHome';
+import SSLCChapterPage from '../pages/sslc/ChapterPage';
 import PlusOneHome from '../pages/plusone/PlusOneHome';
 import PlusOneSubjectHome from '../pages/plusone/SubjectHome';
 import PlusOneChapterPage from '../pages/plusone/ChapterPage';
@@ -27,12 +27,12 @@ export const router = createBrowserRouter([
             element: <SSLCHome />,
           },
           {
-            path: 'mathematics',
-            element: <MathematicsHome />,
+            path: ':subjectId',
+            element: <SSLCSubjectHome />,
           },
           {
-            path: 'mathematics/:chapterId',
-            element: <ChapterPage />,
+            path: ':subjectId/:chapterId',
+            element: <SSLCChapterPage />,
           },
         ],
       },
