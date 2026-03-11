@@ -21,7 +21,56 @@ import { plusOneIslamicHistoryUnit5 } from './plusone_islamic_history_unit5';
 import { plusOneIslamicHistoryUnit6 } from './plusone_islamic_history_unit6';
 import { plusOneIslamicHistoryUnit7 } from './plusone_islamic_history_unit7';
 
+import { plusOneArabicUnit1, plusOneArabicUnit2, plusOneArabicUnit3, plusOneArabicUnit4, plusOneArabicUnit5 } from './plusone_arabic';
+import { 
+  plusOneUrduUnit1Chapter1, plusOneUrduUnit1Chapter2, plusOneUrduUnit1Chapter3,
+  plusOneUrduUnit2Chapter4, plusOneUrduUnit2Chapter5, plusOneUrduUnit2Chapter6,
+  plusOneUrduUnit3Chapter7, plusOneUrduUnit3Chapter8, plusOneUrduUnit3Chapter9,
+  plusOneUrduUnit4Chapter10, plusOneUrduUnit4Chapter11, plusOneUrduUnit4Chapter12, plusOneUrduUnit4Chapter13
+} from './plusone_urdu';
+
 export const plusOneCurriculum: Subject[] = [
+  {
+    id: "sub-urdu",
+    title: { ar: "اردو", en: "Urdu", ml: "ഉറുദു" },
+    icon: "📖",
+    color: "bg-[#4db6ac]",
+    units: [
+      {
+        id: "u-urdu-1",
+        title: { en: "Aati Hai Urdu Zaban Aate Aate", ml: "ആതി ഹേ ഉറുദു സബാൻ ആതേ ആതേ", ar: "آتی ہے اردو زباں آتے آتے" },
+        lessons: [plusOneUrduUnit1Chapter1, plusOneUrduUnit1Chapter2, plusOneUrduUnit1Chapter3]
+      },
+      {
+        id: "u-urdu-2",
+        title: { en: "Sab Se Pyara Gulistan Hamara", ml: "സബ് സേ പ്യാര ഗുലിസ്താൻ ഹമാര", ar: "سب سے پیارا گلستاں ہمارا" },
+        lessons: [plusOneUrduUnit2Chapter4, plusOneUrduUnit2Chapter5, plusOneUrduUnit2Chapter6]
+      },
+      {
+        id: "u-urdu-3",
+        title: { en: "Fun Ki Duniya Man Ki Duniya", ml: "ഫൻ കി ദുനിയ മൻ കി ദുനിയ", ar: "فن کی دنیا من کی دنیا" },
+        lessons: [plusOneUrduUnit3Chapter7, plusOneUrduUnit3Chapter8, plusOneUrduUnit3Chapter9]
+      },
+      {
+        id: "u-urdu-4",
+        title: { en: "Yeh Duniya Hai Sab Ki Yeh Sab Ke Liye", ml: "യേ ദുനിയ ഹേ സബ് കി യേ സബ് കേ ലിയേ", ar: "یہ دنیا ہے سب کی، یہ سب کے لیے" },
+        lessons: [plusOneUrduUnit4Chapter10, plusOneUrduUnit4Chapter11, plusOneUrduUnit4Chapter12, plusOneUrduUnit4Chapter13]
+      }
+    ]
+  },
+  {
+    id: "sub-arabic",
+    title: { ar: "العربية", en: "Arabic", ml: "അറബിക്" },
+    icon: "🕌",
+    color: "bg-[#009688]",
+    units: [
+      plusOneArabicUnit1,
+      plusOneArabicUnit2,
+      plusOneArabicUnit3,
+      plusOneArabicUnit4,
+      plusOneArabicUnit5
+    ]
+  },
   {
     id: "sub-english",
     title: { en: "English", ml: "ഇംഗ്ലീഷ്" },

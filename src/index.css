@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@font-face {
+  font-family: 'Majalla';
+  src: url('/majalla.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Baloo 2", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Majalla", "Sakkal Majalla", "Traditional Arabic", "Noto Naskh Arabic", sans-serif;
   --color-brand-primary: #1a1f4e;
   --color-brand-accent: #f7c948;
   --color-brand-teal: #00bfa5;
@@ -38,5 +47,9 @@
 
   .dark body {
     @apply bg-slate-950 text-slate-100;
+  }
+
+  [dir="rtl"], [dir="rtl"] * {
+    font-family: var(--font-arabic) !important;
   }
 }

@@ -1,4 +1,4 @@
-export type Language = 'en' | 'ml' | 'bilingual';
+export type Language = 'en' | 'ml' | 'bilingual' | 'ar';
 
 import { chemUnit2 } from './chem_unit2';
 import { chemUnit3 } from './chem_unit3';
@@ -67,19 +67,21 @@ import {
 export type BilingualString = {
   en: string;
   ml: string;
+  ar?: string;
 };
 
 export type ContentBlock = {
   type: 'h2' | 'h3' | 'p' | 'formula' | 'table' | 'img' | 'ul';
   en?: string;
   ml?: string;
+  ar?: string;
   src?: string;
   customId?: string;
   tableData?: {
-    headers: readonly { en: string; ml: string }[];
-    rows: readonly (readonly { en: string; ml: string }[])[];
+    headers: readonly { en: string; ml: string; ar?: string }[];
+    rows: readonly (readonly { en: string; ml: string; ar?: string }[])[];
   };
-  items?: { en: string; ml: string }[];
+  items?: { en: string; ml: string; ar?: string }[];
 };
 
 export interface Lesson {
@@ -99,6 +101,7 @@ export interface Lesson {
     question: BilingualString;
     answer: BilingualString;
   }[];
+  translation?: { urdu: string; ml: string; en: string }[];
 }
 
 export interface Unit {

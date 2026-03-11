@@ -18,4 +18,9 @@ export const routes = {
       unit: (id: string) => `/plusone/accountancy/${id}`,
     },
   },
+  dars: {
+    home: '/dars',
+    subject: (id: string) => `/dars/${id}`,
+    chapter: (sid: string, cid: string) => `/dars/${sid}/${cid}`,
+  },
 };

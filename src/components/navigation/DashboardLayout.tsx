@@ -6,6 +6,7 @@ import ThemeToggle from '../ThemeToggle';
 import TextSizeToggle from '../TextSizeToggle';
 import { sslcCurriculum } from '../../data/curriculum';
 import { plusOneCurriculum } from '../../data/plusone_curriculum';
+import { darsCurriculum } from '../../data/dars_curriculum';
 
 export default function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,18 +16,27 @@ export default function DashboardLayout() {
 
   const isSSLC = location.pathname.startsWith('/sslc');
   const isPlusOne = location.pathname.startsWith('/plusone');
-  const curriculum = isPlusOne ? plusOneCurriculum : sslcCurriculum;
-  const currentClass = isPlusOne ? '11' : '10';
+  const isDars = location.pathname.startsWith('/dars');
+  
+  const curriculum = isPlusOne 
+    ? plusOneCurriculum 
+    : isDars 
+      ? darsCurriculum 
+      : sslcCurriculum;
+      
+  const currentClass = isPlusOne ? '11' : isDars ? 'Dars' : '10';
 
   const cycleLanguage = () => {
     if (language === 'en') setLanguage('ml');
-    else if (language === 'ml') setLanguage('bilingual');
+    else if (language === 'ml') setLanguage('ar');
+    else if (language === 'ar') setLanguage('bilingual');
     else setLanguage('en');
   };
 
   const getLanguageLabel = () => {
     if (language === 'en') return 'English';
     if (language === 'ml') return 'മലയാളം';
+    if (language === 'ar') return 'العربية';
     return 'Bilingual';
   };
 
@@ -39,7 +49,8 @@ export default function DashboardLayout() {
   const handleSelectSubject = (id: string) => {
     setIsSidebarOpen(false);
     if (isSSLC) navigate(`/sslc/${id}`);
-    if (isPlusOne) navigate(`/plusone/${id}`);
+    else if (isPlusOne) navigate(`/plusone/${id}`);
+    else if (isDars) navigate(`/dars/${id}`);
   };
 
   return (
@@ -61,7 +72,7 @@ export default function DashboardLayout() {
         <div className="p-4 flex-1 overflow-y-auto">
           <div className="text-[10px] font-bold tracking-widest text-slate-400 dark:text-white/40 uppercase mb-2 px-3">Main</div>
           <div className="space-y-1 mb-6">
-            <button onClick={() => navigate(isSSLC ? '/sslc' : '/plusone')} className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${(location.pathname === '/sslc' || location.pathname === '/plusone') ? 'bg-brand-primary text-white dark:bg-brand-accent dark:text-slate-900 shadow-lg shadow-brand-primary/20 dark:shadow-none' : 'hover:bg-slate-100 dark:hover:bg-white/10 hover:text-brand-primary dark:hover:text-white'}`}>
+            <button onClick={() => navigate(isSSLC ? '/sslc' : isPlusOne ? '/plusone' : '/dars')} className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${(location.pathname === '/sslc' || location.pathname === '/plusone' || location.pathname === '/dars') ? 'bg-brand-primary text-white dark:bg-brand-accent dark:text-slate-900 shadow-lg shadow-brand-primary/20 dark:shadow-none' : 'hover:bg-slate-100 dark:hover:bg-white/10 hover:text-brand-primary dark:hover:text-white'}`}>
               <Home className="w-5 h-5" /> {language === 'en' ? 'Dashboard' : language === 'ml' ? 'ഡാഷ്‌ബോർഡ്' : 'Dashboard / ഡാഷ്‌ബോർഡ്'}
             </button>
             <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-100 dark:hover:bg-white/10 hover:text-brand-primary dark:hover:text-white transition-colors">
@@ -100,7 +111,7 @@ export default function DashboardLayout() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Topbar */}
-        <div className="bg-white dark:bg-slate-900 px-3 md:px-8 py-2.5 md:py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 shadow-sm z-20 transition-colors duration-300">
+        <div className="bg-brand-bg px-3 md:px-8 py-2.5 md:py-4 flex items-center justify-between border-b border-brand-bg z-20 transition-colors duration-300">
           <div className="flex items-center gap-1.5 sm:gap-3">
             <button onClick={() => setIsSidebarOpen(true)} className="md:hidden p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10">
               <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -115,7 +126,7 @@ export default function DashboardLayout() {
             </button>
 
             <h2 className="font-display text-sm sm:text-base md:text-xl font-bold truncate max-w-[100px] xs:max-w-[140px] sm:max-w-[200px] md:max-w-xl text-brand-primary dark:text-white">
-              {isSSLC ? 'SSLC' : 'Plus One'}
+              {isSSLC ? 'SSLC' : isPlusOne ? 'Plus One' : isDars ? 'Dars' : 'Wiselearn'}
             </h2>
           </div>
           <div className="flex items-center gap-1 md:gap-4">
@@ -129,7 +140,7 @@ export default function DashboardLayout() {
               <Globe className="w-3.5 h-3.5 md:w-4 h-4" />
               <span className="hidden sm:inline">{getLanguageLabel()}</span>
             </button>
-            <span className="hidden md:inline bg-brand-accent text-brand-primary dark:text-slate-900 text-[10px] md:text-xs font-extrabold px-2 md:px-3 py-1 rounded-full whitespace-nowrap">{isSSLC ? 'SSLC 2025' : 'Plus One'}</span>
+            <span className="hidden md:inline bg-brand-accent text-brand-primary dark:text-slate-900 text-[10px] md:text-xs font-extrabold px-2 md:px-3 py-1 rounded-full whitespace-nowrap">{isSSLC ? 'SSLC 2025' : isPlusOne ? 'Plus One' : isDars ? 'Dars' : '2025'}</span>
           </div>
         </div>
 

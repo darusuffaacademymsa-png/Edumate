@@ -8,6 +8,9 @@ import SSLCChapterPage from '../pages/sslc/ChapterPage';
 import PlusOneHome from '../pages/plusone/PlusOneHome';
 import PlusOneSubjectHome from '../pages/plusone/SubjectHome';
 import PlusOneChapterPage from '../pages/plusone/ChapterPage';
+import DARSHome from '../pages/dars/DARSHome';
+import DARSSubjectHome from '../pages/dars/SubjectHome';
+import DARSChapterPage from '../pages/dars/ChapterPage';
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +54,24 @@ export const router = createBrowserRouter([
           {
             path: ':subjectId/:chapterId',
             element: <PlusOneChapterPage />,
+          },
+        ],
+      },
+      {
+        path: '/dars',
+        element: <DashboardLayout />,
+        children: [
+          {
+            path: '',
+            element: <DARSHome />,
+          },
+          {
+            path: ':subjectId',
+            element: <DARSSubjectHome />,
+          },
+          {
+            path: ':subjectId/:chapterId',
+            element: <DARSChapterPage />,
           },
         ],
       },

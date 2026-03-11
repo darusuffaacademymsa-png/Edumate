@@ -13,11 +13,12 @@ import { LeverSimulation } from '../labs/mechanics/LeverSimulation';
 import { PulleySimulation } from '../labs/mechanics/PulleySimulation';
 import { BarMagnetSimulation } from '../labs/physics/BarMagnetSimulation';
 import QuizView from './QuizView';
+import SarfPractice from './SarfPractice';
 
 import { markLessonComplete } from '../utils/progressTracker';
 
 export default function LessonView({ lesson, language, onBack, subjectId, selectedClass }: { lesson: any, language: Language, onBack: () => void, subjectId?: string | null, selectedClass?: string }) {
-  const [activeTab, setActiveTab] = useState<'read' | 'experiment' | 'quiz' | 'glossary' | 'sample_questions'>('read');
+  const [activeTab, setActiveTab] = useState<'read' | 'experiment' | 'quiz' | 'glossary' | 'sample_questions' | 'translation'>('read');
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(320);
@@ -29,10 +30,19 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
     }
   }, [lesson?.id]);
 
+  const isArabicSubject = subjectId === 'sub-arabic' || subjectId === 'sub-islamic-history' || subjectId === 'sub-urdu' || subjectId === 'sub-meezan';
   const isEnglishSubject = subjectId === 'sub-english';
+  const isRTL = language === 'ar' || isArabicSubject;
+  
+  const isDars = subjectId === 'sub-meezan';
+
   const glossaryLabel = isEnglishSubject 
-    ? { en: 'Characters', ml: 'കഥാപാത്രങ്ങൾ' }
-    : { en: 'Glossary', ml: 'പദസൂചിക' };
+    ? { en: 'Characters', ml: 'കഥാപാത്രങ്ങൾ', ar: 'شخصيات' }
+    : { en: 'Glossary', ml: 'പദസൂചിക', ar: 'قاموس المصطلحات' };
+
+  const practiceLabel = isDars
+    ? { en: 'Practice', ml: 'പരിശീലനം', ar: 'تدريب' }
+    : { en: 'Experiment', ml: 'പരീക്ഷണം', ar: 'تجربة' };
 
   const startResizing = useCallback(() => {
     isResizing.current = true;
@@ -67,12 +77,38 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
 
   const renderInline = (str: any) => {
     if (!str) return '';
+    
+    // Logic for Arabic subject
+    if (isArabicSubject && str.ar) {
+      if (language === 'ar') return str.ar;
+      if (language === 'en') return `${str.ar} (${str.en})`;
+      if (language === 'ml') return `${str.ar} (${str.ml})`;
+      if (language === 'bilingual') return `${str.ar} (${str.en} / ${str.ml})`;
+      return str.ar;
+    }
+
     if (language === 'bilingual') return `${str.en} / ${str.ml}`;
-    return str[language];
+    return str[language] || str.en;
   };
 
-  const TextContent = ({ enText, mlText, className = "" }: any) => {
+  const TextContent = ({ enText, mlText, arText, className = "" }: any) => {
     const isBilingual = language === 'bilingual';
+    
+    if (isArabicSubject && arText) {
+      return (
+        <span className={`block mb-4 ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+          <span className="block text-2xl mb-2">{arText}</span>
+          {language === 'en' && enText && <span className="block text-sm text-slate-600 dark:text-slate-400">{enText}</span>}
+          {language === 'ml' && mlText && <span className="block text-sm text-slate-600 dark:text-slate-400">{mlText}</span>}
+          {isBilingual && (
+            <span className="block text-sm text-slate-600 dark:text-slate-400">
+              {enText} {enText && mlText ? '/' : ''} {mlText}
+            </span>
+          )}
+        </span>
+      );
+    }
+
     return (
       <span className={`block mb-4 ${className}`}>
         {(language === 'en' || isBilingual) && <span className={`block ${isBilingual ? "text-slate-800 dark:text-slate-200" : ""}`}>{enText}</span>}
@@ -81,9 +117,35 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
     );
   };
 
-  const MarkdownContent = ({ enText, mlText, className = "" }: any) => {
+  const MarkdownContent = ({ enText, mlText, arText, className = "" }: any) => {
     const isBilingual = language === 'bilingual';
     
+    if (isArabicSubject && arText) {
+      return (
+        <div className={`mb-6 ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+          <div className="prose prose-slate dark:prose-invert max-w-none text-2xl mb-4">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{arText}</ReactMarkdown>
+          </div>
+          {language === 'en' && enText && (
+            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>
+            </div>
+          )}
+          {language === 'ml' && mlText && (
+            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>
+            </div>
+          )}
+          {isBilingual && (
+            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
+              {enText && <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>}
+              {mlText && <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>}
+            </div>
+          )}
+        </div>
+      );
+    }
+
     if (isBilingual) {
       const enBlocks = (enText || '').split('\n\n');
       const mlBlocks = (mlText || '').split('\n\n');
@@ -128,20 +190,21 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   const renderBlock = (block: any, idx: number) => {
     const en = block.en;
     const ml = block.ml;
+    const ar = block.ar;
 
     switch (block.type) {
       case 'h2':
-        return <h2 key={idx} className="font-display text-2xl font-bold text-brand-primary dark:text-white mt-8 mb-4 border-b border-slate-100 dark:border-slate-700 pb-2"><TextContent enText={en} mlText={ml} /></h2>;
+        return <h2 key={idx} className="font-display text-2xl font-bold text-brand-primary dark:text-white mt-8 mb-4 border-b border-slate-100 dark:border-slate-700 pb-2"><TextContent enText={en} mlText={ml} arText={ar} /></h2>;
       case 'h3':
-        return <h3 key={idx} className="font-display text-xl font-bold text-brand-primary dark:text-white mt-6 mb-3"><TextContent enText={en} mlText={ml} /></h3>;
+        return <h3 key={idx} className="font-display text-xl font-bold text-brand-primary dark:text-white mt-6 mb-3"><TextContent enText={en} mlText={ml} arText={ar} /></h3>;
       case 'p':
-        return <div key={idx} className="text-lg leading-relaxed text-slate-700 dark:text-slate-300"><TextContent enText={en} mlText={ml} /></div>;
+        return <div key={idx} className="text-lg leading-relaxed text-slate-700 dark:text-slate-300"><TextContent enText={en} mlText={ml} arText={ar} /></div>;
       case 'ul':
         return (
-          <ul key={idx} className="list-disc list-inside space-y-2 my-4 text-slate-700 dark:text-slate-300">
+          <ul key={idx} className={`list-disc list-inside space-y-2 my-4 text-slate-700 dark:text-slate-300 ${isRTL ? 'text-right' : 'text-left'}`}>
             {block.items?.map((item: any, i: number) => (
               <li key={i}>
-                <TextContent enText={item.en} mlText={item.ml} className="inline" />
+                <TextContent enText={item.en} mlText={item.ml} arText={item.ar} className="inline" />
               </li>
             ))}
           </ul>
@@ -149,7 +212,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
       case 'formula':
         return (
           <div key={idx} className="bg-brand-accent/10 dark:bg-brand-accent/20 border-l-4 border-brand-accent p-4 rounded-r-xl my-4 font-mono text-sm text-brand-primary dark:text-brand-accent">
-            <TextContent enText={en} mlText={ml} />
+            <TextContent enText={en} mlText={ml} arText={ar} />
           </div>
         );
       case 'img':
@@ -332,7 +395,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
               className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'experiment' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <FlaskConical className="w-4 h-4" />
-              {language === 'en' ? 'Experiment' : language === 'ml' ? 'പരീക്ഷണം' : 'Experiment / പരീക്ഷണം'}
+              {renderInline(practiceLabel)}
             </button>
             <button
               onClick={() => setActiveTab('quiz')}
@@ -348,6 +411,15 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
               >
                 <HelpCircle className="w-4 h-4" />
                 {language === 'en' ? 'Sample Questions' : language === 'ml' ? 'മാതൃകാ ചോദ്യങ്ങൾ' : 'Sample Questions / മാതൃകാ ചോദ്യങ്ങൾ'}
+              </button>
+            )}
+            {lesson.translation && (
+              <button
+                onClick={() => setActiveTab('translation')}
+                className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'translation' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              >
+                <Volume2 className="w-4 h-4" />
+                {language === 'en' ? 'Translation of chapter' : language === 'ml' ? 'പാഠഭാഗത്തിന്റെ വിവർത്തനം' : 'Translation / വിവർത്തനം'}
               </button>
             )}
             <button
@@ -366,7 +438,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                 <section className="prose prose-slate dark:prose-invert max-w-none">
                   <div className="flex items-start gap-4 group">
                     <div className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 flex-1">
-                      <TextContent enText={lesson.content.intro.en} mlText={lesson.content.intro.ml} />
+                      <TextContent enText={lesson.content.intro.en} mlText={lesson.content.intro.ml} arText={lesson.content.intro.ar} />
                     </div>
                     <button className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-full transition-colors opacity-0 group-hover:opacity-100" title="Listen (TTS)">
                       <Volume2 className="w-5 h-5" />
@@ -382,7 +454,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                   <section className="mt-8">
                     <div className="flex items-start gap-4 group">
                       <div className="flex-1">
-                        <MarkdownContent enText={lesson.content.core.en} mlText={lesson.content.core.ml} />
+                        <MarkdownContent enText={lesson.content.core.en} mlText={lesson.content.core.ml} arText={lesson.content.core.ar} />
                       </div>
                       <button className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-full transition-colors opacity-0 group-hover:opacity-100" title="Listen (TTS)">
                         <Volume2 className="w-5 h-5" />
@@ -398,13 +470,15 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                 <ChemistryInteractive language={language} />
               ) : lesson.id === 'sc-phy-10-sound' ? (
                 <SoundWavesInteractive language={language} />
+              ) : isDars ? (
+                <SarfPractice language={language} />
               ) : (
                 <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-12 text-center shadow-sm">
                   <div className="w-20 h-20 bg-brand-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <FlaskConical className="w-10 h-10 text-brand-primary dark:text-slate-300" />
                   </div>
                   <h3 className="font-display text-2xl font-bold text-brand-primary dark:text-white mb-2">
-                    {language === 'en' ? 'Interactive Experiment' : language === 'ml' ? 'സംവേദനാത്മക പരീക്ഷണം' : 'Interactive Experiment / സംവേദനാത്മക പരീക്ഷണം'}
+                    {renderInline(practiceLabel.en.includes('Practice') ? { en: 'Interactive Practice', ml: 'ഇന്ററാക്ടീവ് പരിശീലനം' } : { en: 'Interactive Experiment', ml: 'സംവേദനാത്മക പരീക്ഷണം' })}
                   </h3>
                   <p className="text-slate-500 dark:text-slate-400 font-semibold">
                     {language === 'en' ? 'Coming soon for this chapter.' : language === 'ml' ? 'ഈ അധ്യായത്തിനായി ഉടൻ വരുന്നു.' : 'Coming soon for this chapter / ഈ അധ്യായത്തിനായി ഉടൻ വരുന്നു.'}
@@ -425,7 +499,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                       <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold px-2 py-1 rounded">Q{idx + 1}</span>
                     </div>
                     <div className="text-lg font-medium text-slate-900 dark:text-slate-100 mb-6">
-                      <TextContent enText={q.question.en} mlText={q.question.ml} />
+                      <TextContent enText={q.question.en} mlText={q.question.ml} arText={q.question.ar} />
                     </div>
                     
                     <div className="mt-4 p-4 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-200 border border-indigo-100 dark:border-indigo-800">
@@ -436,11 +510,46 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                             {language === 'en' ? 'Answer' : language === 'ml' ? 'ഉത്തരം' : 'Answer / ഉത്തരം'}
                           </p>
                           <div className="text-sm opacity-90">
-                            <TextContent enText={q.answer.en} mlText={q.answer.ml} />
+                            <TextContent enText={q.answer.en} mlText={q.answer.ml} arText={q.answer.ar} />
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeTab === 'translation' && lesson.translation && (
+              <div className="space-y-6">
+                {lesson.translation.map((item: any, idx: number) => (
+                  <div key={idx} className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 sm:p-6 shadow-sm">
+                    <div className="text-right mb-4" dir="rtl">
+                      <p className="text-2xl leading-loose text-slate-900 dark:text-white font-medium">{item.urdu}</p>
+                    </div>
+                    
+                    {(language === 'en' || language === 'ml' || language === 'bilingual' || language === 'ar') && (
+                      <div className={`pt-4 border-t border-slate-100 dark:border-slate-700 ${language === 'bilingual' || language === 'ar' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : ''}`}>
+                        {(language === 'ml' || language === 'bilingual' || language === 'ar') && (
+                          <div>
+                            <p className="text-[10px] font-bold text-brand-teal uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                              Malayalam
+                            </p>
+                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.ml}</p>
+                          </div>
+                        )}
+                        {(language === 'en' || language === 'bilingual' || language === 'ar') && (
+                          <div>
+                            <p className="text-[10px] font-bold text-brand-purple uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+                              English
+                            </p>
+                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.en}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -457,7 +566,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                       </button>
                     </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      <TextContent enText={item.definition.en} mlText={item.definition.ml} />
+                      <TextContent enText={item.definition.en} mlText={item.definition.ml} arText={item.definition.ar} />
                     </div>
                   </div>
                 ))}
