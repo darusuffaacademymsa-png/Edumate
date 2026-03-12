@@ -13,6 +13,12 @@ import { plusOneAccountancyUnit5 } from './plusone_accountancy_unit5';
 import { plusOneAccountancyUnit6 } from './plusone_accountancy_unit6';
 import { plusOneAccountancyUnit7 } from './plusone_accountancy_unit7';
 import { plusOneAccountancyUnit8 } from './plusone_accountancy_unit8';
+import { 
+  plusOneBusinessStudiesUnit1, plusOneBusinessStudiesUnit2, plusOneBusinessStudiesUnit3,
+  plusOneBusinessStudiesUnit4, plusOneBusinessStudiesUnit5, plusOneBusinessStudiesUnit6,
+  plusOneBusinessStudiesUnit7, plusOneBusinessStudiesUnit8, plusOneBusinessStudiesUnit9,
+  plusOneBusinessStudiesUnit10, plusOneBusinessStudiesUnit11
+} from './plusone_business_studies';
 import { plusOneIslamicHistoryUnit1 } from './plusone_islamic_history_unit1';
 import { plusOneIslamicHistoryUnit2 } from './plusone_islamic_history_unit2';
 import { plusOneIslamicHistoryUnit3 } from './plusone_islamic_history_unit3';
@@ -33,7 +39,7 @@ export const plusOneCurriculum: Subject[] = [
   {
     id: "sub-urdu",
     title: { ar: "اردو", en: "Urdu", ml: "ഉറുദു" },
-    icon: "📖",
+    icon: "BookOpen",
     color: "bg-[#4db6ac]",
     units: [
       {
@@ -61,7 +67,7 @@ export const plusOneCurriculum: Subject[] = [
   {
     id: "sub-arabic",
     title: { ar: "العربية", en: "Arabic", ml: "അറബിക്" },
-    icon: "🕌",
+    icon: "Mosque",
     color: "bg-[#009688]",
     units: [
       plusOneArabicUnit1,
@@ -74,7 +80,7 @@ export const plusOneCurriculum: Subject[] = [
   {
     id: "sub-english",
     title: { en: "English", ml: "ഇംഗ്ലീഷ്" },
-    icon: "📝",
+    icon: "Type",
     color: "bg-[#7c4dff]",
     units: [
       {
@@ -112,7 +118,7 @@ export const plusOneCurriculum: Subject[] = [
   {
     id: "sub-islamic-history",
     title: { en: "Islamic History", ml: "ഇസ്ലാമിക ചരിത്രം" },
-    icon: "🕌",
+    icon: "Mosque",
     color: "bg-[#f57c00]",
     units: [
       {
@@ -155,7 +161,7 @@ export const plusOneCurriculum: Subject[] = [
   {
     id: "sub-accountancy",
     title: { en: "Accountancy", ml: "അക്കൗണ്ടൻസി" },
-    icon: "📊",
+    icon: "BarChart3",
     color: "bg-[#00c853]",
     units: [
       {
@@ -201,9 +207,72 @@ export const plusOneCurriculum: Subject[] = [
     ]
   },
   {
+    id: "sub-business-studies",
+    title: { en: "Business Studies", ml: "ബിസിനസ്സ് സ്റ്റഡീസ്" },
+    icon: "Briefcase",
+    color: "bg-[#795548]",
+    units: [
+      {
+        id: "u-bs-1",
+        title: { en: "Business, Trade and Commerce", ml: "ബിസിനസ്സ്, വ്യാപാരം, വാണിജ്യം" },
+        lessons: [plusOneBusinessStudiesUnit1]
+      },
+      {
+        id: "u-bs-2",
+        title: { en: "Forms of Business Organisation", ml: "ബിസിനസ്സ് സ്ഥാപനങ്ങളുടെ വിവിധ രൂപങ്ങൾ" },
+        lessons: [plusOneBusinessStudiesUnit2]
+      },
+      {
+        id: "u-bs-3",
+        title: { en: "Private, Public and Global Enterprises", ml: "സ്വകാര്യ, പൊതു, ആഗോള സംരംഭങ്ങൾ" },
+        lessons: [plusOneBusinessStudiesUnit3]
+      },
+      {
+        id: "u-bs-4",
+        title: { en: "Business Services", ml: "ബിസിനസ്സ് സേവനങ്ങൾ" },
+        lessons: [plusOneBusinessStudiesUnit4]
+      },
+      {
+        id: "u-bs-5",
+        title: { en: "Emerging Modes of Business", ml: "ഉയർന്നുവരുന്ന ബിസിനസ്സ് രീതികൾ" },
+        lessons: [plusOneBusinessStudiesUnit5]
+      },
+      {
+        id: "u-bs-6",
+        title: { en: "Social Responsibilities of Business and Business Ethics", ml: "ബിസിനസ്സിന്റെ സാമൂഹിക ഉത്തരവാദിത്തങ്ങളും ബിസിനസ്സ് ധാർമ്മികതയും" },
+        lessons: [plusOneBusinessStudiesUnit6]
+      },
+      {
+        id: "u-bs-7",
+        title: { en: "Formation of a Company", ml: "ഒരു കമ്പനിയുടെ രൂപീകരണം" },
+        lessons: [plusOneBusinessStudiesUnit7]
+      },
+      {
+        id: "u-bs-8",
+        title: { en: "Sources of Business Finance", ml: "ബിസിനസ്സ് ഫിനാൻസിന്റെ ഉറവിടങ്ങൾ" },
+        lessons: [plusOneBusinessStudiesUnit8]
+      },
+      {
+        id: "u-bs-9",
+        title: { en: "Small Business", ml: "ചെറുകിട ബിസിനസ്സ്" },
+        lessons: [plusOneBusinessStudiesUnit9]
+      },
+      {
+        id: "u-bs-10",
+        title: { en: "Internal Trade", ml: "ആഭ്യന്തര വ്യാപാരം" },
+        lessons: [plusOneBusinessStudiesUnit10]
+      },
+      {
+        id: "u-bs-11",
+        title: { en: "International Business", ml: "അന്താരാഷ്ട്ര ബിസിനസ്സ്" },
+        lessons: [plusOneBusinessStudiesUnit11]
+      }
+    ]
+  },
+  {
     id: "sub-physics",
     title: { en: "Physics", ml: "ഭൗതികശാസ്ത്രം" },
-    icon: "⚡",
+    icon: "Zap",
     color: "bg-[#29b6f6]",
     units: [
       {

@@ -9,9 +9,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Manjari';
+  src: url('/Manjari-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Baloo 2", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manjari", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manjari", "Baloo 2", ui-sans-serif, system-ui, sans-serif;
   --font-arabic: "Majalla", "Sakkal Majalla", "Traditional Arabic", "Noto Naskh Arabic", sans-serif;
   --color-brand-primary: #1a1f4e;
   --color-brand-accent: #f7c948;
@@ -34,11 +42,26 @@
   html.text-size-normal {
     font-size: 16px;
   }
+  @media (min-width: 1024px) {
+    html.text-size-normal {
+      font-size: 15px; /* Slight scale reduction for computers */
+    }
+  }
   html.text-size-large {
     font-size: 18px;
   }
+  @media (min-width: 1024px) {
+    html.text-size-large {
+      font-size: 17px;
+    }
+  }
   html.text-size-xlarge {
     font-size: 20px;
+  }
+  @media (min-width: 1024px) {
+    html.text-size-xlarge {
+      font-size: 19px;
+    }
   }
 
   body {

@@ -5,7 +5,7 @@ export const darsCurriculum: Subject[] = [
   {
     id: "sub-meezan",
     title: { ar: "ميزان الصرف", en: "Meezan al-Sarf", ml: "മീസാൻ" },
-    icon: "⚖️",
+    icon: "Scale",
     color: "bg-[#795548]",
     units: [
       {

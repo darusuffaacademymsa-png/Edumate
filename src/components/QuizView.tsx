@@ -216,9 +216,31 @@ export default function QuizView({ questions, language, quizId = 'default_quiz' 
     const isCorrect = selectedAnswer === currentQuestion.answer;
 
     return (
-      <div className="max-w-3xl mx-auto">
-        {/* Progress Bar */}
-        <div className="mb-6">
+      <div className="fixed inset-0 z-50 bg-slate-50 dark:bg-slate-950 flex flex-col overflow-hidden md:relative md:inset-auto md:z-0 md:bg-transparent md:dark:bg-transparent md:flex-none">
+        {/* Mobile Header with Progress */}
+        <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-4 flex flex-col gap-3 flex-shrink-0 md:hidden">
+          <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span>Question {currentQuestionIndex + 1} / {activeQuestions.length}</span>
+            <button 
+              onClick={() => {
+                if (confirm('Exit quiz? Progress will be lost.')) setQuizState('setup');
+              }}
+              className="text-red-500 hover:text-red-600"
+            >
+              Exit
+            </button>
+          </div>
+          <div className="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: `${((currentQuestionIndex + 1) / activeQuestions.length) * 100}%` }}
+              className="h-full bg-indigo-600"
+            />
+          </div>
+        </div>
+
+        {/* Desktop Progress Bar */}
+        <div className="hidden md:block mb-6">
           <div className="flex justify-between text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
             <span>Question {currentQuestionIndex + 1} of {activeQuestions.length}</span>
             <span>{Math.round(((currentQuestionIndex + 1) / activeQuestions.length) * 100)}% Completed</span>
@@ -231,114 +253,120 @@ export default function QuizView({ questions, language, quizId = 'default_quiz' 
           </div>
         </div>
 
-        {/* Question Card */}
-        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-          <div className="p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-relaxed mb-8">
-              {renderText(currentQuestion.stem)}
-            </h3>
-
-            <div className="space-y-3">
-              {currentOptions.map((opt, idx) => {
-                const isSelected = selectedAnswer === opt.k;
-                const isThisCorrect = opt.k === currentQuestion.answer;
-                const showResult = showExplanation;
-
-                let optionClass = "w-full text-left p-4 rounded-xl border-2 transition-all flex items-start gap-4 ";
-                
-                if (showResult) {
-                  if (isThisCorrect) {
-                    optionClass += "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-500 text-emerald-900 dark:text-emerald-100";
-                  } else if (isSelected && !isThisCorrect) {
-                    optionClass += "bg-red-50 dark:bg-red-900/20 border-red-500 text-red-900 dark:text-red-100";
-                  } else {
-                    optionClass += "border-slate-100 dark:border-slate-700 opacity-50";
-                  }
-                } else {
-                  if (isSelected) {
-                    optionClass += "border-indigo-600 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-100";
-                  } else {
-                    optionClass += "border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800";
-                  }
-                }
-
-                return (
-                  <button
-                    key={opt.k}
-                    onClick={() => handleOptionSelect(opt.k)}
-                    disabled={showExplanation}
-                    className={optionClass}
-                  >
-                    <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                      showResult && isThisCorrect ? 'bg-emerald-200 text-emerald-800' :
-                      showResult && isSelected && !isThisCorrect ? 'bg-red-200 text-red-800' :
-                      isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
-                    }`}>
-                      {String.fromCharCode(65 + idx)}
-                    </span>
-                    <span className="flex-1 pt-1 font-medium">
-                      {renderText(opt.text)}
-                    </span>
-                    {showResult && isThisCorrect && <CheckCircle className="w-6 h-6 text-emerald-600" />}
-                    {showResult && isSelected && !isThisCorrect && <XCircle className="w-6 h-6 text-red-600" />}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Footer / Actions */}
-          <div className="bg-slate-50 dark:bg-slate-900/50 p-6 border-t border-slate-100 dark:border-slate-800">
-            {!showExplanation ? (
-              <div className="flex justify-end">
-                <button
-                  onClick={handleCheckAnswer}
-                  disabled={!selectedAnswer}
-                  className={`px-6 py-3 rounded-xl font-bold text-white transition-all ${
-                    selectedAnswer 
-                      ? 'bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-200 dark:shadow-none' 
-                      : 'bg-slate-300 dark:bg-slate-700 cursor-not-allowed'
-                  }`}
-                >
-                  {language === 'en' ? 'Check Answer' : language === 'ml' ? 'ഉത്തരം പരിശോധിക്കുക' : 'Check Answer / ഉത്തരം പരിശോധിക്കുക'}
-                </button>
+        {/* Main Quiz Area - Scrollable only if content is huge, but designed to fit */}
+        <div className="flex-1 flex flex-col p-4 md:p-0 overflow-y-auto md:overflow-visible">
+          <div className="flex-1 flex flex-col bg-white dark:bg-slate-800 rounded-2xl md:shadow-sm md:border md:border-slate-200 md:dark:border-slate-700 overflow-hidden max-h-full">
+            <div className="flex-1 overflow-y-auto p-4 md:p-8 flex flex-col">
+              {/* Question Text */}
+              <div className="mb-6 flex-shrink-0">
+                <h3 className="text-lg md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+                  {renderText(currentQuestion.stem)}
+                </h3>
               </div>
-            ) : (
-              <div className="space-y-6">
-                <div className={`p-4 rounded-xl ${isCorrect ? 'bg-emerald-100 dark:bg-emerald-900/30' : 'bg-red-100 dark:bg-red-900/30'}`}>
-                  <div className="flex items-start gap-3">
-                    <div className={`p-2 rounded-full ${isCorrect ? 'bg-emerald-200 dark:bg-emerald-800' : 'bg-red-200 dark:bg-red-800'}`}>
-                      {isCorrect ? <CheckCircle className="w-5 h-5 text-emerald-700 dark:text-emerald-300" /> : <XCircle className="w-5 h-5 text-red-700 dark:text-red-300" />}
-                    </div>
-                    <div>
-                      <h4 className={`font-bold mb-1 ${isCorrect ? 'text-emerald-800 dark:text-emerald-200' : 'text-red-800 dark:text-red-200'}`}>
-                        {isCorrect 
-                          ? (language === 'en' ? 'Correct Answer!' : language === 'ml' ? 'ശരിയായ ഉത്തരം!' : 'Correct Answer! / ശരിയായ ഉത്തരം!')
-                          : (language === 'en' ? 'Incorrect Answer' : language === 'ml' ? 'തെറ്റായ ഉത്തരം' : 'Incorrect Answer / തെറ്റായ ഉത്തരം')
-                        }
-                      </h4>
-                      <div className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-                        <span className="font-semibold block mb-1 opacity-70 uppercase tracking-wider text-xs">Explanation</span>
-                        {renderText(currentQuestion.explanation)}
+
+              {/* Options - Grid for better space utilization on mobile if needed, but list is standard */}
+              <div className="space-y-2 md:space-y-3 pb-4">
+                {currentOptions.map((opt, idx) => {
+                  const isSelected = selectedAnswer === opt.k;
+                  const isThisCorrect = opt.k === currentQuestion.answer;
+                  const showResult = showExplanation;
+
+                  let optionClass = "w-full text-left p-3 md:p-4 rounded-xl border-2 transition-all flex items-start gap-3 md:gap-4 ";
+                  
+                  if (showResult) {
+                    if (isThisCorrect) {
+                      optionClass += "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-500 text-emerald-900 dark:text-emerald-100";
+                    } else if (isSelected && !isThisCorrect) {
+                      optionClass += "bg-red-50 dark:bg-red-900/20 border-red-500 text-red-900 dark:text-red-100";
+                    } else {
+                      optionClass += "border-slate-100 dark:border-slate-700 opacity-50";
+                    }
+                  } else {
+                    if (isSelected) {
+                      optionClass += "border-indigo-600 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-100";
+                    } else {
+                      optionClass += "border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800";
+                    }
+                  }
+
+                  return (
+                    <button
+                      key={opt.k}
+                      onClick={() => handleOptionSelect(opt.k)}
+                      disabled={showExplanation}
+                      className={optionClass}
+                    >
+                      <span className={`flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center font-bold text-xs md:text-sm ${
+                        showResult && isThisCorrect ? 'bg-emerald-200 text-emerald-800' :
+                        showResult && isSelected && !isThisCorrect ? 'bg-red-200 text-red-800' :
+                        isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                      }`}>
+                        {String.fromCharCode(65 + idx)}
+                      </span>
+                      <span className="flex-1 pt-0.5 text-sm md:text-base font-medium">
+                        {renderText(opt.text)}
+                      </span>
+                      {showResult && isThisCorrect && <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-emerald-600" />}
+                      {showResult && isSelected && !isThisCorrect && <XCircle className="w-5 h-5 md:w-6 md:h-6 text-red-600" />}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Result/Explanation Overlay or Section */}
+              <AnimatePresence>
+                {showExplanation && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className={`mt-4 p-4 rounded-xl flex-shrink-0 ${isCorrect ? 'bg-emerald-100 dark:bg-emerald-900/30' : 'bg-red-100 dark:bg-red-900/30'}`}
+                  >
+                    <div className="flex items-start gap-3 overflow-y-auto max-h-32">
+                      <div className={`p-1.5 rounded-full flex-shrink-0 ${isCorrect ? 'bg-emerald-200 dark:bg-emerald-800' : 'bg-red-200 dark:bg-red-800'}`}>
+                        {isCorrect ? <CheckCircle className="w-4 h-4 text-emerald-700 dark:text-emerald-300" /> : <XCircle className="w-4 h-4 text-red-700 dark:text-red-300" />}
+                      </div>
+                      <div>
+                        <h4 className={`font-bold text-xs md:text-sm mb-1 ${isCorrect ? 'text-emerald-800 dark:text-emerald-200' : 'text-red-800 dark:text-red-200'}`}>
+                          {isCorrect ? 'Correct!' : 'Incorrect'}
+                        </h4>
+                        <div className="text-slate-700 dark:text-slate-300 text-xs md:text-sm leading-snug">
+                          {renderText(currentQuestion.explanation)}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Sticky Mobile/Desktop Footer */}
+            <div className="bg-slate-50 dark:bg-slate-900/50 p-4 border-t border-slate-100 dark:border-slate-800 flex-shrink-0">
+              {!showExplanation ? (
+                <div className="flex justify-stretch">
+                  <button
+                    onClick={handleCheckAnswer}
+                    disabled={!selectedAnswer}
+                    className={`w-full py-3 rounded-xl font-bold text-white transition-all ${
+                      selectedAnswer 
+                        ? 'bg-indigo-600 hover:bg-indigo-700 shadow-lg' 
+                        : 'bg-slate-300 dark:bg-slate-700 cursor-not-allowed'
+                    }`}
+                  >
+                    {language === 'en' ? 'Check Answer' : language === 'ml' ? 'ഉത്തരം പരിശോധിക്കുക' : 'Check'}
+                  </button>
                 </div>
-                
-                <div className="flex justify-end">
+              ) : (
+                <div className="flex justify-stretch">
                   <button
                     onClick={handleNextQuestion}
-                    className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold hover:opacity-90 transition-all flex items-center gap-2"
+                    className="w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2"
                   >
-                    {currentQuestionIndex < activeQuestions.length - 1 
-                      ? (language === 'en' ? 'Next Question' : language === 'ml' ? 'അടുത്ത ചോദ്യം' : 'Next Question / അടുത്ത ചോദ്യം')
-                      : (language === 'en' ? 'Finish Quiz' : language === 'ml' ? 'ക്വിസ് അവസാനിപ്പിക്കുക' : 'Finish Quiz / ക്വിസ് അവസാനിപ്പിക്കുക')
-                    }
+                    {currentQuestionIndex < activeQuestions.length - 1 ? 'Next Question' : 'Finish Quiz'}
                     <ChevronRight className="w-5 h-5" />
                   </button>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

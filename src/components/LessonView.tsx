@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, FileText, HelpCircle, Info, ArrowLeft, Clock, GripVertical } from 'lucide-react';
+import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, FileText, HelpCircle, Info, ArrowLeft, Clock, GripVertical, Sparkles, Maximize } from 'lucide-react';
 import { Language } from '../data/curriculum';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -18,7 +18,7 @@ import SarfPractice from './SarfPractice';
 import { markLessonComplete } from '../utils/progressTracker';
 
 export default function LessonView({ lesson, language, onBack, subjectId, selectedClass }: { lesson: any, language: Language, onBack: () => void, subjectId?: string | null, selectedClass?: string }) {
-  const [activeTab, setActiveTab] = useState<'read' | 'experiment' | 'quiz' | 'glossary' | 'sample_questions' | 'translation'>('read');
+  const [activeTab, setActiveTab] = useState<'read' | 'video' | 'quiz' | 'glossary' | 'sample_questions' | 'translation'>('read');
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(320);
@@ -30,19 +30,16 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
     }
   }, [lesson?.id]);
 
-  const isArabicSubject = subjectId === 'sub-arabic' || subjectId === 'sub-islamic-history' || subjectId === 'sub-urdu' || subjectId === 'sub-meezan';
+  const isArabicSubject = subjectId === 'sub-arabic' || subjectId === 'sub-urdu' || subjectId === 'sub-meezan';
   const isEnglishSubject = subjectId === 'sub-english';
-  const isRTL = language === 'ar' || isArabicSubject;
+  const isRTL = isArabicSubject;
   
   const isDars = subjectId === 'sub-meezan';
+  const isCompact = lesson.id?.startsWith('pl-isl-');
 
   const glossaryLabel = isEnglishSubject 
     ? { en: 'Characters', ml: 'കഥാപാത്രങ്ങൾ', ar: 'شخصيات' }
-    : { en: 'Glossary', ml: 'പദസൂചിക', ar: 'قاموس المصطلحات' };
-
-  const practiceLabel = isDars
-    ? { en: 'Practice', ml: 'പരിശീലനം', ar: 'تدريب' }
-    : { en: 'Experiment', ml: 'പരീക്ഷണം', ar: 'تجربة' };
+    : { en: 'Glossary', ml: 'Glossary', ar: 'Glossary' };
 
   const startResizing = useCallback(() => {
     isResizing.current = true;
@@ -78,41 +75,150 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   const renderInline = (str: any) => {
     if (!str) return '';
     
-    // Logic for Arabic subject
-    if (isArabicSubject && str.ar) {
+    if (str.ar) {
+      if (language === 'bilingual') return `${str.ar} / ${str.en} / ${str.ml}`;
       if (language === 'ar') return str.ar;
       if (language === 'en') return `${str.ar} (${str.en})`;
       if (language === 'ml') return `${str.ar} (${str.ml})`;
-      if (language === 'bilingual') return `${str.ar} (${str.en} / ${str.ml})`;
-      return str.ar;
     }
 
     if (language === 'bilingual') return `${str.en} / ${str.ml}`;
     return str[language] || str.en;
   };
 
+  const getEmbedUrl = (url: string) => {
+    let videoId = '';
+    if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.includes('watch?v=')) {
+      videoId = url.split('watch?v=')[1].split('&')[0];
+    }
+    
+    if (videoId) {
+      // Modest branding, no related videos from other channels, and custom colors
+      return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3`;
+    }
+    return url;
+  };
+
+  const VideoPlayer = ({ video }: { video: any }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [showButton, setShowButton] = useState(true);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+    const resetTimer = () => {
+      setShowButton(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        setShowButton(false);
+      }, 3000);
+    };
+
+    useEffect(() => {
+      resetTimer();
+      return () => {
+        if (timerRef.current) clearTimeout(timerRef.current);
+      };
+    }, []);
+
+    const toggleFullScreen = async () => {
+      if (!containerRef.current) return;
+      
+      try {
+        if (!document.fullscreenElement) {
+          if (containerRef.current.requestFullscreen) {
+            await containerRef.current.requestFullscreen();
+          } else if ((containerRef.current as any).webkitRequestFullscreen) {
+            await (containerRef.current as any).webkitRequestFullscreen();
+          }
+          
+          if (window.screen.orientation && (window.screen.orientation as any).lock) {
+            await (window.screen.orientation as any).lock('landscape').catch(() => {});
+          }
+        } else {
+          if (document.exitFullscreen) {
+            await document.exitFullscreen();
+          }
+        }
+      } catch (err) {
+        console.error("Error toggling fullscreen:", err);
+      }
+    };
+
+    return (
+      <div className="relative group">
+        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-brand-purple rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+        <div 
+          ref={containerRef} 
+          className="relative aspect-video w-full rounded-[2rem] overflow-hidden bg-black shadow-2xl border border-white/10 group/player"
+          onMouseMove={resetTimer}
+          onTouchStart={resetTimer}
+        >
+          <iframe 
+            src={getEmbedUrl(video.url)} 
+            className="w-full h-full"
+            title={video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          />
+          {/* Fullscreen Landscape Button */}
+          <button 
+            onClick={toggleFullScreen}
+            className={`absolute bottom-4 right-4 z-20 p-3 bg-black/60 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-all duration-500 flex items-center gap-2 ${showButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+            title="Fullscreen Landscape"
+          >
+            <Maximize className="w-5 h-5" />
+            <span className="text-xs font-bold sm:hidden">Landscape Fullscreen</span>
+          </button>
+        </div>
+        <h3 className="mt-4 text-xl font-bold text-brand-primary dark:text-white px-2">{video.title}</h3>
+      </div>
+    );
+  };
+
   const TextContent = ({ enText, mlText, arText, className = "" }: any) => {
     const isBilingual = language === 'bilingual';
+    const isInline = className.includes('inline') || isCompact;
     
-    if (isArabicSubject && arText) {
+    if (arText) {
+      const showAr = true; // Always show Arabic for reference
+      const showEn = (language === 'en' || isBilingual) && enText;
+      const showMl = (language === 'ml' || isBilingual) && mlText;
+
       return (
-        <span className={`block mb-4 ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-          <span className="block text-2xl mb-2">{arText}</span>
-          {language === 'en' && enText && <span className="block text-sm text-slate-600 dark:text-slate-400">{enText}</span>}
-          {language === 'ml' && mlText && <span className="block text-sm text-slate-600 dark:text-slate-400">{mlText}</span>}
-          {isBilingual && (
-            <span className="block text-sm text-slate-600 dark:text-slate-400">
-              {enText} {enText && mlText ? '/' : ''} {mlText}
+        <span className={`${isInline ? "inline" : "block mb-4"} ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+          {showAr && (
+            <span className={`${isInline ? "inline" : "block text-2xl mb-2"} text-slate-900 dark:text-white`}>{arText}</span>
+          )}
+          {showEn && (
+            <span className={`${isInline ? "inline opacity-80" : "block text-sm"} text-slate-800 dark:text-slate-200`}>
+              {isInline && showAr ? " / " : ""}{enText}
+            </span>
+          )}
+          {showMl && (
+            <span className={`${isInline ? "inline opacity-80" : "block text-sm mt-1"} text-slate-600 dark:text-slate-400`}>
+              {isInline && (showAr || showEn) ? " / " : ""}{mlText}
             </span>
           )}
         </span>
       );
     }
 
+    const showEn = (language === 'en' || isBilingual) && enText;
+    const showMl = (language === 'ml' || isBilingual) && mlText;
+
     return (
-      <span className={`block mb-4 ${className}`}>
-        {(language === 'en' || isBilingual) && <span className={`block ${isBilingual ? "text-slate-800 dark:text-slate-200" : ""}`}>{enText}</span>}
-        {(language === 'ml' || isBilingual) && <span className={`block ${isBilingual ? "text-slate-600 dark:text-slate-400 text-sm mt-1" : ""}`}>{mlText}</span>}
+      <span className={`${isInline ? "inline" : "block mb-4"} ${className}`}>
+        {showEn && (
+          <span className={`${isInline ? "inline" : "block"} ${isBilingual && !isInline ? "text-slate-800 dark:text-slate-200" : ""}`}>
+            {enText}
+          </span>
+        )}
+        {showMl && (
+          <span className={`${isInline ? "inline opacity-80" : "block"} ${isBilingual && !isInline ? "text-slate-600 dark:text-slate-400 text-sm mt-1" : ""}`}>
+            {isInline && showEn ? " / " : ""}{mlText}
+          </span>
+        )}
       </span>
     );
   };
@@ -120,26 +226,22 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   const MarkdownContent = ({ enText, mlText, arText, className = "" }: any) => {
     const isBilingual = language === 'bilingual';
     
-    if (isArabicSubject && arText) {
+    if (arText) {
       return (
         <div className={`mb-6 ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-          <div className="prose prose-slate dark:prose-invert max-w-none text-2xl mb-4">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{arText}</ReactMarkdown>
-          </div>
-          {language === 'en' && enText && (
+          {(language === 'ar' || language === 'en' || language === 'ml' || isBilingual) && (
+            <div className="prose prose-slate dark:prose-invert max-w-none text-2xl mb-4">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{arText}</ReactMarkdown>
+            </div>
+          )}
+          {(language === 'en' || isBilingual) && enText && (
             <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>
             </div>
           )}
-          {language === 'ml' && mlText && (
-            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
+          {(language === 'ml' || isBilingual) && mlText && (
+            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm mt-2">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>
-            </div>
-          )}
-          {isBilingual && (
-            <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
-              {enText && <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>}
-              {mlText && <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>}
             </div>
           )}
         </div>
@@ -194,17 +296,41 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
 
     switch (block.type) {
       case 'h2':
-        return <h2 key={idx} className="font-display text-2xl font-bold text-brand-primary dark:text-white mt-8 mb-4 border-b border-slate-100 dark:border-slate-700 pb-2"><TextContent enText={en} mlText={ml} arText={ar} /></h2>;
+        return (
+          <h2 key={idx} className={`relative font-display ${isCompact ? 'text-xl sm:text-2xl mt-6 mb-3' : 'text-2xl sm:text-3xl mt-12 mb-6'} font-black text-brand-primary dark:text-white group/h2`}>
+            <span className="relative z-10 flex items-center gap-3">
+              <div className={`${isCompact ? 'w-1.5 h-6' : 'w-2 h-8'} bg-indigo-600 rounded-full shadow-[0_0_15px_rgba(79,70,229,0.4)]`}></div>
+              <TextContent enText={en} mlText={ml} arText={ar} />
+            </span>
+            <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-indigo-600/40 to-transparent rounded-full"></div>
+          </h2>
+        );
       case 'h3':
-        return <h3 key={idx} className="font-display text-xl font-bold text-brand-primary dark:text-white mt-6 mb-3"><TextContent enText={en} mlText={ml} arText={ar} /></h3>;
+        return (
+          <h3 key={idx} className={`font-display ${isCompact ? 'text-lg sm:text-xl mt-5 mb-2' : 'text-xl sm:text-2xl mt-10 mb-4'} font-extrabold text-indigo-900 dark:text-indigo-300 flex items-center gap-2`}>
+            <Sparkles className={`${isCompact ? 'w-4 h-4' : 'w-5 h-5'} text-brand-accent animate-pulse`} />
+            <TextContent enText={en} mlText={ml} arText={ar} />
+          </h3>
+        );
       case 'p':
-        return <div key={idx} className="text-lg leading-relaxed text-slate-700 dark:text-slate-300"><TextContent enText={en} mlText={ml} arText={ar} /></div>;
+        return (
+          <div 
+            key={idx} 
+            className={`group/p relative text-lg leading-relaxed text-slate-700 dark:text-slate-300 transition-all hover:bg-white dark:hover:bg-slate-800/50 hover:shadow-sm border border-transparent hover:border-slate-100 dark:hover:border-slate-700 ${isCompact ? 'my-1 p-2 rounded-xl hyphens-auto text-justify' : 'my-4 p-4 rounded-2xl'}`}
+            style={{ hyphens: 'auto', WebkitHyphens: 'auto' } as any}
+          >
+            <TextContent enText={en} mlText={ml} arText={ar} />
+          </div>
+        );
       case 'ul':
         return (
-          <ul key={idx} className={`list-disc list-inside space-y-2 my-4 text-slate-700 dark:text-slate-300 ${isRTL ? 'text-right' : 'text-left'}`}>
+          <ul key={idx} className={`${isCompact ? 'space-y-1 my-2' : 'space-y-4 my-6'} ${isRTL ? 'text-right' : 'text-left'}`}>
             {block.items?.map((item: any, i: number) => (
-              <li key={i}>
-                <TextContent enText={item.en} mlText={item.ml} arText={item.ar} className="inline" />
+              <li key={i} className={`flex items-start ${isCompact ? 'gap-2' : 'gap-3'} group/li`}>
+                <div className={`${isCompact ? 'mt-2 w-1.5 h-1.5' : 'mt-2 w-2 h-2'} rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)] group-hover/li:scale-125 transition-transform flex-shrink-0`} />
+                <div className={`text-lg text-slate-700 dark:text-slate-300 leading-relaxed ${isCompact ? 'hyphens-auto' : ''}`} style={isCompact ? { hyphens: 'auto', WebkitHyphens: 'auto' } as any : {}}>
+                  <TextContent enText={item.en} mlText={item.ml} arText={item.ar} className="inline" />
+                </div>
               </li>
             ))}
           </ul>
@@ -286,51 +412,29 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             </div>
           );
         }
-        if (block.customId && (block.customId.includes('simulation') || block.customId.includes('animation') || block.customId.includes('diagram'))) {
-          return (
-            <div key={idx} className="my-8 p-12 bg-slate-100 dark:bg-slate-800/50 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center text-center">
-              <PlayCircle className="w-12 h-12 text-brand-primary mb-4 opacity-50" />
-              <h4 className="text-lg font-bold text-slate-800 dark:text-white mb-2">
-                {renderInline({ en: 'Interactive Content', ml: 'ഇന്ററാക്ടീവ് ഉള്ളടക്കം' })}
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xs">
-                {renderInline({ 
-                  en: `The ${block.customId.replace(/-/g, ' ')} is coming soon in the next update!`, 
-                  ml: `${block.customId.replace(/-/g, ' ')} അടുത്ത അപ്‌ഡേറ്റിൽ ലഭ്യമാകും!` 
-                })}
-              </p>
-              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-6 italic font-medium">
-                <TextContent enText={en} mlText={ml} />
-              </div>
-            </div>
-          );
-        }
         return (
-          <div key={idx} className="my-8">
-            <img 
-              src={block.src} 
-              alt={renderInline(block.en)} 
-              className="w-full rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700"
-              referrerPolicy="no-referrer"
-            />
-            <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+          <div key={idx} className="my-8 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg">
+            <img src={block.url} alt={renderInline(block.en)} className="w-full h-auto" />
+            <div className="p-4 bg-slate-50 dark:bg-slate-900/50 text-center text-sm text-slate-500 dark:text-slate-400 italic font-medium border-t border-slate-100 dark:border-slate-800">
               <TextContent enText={en} mlText={ml} />
             </div>
           </div>
         );
       case 'table':
         return (
-          <div key={idx} className="overflow-x-auto my-6 rounded-xl border border-slate-200 dark:border-slate-700">
-            <table className="w-full text-left border-collapse">
+          <div key={idx} className="my-8 overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <table className="w-full text-left border-collapse min-w-[500px]">
               <thead>
-                <tr className="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700">
-                  {block.tableData.headers.map((h: any, i: number) => (
-                    <th key={i} className="p-4 font-bold text-slate-700 dark:text-slate-300"><TextContent enText={h.en} mlText={h.ml} /></th>
+                <tr className="bg-slate-50 dark:bg-slate-800/50">
+                  {block.tableData.headers.map((header: any, i: number) => (
+                    <th key={i} className="p-4 font-black text-brand-primary dark:text-brand-accent uppercase tracking-widest text-xs border-b border-slate-200 dark:border-slate-700">
+                      <TextContent enText={header.en} mlText={header.ml} />
+                    </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-700/50">
-                {block.tableData.rows.map((row: any, i: number) => (
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                {block.tableData.rows.map((row: any[], i: number) => (
                   <tr key={i} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
                     {row.map((cell: any, j: number) => (
                       <td key={j} className="p-4 text-slate-700 dark:text-slate-300"><TextContent enText={cell.en} mlText={cell.ml} /></td>
@@ -385,106 +489,100 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
           <div className="flex border-b border-slate-200 dark:border-slate-700 mb-6 sm:mb-8 overflow-x-auto scrollbar-hide sticky top-0 bg-white dark:bg-slate-900 z-10 -mx-4 sm:-mx-8 px-4 sm:px-8">
             <button
               onClick={() => setActiveTab('read')}
-              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'read' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'read' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <FileText className="w-4 h-4" />
-              {language === 'en' ? 'Read' : language === 'ml' ? 'വായിക്കുക' : 'Read / വായിക്കുക'}
+              <span className={activeTab === 'read' ? 'inline' : 'hidden sm:inline'}>
+                {language === 'en' ? 'Read' : language === 'ml' ? 'വായിക്കുക' : 'Read / വായിക്കുക'}
+              </span>
             </button>
             <button
-              onClick={() => setActiveTab('experiment')}
-              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'experiment' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              onClick={() => setActiveTab('video')}
+              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'video' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
-              <FlaskConical className="w-4 h-4" />
-              {renderInline(practiceLabel)}
+              <PlayCircle className="w-4 h-4" />
+              <span className={activeTab === 'video' ? 'inline' : 'hidden sm:inline'}>
+                {language === 'en' ? 'Video' : language === 'ml' ? 'വീഡിയോ' : 'Video / വീഡിയോ'}
+              </span>
             </button>
             <button
               onClick={() => setActiveTab('quiz')}
-              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'quiz' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'quiz' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <HelpCircle className="w-4 h-4" />
-              {language === 'en' ? 'Quiz' : language === 'ml' ? 'ക്വിസ്' : 'Quiz / ക്വിസ്'}
+              <span className={activeTab === 'quiz' ? 'inline' : 'hidden sm:inline'}>
+                {language === 'en' ? 'Quiz' : language === 'ml' ? 'ക്വിസ്' : 'Quiz / ക്വിസ്'}
+              </span>
             </button>
             {lesson.sample_questions && (
               <button
                 onClick={() => setActiveTab('sample_questions')}
-                className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'sample_questions' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'sample_questions' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
               >
                 <HelpCircle className="w-4 h-4" />
-                {language === 'en' ? 'Sample Questions' : language === 'ml' ? 'മാതൃകാ ചോദ്യങ്ങൾ' : 'Sample Questions / മാതൃകാ ചോദ്യങ്ങൾ'}
+                <span className={activeTab === 'sample_questions' ? 'inline' : 'hidden sm:inline'}>
+                  {language === 'en' ? 'Questions' : language === 'ml' ? 'ചോദ്യങ്ങൾ' : 'Questions / ചോദ്യങ്ങൾ'}
+                </span>
               </button>
             )}
             {lesson.translation && (
               <button
                 onClick={() => setActiveTab('translation')}
-                className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap ${activeTab === 'translation' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'translation' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
               >
                 <Volume2 className="w-4 h-4" />
-                {language === 'en' ? 'Translation of chapter' : language === 'ml' ? 'പാഠഭാഗത്തിന്റെ വിവർത്തനം' : 'Translation / വിവർത്തനം'}
+                <span className={activeTab === 'translation' ? 'inline' : 'hidden sm:inline'}>
+                  {language === 'en' ? 'Translation' : language === 'ml' ? 'വിവർത്തനം' : 'Translation / വിവർത്തനം'}
+                </span>
               </button>
             )}
             <button
               onClick={() => setActiveTab('glossary')}
-              className={`px-4 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-colors flex items-center gap-2 lg:hidden whitespace-nowrap ${activeTab === 'glossary' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 lg:hidden whitespace-nowrap ${activeTab === 'glossary' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
             >
               <BookOpen className="w-4 h-4" />
-              {renderInline(glossaryLabel)}
+              <span className={activeTab === 'glossary' ? 'inline' : 'hidden sm:inline'}>
+                {renderInline(glossaryLabel)}
+              </span>
             </button>
           </div>
 
           {/* Tab Content */}
           <div className="pb-20">
             {activeTab === 'read' && (
-              <div className="space-y-8">
-                <section className="prose prose-slate dark:prose-invert max-w-none">
-                  <div className="flex items-start gap-4 group">
-                    <div className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 flex-1">
-                      <TextContent enText={lesson.content.intro.en} mlText={lesson.content.intro.ml} arText={lesson.content.intro.ar} />
-                    </div>
-                    <button className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-full transition-colors opacity-0 group-hover:opacity-100" title="Listen (TTS)">
-                      <Volume2 className="w-5 h-5" />
-                    </button>
-                  </div>
-                </section>
-
-                {lesson.content.blocks ? (
-                  <div className="mt-8">
-                    {lesson.content.blocks.map((block: any, idx: number) => renderBlock(block, idx))}
+              <div className="space-y-4">
+                {!lesson.content.blocks || lesson.content.blocks.length === 0 ? (
+                  <div className="prose prose-slate dark:prose-invert max-w-none">
+                    <MarkdownContent 
+                      enText={lesson.content.core?.en} 
+                      mlText={lesson.content.core?.ml} 
+                      arText={lesson.content.core?.ar} 
+                    />
                   </div>
                 ) : (
-                  <section className="mt-8">
-                    <div className="flex items-start gap-4 group">
-                      <div className="flex-1">
-                        <MarkdownContent enText={lesson.content.core.en} mlText={lesson.content.core.ml} arText={lesson.content.core.ar} />
-                      </div>
-                      <button className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-full transition-colors opacity-0 group-hover:opacity-100" title="Listen (TTS)">
-                        <Volume2 className="w-5 h-5" />
-                      </button>
-                    </div>
-                  </section>
+                  lesson.content.blocks.map((block: any, idx: number) => renderBlock(block, idx))
                 )}
               </div>
             )}
 
-            {activeTab === 'experiment' && (
-              lesson.id === 'sc-chem-10-nomenclature' ? (
-                <ChemistryInteractive language={language} />
-              ) : lesson.id === 'sc-phy-10-sound' ? (
-                <SoundWavesInteractive language={language} />
-              ) : isDars ? (
-                <SarfPractice language={language} />
-              ) : (
-                <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-12 text-center shadow-sm">
-                  <div className="w-20 h-20 bg-brand-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <FlaskConical className="w-10 h-10 text-brand-primary dark:text-slate-300" />
+            {activeTab === 'video' && (
+              <div className="space-y-8">
+                {lesson.videos && lesson.videos.length > 0 ? (
+                  lesson.videos.map((video: any, idx: number) => (
+                    <VideoPlayer key={idx} video={video} />
+                  ))
+                ) : (
+                  <div className="bg-white dark:bg-slate-800 rounded-[2rem] p-12 text-center border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div className="w-20 h-20 bg-indigo-50 dark:bg-indigo-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <PlayCircle className="w-10 h-10 text-indigo-500/40" />
+                    </div>
+                    <h3 className="text-2xl font-black text-brand-primary dark:text-white mb-2">Video Tutorial Coming Soon</h3>
+                    <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto font-medium leading-relaxed">
+                      We are currently preparing high-quality video lessons for this chapter. They will be available here soon!
+                    </p>
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-brand-primary dark:text-white mb-2">
-                    {renderInline(practiceLabel.en.includes('Practice') ? { en: 'Interactive Practice', ml: 'ഇന്ററാക്ടീവ് പരിശീലനം' } : { en: 'Interactive Experiment', ml: 'സംവേദനാത്മക പരീക്ഷണം' })}
-                  </h3>
-                  <p className="text-slate-500 dark:text-slate-400 font-semibold">
-                    {language === 'en' ? 'Coming soon for this chapter.' : language === 'ml' ? 'ഈ അധ്യായത്തിനായി ഉടൻ വരുന്നു.' : 'Coming soon for this chapter / ഈ അധ്യായത്തിനായി ഉടൻ വരുന്നു.'}
-                  </p>
-                </div>
-              )
+                )}
+              </div>
             )}
 
             {activeTab === 'quiz' && (
@@ -492,27 +590,17 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             )}
 
             {activeTab === 'sample_questions' && lesson.sample_questions && (
-              <div className="space-y-8">
-                {lesson.sample_questions.map((q: any, idx: number) => (
-                  <div key={q.q_id || idx} className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold px-2 py-1 rounded">Q{idx + 1}</span>
+              <div className="space-y-6">
+                {lesson.sample_questions.map((q: any, i: number) => (
+                  <div key={i} className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div className="text-xs font-black text-brand-teal uppercase tracking-widest mb-4">Question {i + 1}</div>
+                    <div className="text-xl font-bold text-brand-primary dark:text-white mb-6">
+                      <TextContent enText={q.question.en} mlText={q.question.ml} />
                     </div>
-                    <div className="text-lg font-medium text-slate-900 dark:text-slate-100 mb-6">
-                      <TextContent enText={q.question.en} mlText={q.question.ml} arText={q.question.ar} />
-                    </div>
-                    
-                    <div className="mt-4 p-4 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-200 border border-indigo-100 dark:border-indigo-800">
-                      <div className="flex gap-3">
-                        <Info className="w-5 h-5 flex-shrink-0 mt-0.5 text-indigo-600 dark:text-indigo-400" />
-                        <div>
-                          <p className="font-bold mb-1 text-indigo-700 dark:text-indigo-300">
-                            {language === 'en' ? 'Answer' : language === 'ml' ? 'ഉത്തരം' : 'Answer / ഉത്തരം'}
-                          </p>
-                          <div className="text-sm opacity-90">
-                            <TextContent enText={q.answer.en} mlText={q.answer.ml} arText={q.answer.ar} />
-                          </div>
-                        </div>
+                    <div className="pt-6 border-t border-slate-100 dark:border-slate-700">
+                      <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Model Answer</div>
+                      <div className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <TextContent enText={q.answer.en} mlText={q.answer.ml} />
                       </div>
                     </div>
                   </div>
@@ -521,97 +609,83 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             )}
 
             {activeTab === 'translation' && lesson.translation && (
-              <div className="space-y-6">
-                {lesson.translation.map((item: any, idx: number) => (
-                  <div key={idx} className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 sm:p-6 shadow-sm">
-                    <div className="text-right mb-4" dir="rtl">
-                      <p className="text-2xl leading-loose text-slate-900 dark:text-white font-medium">{item.urdu}</p>
-                    </div>
-                    
-                    {(language === 'en' || language === 'ml' || language === 'bilingual' || language === 'ar') && (
-                      <div className={`pt-4 border-t border-slate-100 dark:border-slate-700 ${language === 'bilingual' || language === 'ar' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : ''}`}>
-                        {(language === 'ml' || language === 'bilingual' || language === 'ar') && (
-                          <div>
-                            <p className="text-[10px] font-bold text-brand-teal uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                              Malayalam
-                            </p>
-                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.ml}</p>
-                          </div>
-                        )}
-                        {(language === 'en' || language === 'bilingual' || language === 'ar') && (
-                          <div>
-                            <p className="text-[10px] font-bold text-brand-purple uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
-                              English
-                            </p>
-                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.en}</p>
-                          </div>
-                        )}
+              <div className="space-y-4">
+                {lesson.translation.map((t: any, i: number) => (
+                  <div key={i} className="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden" dir="rtl">
+                    <div className="text-3xl font-arabic text-slate-900 dark:text-white mb-4 leading-relaxed">{t.urdu}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-slate-100 dark:border-slate-700" dir="ltr">
+                      <div>
+                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Malayalam</div>
+                        <div className="text-slate-700 dark:text-slate-300 font-medium">{t.ml}</div>
                       </div>
-                    )}
+                      <div>
+                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">English</div>
+                        <div className="text-slate-600 dark:text-slate-400">{t.en}</div>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
             )}
 
             {activeTab === 'glossary' && (
-              <div className="space-y-4">
-                {lesson.glossary.map((item: any, idx: number) => (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-bold text-slate-900 dark:text-white">{renderInline(item.term)}</h4>
-                      <button className="text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Pronounce">
-                        <Volume2 className="w-4 h-4" />
-                      </button>
+              <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm">
+                <h3 className="text-xl font-bold text-brand-primary dark:text-white mb-6 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-indigo-500" />
+                  {renderInline(glossaryLabel)}
+                </h3>
+                <div className="space-y-6">
+                  {lesson.glossary.map((item: any, i: number) => (
+                    <div key={i} className="group">
+                      <div className="font-bold text-indigo-600 dark:text-indigo-400 mb-1 flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-200 dark:bg-indigo-900" />
+                        <TextContent enText={item.term.en} mlText={item.term.ml} arText={item.term.ar} className="inline" />
+                      </div>
+                      <div className="pl-3.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-l border-slate-100 dark:border-slate-700 ml-0.5">
+                        <TextContent enText={item.definition.en} mlText={item.definition.ml} arText={item.definition.ar} />
+                      </div>
                     </div>
-                    <div className="text-sm text-slate-600 dark:text-slate-300">
-                      <TextContent enText={item.definition.en} mlText={item.definition.ml} arText={item.definition.ar} />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {/* Right Sidebar: Glossary & Tools */}
+      {/* Glossary Sidebar (Desktop) */}
       <div 
-        className="bg-white dark:bg-slate-800 border-l border-slate-200 dark:border-slate-700 flex-shrink-0 overflow-y-auto transition-colors duration-300 hidden lg:flex flex-col relative"
         style={{ width: sidebarWidth }}
+        className="hidden lg:flex flex-col border-l border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm sticky top-0 h-screen overflow-hidden"
       >
         {/* Resize Handle */}
         <div 
           onMouseDown={startResizing}
-          className="absolute left-0 top-0 bottom-0 w-1 cursor-col-resize hover:bg-indigo-500/50 transition-colors group z-20"
-        >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-200 dark:bg-slate-700 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-            <GripVertical className="w-3 h-3 text-slate-400" />
+          className="absolute left-0 top-0 w-1 h-full cursor-col-resize hover:bg-brand-primary/20 transition-colors z-20"
+        />
+        
+        <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-indigo-500" />
+            <h3 className="font-bold text-slate-800 dark:text-slate-200 uppercase tracking-widest text-xs">{renderInline(glossaryLabel)}</h3>
+          </div>
+          <div className="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500">
+            {lesson.glossary.length} Items
           </div>
         </div>
-
-        <div className="p-6">
-          <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
-            {renderInline(glossaryLabel)}
-          </h3>
-          
-          <div className="space-y-4">
-            {lesson.glossary.map((item: any, idx: number) => (
-              <div key={idx} className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
-                <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-bold text-slate-900 dark:text-white">{renderInline(item.term)}</h4>
-                  <button className="text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Pronounce">
-                    <Volume2 className="w-4 h-4" />
-                  </button>
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">
-                  <TextContent enText={item.definition.en} mlText={item.definition.ml} />
-                </div>
+        
+        <div className="flex-1 overflow-y-auto p-6 space-y-8 scrollbar-hide">
+          {lesson.glossary.map((item: any, i: number) => (
+            <div key={i} className="group">
+              <div className="font-black text-indigo-600 dark:text-indigo-400 mb-2 flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                <div className="w-1.5 h-1.5 rounded-full bg-indigo-200 dark:bg-indigo-900" />
+                <TextContent enText={item.term.en} mlText={item.term.ml} arText={item.term.ar} className="inline" />
               </div>
-            ))}
-          </div>
+              <div className="pl-3.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-l-2 border-slate-100 dark:border-slate-800 ml-0.5 group-hover:border-indigo-100 dark:group-hover:border-indigo-900 transition-colors">
+                <TextContent enText={item.definition.en} mlText={item.definition.ml} arText={item.definition.ar} />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

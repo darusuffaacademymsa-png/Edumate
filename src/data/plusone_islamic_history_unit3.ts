@@ -9,7 +9,8 @@ export const plusOneIslamicHistoryUnit3: Lesson = {
     { en: "Explain the significance of his youth and marriage to Khadeeja", ml: "അദ്ദേഹത്തിന്റെ യുവത്വത്തിന്റെയും ഖദീജയുമായുള്ള വിവാഹത്തിന്റെയും പ്രാധാന്യം വിശദീകരിക്കാൻ" },
     { en: "Understand the event of the first revelation at Cave Hira", ml: "ഹിറ ഗുഹയിലെ ആദ്യത്തെ ദിവ്യവെളിപാടിനെക്കുറിച്ച് മനസ്സിലാക്കാൻ" },
     { en: "Discuss the challenges faced during public preaching and the migration to Abyssinia", ml: "പരസ്യ പ്രബോധന വേളയിൽ നേരിട്ട വെല്ലുവിളികളെക്കുറിച്ചും അബിസീനിയയിലേക്കുള്ള പലായനത്തെക്കുറിച്ചും ചർച്ച ചെയ്യാൻ" },
-    { en: "Identify the major events leading to the Hijra, including the Year of Sorrows and Pledges of Aqba", ml: "ദുഃഖ വർഷം, അഖബ ഉടമ്പടികൾ എന്നിവയുൾപ്പെടെ ഹിജ്റയിലേക്ക് നയിച്ച പ്രധാന സംഭവങ്ങൾ തിരിച്ചറിയാൻ" }
+    { en: "Identify the major events leading to the Hijra, including the Year of Sorrows and Pledges of Aqba", ml: "ദുഃഖ വർഷം, അഖബ ഉടമ്പടികൾ എന്നിവയുൾപ്പെടെ ഹിജ്റയിലേക്ക് നയിച്ച പ്രധാന സംഭവങ്ങൾ തിരിച്ചറിയാൻ" },
+    { en: "Study the Reconstruction of Ka'aba and Pledges of Aqba", ml: "കഅബയുടെ പുനർനിർമ്മാണത്തെക്കുറിച്ചും അഖബ ഉടമ്പടികളെക്കുറിച്ചും പഠിക്കുക" }
   ],
   content: {
     intro: {
@@ -21,20 +22,7 @@ export const plusOneIslamicHistoryUnit3: Lesson = {
       ml: "മുഹമ്മദ് നബിയുടെ ആദ്യകാല ജീവിതം, പ്രവാചകത്വം, ഖുറൈശികളിൽ നിന്നുള്ള എതിർപ്പ്, ഒടുവിൽ മക്കയിൽ നിന്ന് മദീനയിലേക്കുള്ള പലായനം എന്നിവ ഈ യൂണിറ്റ് വിശദീകരിക്കുന്നു."
     },
     blocks: [
-      { type: 'h2', en: '1. Chapter Title', ml: '1. അധ്യായത്തിന്റെ പേര്' },
-      { type: 'p', en: 'Chapter III: The Prophetic Period: Makkah', ml: 'അധ്യായം 3: പ്രവാചക കാലഘട്ടം: മക്ക' },
-      { type: 'h2', en: '2. Key Concepts', ml: '2. പ്രധാന ആശയങ്ങൾ' },
-      { type: 'ul', items: [
-        { en: 'Birth and Childhood of Prophet Muhammad', ml: 'മുഹമ്മദ് നബിയുടെ ജനനവും ബാല്യകാലവും' },
-        { en: 'Youth, Marriage, and Ka\'aba Reconstruction', ml: 'യുവത്വവും വിവാഹവും കഅബയുടെ പുനർനിർമ്മാണവും' },
-        { en: 'First Revelation at Cave Hira', ml: 'ഹിറ ഗുഹയിലെ ആദ്യത്തെ ദിവ്യവെളിപാട്' },
-        { en: 'Preaching of Islam and Quraish Opposition', ml: 'ഇസ്ലാമിന്റെ പ്രബോധനവും ഖുറൈശികളുടെ എതിർപ്പും' },
-        { en: 'Migration to Abyssinia', ml: 'അബിസീനിയയിലേക്കുള്ള പലായനം' },
-        { en: 'Year of Sorrows and Journey to Thaif', ml: 'ദുഃഖ വർഷവും ത്വായിഫിലേക്കുള്ള യാത്രയും' },
-        { en: 'Pledges of Aqba', ml: 'അഖബ ഉടമ്പടികൾ' },
-        { en: 'The Hijra (Migration to Madina)', ml: 'ഹിജ്റ (മദീനയിലേക്കുള്ള പലായനം)' }
-      ] },
-      { type: 'h2', en: '3. Topic-wise Explanation', ml: '3. വിഷയാധിഷ്ഠിതമായ വിശദീകരണം' },
+      { type: 'h2', en: '1. Topic-wise Explanation', ml: '1. വിഷയാധിഷ്ഠിതമായ വിശദീകരണം' },
       { type: 'h3', en: 'Topic 1: Birth and Childhood of the Prophet', ml: 'വിഷയം 1: പ്രവാചകന്റെ ജനനവും ബാല്യകാലവും' },
       { type: 'p', en: 'Prophet Muhammad was born in Makkah in 570 C.E in the Hashim family of the Quraish tribe.', ml: 'ക്രിസ്തുവർഷം 570-ൽ ഖുറൈഷ് ഗോത്രത്തിലെ ഹാഷിം കുടുംബത്തിൽ മക്കയിലാണ് മുഹമ്മദ് നബി ജനിച്ചത്.' },
       { type: 'p', en: 'His father was Abdullah and his mother was Amina.', ml: 'അദ്ദേഹത്തിന്റെ പിതാവ് അബ്ദുള്ളയും മാതാവ് ആമിനയുമായിരുന്നു.' },
@@ -138,6 +126,12 @@ export const plusOneIslamicHistoryUnit3: Lesson = {
     { term: { en: "Hilful Fuzul", ml: "ഹിൽഫുൽ ഫുസൂൽ" }, definition: { en: "A peace committee formed in Makkah to maintain harmony among tribes.", ml: "ഗോത്രങ്ങൾക്കിടയിൽ സമാധാനം നിലനിർത്താൻ മക്കയിൽ രൂപീകരിച്ച സമാധാന സമിതി." } },
     { term: { en: "Aamul Huzun", ml: "ആമുൽ ഹുസുൻ" }, definition: { en: "The 'Year of Sorrows' (619 C.E) when the Prophet lost his wife and uncle.", ml: "പ്രവാചകന് ഭാര്യയെയും അമ്മാവനെയും നഷ്ടപ്പെട്ട 'ദുഃഖ വർഷം' (ക്രിസ്തുവർഷം 619)." } },
     { term: { en: "Hijra", ml: "ഹിജ്റ" }, definition: { en: "The migration of Prophet Muhammad from Makkah to Madina in 622 C.E.", ml: "ക്രിസ്തുവർഷം 622-ൽ മുഹമ്മദ് നബി മക്കയിൽ നിന്ന് മദീനയിലേക്ക് നടത്തിയ പലായനം." } }
+  ],
+  videos: [
+    {
+      title: "പ്രവാചക കാലഘട്ടം: മക്ക - Video Tutorial",
+      url: "https://www.youtube.com/watch?v=xIe-aiMrjOU"
+    }
   ],
   quiz: [
     {

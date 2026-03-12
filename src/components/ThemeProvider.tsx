@@ -21,11 +21,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
 
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.classList.add(systemTheme);
-    } else {
-      root.classList.add(theme);
+    const effectiveTheme = theme === 'system' 
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : theme;
+
+    root.classList.add(effectiveTheme);
+    
+    // Update theme-color meta tag for status bar
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      // #f8fafc for light, #0f172a for dark (from index.css)
+      const color = effectiveTheme === 'dark' ? '#0f172a' : '#f8fafc';
+      metaThemeColor.setAttribute('content', color);
     }
   }, [theme]);
 

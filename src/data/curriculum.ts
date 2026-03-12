@@ -63,11 +63,14 @@ import {
   lessonEnteBhasha,
   lessonVijnanaBhasha
 } from './malayalam_ii_unit3';
+import { hindiUnits } from './hindi_sslc';
 
 export type BilingualString = {
   en: string;
   ml: string;
   ar?: string;
+  className?: string;
+  type?: string;
 };
 
 export type ContentBlock = {
@@ -78,10 +81,10 @@ export type ContentBlock = {
   src?: string;
   customId?: string;
   tableData?: {
-    headers: readonly { en: string; ml: string; ar?: string }[];
-    rows: readonly (readonly { en: string; ml: string; ar?: string }[])[];
+    headers: readonly BilingualString[];
+    rows: readonly (readonly BilingualString[])[];
   };
-  items?: { en: string; ml: string; ar?: string }[];
+  items?: BilingualString[];
 };
 
 export interface Lesson {
@@ -100,6 +103,10 @@ export interface Lesson {
     q_id: string;
     question: BilingualString;
     answer: BilingualString;
+  }[];
+  videos?: {
+    title: string;
+    url: string;
   }[];
   translation?: { urdu: string; ml: string; en: string }[];
 }
@@ -122,7 +129,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-maths",
     title: { en: "Mathematics", ml: "ഗണിതം" },
-    icon: "📐",
+    icon: "Calculator",
     color: "bg-[#00bfa5]",
     units: [
       {
@@ -145,7 +152,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-physics",
     title: { en: "Physics", ml: "ഭൗതികശാസ്ത്രം" },
-    icon: "⚡",
+    icon: "Zap",
     color: "bg-[#29b6f6]",
     units: [
       {
@@ -188,7 +195,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-chemistry",
     title: { en: "Chemistry", ml: "രസതന്ത്രം" },
-    icon: "🧪",
+    icon: "FlaskConical",
     color: "bg-[#66bb6a]",
     units: [
       {
@@ -385,7 +392,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-biology",
     title: { en: "Biology", ml: "ജീവശാസ്ത്രം" },
-    icon: "🌿",
+    icon: "Leaf",
     color: "bg-[#f59e0b]",
     units: [
       {
@@ -446,7 +453,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-social-1",
     title: { en: "Social Science I", ml: "സാമൂഹ്യശാസ്ത്രം I" },
-    icon: "🌍",
+    icon: "Globe2",
     color: "bg-[#ff6b6b]",
     units: [
       {
@@ -499,14 +506,14 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-social-2",
     title: { en: "Social Science II", ml: "സാമൂഹ്യശാസ്ത്രം II" },
-    icon: "🗺️",
+    icon: "Map",
     color: "bg-[#f59e0b]",
     units: []
   },
   {
     id: "sub-english",
     title: { en: "English", ml: "ഇംഗ്ലീഷ്" },
-    icon: "📝",
+    icon: "Type",
     color: "bg-[#7c4dff]",
     units: [
       {
@@ -559,7 +566,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-malayalam",
     title: { en: "Malayalam", ml: "മലയാളം" },
-    icon: "🌺",
+    icon: "Languages",
     color: "bg-[#ec4899]",
     units: [
       {
@@ -582,7 +589,7 @@ export const sslcCurriculum: Subject[] = [
   {
     id: "sub-malayalam-ii",
     title: { en: "Malayalam II", ml: "മലയാളം II" },
-    icon: "🌺",
+    icon: "Languages",
     color: "bg-[#ec4899]",
     units: [
       {
@@ -613,5 +620,12 @@ export const sslcCurriculum: Subject[] = [
         ]
       }
     ]
+  },
+  {
+    id: "sub-hindi",
+    title: { en: "Hindi", ml: "ഹിന്ദി", ar: "हिन्दी" },
+    icon: "Languages",
+    color: "bg-[#ff6b6b]",
+    units: hindiUnits
   }
 ];

@@ -1,35 +1,68 @@
 import { Subject, Language } from '../data/curriculum';
-import { ArrowLeft, Clock, CheckCircle2 } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Clock, 
+  CheckCircle2,
+  Calculator,
+  Zap,
+  FlaskConical,
+  Leaf,
+  Globe2,
+  Map,
+  BarChart3,
+  Scale,
+  Languages,
+  BookOpen
+} from 'lucide-react';
+
+const iconMap: Record<string, any> = {
+  Calculator,
+  Zap,
+  FlaskConical,
+  Leaf,
+  Globe2,
+  Map,
+  BarChart3,
+  Scale,
+  Languages,
+  BookOpen
+};
 
 export default function ChapterList({ subject, language, onSelectLesson, onBack, showHeader = true }: { subject: Subject, language: Language, onSelectLesson: (id: string) => void, onBack: () => void, showHeader?: boolean }) {
-  const isArabicSubject = subject.id === 'sub-arabic' || subject.id === 'sub-islamic-history' || subject.id === 'sub-urdu';
-  const isRTL = language === 'ar' || isArabicSubject;
+  const isArabicSubject = subject.id === 'sub-arabic' || subject.id === 'sub-urdu';
+  const isRTL = isArabicSubject;
   
   const renderInline = (str: any) => {
     if (!str) return '';
     
-    // Logic for Arabic subject
-    if (isArabicSubject && str.ar) {
+    if (str.ar) {
+      if (language === 'bilingual') return `${str.ar} / ${str.en} / ${str.ml}`;
       if (language === 'ar') return str.ar;
       if (language === 'en') return `${str.ar} (${str.en})`;
       if (language === 'ml') return `${str.ar} (${str.ml})`;
-      if (language === 'bilingual') return `${str.ar} (${str.en} / ${str.ml})`;
-      return str.ar;
     }
 
-    if (language === 'bilingual') {
-      const parts = [str.en, str.ml];
-      return parts.join(' / ');
-    }
+    if (language === 'bilingual') return `${str.en} / ${str.ml}`;
     return str[language] || str.en;
   };
 
+  const Icon = iconMap[subject.icon] || BookOpen;
+
   return (
     <div className={`p-2 sm:p-4 md:p-8 max-w-4xl mx-auto ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+      {onBack && (
+        <button 
+          onClick={onBack}
+          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-slate-500 hover:text-brand-primary hover:bg-slate-50 dark:hover:bg-white/5 transition-all mb-4 font-bold ${isRTL ? 'flex-row-reverse' : ''}`}
+        >
+          <ArrowLeft className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
+          <span>{language === 'en' ? 'Back' : language === 'ml' ? 'തിരികെ' : 'Back'}</span>
+        </button>
+      )}
       {showHeader && (
         <div className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-6 sm:mb-10 bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-          <div className="text-4xl sm:text-6xl w-16 h-16 sm:w-20 sm:h-20 bg-slate-50 dark:bg-slate-700 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner">
-            {subject.icon}
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-slate-50 dark:bg-slate-700 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner text-brand-primary dark:text-brand-accent">
+            <Icon className="w-10 h-10 sm:w-12 sm:h-12" />
           </div>
           <div className={isRTL ? 'text-center sm:text-right' : 'text-center sm:text-left'}>
             <h2 className="font-display text-xl sm:text-3xl font-extrabold text-brand-primary dark:text-white">{renderInline(subject.title)}</h2>
@@ -41,37 +74,49 @@ export default function ChapterList({ subject, language, onSelectLesson, onBack,
       )}
 
       <div className="space-y-4 sm:space-y-8">
-        {subject.units.map((unit, idx) => (
-          <div key={unit.id} className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300">
-            <h3 className={`font-display text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3 text-brand-primary dark:text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <span className="bg-slate-100 dark:bg-slate-700 text-brand-primary dark:text-slate-200 w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-xs sm:text-sm">
-                {idx + 1}
-              </span>
-              {renderInline(unit.title)}
-            </h3>
+        {subject.units.map((unit, idx) => {
+          const colors = [
+            'bg-brand-teal/10 text-brand-teal',
+            'bg-brand-purple/10 text-brand-purple',
+            'bg-brand-coral/10 text-brand-coral',
+            'bg-brand-green/10 text-brand-green',
+            'bg-brand-sky/10 text-brand-sky',
+            'bg-brand-accent/20 text-brand-primary dark:text-brand-accent'
+          ];
+          const colorClass = colors[idx % colors.length];
+          
+          return (
+            <div key={unit.id} className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300">
+              <h3 className={`font-display text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3 text-brand-primary dark:text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <span className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-xs sm:text-sm font-black ${colorClass}`}>
+                  {idx + 1}
+                </span>
+                {renderInline(unit.title)}
+              </h3>
             
-            <div className={`space-y-2 sm:space-y-3 ${isRTL ? 'pr-0 sm:pr-11' : 'pl-0 sm:pl-11'}`}>
-              {unit.lessons.map(lesson => (
-                <div 
-                  key={lesson.id}
-                  onClick={() => onSelectLesson(lesson.id)} 
-                  className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-brand-teal dark:hover:border-brand-teal hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer flex justify-between items-center transition-all group ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <div className={`flex items-center gap-2 sm:gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 dark:text-slate-600 group-hover:text-brand-teal transition-colors" />
-                    <span className="font-bold text-sm sm:text-base text-slate-700 dark:text-slate-200 group-hover:text-brand-primary dark:group-hover:text-white transition-colors">
-                      {renderInline(lesson.title)}
-                    </span>
+              <div className={`space-y-2 sm:space-y-3 ${isRTL ? 'pr-0 sm:pr-11' : 'pl-0 sm:pl-11'}`}>
+                {unit.lessons.map(lesson => (
+                  <div 
+                    key={lesson.id}
+                    onClick={() => onSelectLesson(lesson.id)} 
+                    className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-brand-teal dark:hover:border-brand-teal hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer flex justify-between items-center transition-all group ${isRTL ? 'flex-row-reverse' : ''}`}
+                  >
+                    <div className={`flex items-center gap-2 sm:gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 dark:text-slate-600 group-hover:text-brand-teal transition-colors" />
+                      <span className="font-bold text-sm sm:text-base text-slate-700 dark:text-slate-200 group-hover:text-brand-primary dark:group-hover:text-white transition-colors">
+                        {renderInline(lesson.title)}
+                      </span>
+                    </div>
+                    <div className={`flex items-center gap-1 sm:gap-2 text-[10px] sm:text-sm font-semibold text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-slate-100 dark:border-slate-700 whitespace-nowrap ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+                      {lesson.estimated_time_mins} {language === 'en' ? 'mins' : language === 'ml' ? 'മിനിറ്റ്' : language === 'ar' ? 'دقائق' : 'mins / മിനിറ്റ്'}
+                    </div>
                   </div>
-                  <div className={`flex items-center gap-1 sm:gap-2 text-[10px] sm:text-sm font-semibold text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-slate-100 dark:border-slate-700 whitespace-nowrap ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
-                    {lesson.estimated_time_mins} {language === 'en' ? 'mins' : language === 'ml' ? 'മിനിറ്റ്' : language === 'ar' ? 'دقائق' : 'mins / മിനിറ്റ്'}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

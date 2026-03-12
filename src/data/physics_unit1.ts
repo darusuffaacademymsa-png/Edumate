@@ -4,6 +4,12 @@ export const physicsUnit1: Lesson = {
   id: "sc-phy-10-sound",
   title: { en: "Sound Waves", ml: "ശബ്ദ തരംഗങ്ങൾ" },
   estimated_time_mins: 60,
+  videos: [
+    {
+      title: "Sound Waves - Chapter 1",
+      url: "https://youtu.be/NmK_0a0-tUA?si=_NMobmQj4ENB-I0Q"
+    }
+  ],
   learning_objectives: [
     { id: "lo1", text: { en: "Understand oscillatory motion and its characteristics.", ml: "ദോലന ചലനവും അതിന്റെ സവിശേഷതകളും മനസ്സിലാക്കുക." } },
     { id: "lo2", text: { en: "Explain the relation between period and frequency.", ml: "പിരിയഡും ആവൃത്തിയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക." } },
