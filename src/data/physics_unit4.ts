@@ -4,6 +4,12 @@ export const physicsUnit4: Lesson = {
   id: 'sc-phy-10-magnetic-effect',
   title: { en: 'Magnetic Effect of Electric Current', ml: 'വൈദ്യുത പ്രവാഹത്തിന്റെ കാന്തികഫലം' },
   estimated_time_mins: 90,
+  videos: [
+    {
+      title: "Quick revision (Exam oriented)",
+      url: "https://www.youtube.com/watch?v=qOi89_eQJ2I"
+    }
+  ],
   learning_objectives: [
     { id: 'lo1', text: { en: 'Understand the concept of magnetic field and field lines.', ml: 'കാന്തികമണ്ഡലം, കാന്തിക ബലരേഖകൾ എന്നീ ആശയങ്ങൾ മനസ്സിലാക്കുക.' } },
     { id: 'lo2', text: { en: 'Explain the magnetic effect of electric current discovered by Oersted.', ml: 'ഒയർസ്റ്റെഡ് കണ്ടെത്തിയ വൈദ്യുത പ്രവാഹത്തിന്റെ കാന്തികഫലം വിശദീകരിക്കുക.' } },
@@ -136,44 +142,1149 @@ export const physicsUnit4: Lesson = {
     { term: { en: 'Armature', ml: 'ആർമേച്ചർ' }, definition: { en: 'The power-producing component of an electric machine.', ml: 'ഒരു വൈദ്യുത യന്ത്രത്തിലെ ഊർജ്ജം ഉത്പാദിപ്പിക്കുന്ന ഭാഗം.' } }
   ],
   quiz: [
-    {
-      q_id: 'q1',
-      type: 'mcq',
-      stem: { en: 'Who discovered the magnetic effect of electric current?', ml: 'വൈദ്യുത പ്രവാഹത്തിന്റെ കാന്തികഫലം കണ്ടെത്തിയത് ആര്?' },
-      options: [
-        { k: 'A', text: { en: 'Isaac Newton', ml: 'ഐസക് ന്യൂട്ടൺ' } },
-        { k: 'B', text: { en: 'Christian Oersted', ml: 'ക്രിസ്റ്റ്യൻ ഒയർസ്റ്റെഡ്' } },
-        { k: 'C', text: { en: 'Michael Faraday', ml: 'മൈക്കൽ ഫാരഡെ' } },
-        { k: 'D', text: { en: 'James Watt', ml: 'ജെയിംസ് വാട്ട്' } }
-      ],
-      answer: 'B',
-      explanation: { en: 'Hans Christian Oersted discovered that electric current creates a magnetic field in 1820.', ml: '1820-ൽ ഹാൻസ് ക്രിസ്റ്റ്യൻ ഒയർസ്റ്റെഡ് ആണ് വൈദ്യുത പ്രവാഹം കാന്തികമണ്ഡലം സൃഷ്ടിക്കുന്നു എന്ന് കണ്ടെത്തിയത്.' }
+  {
+    "q_id": "u4_q1",
+    "type": "mcq",
+    "stem": {
+      "en": "The angle of incidence equals the angle of reflection. This is:",
+      "ml": "പതന കോണും, പ്രതിപതന കോണും തുല്യമാണ്. ഇത്:"
     },
-    {
-      q_id: 'q2',
-      type: 'mcq',
-      stem: { en: 'Which rule is used to find the direction of magnetic field around a straight conductor?', ml: 'ഒരു നേർചാലകത്തിന് ചുറ്റുമുള്ള കാന്തികമണ്ഡലത്തിന്റെ ദിശ കണ്ടെത്താൻ ഉപയോഗിക്കുന്ന നിയമം ഏത്?' },
-      options: [
-        { k: 'A', text: { en: 'Fleming\'s Left Hand Rule', ml: 'ഫ്ലെമിങ്ങിന്റെ ഇടതുകൈ നിയമം' } },
-        { k: 'B', text: { en: 'Right Hand Thumb Rule', ml: 'വലതുകൈ തള്ളവിരൽ നിയമം' } },
-        { k: 'C', text: { en: 'Fleming\'s Right Hand Rule', ml: 'ഫ്ലെമിങ്ങിന്റെ വലതുകൈ നിയമം' } },
-        { k: 'D', text: { en: 'Ohm\'s Law', ml: 'ഓം നിയമം' } }
-      ],
-      answer: 'B',
-      explanation: { en: 'Right Hand Thumb Rule relates current direction to magnetic field direction.', ml: 'വലതുകൈ തള്ളവിരൽ നിയമം വൈദ്യുത ദിശയെയും കാന്തികമണ്ഡല ദിശയെയും തമ്മിൽ ബന്ധിപ്പിക്കുന്നു.' }
-    },
-    {
-      q_id: 'q3',
-      type: 'mcq',
-      stem: { en: 'In a DC motor, what is the function of split rings?', ml: 'ഒരു DC മോട്ടോറിൽ സ്പ്ലിറ്റ് റിംഗുകളുടെ ധർമ്മം എന്ത്?' },
-      options: [
-        { k: 'A', text: { en: 'To increase speed', ml: 'വേഗത വർദ്ധിപ്പിക്കാൻ' } },
-        { k: 'B', text: { en: 'To reverse current direction', ml: 'വൈദ്യുത ദിശ മാറ്റാൻ' } },
-        { k: 'C', text: { en: 'To reduce friction', ml: 'ഘർഷണം കുറയ്ക്കാൻ' } },
-        { k: 'D', text: { en: 'To provide magnetic field', ml: 'കാന്തികമണ്ഡലം നൽകാൻ' } }
-      ],
-      answer: 'B',
-      explanation: { en: 'Split rings act as a commutator to ensure continuous rotation in one direction.', ml: 'ഒരേ ദിശയിലുള്ള തുടർച്ചയായ ഭ്രമണം ഉറപ്പാക്കാൻ സ്പ്ലിറ്റ് റിംഗുകൾ കമ്യൂട്ടേറ്ററായി പ്രവർത്തിക്കുന്നു.' }
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Snell's Law",
+          "ml": "സ്നെൽ നിയമം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Law of Reflection",
+          "ml": "പ്രതിപതന നിയമം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Law of Refraction",
+          "ml": "അപവർത്തന നിയമം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Lens Law",
+          "ml": "ലെൻസ് നിയമം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "This is the first law of reflection.",
+      "ml": "ഇത് പ്രതിപതനത്തിന്റെ ഒന്നാം നിയമമാണ്."
     }
-  ]
-};
+  },
+  {
+    "q_id": "u4_q2",
+    "type": "mcq",
+    "stem": {
+      "en": "In a plane mirror, the image formed is:",
+      "ml": "ഒരു പ്ലേൻ കണ്ണാടിയിൽ ഉണ്ടാകുന്ന പ്രതിബിംബം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Real, inverted, same size",
+          "ml": "യഥാർത്ഥം, തലകീഴായത്, ഒരേ വലിപ്പം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Virtual, erect, laterally inverted",
+          "ml": "മിഥ്യ, നിവർന്നത്, ലാറ്ററൽ ഇൻവേർഷൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Real, erect, magnified",
+          "ml": "യഥാർത്ഥം, നിവർന്നത്, വലുത്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Virtual, inverted, diminished",
+          "ml": "മിഥ്യ, തലകീഴായത്, ചെറുത്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "A plane mirror forms a virtual, erect, and laterally inverted image of the same size at the same distance behind the mirror.",
+      "ml": "പ്ലേൻ കണ്ണാടിയിൽ ഒരേ വലിപ്പത്തിൽ, ഒരേ ദൂരത്തിൽ, ലാറ്ററൽ ഇൻവേഴ്ഷൻ ഉള്ള മിഥ്യ പ്രതിബിംബം ഉണ്ടാകുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q3",
+    "type": "mcq",
+    "stem": {
+      "en": "A concave mirror is also known as:",
+      "ml": "ഒരു കോൺകേവ് കണ്ണാടിയെ ഏത് പേരിൽ അറിയപ്പെടുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Diverging mirror",
+          "ml": "വികേന്ദ്രീകരണ ദർപ്പണം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Plane mirror",
+          "ml": "പ്ലേൻ ദർപ്പണം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Converging mirror",
+          "ml": "കേന്ദ്രീകരണ ദർപ്പണം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Flat mirror",
+          "ml": "ഫ്ലാറ്റ് ദർപ്പണം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Concave mirrors converge reflected rays to a focus.",
+      "ml": "കോൺകേവ് കണ്ണാടി (ആനത ദർപ്പണം) പ്രകാശകിരണങ്ങളെ കേന്ദ്രീകരിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q4",
+    "type": "mcq",
+    "stem": {
+      "en": "Convex mirrors are used as rear-view mirrors because:",
+      "ml": "ഉത്തല ദർപ്പണങ്ങൾ പിൻ-കാഴ്ച ദർപ്പണമായി ഉപയോഗിക്കുന്നത് എന്തുകൊണ്ട്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "They form magnified images",
+          "ml": "ഇവ വലുതാക്കിയ ചിത്രം ഉണ്ടാക്കുന്നു"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "They have a wide field of view",
+          "ml": "ഇവ വിശാലമായ കാഴ്ചേ നൽകുന്നു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "They form real images",
+          "ml": "ഇവ യഥാർത്ഥ ചിത്രം ഉണ്ടാക്കുന്നു"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "They are cheaper",
+          "ml": "ഇവ വിലകുറഞ്ഞതാണ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Convex mirrors provide a wide field of view with virtual, erect, diminished images.",
+      "ml": "ഉത്തല ദർപ്പണം വിശാലമായ വ്യൂ ഏരിയ ഉള്ള മിഥ്യ ചിത്രം ഉണ്ടാക്കുന്നതിനാൽ ഡ്രൈവിംഗ് ദർപ്പണമായി ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q5",
+    "type": "mcq",
+    "stem": {
+      "en": "Which mirror is used by dentists?",
+      "ml": "ദന്ത ഡോക്ടർ ഏത് ദർപ്പണം ഉപയോഗിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Convex mirror",
+          "ml": "ഉത്തല ദർപ്പണം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Plane mirror",
+          "ml": "പ്ലേൻ ദർപ്പണം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Concave mirror",
+          "ml": "ആനത ദർപ്പണം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Parabolic mirror",
+          "ml": "പരാബോളിക് ദർപ്പണം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Concave mirrors magnify images when the object is close, used by dentists and ENT doctors.",
+      "ml": "ആനത ദർപ്പണം വസ്തു F-ൽ നിന്ന് അടുത്ത് ഇരിക്കുമ്പോൾ വലുത്, നിവർന്ന, മിഥ്യ ചിത്രം ഉണ്ടാക്കുന്നതിനാൽ ദന്ത ഡോക്ടർ ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q6",
+    "type": "mcq",
+    "stem": {
+      "en": "Mirror formula is:",
+      "ml": "ദർപ്പണ സമവാക്യം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "1/f = 1/v + 1/u",
+          "ml": "1/f = 1/v + 1/u"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "1/f = 1/v - 1/u",
+          "ml": "1/f = 1/v - 1/u"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "f = v + u",
+          "ml": "f = v + u"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "f = v * u",
+          "ml": "f = v * u"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "The mirror formula: 1/f = 1/v + 1/u.",
+      "ml": "ദർപ്പണ സമവാക്യം: 1/f = 1/v + 1/u."
+    }
+  },
+  {
+    "q_id": "u4_q7",
+    "type": "mcq",
+    "stem": {
+      "en": "The focal length of a mirror is:",
+      "ml": "ഒരു ദർപ്പണത്തിന്റെ ഫോക്കസ് ദൂരം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Equal to radius of curvature",
+          "ml": "ആരം ഒഫ് കർവേചർ ന് തുല്യം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Half the radius of curvature",
+          "ml": "ആരത്തിന്റെ പകുതി"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Double the radius of curvature",
+          "ml": "ആരത്തിന്റെ ഇരട്ടി"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Unrelated to radius",
+          "ml": "ആരവുമായി ബന്ധമില്ലാത്തത്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "f = R/2, where R is the radius of curvature.",
+      "ml": "f = R/2, ഇവിടെ R എന്നത് ദർപ്പണത്തിന്റെ ആരം ഒഫ് കർവേചർ ആണ്."
+    }
+  },
+  {
+    "q_id": "u4_q8",
+    "type": "mcq",
+    "stem": {
+      "en": "When an object is placed at the centre of curvature (C) of a concave mirror, the image is:",
+      "ml": "ഒരു ആനത ദർപ്പണത്തിന്റെ C-ൽ വസ്തു ഇരിക്കുമ്പോൾ ഉണ്ടാകുന്ന ചിത്രം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "At infinity, magnified",
+          "ml": "അനന്തതയിൽ, വലുത്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "At F, same size",
+          "ml": "F-ൽ, ഒരേ വലിപ്പം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "At C, same size, real, inverted",
+          "ml": "C-ൽ, ഒരേ വലിപ്പം, യഥാർത്ഥം, തലകീഴായത്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Between F and C, virtual",
+          "ml": "F-നും C-നും ഇടയിൽ, മിഥ്യ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Object at C → Image at C, same size, real, inverted.",
+      "ml": "C-ൽ ഇരിക്കുന്ന വസ്തുവിന്റെ ചിത്രം C-ൽ, ഒരേ വലിപ്പം, യഥാർത്ഥം, തലകീഴായ."
+    }
+  },
+  {
+    "q_id": "u4_q9",
+    "type": "mcq",
+    "stem": {
+      "en": "A convex mirror always forms an image that is:",
+      "ml": "ഉത്തല ദർപ്പണം എപ്പോഴും ഉണ്ടാക്കുന്ന ചിത്രം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Real, inverted, magnified",
+          "ml": "യഥാർത്ഥം, തലകീഴായത്, വലുത്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Virtual, erect, diminished",
+          "ml": "മിഥ്യ, നിവർന്നത്, ചെറുത്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Real, erect, same size",
+          "ml": "യഥാർത്ഥം, നിവർന്നത്, ഒരേ വലിപ്പം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Virtual, inverted, magnified",
+          "ml": "മിഥ്യ, തലകീഴായത്, വലുത്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Convex mirrors always form virtual, erect, diminished images.",
+      "ml": "ഉത്തല ദർപ്പണം എപ്പോഴും മിഥ്യ, നിവർന്ന, ചെറിയ ചിത്രം ഉണ്ടാക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q10",
+    "type": "mcq",
+    "stem": {
+      "en": "Which of the following uses a concave mirror?",
+      "ml": "ആനത ദർപ്പണം ഉപയോഗിക്കുന്ന ഉപകരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Rear-view mirror in cars",
+          "ml": "കാറിലെ പിൻ-കാഴ്ച ദർป്പണം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Periscope",
+          "ml": "പെരിസ്കോപ്പ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Searchlight reflector",
+          "ml": "സേർച്ച്ലൈറ്റ് ദർപ്പണം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Shop security mirror",
+          "ml": "കടകളിലെ സുരക്ഷ ദർപ്പണം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Searchlights, torch reflectors, and solar cookers use concave mirrors.",
+      "ml": "സേർച്ച്ലൈറ്റ്, ടോർച്ച്, സോളാർ കുക്കർ എന്നിവയിൽ ആനത ദർപ്പണം ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q11",
+    "type": "mcq",
+    "stem": {
+      "en": "Object is placed beyond C of a concave mirror. The image is:",
+      "ml": "ഒരു ആനത ദർപ്പണത്തിൽ C-ൻ അപ്പുറം വസ്തു ഇരിക്കുമ്പോൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Beyond C, real, inverted, diminished",
+          "ml": "C-ൻ അപ്പുറം, യഥാർത്ഥം, തലകീഴായത്, ചെറുത്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "At F, real, inverted, very large",
+          "ml": "F-ൽ, യഥാർത്ഥം, തലകീഴായത്, വളരെ വലുത്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "At C, same size",
+          "ml": "C-ൽ, ഒരേ വലിപ്പം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Virtual, erect",
+          "ml": "മിഥ്യ, നിവർന്നത്"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "Beyond C → Image between F and C, real, inverted, diminished.",
+      "ml": "C-ൽ നിന്ന് അകലേ ഇരിക്കുന്ന വസ്തുവിന്റെ ചിത്രം F-നും C-നും ഇടയിൽ, ചെറുത്, തലകീഴ്."
+    }
+  },
+  {
+    "q_id": "u4_q12",
+    "type": "mcq",
+    "stem": {
+      "en": "What is magnification (m)?",
+      "ml": "ആവർധനം (m) എന്നത്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "hi/ho = u/v",
+          "ml": "hi/ho = u/v"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "hi/ho = -v/u",
+          "ml": "hi/ho = -v/u"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "v - u",
+          "ml": "v - u"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "f/u",
+          "ml": "f/u"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "m = hi/ho = -v/u. Negative m means inverted image.",
+      "ml": "m = -v/u. m നെഗറ്റീവ് ആണെങ്കിൽ ചിത്രം തലകീഴ് ആണ്."
+    }
+  },
+  {
+    "q_id": "u4_q13",
+    "type": "mcq",
+    "stem": {
+      "en": "When m is positive, the image is:",
+      "ml": "m പോസിറ്റീവ് ആകുമ്പോൾ ചിത്രം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Real and Inverted",
+          "ml": "യഥാർത്ഥം, തലകീഴ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Virtual and Erect",
+          "ml": "മിഥ്യ, നിവർന്നത്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Real and Erect",
+          "ml": "യഥാർത്ഥം, നിവർന്നത്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Virtual and Inverted",
+          "ml": "മിഥ്യ, തലകീഴ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "m > 0 means virtual and erect image.",
+      "ml": "m > 0 → ചിത്രം മിഥ്യ, നിവർന്നത്."
+    }
+  },
+  {
+    "q_id": "u4_q14",
+    "type": "mcq",
+    "stem": {
+      "en": "The pole of a mirror is:",
+      "ml": "ദർപ്പണത്തിന്റെ ധ്രുവം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "The focal point",
+          "ml": "ഫോക്കൽ പോയിന്റ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "The midpoint of the mirror surface",
+          "ml": "ദർപ്പണ ഉപരിതലത്തിന്റെ മധ്യ ബിന്ദു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "The center of curvature",
+          "ml": "ആരം ഒഫ് കർവേചർ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "The edge of the mirror",
+          "ml": "ദർപ്പണത്തിന്റെ അറ്റം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The pole (P) is the central point of the reflecting surface.",
+      "ml": "ദർപ്പണ ഉപരിതലത്തിന്റെ മധ്യ ബിന്ദുവാണ് ധ്രുവം."
+    }
+  },
+  {
+    "q_id": "u4_q15",
+    "type": "mcq",
+    "stem": {
+      "en": "What is the SI unit of power of a mirror?",
+      "ml": "ഒരു ദർപ്പണത്തിന്റെ പവറിന്റെ SI യൂണിറ്റ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Dioptre",
+          "ml": "ഡയോപ്റ്റർ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Metre",
+          "ml": "മീറ്റർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Watt",
+          "ml": "വാട്ട്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Hertz",
+          "ml": "ഹെർട്സ്"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Power of a mirror = 1/f, measured in dioptres — same as lenses.",
+      "ml": "ദർപ്പണ പവർ ഡയോപ്റ്ററിൽ അളക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q16",
+    "type": "mcq",
+    "stem": {
+      "en": "New Cartesian sign convention: object distance (u) is always:",
+      "ml": "സൈൻ കൺവെൻഷൻ പ്രകാരം വസ്തു ദൂരം (u):"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Positive",
+          "ml": "പോസിറ്റീവ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Negative",
+          "ml": "നെഗറ്റീവ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Zero",
+          "ml": "പൂജ്യം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Can be positive or negative",
+          "ml": "പോസിറ്റീവോ നെഗറ്റീവോ ആകാം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Object is always placed to the left (incident ray direction), so u is always negative.",
+      "ml": "ഒരു ദർപ്പണത്തിൽ വസ്തു ദൂരം (u) എപ്പോഴും നെഗറ്റീവ് ആണ്."
+    }
+  },
+  {
+    "q_id": "u4_q17",
+    "type": "mcq",
+    "stem": {
+      "en": "Total internal reflection occurs when light travels from:",
+      "ml": "പൂർണ ആന്തരിക പ്രതിബിംബ (Total Internal Reflection) ഉണ്ടാകുന്ന ഘടനം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Rarer to denser medium above critical angle",
+          "ml": "കൂടിയ ഒപ്റ്റിക്കൽ ഡെൻസിറ്റിയിൽ നിന്ന് കുറഞ്ഞതിലേക്ക്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Denser to rarer medium above critical angle",
+          "ml": "കൂടിയ ഒപ്റ്റിക്കൽ ഡെൻസിറ്റിയിൽ നിന്ന് കുറഞ്ഞ ഡെൻസിറ്റിയിലേക്ക്, ക്രിട്ടിക്കൽ ആങ്കിൾ കവിക്കുമ്പോൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Rarer to denser medium at any angle",
+          "ml": "ഏത് കോണിലും"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Light passing through vacuum",
+          "ml": "ശൂന്യസ്ഥലത്തിലൂടെ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "TIR happens when light goes from denser to rarer medium at angles exceeding critical angle.",
+      "ml": "ക്രിട്ടിക്കൽ ആങ്കിൾ കവിക്കുന്ന ഉൽദ്ദീപ്ത കോണിൽ ഒരു ഡെൻസ് മാധ്യമത്തിൽ നിന്ന് ലൈറ്ററിലേക്ക് പ്രകാശം ഒഴുകുമ്പോൾ ആണ് TIR ഉണ്ടാകുന്നത്."
+    }
+  },
+  {
+    "q_id": "u4_q18",
+    "type": "mcq",
+    "stem": {
+      "en": "Which of the following is an application of total internal reflection?",
+      "ml": "ടോട്ടൽ ഇന്റേണൽ റിഫ്ലക്ഷൻ ഉപയോഗിക്കുന്ന ഒന്ന്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Periscope",
+          "ml": "പെരിസ്കോപ്പ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Optical fibre",
+          "ml": "ഒപ്റ്റിക്കൽ ഫൈബർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Concave lens",
+          "ml": "ആനത ദർപ്പണം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Solar panel",
+          "ml": "സോളാർ പാനൽ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Optical fibres use TIR to send light/data through flexible glass strands.",
+      "ml": "ഒപ്റ്റിക്കൽ ഫൈബർ ടോട്ടൽ ഇന്റേണൽ റിഫ്ലക്ഷൻ ഉപയോഗിച്ചാണ് പ്രകാശ സിഗ്നലുകൾ കൊണ്ടുപോകുന്നത്."
+    }
+  },
+  {
+    "q_id": "u4_q19",
+    "type": "mcq",
+    "stem": {
+      "en": "The principal axis of a mirror is:",
+      "ml": "ദർപ്പണത്തിന്റെ മുഖ്യ അക്ഷം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "The reflecting surface",
+          "ml": "പ്രതിഫലന ഉപരിതലം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "The imaginary line through the pole/C perpendicular to the mirror",
+          "ml": "ദർപ്പണ ഉപരിതലത്തോട് ലംബമായി, P-ലൂടെ കടന്നുപോകുന്ന സാങ്കൽപ്പിക രേഖ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "The edge of the mirror",
+          "ml": "ദർപ്പണത്തിന്റെ ഇടം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "The focus",
+          "ml": "ഫോക്കസ് ബിന്ദു"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The principal axis is an imaginary line perpendicular to the mirror through its pole.",
+      "ml": "ദർപ്പണ ഉപരിതലത്തോട് ലംബമായ സാങ്കൽപ്പിക രേഖ."
+    }
+  },
+  {
+    "q_id": "u4_q20",
+    "type": "mcq",
+    "stem": {
+      "en": "In the sign convention, all distances measured opposite to incident ray are:",
+      "ml": "ചിഹ്ന നിയമ പ്രകാരം, പതന കിരണത്തിന് എതിർ ദിശയിൽ അളക്കുന്ന ദൂരങ്ങൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Positive",
+          "ml": "പോസിറ്റീവ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Negative",
+          "ml": "നെഗറ്റീവ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Zero",
+          "ml": "പൂജ്യം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Imaginary",
+          "ml": "കൽപ്പിതം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Distances against the direction of incident light are taken as negative.",
+      "ml": "പതന കിരണ ദിശക്ക് എതിർ ദിശ നെഗറ്റീവ്."
+    }
+  },
+  {
+    "q_id": "u4_q21",
+    "type": "mcq",
+    "stem": {
+      "en": "When the object is at infinity, a concave mirror forms an image:",
+      "ml": "ആനത ദർപ്പണത്തിൽ വസ്തു അനന്തതയിൽ ഇരിക്കുമ്പോൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "At C, equal size",
+          "ml": "C-ൽ, ഒരേ വലിപ്പം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "At F, very small, real, inverted",
+          "ml": "F-ൽ, വളരെ ചെറുത്, യഥാർത്ഥം, തലകീഴ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Between F and pole",
+          "ml": "F-നും P-നും ഇടയിൽ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Behind the mirror",
+          "ml": "ദർപ്പണത്തിന്റെ പിറകിൽ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Object at infinity → Image at F, tiny, real, inverted.",
+      "ml": "അനന്തതയിൽ ഉള്ള വസ്തുവിന്റെ ചിത്രം F-ൽ, ചെറുത്, യഥാർത്ഥ, തലകീഴ്."
+    }
+  },
+  {
+    "q_id": "u4_q22",
+    "type": "mcq",
+    "stem": {
+      "en": "What does the radius of curvature of a mirror mean?",
+      "ml": "ദർപ്പണത്തിന്റെ ആരം ഒഫ് കർവേചർ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Distance from pole to focus",
+          "ml": "ധ്രുവം മുതൽ ഫോക്കസ് വരെ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Distance from pole to the centre of the sphere the mirror is part of",
+          "ml": "ദർപ്പണം ഒരു ഭാഗമായ ഗോളത്തിന്റെ കേന്ദ്രത്തിലേക്കുള്ള ദൂരം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "The total length of the mirror",
+          "ml": "ദർപ്പണത്തിന്റെ ആകെ നീളം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "The aperture of mirror",
+          "ml": "ദർപ്പണ ദ്വാരത്തിന്റെ വലിപ്പം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "R = distance from pole to centre of the sphere the mirror is a part of.",
+      "ml": "ദർപ്പണം ഒരു ഭാഗമായ ഗോളത്തിന്റെ ആരം ആണ് R."
+    }
+  },
+  {
+    "q_id": "u4_q23",
+    "type": "mcq",
+    "stem": {
+      "en": "A concave mirror's focal length is 15 cm. Its radius of curvature is:",
+      "ml": "ആനത ദർപ്പണത്തിന്റെ ഫോക്കസ് ദൂരം 15 cm ആണെങ്കിൽ ആരം ഒഫ് കർവേചർ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "7.5 cm",
+          "ml": "7.5 cm"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "15 cm",
+          "ml": "15 cm"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "30 cm",
+          "ml": "30 cm"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "45 cm",
+          "ml": "45 cm"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "R = 2f = 2 × 15 = 30 cm.",
+      "ml": "R = 2f = 2 × 15 = 30 cm."
+    }
+  },
+  {
+    "q_id": "u4_q24",
+    "type": "mcq",
+    "stem": {
+      "en": "What happens to a ray of light passing through the principal focus of a concave mirror after reflection?",
+      "ml": "ആനത ദർപ്പണത്തിന്റെ F-ലൂടെ കടന്നുവരുന്ന കിരണം പ്രതിഫലന ശേഷം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Reflects back through F",
+          "ml": "F-ലൂടെ തിരകെ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Passes through C",
+          "ml": "C-ലൂടെ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Reflects parallel to principal axis",
+          "ml": "മുഖ്യ അക്ഷത്തിന് സമാന്തരമായി"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Reflects at random angle",
+          "ml": "ക്രമരഹിതമായ കോണിൽ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "A ray through F reflects parallel to the principal axis.",
+      "ml": "F-ലൂടെ കടന്നുവരുന്ന കിരണം, പ്രതിഫലന ശേഷം മുഖ്യ അക്ഷത്തിന് സമാന്തരമായി സഞ്ചരിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u4_q25",
+    "type": "mcq",
+    "stem": {
+      "en": "Reflection through a curved mirror differs between concave and convex in that:",
+      "ml": "ആനത ദർപ്പണവും ഉത്തല ദർപ്പണവും പ്രതിഫലനത്തിൽ വ്യത്യാസം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Only concave mirrors follow laws of reflection",
+          "ml": "ആനത ദർപ്പണം മാത്രം നിയമം പാലിക്കുന്നു"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Concave converges rays, convex diverges rays",
+          "ml": "ആനത കേന്ദ്രീകരിക്കുന്നു, ഉത്തല വികേന്ദ്രീകരിക്കുന്നു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Convex mirror can't form images",
+          "ml": "ഉത്തല ദർപ്പണം ചിത്രം ഉണ്ടാക്കില്ല"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "There is no difference",
+          "ml": "വ്യത്യാസം ഇല്ല"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Concave = converging mirror, Convex = diverging mirror.",
+      "ml": "ആനത ദർപ്പണം (Concave) = കേന്ദ്രീകരണ ദർപ്പണം, ഉത്തല (Convex) = വികേന്ദ്രീകരണ ദർപ്പണം."
+    }
+  },
+  {
+    "q_id": "u4_q26",
+    "type": "mcq",
+    "stem": {
+      "en": "In a periscope, plane mirrors are arranged at:",
+      "ml": "ഒരു പെരിസ്കോപ്പിൽ ദർപ്പണങ്ങൾ ഏത് കോണിൽ ഇരിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "30°",
+          "ml": "30°"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "45°",
+          "ml": "45°"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "60°",
+          "ml": "60°"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "90°",
+          "ml": "90°"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Plane mirrors in a periscope are arranged at 45° to the principal axis.",
+      "ml": "ദർപ്പണങ്ങൾ 45° കോണിൽ ഇരിക്കുന്നതിനാൽ ലംബ ദർശനം (vertical vision) സാദ്ധ്യമാകുന്നു."
+    }
+  }
+]
+} as const;

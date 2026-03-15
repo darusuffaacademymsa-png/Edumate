@@ -1,0 +1,233 @@
+Q: The angle of incidence equals the angle of reflection. This is: | പതന കോണും, പ്രതിപതന കോണും തുല്യമാണ്. ഇത്:
+A) Snell's Law | സ്നെൽ നിയമം
+B) Law of Reflection | പ്രതിപതന നിയമം
+C) Law of Refraction | അപവർത്തന നിയമം
+D) Lens Law | ലെൻസ് നിയമം
+ANS: B
+DIFF: easy
+EXP: This is the first law of reflection. | ഇത് പ്രതിപതനത്തിന്റെ ഒന്നാം നിയമമാണ്.
+
+Q: In a plane mirror, the image formed is: | ഒരു പ്ലേൻ കണ്ണാടിയിൽ ഉണ്ടാകുന്ന പ്രതിബിംബം:
+A) Real, inverted, same size | യഥാർത്ഥം, തലകീഴായത്, ഒരേ വലിപ്പം
+B) Virtual, erect, laterally inverted | മിഥ്യ, നിവർന്നത്, ലാറ്ററൽ ഇൻവേർഷൻ
+C) Real, erect, magnified | യഥാർത്ഥം, നിവർന്നത്, വലുത്
+D) Virtual, inverted, diminished | മിഥ്യ, തലകീഴായത്, ചെറുത്
+ANS: B
+DIFF: easy
+EXP: A plane mirror forms a virtual, erect, and laterally inverted image of the same size at the same distance behind the mirror. | പ്ലേൻ കണ്ണാടിയിൽ ഒരേ വലിപ്പത്തിൽ, ഒരേ ദൂരത്തിൽ, ലാറ്ററൽ ഇൻവേഴ്ഷൻ ഉള്ള മിഥ്യ പ്രതിബിംബം ഉണ്ടാകുന്നു.
+
+Q: A concave mirror is also known as: | ഒരു കോൺകേവ് കണ്ണാടിയെ ഏത് പേരിൽ അറിയപ്പെടുന്നു?
+A) Diverging mirror | വികേന്ദ്രീകരണ ദർപ്പണം
+B) Plane mirror | പ്ലേൻ ദർപ്പണം
+C) Converging mirror | കേന്ദ്രീകരണ ദർപ്പണം
+D) Flat mirror | ഫ്ലാറ്റ് ദർപ്പണം
+ANS: C
+DIFF: easy
+EXP: Concave mirrors converge reflected rays to a focus. | കോൺകേവ് കണ്ണാടി (ആനത ദർപ്പണം) പ്രകാശകിരണങ്ങളെ കേന്ദ്രീകരിക്കുന്നു.
+
+Q: Convex mirrors are used as rear-view mirrors because: | ഉത്തല ദർപ്പണങ്ങൾ പിൻ-കാഴ്ച ദർപ്പണമായി ഉപയോഗിക്കുന്നത് എന്തുകൊണ്ട്?
+A) They form magnified images | ഇവ വലുതാക്കിയ ചിത്രം ഉണ്ടാക്കുന്നു
+B) They have a wide field of view | ഇവ വിശാലമായ കാഴ്ചേ നൽകുന്നു
+C) They form real images | ഇവ യഥാർത്ഥ ചിത്രം ഉണ്ടാക്കുന്നു
+D) They are cheaper | ഇവ വിലകുറഞ്ഞതാണ്
+ANS: B
+DIFF: medium
+EXP: Convex mirrors provide a wide field of view with virtual, erect, diminished images. | ഉത്തല ദർപ്പണം വിശാലമായ വ്യൂ ഏരിയ ഉള്ള മിഥ്യ ചിത്രം ഉണ്ടാക്കുന്നതിനാൽ ഡ്രൈവിംഗ് ദർപ്പണമായി ഉപയോഗിക്കുന്നു.
+
+Q: Which mirror is used by dentists? | ദന്ത ഡോക്ടർ ഏത് ദർപ്പണം ഉപയോഗിക്കുന്നു?
+A) Convex mirror | ഉത്തല ദർപ്പണം
+B) Plane mirror | പ്ലേൻ ദർപ്പണം
+C) Concave mirror | ആനത ദർപ്പണം
+D) Parabolic mirror | പരാബോളിക് ദർപ്പണം
+ANS: C
+DIFF: easy
+EXP: Concave mirrors magnify images when the object is close, used by dentists and ENT doctors. | ആനത ദർപ്പണം വസ്തു F-ൽ നിന്ന് അടുത്ത് ഇരിക്കുമ്പോൾ വലുത്, നിവർന്ന, മിഥ്യ ചിത്രം ഉണ്ടാക്കുന്നതിനാൽ ദന്ത ഡോക്ടർ ഉപയോഗിക്കുന്നു.
+
+Q: Mirror formula is: | ദർപ്പണ സമവാക്യം:
+A) 1/f = 1/v + 1/u | 1/f = 1/v + 1/u
+B) 1/f = 1/v - 1/u | 1/f = 1/v - 1/u
+C) f = v + u | f = v + u
+D) f = v * u | f = v * u
+ANS: A
+DIFF: medium
+EXP: The mirror formula: 1/f = 1/v + 1/u. | ദർപ്പണ സമവാക്യം: 1/f = 1/v + 1/u.
+
+Q: The focal length of a mirror is: | ഒരു ദർപ്പണത്തിന്റെ ഫോക്കസ് ദൂരം:
+A) Equal to radius of curvature | ആരം ഒഫ് കർവേചർ ന് തുല്യം
+B) Half the radius of curvature | ആരത്തിന്റെ പകുതി
+C) Double the radius of curvature | ആരത്തിന്റെ ഇരട്ടി
+D) Unrelated to radius | ആരവുമായി ബന്ധമില്ലാത്തത്
+ANS: B
+DIFF: medium
+EXP: f = R/2, where R is the radius of curvature. | f = R/2, ഇവിടെ R എന്നത് ദർപ്പണത്തിന്റെ ആരം ഒഫ് കർവേചർ ആണ്.
+
+Q: When an object is placed at the centre of curvature (C) of a concave mirror, the image is: | ഒരു ആനത ദർപ്പണത്തിന്റെ C-ൽ വസ്തു ഇരിക്കുമ്പോൾ ഉണ്ടാകുന്ന ചിത്രം:
+A) At infinity, magnified | അനന്തതയിൽ, വലുത്
+B) At F, same size | F-ൽ, ഒരേ വലിപ്പം
+C) At C, same size, real, inverted | C-ൽ, ഒരേ വലിപ്പം, യഥാർത്ഥം, തലകീഴായത്
+D) Between F and C, virtual | F-നും C-നും ഇടയിൽ, മിഥ്യ
+ANS: C
+DIFF: medium
+EXP: Object at C → Image at C, same size, real, inverted. | C-ൽ ഇരിക്കുന്ന വസ്തുവിന്റെ ചിത്രം C-ൽ, ഒരേ വലിപ്പം, യഥാർത്ഥം, തലകീഴായ.
+
+Q: A convex mirror always forms an image that is: | ഉത്തല ദർപ്പണം എപ്പോഴും ഉണ്ടാക്കുന്ന ചിത്രം:
+A) Real, inverted, magnified | യഥാർത്ഥം, തലകീഴായത്, വലുത്
+B) Virtual, erect, diminished | മിഥ്യ, നിവർന്നത്, ചെറുത്
+C) Real, erect, same size | യഥാർത്ഥം, നിവർന്നത്, ഒരേ വലിപ്പം
+D) Virtual, inverted, magnified | മിഥ്യ, തലകീഴായത്, വലുത്
+ANS: B
+DIFF: easy
+EXP: Convex mirrors always form virtual, erect, diminished images. | ഉത്തല ദർപ്പണം എപ്പോഴും മിഥ്യ, നിവർന്ന, ചെറിയ ചിത്രം ഉണ്ടാക്കുന്നു.
+
+Q: Which of the following uses a concave mirror? | ആനത ദർപ്പണം ഉപയോഗിക്കുന്ന ഉപകരണം:
+A) Rear-view mirror in cars | കാറിലെ പിൻ-കാഴ്ച ദർป്പണം
+B) Periscope | പെരിസ്കോപ്പ്
+C) Searchlight reflector | സേർച്ച്ലൈറ്റ് ദർപ്പണം
+D) Shop security mirror | കടകളിലെ സുരക്ഷ ദർപ്പണം
+ANS: C
+DIFF: medium
+EXP: Searchlights, torch reflectors, and solar cookers use concave mirrors. | സേർച്ച്ലൈറ്റ്, ടോർച്ച്, സോളാർ കുക്കർ എന്നിവയിൽ ആനത ദർപ്പണം ഉപയോഗിക്കുന്നു.
+
+Q: Object is placed beyond C of a concave mirror. The image is: | ഒരു ആനത ദർപ്പണത്തിൽ C-ൻ അപ്പുറം വസ്തു ഇരിക്കുമ്പോൾ:
+A) Beyond C, real, inverted, diminished | C-ൻ അപ്പുറം, യഥാർത്ഥം, തലകീഴായത്, ചെറുത്
+B) At F, real, inverted, very large | F-ൽ, യഥാർത്ഥം, തലകീഴായത്, വളരെ വലുത്
+C) At C, same size | C-ൽ, ഒരേ വലിപ്പം
+D) Virtual, erect | മിഥ്യ, നിവർന്നത്
+ANS: A
+DIFF: hard
+EXP: Beyond C → Image between F and C, real, inverted, diminished. | C-ൽ നിന്ന് അകലേ ഇരിക്കുന്ന വസ്തുവിന്റെ ചിത്രം F-നും C-നും ഇടയിൽ, ചെറുത്, തലകീഴ്.
+
+Q: What is magnification (m)? | ആവർധനം (m) എന്നത്:
+A) hi/ho = u/v | hi/ho = u/v
+B) hi/ho = -v/u | hi/ho = -v/u
+C) v - u | v - u
+D) f/u | f/u
+ANS: B
+DIFF: hard
+EXP: m = hi/ho = -v/u. Negative m means inverted image. | m = -v/u. m നെഗറ്റീവ് ആണെങ്കിൽ ചിത്രം തലകീഴ് ആണ്.
+
+Q: When m is positive, the image is: | m പോസിറ്റീവ് ആകുമ്പോൾ ചിത്രം:
+A) Real and Inverted | യഥാർത്ഥം, തലകീഴ്
+B) Virtual and Erect | മിഥ്യ, നിവർന്നത്
+C) Real and Erect | യഥാർത്ഥം, നിവർന്നത്
+D) Virtual and Inverted | മിഥ്യ, തലകീഴ്
+ANS: B
+DIFF: medium
+EXP: m > 0 means virtual and erect image. | m > 0 → ചിത്രം മിഥ്യ, നിവർന്നത്.
+
+Q: The pole of a mirror is: | ദർപ്പണത്തിന്റെ ധ്രുവം:
+A) The focal point | ഫോക്കൽ പോയിന്റ്
+B) The midpoint of the mirror surface | ദർപ്പണ ഉപരിതലത്തിന്റെ മധ്യ ബിന്ദു
+C) The center of curvature | ആരം ഒഫ് കർവേചർ
+D) The edge of the mirror | ദർപ്പണത്തിന്റെ അറ്റം
+ANS: B
+DIFF: easy
+EXP: The pole (P) is the central point of the reflecting surface. | ദർപ്പണ ഉപരിതലത്തിന്റെ മധ്യ ബിന്ദുവാണ് ധ്രുവം.
+
+Q: What is the SI unit of power of a mirror? | ഒരു ദർപ്പണത്തിന്റെ പവറിന്റെ SI യൂണിറ്റ്:
+A) Dioptre | ഡയോപ്റ്റർ
+B) Metre | മീറ്റർ
+C) Watt | വാട്ട്
+D) Hertz | ഹെർട്സ്
+ANS: A
+DIFF: medium
+EXP: Power of a mirror = 1/f, measured in dioptres — same as lenses. | ദർപ്പണ പവർ ഡയോപ്റ്ററിൽ അളക്കുന്നു.
+
+Q: New Cartesian sign convention: object distance (u) is always: | സൈൻ കൺവെൻഷൻ പ്രകാരം വസ്തു ദൂരം (u):
+A) Positive | പോസിറ്റീവ്
+B) Negative | നെഗറ്റീവ്
+C) Zero | പൂജ്യം
+D) Can be positive or negative | പോസിറ്റീവോ നെഗറ്റീവോ ആകാം
+ANS: B
+DIFF: medium
+EXP: Object is always placed to the left (incident ray direction), so u is always negative. | ഒരു ദർപ്പണത്തിൽ വസ്തു ദൂരം (u) എപ്പോഴും നെഗറ്റീവ് ആണ്.
+
+Q: Total internal reflection occurs when light travels from: | പൂർണ ആന്തരിക പ്രതിബിംബ (Total Internal Reflection) ഉണ്ടാകുന്ന ഘടനം:
+A) Rarer to denser medium above critical angle | കൂടിയ ഒപ്റ്റിക്കൽ ഡെൻസിറ്റിയിൽ നിന്ന് കുറഞ്ഞതിലേക്ക്
+B) Denser to rarer medium above critical angle | കൂടിയ ഒപ്റ്റിക്കൽ ഡെൻസിറ്റിയിൽ നിന്ന് കുറഞ്ഞ ഡെൻസിറ്റിയിലേക്ക്, ക്രിട്ടിക്കൽ ആങ്കിൾ കവിക്കുമ്പോൾ
+C) Rarer to denser medium at any angle | ഏത് കോണിലും
+D) Light passing through vacuum | ശൂന്യസ്ഥലത്തിലൂടെ
+ANS: B
+DIFF: hard
+EXP: TIR happens when light goes from denser to rarer medium at angles exceeding critical angle. | ക്രിട്ടിക്കൽ ആങ്കിൾ കവിക്കുന്ന ഉൽദ്ദീപ്ത കോണിൽ ഒരു ഡെൻസ് മാധ്യമത്തിൽ നിന്ന് ലൈറ്ററിലേക്ക് പ്രകാശം ഒഴുകുമ്പോൾ ആണ് TIR ഉണ്ടാകുന്നത്.
+
+Q: Which of the following is an application of total internal reflection? | ടോട്ടൽ ഇന്റേണൽ റിഫ്ലക്ഷൻ ഉപയോഗിക്കുന്ന ഒന്ന്:
+A) Periscope | പെരിസ്കോപ്പ്
+B) Optical fibre | ഒപ്റ്റിക്കൽ ഫൈബർ
+C) Concave lens | ആനത ദർപ്പണം
+D) Solar panel | സോളാർ പാനൽ
+ANS: B
+DIFF: medium
+EXP: Optical fibres use TIR to send light/data through flexible glass strands. | ഒപ്റ്റിക്കൽ ഫൈബർ ടോട്ടൽ ഇന്റേണൽ റിഫ്ലക്ഷൻ ഉപയോഗിച്ചാണ് പ്രകാശ സിഗ്നലുകൾ കൊണ്ടുപോകുന്നത്.
+
+Q: The principal axis of a mirror is: | ദർപ്പണത്തിന്റെ മുഖ്യ അക്ഷം:
+A) The reflecting surface | പ്രതിഫലന ഉപരിതലം
+B) The imaginary line through the pole/C perpendicular to the mirror | ദർപ്പണ ഉപരിതലത്തോട് ലംബമായി, P-ലൂടെ കടന്നുപോകുന്ന സാങ്കൽപ്പിക രേഖ
+C) The edge of the mirror | ദർപ്പണത്തിന്റെ ഇടം
+D) The focus | ഫോക്കസ് ബിന്ദു
+ANS: B
+DIFF: easy
+EXP: The principal axis is an imaginary line perpendicular to the mirror through its pole. | ദർപ്പണ ഉപരിതലത്തോട് ലംബമായ സാങ്കൽപ്പിക രേഖ.
+
+Q: In the sign convention, all distances measured opposite to incident ray are: | ചിഹ്ന നിയമ പ്രകാരം, പതന കിരണത്തിന് എതിർ ദിശയിൽ അളക്കുന്ന ദൂരങ്ങൾ:
+A) Positive | പോസിറ്റീവ്
+B) Negative | നെഗറ്റീവ്
+C) Zero | പൂജ്യം
+D) Imaginary | കൽപ്പിതം
+ANS: B
+DIFF: medium
+EXP: Distances against the direction of incident light are taken as negative. | പതന കിരണ ദിശക്ക് എതിർ ദിശ നെഗറ്റീവ്.
+
+Q: When the object is at infinity, a concave mirror forms an image: | ആനത ദർപ്പണത്തിൽ വസ്തു അനന്തതയിൽ ഇരിക്കുമ്പോൾ:
+A) At C, equal size | C-ൽ, ഒരേ വലിപ്പം
+B) At F, very small, real, inverted | F-ൽ, വളരെ ചെറുത്, യഥാർത്ഥം, തലകീഴ്
+C) Between F and pole | F-നും P-നും ഇടയിൽ
+D) Behind the mirror | ദർപ്പണത്തിന്റെ പിറകിൽ
+ANS: B
+DIFF: medium
+EXP: Object at infinity → Image at F, tiny, real, inverted. | അനന്തതയിൽ ഉള്ള വസ്തുവിന്റെ ചിത്രം F-ൽ, ചെറുത്, യഥാർത്ഥ, തലകീഴ്.
+
+Q: What does the radius of curvature of a mirror mean? | ദർപ്പണത്തിന്റെ ആരം ഒഫ് കർവേചർ:
+A) Distance from pole to focus | ധ്രുവം മുതൽ ഫോക്കസ് വരെ
+B) Distance from pole to the centre of the sphere the mirror is part of | ദർപ്പണം ഒരു ഭാഗമായ ഗോളത്തിന്റെ കേന്ദ്രത്തിലേക്കുള്ള ദൂരം
+C) The total length of the mirror | ദർപ്പണത്തിന്റെ ആകെ നീളം
+D) The aperture of mirror | ദർപ്പണ ദ്വാരത്തിന്റെ വലിപ്പം
+ANS: B
+DIFF: medium
+EXP: R = distance from pole to centre of the sphere the mirror is a part of. | ദർപ്പണം ഒരു ഭാഗമായ ഗോളത്തിന്റെ ആരം ആണ് R.
+
+Q: A concave mirror's focal length is 15 cm. Its radius of curvature is: | ആനത ദർപ്പണത്തിന്റെ ഫോക്കസ് ദൂരം 15 cm ആണെങ്കിൽ ആരം ഒഫ് കർവേചർ:
+A) 7.5 cm | 7.5 cm
+B) 15 cm | 15 cm
+C) 30 cm | 30 cm
+D) 45 cm | 45 cm
+ANS: C
+DIFF: medium
+EXP: R = 2f = 2 × 15 = 30 cm. | R = 2f = 2 × 15 = 30 cm.
+
+Q: What happens to a ray of light passing through the principal focus of a concave mirror after reflection? | ആനത ദർപ്പണത്തിന്റെ F-ലൂടെ കടന്നുവരുന്ന കിരണം പ്രതിഫലന ശേഷം:
+A) Reflects back through F | F-ലൂടെ തിരകെ
+B) Passes through C | C-ലൂടെ
+C) Reflects parallel to principal axis | മുഖ്യ അക്ഷത്തിന് സമാന്തരമായി
+D) Reflects at random angle | ക്രമരഹിതമായ കോണിൽ
+ANS: C
+DIFF: hard
+EXP: A ray through F reflects parallel to the principal axis. | F-ലൂടെ കടന്നുവരുന്ന കിരണം, പ്രതിഫലന ശേഷം മുഖ്യ അക്ഷത്തിന് സമാന്തരമായി സഞ്ചരിക്കുന്നു.
+
+Q: Reflection through a curved mirror differs between concave and convex in that: | ആനത ദർപ്പണവും ഉത്തല ദർപ്പണവും പ്രതിഫലനത്തിൽ വ്യത്യാസം:
+A) Only concave mirrors follow laws of reflection | ആനത ദർപ്പണം മാത്രം നിയമം പാലിക്കുന്നു
+B) Concave converges rays, convex diverges rays | ആനത കേന്ദ്രീകരിക്കുന്നു, ഉത്തല വികേന്ദ്രീകരിക്കുന്നു
+C) Convex mirror can't form images | ഉത്തല ദർപ്പണം ചിത്രം ഉണ്ടാക്കില്ല
+D) There is no difference | വ്യത്യാസം ഇല്ല
+ANS: B
+DIFF: easy
+EXP: Concave = converging mirror, Convex = diverging mirror. | ആനത ദർപ്പണം (Concave) = കേന്ദ്രീകരണ ദർപ്പണം, ഉത്തല (Convex) = വികേന്ദ്രീകരണ ദർപ്പണം.
+
+Q: In a periscope, plane mirrors are arranged at: | ഒരു പെരിസ്കോപ്പിൽ ദർപ്പണങ്ങൾ ഏത് കോണിൽ ഇരിക്കുന്നു?
+A) 30° | 30°
+B) 45° | 45°
+C) 60° | 60°
+D) 90° | 90°
+ANS: B
+DIFF: easy
+EXP: Plane mirrors in a periscope are arranged at 45° to the principal axis. | ദർപ്പണങ്ങൾ 45° കോണിൽ ഇരിക്കുന്നതിനാൽ ലംബ ദർശനം (vertical vision) സാദ്ധ്യമാകുന്നു.

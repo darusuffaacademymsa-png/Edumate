@@ -1,0 +1,269 @@
+Q: Who discovered the magnetic effect of electric current? | വൈദ്യുതിയുടെ കാന്തിക ഫലം കണ്ടെത്തിയത് ആര്?
+A) Hans Christian Oersted | ഹാൻസ് ക്രിസ്റ്റ്യൻ ഓർസ്റ്റെഡ്
+B) Michael Faraday | മൈക്കൽ ഫാരഡേ
+C) Nikola Tesla | നിക്കോള ടെസ്‌ല
+D) Thomas Edison | തോമസ് എഡിസൺ
+ANS: A
+DIFF: easy
+EXP: Oersted discovered that an electric current creates a magnetic field. | വൈദ്യുതി ഒരു കാന്തികമണ്ഡലം സൃഷ്ടിക്കുന്നുവെന്ന് കണ്ടെത്തിയത് ഓർസ്റ്റെഡാണ്.
+
+Q: The direction of the magnetic field around a straight current-carrying conductor is given by: | വൈദ്യുതി കടന്നുപോകുന്ന നേരായ ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തികമണ്ഡലത്തിന്റെ ദിശ നിർണ്ണയിക്കുന്നത്:
+A) Fleming's Left Hand Rule | ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം
+B) Fleming's Right Hand Rule | ഫ്ലെമിംഗിന്റെ വലതുകൈ നിയമം
+C) Right Hand Thumb Rule | വലതുകൈ പെരുവിരൽ നിയമം
+D) Ampere's Swimming Rule | ആമ്പിയറുടെ നീന്തൽ നിയമം
+ANS: C
+DIFF: medium
+EXP: Right Hand Thumb Rule shows field lines wrapping around the conductor. | കാന്തികമണ്ഡലത്തിന്റെ ദിശ കണ്ടുപിടിക്കാൻ വലതുകൈ പെരുവിരൽ നിയമം ഉപയോഗിക്കുന്നു.
+
+Q: In the Right Hand Thumb Rule, what does the thumb indicate? | വലതുകൈ പെരുവിരൽ നിയമത്തിൽ, പെരുവിരൽ എന്തിനെ സൂചിപ്പിക്കുന്നു?
+A) Direction of magnetic field | കാന്തികമണ്ഡലത്തിന്റെ ദിശ
+B) Direction of electric current | വൈദ്യുത പ്രവാഹത്തിന്റെ ദിശ
+C) Direction of force | ബലത്തിന്റെ ദിശ
+D) Direction of motion | ചലനത്തിന്റെ ദിശ
+ANS: B
+DIFF: easy
+EXP: The thumb points in the direction of the current. | പെരുവിരൽ വൈദ്യുത പ്രവാഹത്തിന്റെ ദിശയെ സൂചിപ്പിക്കുന്നു.
+
+Q: Magnetic field lines around a straight current bearing conductor are in the shape of: | നേരായ ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തിക ബലരേഖകളുടെ ആകൃതി എന്താണ്?
+A) Straight lines parallel to the wire | കമ്പിക്ക് സമാന്തരമായ നേർരേഖകൾ
+B) Concentric circles | ഏകാക്ഷ വൃത്തങ്ങൾ
+C) Ellipses | ദീർഘവൃത്തങ്ങൾ
+D) Parabolas | പരാബോളകൾ
+ANS: B
+DIFF: medium
+EXP: Field lines around a wire form concentric circles. | ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തിക ബലരേഖകൾ ഏകാക്ഷ വൃത്തങ്ങളാണ്.
+
+Q: Inside a current-carrying solenoid, the magnetic field is: | വൈദ്യുതി കടന്നുപോകുന്ന സോളിനോയിഡിനുള്ളിലെ കാന്തികമണ്ഡലം:
+A) Zero | പൂജ്യം
+B) Uniform everywhere | എല്ലായിടത്തും സമാനം
+C) Non-uniform | അസമാനം
+D) Strongest at the ends | അറ്റങ്ങളിൽ ഏറ്റവും ശക്തം
+ANS: B
+DIFF: hard
+EXP: A solenoid creates a uniform magnetic field inside it, similar to a bar magnet. | സോളിനോയിഡിനുള്ളിൽ എല്ലായിടത്തും കാന്തികമണ്ഡലം സമാനമായിരിക്കും.
+
+Q: What material is best for the core of an electromagnet? | വൈദ്യുതകാന്തത്തിന്റെ കോർ ആയി ഉപയോഗിക്കാൻ ഏറ്റവും അനുയോജ്യമായ പദാർത്ഥം ഏത്?
+A) Steel | സ്റ്റീൽ
+B) Copper | ചെമ്പ്
+C) Soft iron | പച്ചிரുമ്പ് (സോഫ്റ്റ് അയൺ)
+D) Aluminum | അലുമിനിയം
+ANS: C
+DIFF: easy
+EXP: Soft iron gains and loses magnetism quickly, making it ideal. | പച്ചിരുമ്പിന് വേഗത്തിൽ കാന്തികശക്തി ലഭിക്കാനും നഷ്ടപ്പെടാനുമുള്ള കഴിവുള്ളതിനാൽ ഇത് ഏറ്റവും അനുയോജ്യമാണ്.
+
+Q: When a current-carrying conductor is placed in a magnetic field, it experiences a mechanical force. This is the working principle of: | ഒരു കാന്തികമണ്ഡലത്തിൽ ഇരിക്കുന്ന വൈദ്യുതി കടന്നുപോകുന്ന ചാലകത്തിൽ ഒരു ബലം അനുഭവപ്പെടുന്നു. ഇത് എന്തിന്റെ പ്രവർത്തന തത്വമാണ്?
+A) Dynamo | ഡൈനാമോ
+B) Generator | ജനറേറ്റർ
+C) DC Motor | ഡി.സി മോട്ടോർ
+D) Transformer | ട്രാൻസ്ഫോർമർ
+ANS: C
+DIFF: medium
+EXP: DC motors convert electrical energy to mechanical energy via this motor principle. | മോട്ടോർ തത്വം ഉപയോഗിച്ചാണ് ഡി.സി മോട്ടോർ പ്രവർത്തിക്കുന്നത്.
+
+Q: Which rule is used to find the direction of force on a conductor in a magnetic field? | കാന്തികമണ്ഡലത്തിലിരിക്കുന്ന ചാലകത്തിലുണ്ടാകുന്ന ബലത്തിന്റെ ദിശ കണ്ടെത്താൻ ഉപയോഗിക്കുന്ന നിയമം ഏത്?
+A) Fleming's Right Hand Rule | ഫ്ലെമിംഗിന്റെ വലതുകൈ നിയമം
+B) Fleming's Left Hand Rule | ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം
+C) Right Hand Thumb Rule | വലതുകൈ പെരുവിരൽ നിയമം
+D) Corkscrew Rule | കോർക്ക്സ്ക്രൂ നിയമം
+ANS: B
+DIFF: medium
+EXP: Fleming's Left Hand Rule gives the direction of motion/force. | ബലത്തിന്റെ ദിശ കണ്ടുപിടിക്കാൻ ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം ഉപയോഗിക്കുന്നു.
+
+Q: In Fleming's Left Hand Rule, the forefinger represents the direction of: | ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമത്തിൽ ചൂണ്ടുവിരൽ എന്തിനെ സൂചിപ്പിക്കുന്നു?
+A) Current | വൈദ്യുത പ്രവാഹം
+B) Motion (Force) | ചലനം (ബലം)
+C) Magnetic Field | കാന്തികമണ്ഡലം
+D) Voltage | വോൾട്ടേജ്
+ANS: C
+DIFF: easy
+EXP: Forefinger = Magnetic Field, Middle finger = Current, Thumb = Motion. | ചൂണ്ടുവിരൽ കാന്തികമണ്ഡലത്തെയും, നടുവിരൽ വൈദ്യുതപ്രവാഹത്തെയും സൂചിപ്പിക്കുന്നു.
+
+Q: A device that converts electrical energy into mechanical energy is: | വൈദ്യുതോർജ്ജത്തെ യാന്ത്രികോർജ്ജമാക്കി മാറ്റുന്ന ഉപകരണം:
+A) Generator | ജനറേറ്റർ
+B) Motor | മോട്ടോർ
+C) Galvanometer | ഗാൽവനോമീറ്റർ
+D) Transformer | ട്രാൻസ്ഫോർമർ
+ANS: B
+DIFF: easy
+EXP: Electric motors provide mechanical work using electricity. | വൈദ്യുതോർജ്ജം യാന്ത്രികോർജ്ജമാക്കി മാറ്റുന്നത് മോട്ടോർ ആണ്.
+
+Q: Commutator rings (split rings) in a DC motor are used to: | ഡി.സി മോട്ടോറിലെ സ്പ്ലിറ്റ് റിംഗുകളുടെ (കമ്മ്യൂട്ടേറ്റർ) ധർമ്മം എന്താണ്?
+A) Increase the speed | വേഗത കൂട്ടാൻ
+B) Reverse the current direction in the coil | കോയിലിലെ വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറ്റാൻ
+C) Create the magnetic field | കാന്തികമണ്ഡലം നിർമ്മിക്കാൻ
+D) Prevent overheating | ചൂടാകുന്നത് തടയാൻ
+ANS: B
+DIFF: hard
+EXP: They reverse the current direction every half cycle to ensure continuous rotation. | കോയിലിന്റെ തുടർച്ചയായ കറക്കത്തിന് വൈദ്യുത ദിശ മാറ്റാനാണ് ഇവ ഉപയോഗിക്കുന്നത്.
+
+Q: The carbon brushes in a DC motor help to: | ഡി.സി മോട്ടോറിലെ കാർബൺ ബ്രഷുകളുടെ ഉപയോഗം:
+A) Maintain electrical contact with the rotating split rings | കറങ്ങുന്ന സ്പ്ലിറ്റ് റിംഗുകളുമായി വൈദ്യുത ബന്ധം നിലനിർത്താൻ
+B) Generate the magnetic field | കാന്തികമണ്ഡലം ഉണ്ടാക്കാൻ
+C) Reduce friction only | ഘർഷണം കുറയ്ക്കാൻ മാത്രം
+D) Cool down the armature | ആർമേച്ചർ തണുപ്പിക്കാൻ
+ANS: A
+DIFF: medium
+EXP: Brushes transfer current from the external circuit to the rotating commutator. | കറങ്ങുന്ന ഭാഗത്തേക്ക് വൈദ്യുതി എത്തിക്കാൻ ബ്രഷുകൾ സഹായിക്കുന്നു.
+
+Q: Which of the following devices relies on the magnetic effect of current? | വൈദ്യുതിയുടെ കാന്തിക ഫലം അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്ന ഉപകരണം ഏത്?
+A) Electric iron | ഇലക്ട്രിക് അയേൺ
+B) Loudspeaker | ഉച്ചഭാഷിണി
+C) Light bulb | ലൈറ്റ് ബൾബ്
+D) Electric heater | ഇലക്ട്രിക് ഹീറ്റർ
+ANS: B
+DIFF: medium
+EXP: Loudspeakers use electromagnets interacting with permanent magnets to vibrate a cone. | കാന്തികഫലം ഉപയോഗിച്ച് ശബ്ദമുണ്ടാക്കുന്ന ഉപകരണമാണ് ലൗഡ്സ്പീക്കർ.
+
+Q: In a moving coil loudspeaker, electrical signals are converted into: | ചലിക്കുന്ന കോയിൽ ലൗഡ്സ്പീക്കറിൽ വൈദ്യുത സിഗ്നലുകളെ ഏതായി മാറ്റുന്നു?
+A) Light energy | പ്രകാശോർജ്ജം
+B) Heat energy | താപോർജ്ജം
+C) Sound energy | ശബ്ദോർജ്ജം
+D) Chemical energy | രാസോർജ്ജം
+ANS: C
+DIFF: easy
+EXP: Loudspeakers convert electrical impulses (signal) into sound. | ലൗഡ്സ്പീക്കർ വൈദ്യുതോർജ്ജത്തെ ശബ്ദോർജ്ജമാക്കി മാറ്റുന്നു.
+
+Q: The strength of an electromagnet can be increased by: | ഒരു വൈദ്യുതകാന്തത്തിന്റെ ശക്തി കൂട്ടാൻ കഴിയുന്ന മാർഗ്ഗം:
+A) Decreasing the current | വൈദ്യുതപ്രവാഹം കുറയ്ക്കുക
+B) Decreasing the number of turns in the coil | കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കുറയ്ക്കുക
+C) Increasing the number of turns in the coil | കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കൂട്ടുക
+D) Removing the soft iron core | പച്ചിരുമ്പ് കോർ മാറ്റുക
+ANS: C
+DIFF: medium
+EXP: More turns and more current both increase magnetic strength. | കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കൂടുമ്പോൾ കാന്തികശക്തി വർദ്ധിക്കുന്നു.
+
+Q: If the direction of current in a wire is reversed, the magnetic field around it: | ഒരു ചാലകത്തിലൂടെയുള്ള വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറ്റിയാൽ കാന്തികമണ്ഡലത്തിന് എന്ത് സംഭവിക്കും?
+A) Disappears | ഇല്ലാതാകുന്നു
+B) Reverses its direction | ദിശ മാറുന്നു
+C) Remains exactly the same | മാറ്റമില്ലാതെ തുടരുന്നു
+D) Doubles in strength | ശക്തി ഇരട്ടിയാകുന്നു
+ANS: B
+DIFF: easy
+EXP: Current direction directly dictates the direction of the magnetic field (Right Hand Rule). | വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറുന്നതിനനുസരിച്ച് കാന്തികമണ്ഡലത്തിന്റെ ദിശയും മാറുന്നു.
+
+Q: What happens to the magnetic field when current through a conductor increases? | ചാലകത്തിലൂടെയുള്ള വൈദ്യുതപ്രവാഹം കൂടുമ്പോൾ കാന്തികമണ്ഡലത്തിൽ ഉണ്ടാകുന്ന മാറ്റം:
+A) Field strength decreases | കാന്തികശക്തി കുറയുന്നു
+B) Field strength increases | കാന്തികശക്തി വർദ്ധിക്കുന്നു
+C) Direction changes | ദിശ മാറുന്നു
+D) No change occurs | ഒരു മാറ്റവും ഉണ്ടാകുന്നില്ല
+ANS: B
+DIFF: easy
+EXP: Field strength is directly proportional to the magnitude of the electric current. | വൈദ്യുതപ്രവാഹം വർദ്ധിക്കുമ്പോൾ കാന്തികമണ്ഡലത്തിന്റെ ശക്തിയും വർദ്ധിക്കുന്നു.
+
+Q: The armature of a DC motor is placed between: | ഡി.സി മോട്ടോറിലെ ആർമേച്ചർ എവിടെയാണ് സ്ഥാപിച്ചിരിക്കുന്നത്?
+A) Two resistors | രണ്ട് പ്രതിരോധകങ്ങൾക്കിടയിൽ
+B) Two carbon brushes only | രണ്ട് കാർബൺ ബ്രഷുകൾക്കിടയിൽ
+C) The poles of a strong magnet | ശക്തമായ കാന്തത്തിന്റെ ധ്രുവങ്ങൾക്കിടയിൽ
+D) Two slip rings | രണ്ട് സ്ലിപ്പ് റിംഗുകൾക്കിടയിൽ
+ANS: C
+DIFF: medium
+EXP: The armature rotates in the magnetic field created by the permanent magnets. | ശക്തമായ കാന്തത്തിന്റെ ധ്രുവങ്ങൾക്കിടയിലാണ് ആർമേച്ചർ ഇരിക്കുന്നത്.
+
+Q: Which sub-system of a loudspeaker physically moves the air to create sound? | ഒരു ലൗഡ്സ്പീക്കറിൽ വായുവിനെ കമ്പനം ചെയ്യിപ്പിച്ച് ശബ്ദമുണ്ടാക്കുന്ന ഭാഗം ഏത്?
+A) Voice coil | വോയ്സ് കോയിൽ
+B) Permanent magnet | സ്ഥിരകാന്തം
+C) Diaphragm (Cone) | ഡയഫ്രം
+D) Wires | വയറുകൾ
+ANS: C
+DIFF: medium
+EXP: The vibrating diaphragm pushes air waves, creating sound. | ഡയഫ്രം കമ്പനം ചെയ്യുമ്പോഴാണ് വായുവിൽ ശബ്ദതരംഗങ്ങൾ ഉണ്ടാകുന്നത്.
+
+Q: If you look at a circular loop and current is flowing clockwise, that face acts as a: | ഒരു വൃത്താകാര കോയിലിലൂടെ ക്ലോക്ക് വൈസ് ദിശയിൽ വൈദ്യുതി ഒഴുകുമ്പോൾ ആ പ്രതലം ഏത് ധ്രുവമായി പ്രവർത്തിക്കും?
+A) North pole | ഉത്തര ധ്രുവം
+B) South pole | ദക്ഷിണ ധ്രുവം
+C) East pole | ഈസ്റ്റ് പോൾ
+D) Neutral point | ന്യൂട്രൽ പോയിന്റ്
+ANS: B
+DIFF: hard
+EXP: Clockwise = South pole. Anti-clockwise = North pole. (Clock face rule). | ക്ലോക്ക് വൈസ് ദിശയിൽ ഒഴുകുമ്പോൾ ദക്ഷിണ ധ്രുവമായി പ്രവർത്തിക്കുന്നു.
+
+Q: A solenoid behaves like a: | ഒരു സോളിനോയിഡ് എന്തിനെപ്പോലെ പ്രവർത്തിക്കുന്നു?
+A) Compass needle | കോമ്പസ് സൂചി
+B) Horseshoe magnet | ലാടകാന്തം
+C) Bar magnet | ബാർ കാന്തം
+D) Disc magnet | ഡിസ്ക് കാന്തം
+ANS: C
+DIFF: medium
+EXP: A current-carrying solenoid produces field lines exactly like a bar magnet. | ഒരു സോളിനോയിഡിന്റെ കാന്തികമണ്ഡലം ബാർ കാന്തത്തിന് സമാനമാണ്.
+
+Q: According to Fleming's Left Hand Rule, the fingers are held: | ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമപ്രകാരം വിരലുകൾ എങ്ങനെ പിടിക്കണം?
+A) Parallel to each other | പരസ്പരം സമാന്തരമായി
+B) Mutually perpendicular to each other | പരസ്പരം ലംബമായി
+C) At 45 degrees | 45 ഡിഗ്രി കോണിൽ
+D) Clenched in a fist | ചുരുട്ടിപ്പിടിച്ച്
+ANS: B
+DIFF: easy
+EXP: The thumb, forefinger, and middle finger must be mutually perpendicular (at right angles). | പെരുവിരൽ, ചൂണ്ടുവിരൽ, നടുവിരൽ എന്നിവ പരസ്പരം ലംബമായി പിടിക്കണം.
+
+Q: True or False: Earth's magnetic field affects moving charges. | ഭൂമിയുടെ കാന്തികമണ്ഡലം ചലിക്കുന്ന ചാർജുകളെ സ്വാധീനിക്കുന്നു. ശരിയോ തെറ്റോ?
+A) True | ശരി
+B) False | തെറ്റ്
+C) Only at the equator | ഭൂമധ്യരേഖയിൽ മാത്രം
+D) Only inside the earth | ഭൂമിക്കുള്ളിൽ മാത്രം
+ANS: A
+DIFF: medium
+EXP: Moving charges in any magnetic field (including Earth's) experience a Lorentz force. | ഏതൊരു കാന്തികമണ്ഡലത്തിലും ചലിക്കുന്ന ചാർജുകളിൽ ബലം അനുഭവപ്പെടും.
+
+Q: Who formulated the Left Hand Rule? | ഇടതുകൈ നിയമം ആവിഷ്കരിച്ചത് ആര്?
+A) Michael Faraday | മൈക്കൽ ഫാരഡേ
+B) John Ambrose Fleming | ജോൺ ആംബ്രോസ് ഫ്ലെമിംഗ്
+C) James Clerk Maxwell | ജെയിംസ് ക്ലാർക്ക് മാക്സ്വെൽ
+D) Heinrich Hertz | ഹെൻറിച്ച് ഹെർട്സ്
+ANS: B
+DIFF: easy
+EXP: John Ambrose Fleming invented the hand rules for motors and generators. | മോട്ടോറുകളുടെയും ജനറേറ്ററുകളുടെയും പ്രവൃത്തി വിശദീകരിക്കുന്ന നിയമങ്ങൾ ആവിഷ്കരിച്ചത് ഫ്ലെമിംഗ് ആണ്.
+
+Q: The coil of wire wound around a cylinder to form a magnetic field is called a: | കാന്തികമണ്ഡലം ഉണ്ടാക്കുന്നതിനായി സിലിണ്ടർ ആകൃതിയിൽ ചുറ്റിയെടുക്കുന്ന കമ്പി:
+A) Capacitor | കപ്പാസിറ്റർ
+B) Commutator | കമ്മ്യൂട്ടേറ്റർ
+C) Solenoid | സോളിനോയിഡ്
+D) Armature | ആർമേച്ചർ
+ANS: C
+DIFF: medium
+EXP: A solenoid is a cylindrical coil of wire acting as a magnet when carrying electric current. | വൈദ്യുതി കടന്നുപോകുമ്പോൾ കാന്തമായി പ്രവർത്തിക്കുന്ന ചുരുളുകളുള്ള കമ്പിയാണ് സോളിനോയിഡ്.
+
+Q: In a DC motor, what is the rotating part called? | ഡി.സി മോട്ടോറിലെ കറങ്ങുന്ന ഭാഗം ഏതാണ്?
+A) Stator | സ്റ്റേറ്റർ
+B) Armature (Rotor) | ആർമേച്ചർ (റോട്ടർ)
+C) Brush | ബ്രഷ്
+D) Magnet | കാന്തം
+ANS: B
+DIFF: easy
+EXP: The armature is the central coil assembly that spins under magnetic force. | കാന്തിക ബലം കാരണം കറങ്ങുന്ന മോട്ടോറിലെ പ്രധാന ഭാഗമാണ് ആർമേച്ചർ.
+
+Q: What is the primary function of a magnetic compass? | ഒരു മാഗ്നെറ്റിക് കോമ്പസിന്റെ പ്രധാന ഉപയോഗം എന്താണ്?
+A) To measure current | വൈദ്യുതപ്രവാഹം അളക്കാൻ
+B) To find geographic directions using Earth's magnetic field | ഭൂമിയുടെ കാന്തികമണ്ഡലം ഉപയോഗിച്ച് ദിശ കണ്ടെത്താൻ
+C) To measure voltage | വോൾട്ടേജ് അളക്കാൻ
+D) To locate iron strictly | ഇരുമ്പ് കണ്ടെത്താൻ മാത്രം
+ANS: B
+DIFF: easy
+EXP: A compass aligns with magnetic fields, historically used for Earth navigation. | കാന്തികമണ്ഡലത്തിനനുസരിച്ച് ദിശ കാണിക്കുന്ന ഉപകരണമാണ് കോമ്പസ്.
+
+Q: The magnitude of the magnetic field produced by a straight current-carrying wire is inversely proportional to: | ഒരു നേരായ ചാലകം ഉണ്ടാക്കുന്ന കാന്തികമണ്ഡലത്തിന്റെ ശക്തി എന്തിനോട് വിപരീത അനുപാതത്തിലാണ്?
+A) Length of wire | കമ്പിയുടെ നീളം
+B) Disctance from the wire | കമ്പിയിൽ നിന്നുള്ള അകലം
+C) Current in the wire | കമ്പിയിലെ വൈദ്യുതപ്രവാഹം
+D) Voltage | വോൾട്ടേജ്
+ANS: B
+DIFF: hard
+EXP: As you move further away from the wire (increase distance), the magnetic field gets weaker. | ചാലകത്തിൽ നിന്നുള്ള അകലം കൂടുമ്പോൾ കാന്തികശക്തി കുറയുന്നു.
+
+Q: An electromagnet's magnetism is: | ഒരു വൈദ്യുതകാന്തത്തിന്റെ കാന്തികശക്തി:
+A) Permanent | സ്ഥിരമാണ്
+B) Temporary (can be turned on/off) | താൽക്കാലികമാണ് (ഓൺ/ഓഫ് ചെയ്യാൻ കഴിയും)
+C) Exactly same as Earth's | ഭൂമിയുടേതിന് തുല്യമാണ്
+D) Unpredictable | പ്രവചനാതീതമാണ്
+ANS: B
+DIFF: easy
+EXP: Electromagnets only produce a field while electric current is flowing. | വൈദ്യുതി പ്രവഹിക്കുമ്പോൾ മാത്രം കാന്തമായി പ്രവർത്തിക്കുന്നവയാണ് വൈദ്യുതകാന്തങ്ങൾ.
+
+Q: The stationary magnets in an electric motor are generally known as the: | മോട്ടോറിനുള്ളിലെ സ്ഥിരമായി നിൽക്കുന്ന കാന്തങ്ങളെ വിളിക്കുന്ന പേര്:
+A) Rotor | റോട്ടർ
+B) Armature | ആർമേച്ചർ
+C) Stator (Field magnet) | സ്റ്റേറ്റർ (ഫീൽഡ് കാന്തം)
+D) Commutator | കമ്മ്യൂട്ടേറ്റർ
+ANS: C
+DIFF: medium
+EXP: The stationary magnetic field generator is the stator. | മോട്ടോറിനുള്ളിലെ കറങ്ങാത്ത കാന്തിക ഭാഗമാണ് സ്റ്റേറ്റർ.

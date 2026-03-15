@@ -40,20 +40,28 @@ export default function StudentDashboard({ selectedClass, language, setLanguage,
 
   const cycleLanguage = () => {
     if (language === 'en') setLanguage('ml');
-    else if (language === 'ml') setLanguage('bilingual');
+    else if (language === 'ml') setLanguage('ar');
+    else if (language === 'ar') setLanguage('bilingual');
     else setLanguage('en');
   };
 
   const getLanguageLabel = () => {
     if (language === 'en') return 'English';
     if (language === 'ml') return 'മലയാളം';
+    if (language === 'ar') return 'Normal';
     return 'Bilingual';
   };
 
   const renderInline = (str: any) => {
     if (!str) return '';
+    if (str.ar) {
+      if (language === 'bilingual') return `${str.ar} / ${str.ml}`;
+      if (language === 'ar') return str.ar;
+      if (language === 'en') return `${str.ar} (${str.en})`;
+      if (language === 'ml') return `${str.ar} (${str.ml})`;
+    }
     if (language === 'bilingual') return `${str.en} / ${str.ml}`;
-    return str[language];
+    return str[language] || str.en;
   };
 
   return (

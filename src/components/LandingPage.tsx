@@ -67,13 +67,15 @@ export default function LandingPage({ onSelectClass, language, setLanguage }: { 
 
   const cycleLanguage = () => {
     if (language === 'en') setLanguage('ml');
-    else if (language === 'ml') setLanguage('bilingual');
+    else if (language === 'ml') setLanguage('ar');
+    else if (language === 'ar') setLanguage('bilingual');
     else setLanguage('en');
   };
 
   const getLanguageLabel = () => {
     if (language === 'en') return 'English';
     if (language === 'ml') return 'മലയാളം';
+    if (language === 'ar') return 'Normal';
     return 'Bilingual';
   };
 

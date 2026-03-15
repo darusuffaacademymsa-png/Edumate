@@ -7,6 +7,12 @@ export const physicsUnit6: Lesson = {
     ml: 'അധ്യായം 6: നിത്യജീവിതത്തിൽ വൈദ്യുതകാന്തിക പ്രേരണം'
   },
   estimated_time_mins: 60,
+  videos: [
+    {
+      title: "Quick revision (Exam oriented)",
+      url: "https://www.youtube.com/watch?v=QkWalWhZI7g"
+    }
+  ],
   learning_objectives: [
     {
       id: 'lo1',
@@ -276,138 +282,1107 @@ export const physicsUnit6: Lesson = {
       }
     ]
   },
+  glossary: [],
   quiz: [
-    {
-      q_id: 'q1',
-      type: 'mcq',
-      stem: {
-        en: 'What is the working principle of an electric generator?',
-        ml: 'ഒരു വൈദ്യുത ജനറേറ്ററിന്റെ പ്രവർത്തന തത്വം എന്ത്?'
-      },
-      options: [
-        { k: 'A', text: { en: 'Motor principle', ml: 'മോട്ടോർ തത്വം' } },
-        { k: 'B', text: { en: 'Electromagnetic induction', ml: 'വൈദ്യുതകാന്തിക പ്രേരണം' } },
-        { k: 'C', text: { en: 'Self induction', ml: 'സെൽഫ് ഇൻഡക്ഷൻ' } },
-        { k: 'D', text: { en: 'Joule heating', ml: 'ജൂൾ താപനം' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'An electric generator works on the principle of electromagnetic induction, converting mechanical energy into electrical energy.',
-        ml: 'വൈദ്യുത ജനറേറ്റർ വൈദ്യുതകാന്തിക പ്രേരണം എന്ന തത്വത്തിലാണ് പ്രവർത്തിക്കുന്നത്. ഇത് യാന്ത്രികോർജ്ജത്തെ വൈദ്യുതോർജ്ജമാക്കി മാറ്റുന്നു.'
-      }
+  {
+    "q_id": "u6_q1",
+    "type": "mcq",
+    "stem": {
+      "en": "The human eye can adjust its focal length to see objects at different distances. This property is called:",
+      "ml": "കണ്ണിന്റെ ഫോക്കൽ ദൈർഘ്യം മാറ്റി വ്യത്യസ്ത ദൂരത്ത് കാണുന്ന ശേഷി:"
     },
-    {
-      q_id: 'q2',
-      type: 'mcq',
-      stem: {
-        en: 'Which component is used in a DC generator instead of slip rings?',
-        ml: 'DC ജനറേറ്ററിൽ സ്ലിപ്പ് റിംഗുകൾക്ക് പകരം ഉപയോഗിക്കുന്ന ഭാഗം ഏത്?'
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Accommodation",
+          "ml": "ഉൾക്കൊള്ളൽ ശക്തി (Accommodation)"
+        }
       },
-      options: [
-        { k: 'A', text: { en: 'Armature', ml: 'ആർമേച്ചർ' } },
-        { k: 'B', text: { en: 'Field magnet', ml: 'ഫീൽഡ് കാന്തം' } },
-        { k: 'C', text: { en: 'Split ring commutator', ml: 'സ്പ്ലിറ്റ് റിംഗ് കമ്യൂട്ടേറ്റർ' } },
-        { k: 'D', text: { en: 'Inductor', ml: 'ഇൻഡക്റ്റർ' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'A split ring commutator is used in a DC generator to reverse the current direction every half rotation, ensuring direct current output.',
-        ml: 'DC ജനറേറ്ററിൽ സ്ലിപ്പ് റിംഗുകൾക്ക് പകരം സ്പ്ലിറ്റ് റിംഗ് കമ്യൂട്ടേറ്ററാണ് ഉപയോഗിക്കുന്നത്. ഇത് ഒരേ ദിശയിലുള്ള വൈദ്യുത പ്രവാഹം (DC) ഉറപ്പാക്കുന്നു.'
-      }
-    },
-    {
-      q_id: 'q3',
-      type: 'mcq',
-      stem: {
-        en: 'What is the phenomenon where a change in current in one coil induces an EMF in an adjacent coil?',
-        ml: 'ഒരു കമ്പിച്ചുരുളിലെ വൈദ്യുത പ്രവാഹത്തിൽ മാറ്റമുണ്ടാകുമ്പോൾ അടുത്തുള്ള കമ്പിച്ചുരുളിൽ ഇ.എം.എഫ് പ്രേരിതമാകുന്ന പ്രതിഭാസത്തിന്റെ പേരെന്ത്?'
+      {
+        "k": "B",
+        "text": {
+          "en": "Persistence of vision",
+          "ml": "ദർശന സ്ഥിരത"
+        }
       },
-      options: [
-        { k: 'A', text: { en: 'Self induction', ml: 'സെൽഫ് ഇൻഡക്ഷൻ' } },
-        { k: 'B', text: { en: 'Mutual induction', ml: 'മ്യൂച്വൽ ഇൻഡക്ഷൻ' } },
-        { k: 'C', text: { en: 'Electromagnetic induction', ml: 'വൈദ്യുതകാന്തിക പ്രേരണം' } },
-        { k: 'D', text: { en: 'Magnetic effect', ml: 'കാന്തിക ഫലം' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'Mutual induction is the phenomenon where a change in current in the primary coil induces an EMF in the secondary coil.',
-        ml: 'പ്രൈമറി കോയിലിലെ വൈദ്യുത പ്രവാഹത്തിൽ മാറ്റം ഉണ്ടാകുമ്പോൾ, സെക്കൻഡറി കോയിലിൽ ഒരു ഇ.എം.എഫ് പ്രേരിതമാകുന്ന പ്രതിഭാസമാണ് മ്യൂച്വൽ ഇൻഡക്ഷൻ.'
-      }
-    },
-    {
-      q_id: 'q4',
-      type: 'mcq',
-      stem: {
-        en: 'Will a transformer work if connected to a DC battery?',
-        ml: 'ഒരു ട്രാൻസ്ഫോർമർ DC ബാറ്ററിയിൽ ഘടിപ്പിച്ചാൽ പ്രവർത്തിക്കുമോ?'
+      {
+        "k": "C",
+        "text": {
+          "en": "Dispersion",
+          "ml": "ഡിസ്പർഷൻ"
+        }
       },
-      options: [
-        { k: 'A', text: { en: 'Yes, perfectly', ml: 'അതെ, നന്നായി പ്രവർത്തിക്കും' } },
-        { k: 'B', text: { en: 'Yes, but with low efficiency', ml: 'അതെ, പക്ഷേ കാര്യക്ഷമത കുറവായിരിക്കും' } },
-        { k: 'C', text: { en: 'No, it only works on AC', ml: 'ഇല്ല, ഇത് AC യിൽ മാത്രമേ പ്രവർത്തിക്കൂ' } },
-        { k: 'D', text: { en: 'Depends on the voltage', ml: 'വോൾട്ടേജിനെ ആശ്രയിച്ചിരിക്കും' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'A transformer works on mutual induction, which requires a constantly changing magnetic field. DC provides a steady current, so no EMF is induced.',
-        ml: 'ട്രാൻസ്ഫോർമർ മ്യൂച്വൽ ഇൻഡക്ഷൻ തത്വത്തിലാണ് പ്രവർത്തിക്കുന്നത്. ഇതിന് തുടർച്ചയായി മാറിക്കൊണ്ടിരിക്കുന്ന കാന്തികമണ്ഡലം ആവശ്യമാണ്. DC യ്ക്ക് അത് സൃഷ്ടിക്കാൻ കഴിയില്ല.'
+      {
+        "k": "D",
+        "text": {
+          "en": "Refraction",
+          "ml": "അപവർത്തനം"
+        }
       }
-    },
-    {
-      q_id: 'q5',
-      type: 'mcq',
-      stem: {
-        en: 'What is the correct sequence of devices in a household electrical circuit?',
-        ml: 'ഗാർഹിക വൈദ്യുത സർക്യൂട്ടിലെ ഉപകരണങ്ങളുടെ ശരിയായ ക്രമം ഏത്?'
-      },
-      options: [
-        { k: 'A', text: { en: 'Main switch → Watt-hour meter → MCB → ELCB', ml: 'മെയിൻ സ്വിച്ച് → വാട്ട്-അവർ മീറ്റർ → എം.സി.ബി → ഇ.എൽ.സി.ബി' } },
-        { k: 'B', text: { en: 'Watt-hour meter → Main switch → ELCB → MCB', ml: 'വാട്ട്-അവർ മീറ്റർ → മെയിൻ സ്വിച്ച് → ഇ.എൽ.സി.ബി → എം.സി.ബി' } },
-        { k: 'C', text: { en: 'ELCB → MCB → Main switch → Watt-hour meter', ml: 'ഇ.എൽ.സി.ബി → എം.സി.ബി → മെയിൻ സ്വിച്ച് → വാട്ട്-അവർ മീറ്റർ' } },
-        { k: 'D', text: { en: 'Watt-hour meter → MCB → ELCB → Main switch', ml: 'വാട്ട്-അവർ മീറ്റർ → എം.സി.ബി → ഇ.എൽ.സി.ബി → മെയിൻ സ്വിച്ച്' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'The correct sequence is: Watt-hour meter → Main switch → ELCB → MCB → Branch circuits.',
-        ml: 'ശരിയായ ക്രമം: വാട്ട്-അവർ മീറ്റർ → മെയിൻ സ്വിച്ച് → ഇ.എൽ.സി.ബി → എം.സി.ബി → ബ്രാഞ്ച് സർക്യൂട്ടുകൾ.'
-      }
+    ],
+    "answer": "A",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Accommodation is the ability of the eye to adjust to different distances.",
+      "ml": "വ്യത്യസ്ത ദൂരത്ത് കാണാൻ കണ്ണ് ഫോക്കൽ ദൂരം ക്രമീകരിക്കുന്ന ശേഷിയേ Accommodation (ഉൾക്കൊള്ളൽ ശക്തി) എന്ന് പറയുന്നു."
     }
-  ],
-  glossary: [
-    {
-      term: { en: 'Electromagnetic Induction', ml: 'വൈദ്യുതകാന്തിക പ്രേരണം' },
-      definition: {
-        en: 'The phenomenon of inducing an electromotive force (EMF) in a coil due to relative motion between a magnet and the coil.',
-        ml: 'ഒരു കാന്തവും കമ്പിച്ചുരുളും തമ്മിൽ ആപേക്ഷിക ചലനം ഉണ്ടാകുമ്പോൾ കമ്പിച്ചുരുളിൽ ഒരു ഇ.എം.എഫ് പ്രേരിതമാകുന്ന പ്രതിഭാസം.'
-      }
+  },
+  {
+    "q_id": "u6_q2",
+    "type": "mcq",
+    "stem": {
+      "en": "The image formed on the retina in a human eye is:",
+      "ml": "മനുഷ്യ കണ്ണിലെ റെറ്റിനയിൽ ഉണ്ടാകുന്ന ചിത്രം:"
     },
-    {
-      term: { en: 'Mutual Induction', ml: 'മ്യൂച്വൽ ഇൻഡക്ഷൻ' },
-      definition: {
-        en: 'The phenomenon where a change in current in the primary coil induces an EMF in the secondary coil.',
-        ml: 'പ്രൈമറി കോയിലിലെ വൈദ്യുത പ്രവാഹത്തിൽ മാറ്റം ഉണ്ടാകുമ്പോൾ, സെക്കൻഡറി കോയിലിൽ ഒരു ഇ.എം.എഫ് പ്രേരിതമാകുന്ന പ്രതിഭാസം.'
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Erect and virtual",
+          "ml": "നിവർന്നതും, മിഥ്യയും"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Inverted and real",
+          "ml": "തലകീഴ്, യഥാർത്ഥം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Erect and magnified",
+          "ml": "നിവർന്നതും, വലുതും"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Inverted and virtual",
+          "ml": "തലകീഴ്, മിഥ്യ"
+        }
       }
-    },
-    {
-      term: { en: 'Self Induction', ml: 'സെൽഫ് ഇൻഡക്ഷൻ' },
-      definition: {
-        en: 'The phenomenon where a change in current in a coil induces an EMF in the same coil.',
-        ml: 'ഒരു കമ്പിച്ചുരുളിലൂടെയുള്ള വൈദ്യുത പ്രവാഹത്തിൽ മാറ്റമുണ്ടാകുമ്പോൾ ആ കമ്പിച്ചുരുളിൽ തന്നെ ഒരു ഇ.എം.എഫ് പ്രേരിതമാകുന്ന പ്രതിഭാസം.'
-      }
-    },
-    {
-      term: { en: 'Transformer', ml: 'ട്രാൻസ്ഫോർമർ' },
-      definition: {
-        en: 'A device used to increase or decrease AC voltage without power loss, working on the principle of mutual induction.',
-        ml: 'പവർ നഷ്ടമില്ലാതെ AC വോൾട്ടേജ് കൂട്ടാനോ കുറയ്ക്കാനോ ഉപയോഗിക്കുന്ന ഉപകരണം.'
-      }
-    },
-    {
-      term: { en: 'ELCB', ml: 'ഇ.എൽ.സി.ബി' },
-      definition: {
-        en: 'Earth Leakage Circuit Breaker. A safety device that automatically cuts off the power supply during an earth leakage or electric shock.',
-        ml: 'ഷോക്കോ എർത്ത് ചോർച്ചയോ ഉണ്ടായാൽ സ്വയം സർക്യൂട്ട് വിച്ഛേദിച്ച് സുരക്ഷ ഉറപ്പാക്കുന്ന ഉപകരണം.'
-      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The eye forms a real, inverted, diminished image on the retina.",
+      "ml": "കണ്ണ് യഥാർത്ഥം, തലകീഴ്, ചെറിയ ചിത്രം റെറ്റിനയിൽ ഉണ്ടാക്കുന്നു."
     }
-  ]
-};
+  },
+  {
+    "q_id": "u6_q3",
+    "type": "mcq",
+    "stem": {
+      "en": "The defect of vision where distant objects appear blurred is:",
+      "ml": "ദൂര ദൃഷ്ടി വൈകല്യം (ദൂരെ ഉള്ളത് കാണാൻ ബുദ്ധിമുട്ട്):"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Hypermetropia",
+          "ml": "ദൂരക്കാഴ്ച (Hypermetropia)"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Myopia",
+          "ml": "സമീപ ദോഷക്കാഴ്ച (Myopia)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Astigmatism",
+          "ml": "ആസ്ടിഗ്‌മാറ്റിസം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Presbyopia",
+          "ml": "പ്രെസ്ബയോപ്പിയ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Myopia (shortsightedness) is corrected with a concave/diverging lens.",
+      "ml": "Myopia-ൽ ദൂരത്ത് ഉള്ളത് കാണൻ ബുദ്ധിമുട്ടായ് തോന്നുകയും, ഇത് കോൺകേവ് ലെൻസ് ഉപയോഗിച്ച് ശരിയാക്കാം."
+    }
+  },
+  {
+    "q_id": "u6_q4",
+    "type": "mcq",
+    "stem": {
+      "en": "What corrective lens is used for hypermetropia?",
+      "ml": "ദൂരക്കാഴ്ചക്ക് ഉപയോഗിക്കുന്ന ലെൻസ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Concave lens",
+          "ml": "കോൺകേവ് ലെൻസ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Convex lens",
+          "ml": "കോൺവെക്സ് ലെൻസ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Cylindrical lens",
+          "ml": "സിലിണ്ടർ ലെൻസ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Bifocal lens",
+          "ml": "ബൈഫോക്കൽ ലെൻസ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Hypermetropia (farsightedness) is corrected with a convex lens.",
+      "ml": "ദൂരക്കാഴ്ച (Hypermetropia) ശരിയാക്കാൻ കോൺവെക്സ് ലെൻസ് ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q5",
+    "type": "mcq",
+    "stem": {
+      "en": "The cells in the retina responsible for color vision are:",
+      "ml": "നിറ ദർശനത്തിന് ഉത്തരവാദിയായ റെറ്റിന കോശങ്ങൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Rods",
+          "ml": "ദണ്ഡ കോശങ്ങൾ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Cones",
+          "ml": "ശംഖ കോശങ്ങൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Bipolar cells",
+          "ml": "ദ്വിധ്രുവ കോശങ്ങൾ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Amacrine cells",
+          "ml": "അമക്രൈൻ കോശങ്ങൾ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Cones detect color (need bright light); Rods detect motion in dim light.",
+      "ml": "ശംഖ കോശങ്ങൾ (Cones) തിളക്കമേറിയ ആലോകത്തിൽ നിറ ദർശനം നൽകുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q6",
+    "type": "mcq",
+    "stem": {
+      "en": "Primary colors of light are:",
+      "ml": "പ്രകാശത്തിന്റെ പ്രാഥമിക നിറങ്ങൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Red, Green, Blue",
+          "ml": "ചുവപ്പ്, പച്ച, നീല"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Red, Yellow, Blue",
+          "ml": "ചുവപ്പ്, മഞ്ഞ, നീല"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Red, Orange, Yellow",
+          "ml": "ചുവപ്പ്, ഓറഞ്ച്, മഞ്ഞ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Violet, Green, Red",
+          "ml": "വയലറ്റ്, പച്ച, ചുവപ്പ്"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The three primary colors of light (additive) are Red, Green, and Blue (RGB).",
+      "ml": "ആദ്ദേഹ(Additive) നിറ സൂചകം: Red + Green + Blue = White."
+    }
+  },
+  {
+    "q_id": "u6_q7",
+    "type": "mcq",
+    "stem": {
+      "en": "Night blindness is caused by deficiency of:",
+      "ml": "രാത്രി അന്ധത ഉണ്ടാകുന്ന കാരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Vitamin A deficiency",
+          "ml": "വിറ്റാമിൻ A കുറവ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Vitamin C deficiency",
+          "ml": "വിറ്റാമിൻ C കുറവ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Calcium deficiency",
+          "ml": "കാൽസ്യം കുറവ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Iron deficiency",
+          "ml": "ഇരുമ്പ് കുറവ്"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Vitamin A is required for producing rhodopsin in rod cells.",
+      "ml": "ദണ്ഡ കോശങ്ങളിൽ rhodopsin ഉൽദ്ദേശ്യം ഉണ്ടാക്കാൻ വിറ്റാമിൻ A ആവശ്യമാണ്."
+    }
+  },
+  {
+    "q_id": "u6_q8",
+    "type": "mcq",
+    "stem": {
+      "en": "Scattering of sunlight by the atmosphere explains why the sky is:",
+      "ml": "അന്തരീക്ഷം വ്യാപ്ത ചെയ്ത സൂര്യ പ്രകാശം ആകാശം ഏത് നിറത്തിൽ ആകുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Red during noon",
+          "ml": "ഉച്ചക്ക് ചുവപ്പ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Blue during the day",
+          "ml": "പകൽ നീല"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Green at dawn",
+          "ml": "ഉദയ സമയം പച്ച"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Yellow at dusk",
+          "ml": "സന്ധ്യക്ക് മഞ്ഞ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Shorter wavelength blue light scatters more, making the sky appear blue.",
+      "ml": "ചെറിയ തരംഗദൈർഘ്യ ഉള്ള നീല വ്യാപ്ത ആകുന്നതിനാൽ ആകാശം നീലയായ് കാണാം."
+    }
+  },
+  {
+    "q_id": "u6_q9",
+    "type": "mcq",
+    "stem": {
+      "en": "At sunrise/sunset, the sun appears red because:",
+      "ml": "ഉദയ/അസ്‌ത സമയം സൂര്യൻ ചുവപ്പ് കാണപ്പെടുന്നത്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Sun emits red light only",
+          "ml": "സൂര്യൻ ചുവപ്പ് മാത്രം ഉദ്‌വമിക്കുന്നു"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Other colors are scattered away, leaving red",
+          "ml": "ചുവപ്പ് ഒഴിയുള്ള നിറ വ്യാപ്ത ചെയ്ത്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Eye perceives red at longer angles",
+          "ml": "കണ്ണ് ചരിഞ്ഞ കോണിൽ ചുവപ്പ് കാണും"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Temperature drops",
+          "ml": "താപനില കുറയുന്നു"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "At horizon, light travels through more atmosphere, scattering blue/violet, leaving reddish hues.",
+      "ml": "ഉദയ/അസ്‌ത ക്ഷിതിജ ദൂരത്ത് നീലയും വയലറ്റ്ഉം കൂടുതൽ വ്യാപ്ത, ചുവപ്പ് ദൃശ്യമാകുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q10",
+    "type": "mcq",
+    "stem": {
+      "en": "The cells responsible for vision in dim light are:",
+      "ml": "കുറഞ്ഞ വെളിച്ചത്തിൽ ദർശനം നൽകുന്ന കോശങ്ങൾ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Cones",
+          "ml": "ശംഖ കോശങ്ങൾ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Rods",
+          "ml": "ദണ്ഡ കോശങ്ങൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Irises",
+          "ml": "ഐറിസ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Pupils",
+          "ml": "ശ്വേതപടലം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Rods work in low light and detect motion.",
+      "ml": "ദണ്ഡ കോശങ്ങൾ കുറഞ്ഞ ആലോകത്തിൽ ദർശനം നൽകുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q11",
+    "type": "mcq",
+    "stem": {
+      "en": "Persistence of vision means:",
+      "ml": "ദർശന സ്ഥിരത:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Eye can't see fast motion",
+          "ml": "കണ്ണ് വേഗ ചലം കണ്ടെത്തില്ല"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "A visual impression remains for 1/16s after stimulus",
+          "ml": "ഉത്തേജനം തീർന്നാലും (1/16 s) ദർശനം നൽകുന്നു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Eye adjusts to darkness",
+          "ml": "ഇരുട്ടിൽ ചേർന്ന കണ്ണ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Night vision ability",
+          "ml": "രാത്രി ദർശന ക്ഷമത"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "A visual image stays on the retina for about 1/16th of a second.",
+      "ml": "ഒരു ചിത്രം 1/16 സ. വരെ ദർശനം ബാക്കി."
+    }
+  },
+  {
+    "q_id": "u6_q12",
+    "type": "mcq",
+    "stem": {
+      "en": "Far point of a normal human eye is at:",
+      "ml": "ഒരു ആരോഗ്യ കണ്ണിന്റെ ദൂര ബിന്ദു (far point):"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "25 cm",
+          "ml": "25 cm"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "25 m",
+          "ml": "25 m"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Infinity",
+          "ml": "അനന്തത"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "10 m",
+          "ml": "10 m"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "A normal eye can see clearly from 25 cm (near point) to infinity (far point).",
+      "ml": "ആരോഗ്യ കണ്ണ് 25 cm (near point) → Infinity (far point) കാണും."
+    }
+  },
+  {
+    "q_id": "u6_q13",
+    "type": "mcq",
+    "stem": {
+      "en": "The near point of a normal human eye is at:",
+      "ml": "ഒരു ആരോഗ്യ കണ്ണിന്റെ സമീപ ബിന്ദു:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "10 cm",
+          "ml": "10 cm"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "25 cm",
+          "ml": "25 cm"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "50 cm",
+          "ml": "50 cm"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "1 m",
+          "ml": "1 m"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Normal near point is 25 cm (called least distance of distinct vision).",
+      "ml": "ഒരു ആരോഗ്യ കണ്ണിന്റെ near point 25 cm ആണ്."
+    }
+  },
+  {
+    "q_id": "u6_q14",
+    "type": "mcq",
+    "stem": {
+      "en": "Colorblindness is due to deficiency of:",
+      "ml": "വർണ്ണ അന്ധത ഉണ്ടാകുന്ന കാരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Vitamin B",
+          "ml": "വിറ്റാ B"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Defective or absent cone cells",
+          "ml": "ശംഖ കോശ ($\\text{Cone}$) ദോഷം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Overactive rods",
+          "ml": "ദണ്ഡ കോശ ഉദ്ദേശ്യ ആധിക്യം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Inflammation of cornea",
+          "ml": "കോർണിയ ദൗർബ്ബല്യം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Defective or missing cone cells cause colorblindness.",
+      "ml": "ശംഖ കോശ (Cone) ദോഷം കൊണ്ടാണ് വർണ്ണ അന്ധത ഉണ്ടാകുന്നത്."
+    }
+  },
+  {
+    "q_id": "u6_q15",
+    "type": "mcq",
+    "stem": {
+      "en": "A person with myopia should use:",
+      "ml": "Myopia ശരിയാക്കാൻ ഉപയോഗിക്കുന്ന ലെൻസ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Convex lens",
+          "ml": "കോൺവെക്സ് ലെൻസ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Concave lens",
+          "ml": "കോൺകേവ് ലെൻസ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Bifocal lens",
+          "ml": "ബൈഫോക്കൽ ലെൻസ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Prism",
+          "ml": "പ്രിസ്‌മ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Myopia is corrected with a concave (diverging) lens.",
+      "ml": "Myopia ശരിയാക്കാൻ കോൺകേവ് ലെൻസ് ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q16",
+    "type": "mcq",
+    "stem": {
+      "en": "In presbyopia, the problem is with:",
+      "ml": "Presbyopia-ൽ ഉണ്ടാകുന്ന പ്രശ്നം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Cornea degeneration",
+          "ml": "കോർണിയ ദൗർബ്ബല്യം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Loss of accommodation in old age",
+          "ml": "വൃദ്ധ ഘടനയിൽ കണ്ണ് ഉൾക്കൊള്ളൽ ശക്തി നഷ്ടം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Excess near vision",
+          "ml": "അതിരിക്കൽ ആശ്ചര്യ ദർശനം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Rod cell damage",
+          "ml": "ദണ്ഡ കോശ നാശം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Presbyopia is the loss of accommodation due to aging.",
+      "ml": "ഉൾക്കൊള്ളൽ ശക്തി (Accommodation) വൃദ്ധ ഘടനയിൽ കുറഞ്ഞ് Presbyopia ഉണ്ടാകുന്നു."
+    }
+  },
+  {
+    "q_id": "u6_q17",
+    "type": "mcq",
+    "stem": {
+      "en": "Mixing red and blue light gives:",
+      "ml": "ചുവപ്പ് + നീല പ്രകാശ മിശ്രണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Yellow",
+          "ml": "മഞ്ഞ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Magenta",
+          "ml": "Magenta"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Cyan",
+          "ml": "Cyan"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "White",
+          "ml": "ശ്വേതം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Red + Blue = Magenta (additive colour mixing).",
+      "ml": "ചുവപ്പ് + നീല = Magenta (ആദ്ദേഹ (Additive) Color mixing)."
+    }
+  },
+  {
+    "q_id": "u6_q18",
+    "type": "mcq",
+    "stem": {
+      "en": "Red + Green light gives:",
+      "ml": "ചുവപ്പ് + പച്ച:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Cyan",
+          "ml": "Cyan"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Magenta",
+          "ml": "Magenta"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Yellow",
+          "ml": "മഞ്ഞ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "White",
+          "ml": "ശ്വേതം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Red + Green = Yellow (additive mixing).",
+      "ml": "ചുവപ്പ് + പച്ച = മഞ്ഞ."
+    }
+  },
+  {
+    "q_id": "u6_q19",
+    "type": "mcq",
+    "stem": {
+      "en": "Red + Green + Blue (light) gives:",
+      "ml": "ചുവപ്പ് + പച്ച + നീല:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Brown",
+          "ml": "ബ്രൗൺ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Black",
+          "ml": "കറുപ്പ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "White",
+          "ml": "ശ്വേതം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Violet",
+          "ml": "വയലറ്റ്"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "RGB additive mixing = White light.",
+      "ml": "RGB = ശ്വേത പ്രകാശം."
+    }
+  },
+  {
+    "q_id": "u6_q20",
+    "type": "mcq",
+    "stem": {
+      "en": "The lens of the eye is made of:",
+      "ml": "കണ്ണിന്റെ ലെൻസ് ഉണ്ടാക്കുന്ന ദ്രവ്യം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Corneal tissue",
+          "ml": "കോർണിയ കോശം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Transparent elastik protein (crystalline lens)",
+          "ml": "സ്ഫടിക ലെൻസ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Fluid only",
+          "ml": "ദ്രാബം മാത്രം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Glass",
+          "ml": "ഗ്ലാസ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "The eye's lens (crystalline lens) is a transparent, flexible structure.",
+      "ml": "കണ്ണ് ലെൻസ് (crystalline lens) ഒരു സ്ഫടിക, ഇലാസ്തിക് ഘടനയാണ്."
+    }
+  },
+  {
+    "q_id": "u6_q21",
+    "type": "mcq",
+    "stem": {
+      "en": "The change of colors we see in the sky at different times of day is largely due to:",
+      "ml": "ദിവസം വ്യത്യസ്ത സമയത്ത് ആകാശ നിറ മാറ്റം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Absorption by clouds",
+          "ml": "മേഘ ആഗിരണം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Scattering (Rayleigh scattering)",
+          "ml": "Rayleigh Scattering (വ്യാപ്ത)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Reflection by atmosphere",
+          "ml": "ആകാശ പ്രതിഫലനം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Thermal emission",
+          "ml": "ഊഷ്മക ഉദ്‌വമനം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Rayleigh scattering of sunlight by atmospheric particles causes the different sky colors.",
+      "ml": "Rayleigh Scattering ആണ് ആകാശ നിറ വ്യതിയാനത്തിന് കാരണം."
+    }
+  },
+  {
+    "q_id": "u6_q22",
+    "type": "mcq",
+    "stem": {
+      "en": "The cornea of the eye contributes to:",
+      "ml": "കണ്ണിന്റെ കോർണിയ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Color detection",
+          "ml": "നിറ ദർശനം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Most of the eye's focusing power",
+          "ml": "ദർശനത്തിന്റെ ഭൂരിഭാഗ ഫോക്കസ് ശക്തി"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Pupil dilation",
+          "ml": "ശ്വേതപടലം വികാസം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Tear production",
+          "ml": "കണ്ണ് ജലം ഉൽദ്ദേശ്യം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Cornea provides about 2/3 of the total focusing power.",
+      "ml": "കോർണിയ കണ്ണ് ഫോക്കസ് ശക്തിയുടെ 2/3 ഉൽദ്ദേശ്യം."
+    }
+  },
+  {
+    "q_id": "u6_q23",
+    "type": "mcq",
+    "stem": {
+      "en": "Scattering of light (Rayleigh) is inversely proportional to:",
+      "ml": "Rayleigh Scattering ഏതിനോട് വിപരീത അനുപാതത്തിലായിരിക്കും?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Speed of light",
+          "ml": "പ്രകാശ വേഗം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Fourth power of wavelength",
+          "ml": "തരംഗദൈർഘ്യത്തിന്റെ നാലാം ഘാതം (λ⁴)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Frequency",
+          "ml": "ആവൃത്തി"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Amplitude",
+          "ml": "ആയതി"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "Rayleigh Scattering intensity ∝ 1/λ⁴, so shorter wavelengths scatter more.",
+      "ml": "Scattering ∝ 1/λ⁴ - ചെറിയ λ = കൂടുതൽ Scattering."
+    }
+  },
+  {
+    "q_id": "u6_q24",
+    "type": "mcq",
+    "stem": {
+      "en": "A camera forms an image similar to the human eye. The film/sensor corresponds to:",
+      "ml": "ഒരു ക്യാമറ ചിത്രം ഉണ്ടാക്കുന്ന ഭാഗം കണ്ണ് ഘടനയിൽ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Cornea",
+          "ml": "കോർണിയ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Iris",
+          "ml": "ഐറിസ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Retina",
+          "ml": "റെറ്റിന"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Pupil",
+          "ml": "ശ്വേതപടലം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The film/sensor detects light like the retina does.",
+      "ml": "ക്യാമറ ഫിലിം = കണ്ണ് റെറ്റിന."
+    }
+  },
+  {
+    "q_id": "u6_q25",
+    "type": "mcq",
+    "stem": {
+      "en": "The iris in the eye controls:",
+      "ml": "കണ്ണ് ഐറിസ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Focusing",
+          "ml": "ഫോക്കസ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Light entering (pupil size)",
+          "ml": "കടക്കുന്ന പ്രകാശ അളവ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Color detection",
+          "ml": "നിറ ദർശനം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Tear production",
+          "ml": "കണ്ണ് ദ്രവ ഉൽദ്ദേശ്യം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Iris controls pupil size to regulate the amount of light entering the eye.",
+      "ml": "ഐറിസ് ശ്വേതപടലം (Pupil) വലിപ്പം ക്രമീകരിച്ച് ഉൾ കടക്കുന്ന പ്രകാശ അളവ് ക്രമീകരിക്കുന്നു."
+    }
+  }
+]
+} as const;

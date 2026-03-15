@@ -1,0 +1,242 @@
+Q: Which energy resource will eventually run out? | ഒടുവിൽ തീർന്നുപോകുന്ന ഊർജ്ജ സ്രോതസ്:
+A) Wind energy | കാറ്റ് ഊർജ്ജം
+B) Fossil fuels | ഫോസിൽ ഇന്ധനങ്ങൾ
+C) Solar energy | സൗര ഊർജ്ജം
+D) Tidal energy | വേലിയേറ്റ ഊർജ്ജം
+ANS: B
+DIFF: easy
+EXP: Fossil fuels (coal, oil, gas) are non-renewable and will eventually be exhausted. | ഫോസിൽ ഇന്ധനങ്ങൾ (കൽക്കരി, എണ്ണ, വാതകം) ഒടുക്കം ഇല്ലാതാകും.
+
+Q: Which is a renewable energy source? | ഒരു നവീകരണ ഊർജ്ജ സ്രോതസ്:
+A) Petroleum | കച്ചഎണ്ണ
+B) Coal | കൽക്കരി
+C) Solar energy | സൗര ഊർജ്ജം
+D) Natural gas | പ്രകൃതി വാതകം
+ANS: C
+DIFF: easy
+EXP: Solar, wind, hydro, and tidal are all renewable sources. | ആദ്യ ഊർജ്ജ, കാറ്റ്, ജലം, വേലിയേറ്റം - ഇവ എല്ലാം നവീകരണ ഊർജ്ജ സ്രോതസ്.
+
+Q: What is the main cause of the greenhouse effect? | ഹരിത ഗൃഹ പ്രഭാവത്തിന്റെ പ്രധാന കാരണം:
+A) Too much oxygen | വളരെ കൂടുതൽ ഓക്സിജൻ
+B) Greenhouse gases like CO₂, CH₄ | CO₂, CH₄ തുടങ്ങിയ ഹരിത ഗൃഹ വാതകങ്ങൾ
+C) Ozone formation | ഓസോൺ ഉൽദ്ദേശ്യം
+D) Solar flares | സൗര ജ്വാലകൾ
+ANS: B
+DIFF: easy
+EXP: Greenhouse gases trap heat in the atmosphere, causing global warming. | ഹരിതഗൃഹ വാതകങ്ങൾ ഭൂ താരം ഉൾക്കൊണ്ടിട്ട് ഭൂ ഊഷ്മാവ് ഉയർത്തുന്നു.
+
+Q: Photovoltaic cells convert: | ഫോട്ടോ വൊൾട്ടൈക് (PV) ഘടകം:
+A) Heat to electrical energy | ചൂട് → വൈദ്യുതം
+B) Light to electrical energy | പ്രകാശം → വൈദ്യുതം
+C) Electric to static energy | വൈദ്യുതം → സ്ഥിര ഊർജ്ജം
+D) Chemical to mechanical | രാസ → യാന്ത്രിക
+ANS: B
+DIFF: easy
+EXP: Solar PV cells directly convert sunlight into electricity. | ഫോട്ടോ വൊൾട്ടൈക് ഘടകം (Solar Panel) സൂര്യ പ്രകാശം → വൈദ്യുതം.
+
+Q: A solar cooker concentrates sunlight using: | ഒരു സൗര ഉടലുകൂട്ടൽ ഉപകരണം (Solar Cooker) ഏതിനെ ഉപയോഗിക്കുന്നു?
+A) Plane mirror | പ്ലേൻ ദർപ്പണം
+B) Concave mirror/reflector | ആനത ദർപ്പണം
+C) Glass prism | ഗ്ലാസ്സ് പ്രിസ്‌മ്
+D) Optical fibre | ഒപ്റ്റിക്കൽ ഫൈബർ
+ANS: B
+DIFF: easy
+EXP: Solar cookers use concave reflectors to focus sunlight on food. | ആനത ദർപ്പണം (Concave reflector) ഉപ‌ കൊണ്ട് ഭക്ഷ്യ ഘട്ടത്ത് സൂര്യ ഊർജ്ജം കേ‌ൻദ്രീകരിക്കുന്നു.
+
+Q: Biogas mainly contains: | ബയോ ഗ്യാസ് ഏതിൽ ഉൾക്കൊള്ളുന്നു?
+A) Hydrogen | ഹൈഡ്രജൻ
+B) Methane (CH₄) | മീഥേൻ (CH₄)
+C) Oxygen | ഓക്സിജൻ
+D) Carbon dioxide | CO₂
+ANS: B
+DIFF: easy
+EXP: Biogas is primarily methane, produced from organic waste. | ജൈവ മാലിന്യ ദ്രവ്യ ഭ്രഷ്ടത്തിൽ ഉൽദ്ദേശ്യം, CH₄ ആണ് ബയോ ഗ്യാസ്.
+
+Q: The law of conservation of energy states that: | ഊർജ്ജ സംരക്ഷണ നിയമം:
+A) Energy can be created at will | ഊർജ്ജം യഥേഷ്ടം സൃഷ്ടിക്കാം
+B) Energy cannot be created or destroyed, only converted | ഊർജ്ജം സൃഷ്ടിക്കാൻ അথവ നശിപ്പിക്കാൻ ആവില്ല, മൂർത്തീഭവനം ആകും
+C) Total energy in universe keeps decreasing | ഊർജ്ജ ആകെ കുറഞ്ഞ്
+D) Kinetic energy equals potential energy | ഗതിക ഊർജ്ജം = ശേഷി ഊർജ്ജം
+ANS: B
+DIFF: easy
+EXP: Energy can only change form, not be created or destroyed. | ഊർജ്ജം സൃഷ്ടിക്കാൻ അഥവ നശിപ്പിക്കാൻ ആകില്ല, ഒരു രൂപത്തിൽ നിന്ന് മറ്റൊന്നിലേക്ക് മൂർത്തീഭവനം ആകും.
+
+Q: Nuclear fission releases energy by: | ന്യൂക്ലിയർ ഫിഷൻ ഊർജ്ജം ഉൽദ്ദേശ്യം:
+A) Adding protons to a nucleus | ഒരു neumകൽ പ്രോട്ടോൺ ചേർക്കൽ
+B) Splitting a heavy nucleus into smaller ones | കനം ഉള്ള ന്യൂക്ലിയസ് ചെറിയ ഭാഗ ആകൽ
+C) Combining two light nuclei | ലഘു ന്യൂക്ലിയസ് ഒരുമിക്കൽ
+D) Burning in high temperature | ഉയർന്ന ഊഷ്മാവ് ദഹനം
+ANS: B
+DIFF: medium
+EXP: A heavy nucleus (like U-235) splits into smaller nuclei, releasing huge energy. | കനം ഉള്ള U-235 ന്യൂക്ലിയസ് ചെറിയ ഭാഗ ആകൽ ഊർജ്ജ ഉൽദ്ദേശ്യം.
+
+Q: Nuclear fusion involves: | ന്യൂക്ലിയർ ഫ്യൂഷൻ:
+A) Splitting of heavy nuclei | കനം ഉള്ള ന്യൂക്ലിയസ് ഭ്രഷ്ടം
+B) Joining of light nuclei to form heavier ones | ലഘു ന്യൂക്ലിയസ് ഒരുമിപ്പ് ഭാരം ഉള്ള ഉൽദ്ദേശ്യം
+C) Burning of fossil fuels | ഫോസിൽ ഇന്ധന ദഹനം
+D) Conversion of heat to motion | ചൂട് → ചലനം
+ANS: B
+DIFF: medium
+EXP: Fusion is the energy source of the sun (hydrogen nuclei fusing into helium). | ഹൈഡ്രജൻ ന്യൂക്ലിയസ് ഒരുമിപ്പ് ഹീലിയം ആകൽ - ഇതാണ് സൂര്യ ഊർജ്ജ ഉൽദ്ദേശ്യ തത്വം.
+
+Q: The energy stored in fossil fuels is actually: | ഫോസിൽ ഇന്ധനത്തിൽ ഉള്ള ഊർജ്ജ:
+A) Geothermal energy | ഭൂ‌ ഊഷ്‌മ ഊർജ്ജം
+B) Ancient solar energy stored in organic matter | ഒരു കാലത്ത് ഓർഗാനിക് ദ്രവ്യ ശ്രേഖരിച്ച ഊർജ്ജം
+C) Nuclear energy | ന്യൂക്ലിയർ ഊർജ്ജം
+D) Tide energy | വേലിയേറ്റ ഊർജ്ജം
+ANS: B
+DIFF: medium
+EXP: Fossil fuels were formed from ancient organic matter that stored solar energy. | ഫോസിൽ ഇന്ധനം ഒരു കോടി വർഷ മുമ്പ് ജൈവ ദ്രവ്യ ആഗിരണം ചെയ്ത ഊർജ്ജം.
+
+Q: What is the main advantage of nuclear power over fossil fuels? | ഫോസിൽ ഇന്ധനേക്കാൾ ന്യൂക്ലിയർ ഊർജ്ജത്തിന്റെ മേൻമ:
+A) No waste produced | മാലിന്യം ഇല്ല
+B) Generates large energy with little fuel and less greenhouse gases | കുറഞ്ഞ ഇന്ധനം, ഉയർന്ന ഊർജ്ജം, ഹരിതഗൃഹ വാതകം ഇല്ല
+C) Available everywhere | എല്ലായിടത്തും ലഭ്യം
+D) Completely safe with no radiation | ആകർഷ ഗൂഢ, ആർദ്ര ഇല്ല
+ANS: B
+DIFF: medium
+EXP: Nuclear power releases more energy per kilogram with low greenhouse gas emissions. | ന്യൂക്ലിയർ ഊർജ്ജം ഒരു kg ഇന്ധനത്തിൽ നിന്ന് ഫോസിൽ ഇന്ധനേക്കാൾ ഉയർന്ന ഊർജ്ജം ഉൽദ്ദേശ്യം, ഏറ്റ ഗ്രീൻഹൗസ് ഗ്യാസ് ഇല്ലാതെ.
+
+Q: Wind energy is harnessed using: | കാറ്റ് ഊർജ്ജ ഉൾക്കൊള്ളൽ ഉപകരണം:
+A) Turbines (windmills) | ടർബൈൻ (കാറ്റ് കൽ ആൽ)
+B) Solar panels | സൗര ഫലക
+C) Nuclear reactors | ന്യൂക്ലിയർ ർൊ...
+D) Geothermal pumps | ഭൂ‌ ഊഷ്‌മ പമ്പ്
+ANS: A
+DIFF: easy
+EXP: Wind turbines (windmills) convert kinetic energy of wind into electricity. | ടർബൈൻ (windmill) കാറ്റ് ഗതിക ഊർജ്ജം → വൈദ്യുതം.
+
+Q: In a hydroelectric power plant, energy is converted from: | ജലവൈദ്യുതി ജനേ പ്ലാൻ്റ്:
+A) Chemical to electrical | രാസ → വൈദ്യുതം
+B) Gravitational potential energy to electrical | ഗതി শক്তி ഊർജ്ജം → ← →ŒVW →
+C) Nuclear to electrical | ന്യൂക്ലിയർ → ←
+D) Solar to electrical | സൗര → ←
+ANS: B
+DIFF: medium
+EXP: Water at height has potential energy → flows down → drives turbines → produces electricity. | ഏത്തം ഉള്ള ജലം ഗുരുത്വ ഊർജ്ജം → ടർബൈൻ → വൈദ്യുതം.
+
+Q: Which fuel produces the most pollution? | ഏത് ഇന്ധനം ഏറ്റ മലിനീകരണം ഉണ്ടാക്കും?
+A) CNG | CNG
+B) LPG | LPG
+C) Coal | കൽക്കരി
+D) Solar | സൗര ഊർജ്ജം
+ANS: C
+DIFF: easy
+EXP: Coal combustion releases the most greenhouse gases and pollutants. | കൽക്കരി ദഹനം ഏറ്റ ഹരിതഗൃഹ വാതകവും മലിനൻ ഉൽദ്ദേശ്യം.
+
+Q: Tidal energy is generated by: | വേലിയേറ്റ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം:
+A) Waves only | തരംഗ മാത്രം
+B) Gravity of moon and sun causing tides | ചന്ദ്ര ഗ്ര, സൂര്യ ആകർഷ ഉണ്ടാക്കുന്ന വേലിയേറ്റ/ ഇറക്കം
+C) Ocean temperature difference | സമുദ്ര ഊഷ്‌മ അന്തരം
+D) Undersea volcanoes | കടൽ ഉള്ളിലെ അഗ്‌നിപർ...
+ANS: B
+DIFF: medium
+EXP: Tidal energy comes from the gravitational pull of the Moon and Sun creating tidal highs and lows. | ചന്ദ്ര-സൂര്യ ആകർഷ ഉണ്ടാക്കുന്ന വേലിയേറ്റം/ഇറക്കം ഉൽദ്ദേശ്യ ഊർജ്ജം ആണ് tidal energy.
+
+Q: Solar panels must be placed facing: | സൗര ഫലക ഏത് ദിശ ഉൾ‌ ഇരിക്കണം?
+A) North | ഉത്തര ദിശ
+B) South (in northern hemisphere) | ദക്ഷിണ ദിശ (ഉത്തര ഗോളം)
+C) East | കിഴക്ക്
+D) West | പടിഞ്ഞാറ്
+ANS: B
+DIFF: medium
+EXP: In the northern hemisphere, south-facing panels receive the most sunlight. | ഉത്തര ഗോളം: ദക്ഷിണ ദിശ ഇരിക്കൽ ഏറ്റ ഊർജ്ജ ലഭ്യ.
+
+Q: Which of the following does NOT emit greenhouse gases during operation? | ഊർജ്ജ ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഉൽദ്ദേശ്യം ഇല്ലാത്ത ഊർജ്ജം:
+A) Coal plant | കൽക്കരി ജ‌ നേ ഘട്ടം
+B) Oil refinery | ഓയിൽ റിഫൈൻ
+C) Solar power | സൗര ഊർജ്ജം
+D) Gas turbine | ഗ്യാസ് ടർബൈൻ
+ANS: C
+DIFF: easy
+EXP: Solar energy generates no greenhouse gases during operation. | സൗര ഊർജ്ജ ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഇല്ല.
+
+Q: The unit of electrical energy used for billing is: | ഊർജ്ജ ബിൽ ഉദ്ദേശ്യ ഊർജ്ജ യൂണിറ്റ്:
+A) Watt | വാട്ട്
+B) Joule | ജൂൾ
+C) kWh (kilowatt-hour) | kWh (കിലോ‌ വാട്ട്-ആwatch)
+D) Calorie | കലോറി
+ANS: C
+DIFF: easy
+EXP: Electricity is billed in kilowatt-hours (kWh), also called a 'unit'. | ഒരു 'Unit' = 1 kWh = 1000W × 1hr.
+
+Q: 1 kilowatt-hour (kWh) in Joules is: | 1 kWh = ? Joules:
+A) 1000 J | 1000 J
+B) 3,600,000 J | 36,00,000 J
+C) 1,000,000 J | 10,00,000 J
+D) 360 J | 360 J
+ANS: B
+DIFF: hard
+EXP: 1 kWh = 1000W × 3600s = 3,600,000 J = 3.6 × 10⁶ J. | 1 kWh = 3.6 × 10⁶ J.
+
+Q: The most environmentally friendly power plant is: | ഏറ്റ പരിസ്ഥ‌ ഭ്ര ഊർജ്ജ ഘട്ടം:
+A) Coal power plant | കൽക്കരി ജ‌നേ ഘട്ടം
+B) Diesel power plant | ഡീസൽ ഘട്ടം
+C) Solar or Wind power plant | സൗര/ കാറ്റ് ഊർജ്ജ ഘട്ടം
+D) Nuclear power plant | ന്യൂക്ലിയർ ഘട്ടം
+ANS: C
+DIFF: easy
+EXP: Solar and wind power produce no emissions during operation. | സൗര-കാറ്റ് ഊർജ്ജ ഘട്ടം ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഇല്ല.
+
+Q: The formula for electrical energy consumed is: | ഊർജ്ജ ഉൽദ്ദേശ്യ ഉണ്ടാക്കൽ ഫോർമുല:
+A) E = V/t | E = V/t
+B) E = P × t | E = P × t
+C) E = I/t | E = I/t
+D) E = R × t | E = R × t
+ANS: B
+DIFF: medium
+EXP: Electrical energy E = Power (P) × time (t), where P is in watts and t in seconds. | ഊർജ്ജ E = P × t.
+
+Q: An electric bulb of 100W working for 5 hours consumes how many units of electricity? | 100W ബൾബ് 5 hrs പ്രവൃത്ത, ഊർജ്ജ:
+A) 5 units | 5 Units
+B) 0.5 units | 0.5 Units
+C) 500 units | 500 Units
+D) 50 units | 50 Units
+ANS: B
+DIFF: medium
+EXP: Energy = 100W × 5h = 500Wh = 0.5 kWh = 0.5 units. | 100W × 5h = 500Wh = 0.5 kWh.
+
+Q: BEE (Bureau of Energy Efficiency) promotes: | BEE ഉദ്ദേശ്യം:
+A) Energy wastage | ഊർജ്ജ ദ്ര‌ ...
+B) Energy conservation and efficient use of energy | ഊർജ്ജ സംർ, ഊർജ്ജ ദക്ഷ ഉൽദ്ദേശ്യ ഉദ്ദേശ്യം
+C) Free electricity for all | എല്ലാർക്കും ഉൽദ്ദേശ്യ
+D) Nuclear energy only | ന്യൂക്ലിയർ ഊർജ്ജ മാത്ര
+ANS: B
+DIFF: easy
+EXP: BEE promotes energy efficiency in India through regulations and star ratings appliances. | BEE ഊർജ്ജ ദക്ഷ ഉൽദ്ദേശ്യം Star Rating ഉൾദ്ദേശ്യം.
+
+Q: Geothermal energy comes from: | ഭൂ‌ ഊഷ്‌മ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം:
+A) Burning gases | വാതക ദഹ‌‌‌
+B) Heat from inside the Earth | ഭൂ ആഭ്യന്തര താൻ
+C) Sun's heat only | സൂര്യ ചൂട്
+D) Ocean tides | സമുദ്ര വേലിയേറ്റ
+ANS: B
+DIFF: easy
+EXP: Geothermal energy uses heat from the Earth's interior. | ഭൂ ആഭ്യന്തര ഊഷ്‌മ ആണ് ഭൂ‌ ഊഷ്‌മ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം.
+
+Q: Which gas is considered the primary greenhouse gas? | ഏത് വാതകം ആണ് ഹരിത ഗൃഹ ഗ്യാസ് (GHG)?
+A) Oxygen | ഓക്സിജൻ
+B) Carbon dioxide (CO₂) | CO₂
+C) Nitrogen | നൈട്രജൻ
+D) Argon | ആർഗൺ
+ANS: B
+DIFF: easy
+EXP: CO₂ is the main greenhouse gas produced by human activities. | CO₂ ആണ് മനുഷ്യ ക്രിയ ഉൽദ്ദേശ്യ പ്രധാന GHG.
+
+Q: Energy star rating on appliances indicates: | ഉപകരണ Star Rating ഉദ്ദേശ്യം ‌:
+A) The power in watts | ശക്തി (Watts)
+B) Energy efficiency (more stars = more efficient) | ഊർജ്ജ ദക്ഷ (കൂടുതൽ നക്ഷത്ര = കൂടുതൽ ദക്ഷ)
+C) Durability in years | ഉൽദ്ദേശ്യ കാലാവധി
+D) Country of manufacture | ഉൽദ്ദേശ്യ ദേശം
+ANS: B
+DIFF: easy
+EXP: More stars = higher efficiency = lower electricity bill. | കൂടുതൽ Stars = ഊർജ്ജ ദക്ഷ = കുറഞ്ഞ ബിൽ.
+
+Q: Which of the following is NOT a method to conserve energy? | ഊർജ്ജ സംർ ഉൾദ്ദേശ്യ ഉൽദ്ദേശ്യ ഇല്ലാത്ത:
+A) Using CFL instead of incandescent bulbs | CFL = Incandescent ്ജ കുറ
+B) Installing solar panels | സൗര ഫലക ഹ...
+C) Leaving appliances in standby mode | ഉൽദ്ദേശ്യ Standby mode
+D) Using energy-efficient cars | ഊ ദ‌ കാർ
+ANS: C
+DIFF: medium
+EXP: Standby mode still consumes power ("phantom load"). Always switch off appliances completely. | Standby ഘടന ഊർജ്ജ "phantom load" ആയ ഉൽദ്ദേശ്യ, off ആകൽ.

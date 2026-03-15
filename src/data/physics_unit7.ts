@@ -7,6 +7,12 @@ export const physicsUnit7: Lesson = {
     ml: 'അധ്യായം 7: യാന്ത്രികലാഭം പ്രവൃത്തിയിൽ'
   },
   estimated_time_mins: 60,
+  videos: [
+    {
+      title: "Quick revision (Exam oriented)",
+      url: "https://www.youtube.com/watch?v=zXMA-6ZoQ3E"
+    }
+  ],
   learning_objectives: [
     {
       id: 'lo1',
@@ -346,233 +352,1195 @@ export const physicsUnit7: Lesson = {
       }
     ]
   },
+  glossary: [],
   quiz: [
-    {
-      q_id: 'q1',
-      type: 'mcq',
-      stem: {
-        en: 'Define a simple machine. Give two examples.',
-        ml: 'ലഘുയന്ത്രങ്ങൾ എന്നാൽ എന്ത്? രണ്ട് ഉദാഹരണങ്ങൾ നൽകുക.'
-      },
-      options: [
-        { k: 'A', text: { en: 'Devices that make work easier. Ex: Crowbar, Pulleys', ml: 'പ്രവൃത്തി എളുപ്പമാക്കുന്ന ഉപകരണങ്ങൾ. ഉദാ: കടപ്പാര, കപ്പികൾ' } },
-        { k: 'B', text: { en: 'Devices that increase work. Ex: Engine, Motor', ml: 'പ്രവൃത്തി വർദ്ധിപ്പിക്കുന്ന ഉപകരണങ്ങൾ. ഉദാ: എഞ്ചിൻ, മോട്ടോർ' } },
-        { k: 'C', text: { en: 'Devices that create energy. Ex: Generator, Battery', ml: 'ഊർജ്ജം സൃഷ്ടിക്കുന്ന ഉപകരണങ്ങൾ. ഉദാ: ജനറേറ്റർ, ബാറ്ററി' } },
-        { k: 'D', text: { en: 'Devices that measure force. Ex: Spring balance', ml: 'ബലം അളക്കുന്ന ഉപകരണങ്ങൾ. ഉദാ: സ്പ്രിംഗ് ബാലൻസ്' } }
-      ],
-      answer: 'A',
-      explanation: {
-        en: 'Devices that make our work easier by helping to overcome a large resistance with a small effort are called simple machines. Examples: Crowbar, Pulleys.',
-        ml: 'ചെറിയ യത്നം ഉപയോഗിച്ച് വലിയൊരു പ്രതിരോധത്തെ മറികടക്കാൻ സഹായിക്കുന്നതും അതുവഴി പ്രവൃത്തി എളുപ്പമാക്കുന്നതുമായ ഉപകരണങ്ങളാണ് ലഘുയന്ത്രങ്ങൾ. ഉദാഹരണങ്ങൾ: കടപ്പാര, കപ്പികൾ.'
-      }
+  {
+    "q_id": "u7_q1",
+    "type": "mcq",
+    "stem": {
+      "en": "Which energy resource will eventually run out?",
+      "ml": "ഒടുവിൽ തീർന്നുപോകുന്ന ഊർജ്ജ സ്രോതസ്:"
     },
-    {
-      q_id: 'q2',
-      type: 'mcq',
-      stem: {
-        en: 'Write the formula for Mechanical Advantage.',
-        ml: 'യാന്ത്രികലാഭം കണ്ടുപിടിക്കാനുള്ള സമവാക്യം എഴുതുക.'
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Wind energy",
+          "ml": "കാറ്റ് ഊർജ്ജം"
+        }
       },
-      options: [
-        { k: 'A', text: { en: 'MA = Effort / Load', ml: 'MA = യത്നം / ഭാരം' } },
-        { k: 'B', text: { en: 'MA = Load / Effort', ml: 'MA = ഭാരം / യത്നം' } },
-        { k: 'C', text: { en: 'MA = Load × Effort', ml: 'MA = ഭാരം × യത്നം' } },
-        { k: 'D', text: { en: 'MA = Load + Effort', ml: 'MA = ഭാരം + യത്നം' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'Mechanical Advantage (MA) = Load / Effort',
-        ml: 'യാന്ത്രികലാഭം (MA) = ഭാരം / യത്നം'
-      }
-    },
-    {
-      q_id: 'q3',
-      type: 'mcq',
-      stem: {
-        en: 'Why is the efficiency of a practical machine always less than 100%?',
-        ml: 'ഒരു പ്രായോഗിക യന്ത്രത്തിന്റെ ക്ഷമത എപ്പോഴും 100%-ൽ താഴെയായിരിക്കുന്നത് എന്തുകൊണ്ട്?'
+      {
+        "k": "B",
+        "text": {
+          "en": "Fossil fuels",
+          "ml": "ഫോസിൽ ഇന്ധനങ്ങൾ"
+        }
       },
-      options: [
-        { k: 'A', text: { en: 'Due to friction and weight of moving parts', ml: 'ഘർഷണം, യന്ത്രഭാഗങ്ങളുടെ ഭാരം എന്നിവ കാരണം' } },
-        { k: 'B', text: { en: 'Because machines create energy', ml: 'യന്ത്രങ്ങൾ ഊർജ്ജം സൃഷ്ടിക്കുന്നതുകൊണ്ട്' } },
-        { k: 'C', text: { en: 'Because effort is always greater than load', ml: 'യത്നം എപ്പോഴും ഭാരത്തേക്കാൾ കൂടുതലായതുകൊണ്ട്' } },
-        { k: 'D', text: { en: 'Due to high velocity ratio', ml: 'ഉയർന്ന പ്രവേഗ അനുപാതം കാരണം' } }
-      ],
-      answer: 'A',
-      explanation: {
-        en: 'The efficiency of a machine is always less than 100% because a part of the work input is used to overcome friction and to lift the moving parts of the machine itself.',
-        ml: 'നൽകുന്ന പ്രവൃത്തിയുടെ ഒരു ഭാഗം ഘർഷണം മറികടക്കുന്നതിനും യന്ത്രഭാഗങ്ങൾ ചലിപ്പിക്കുന്നതിനുമായി ഉപയോഗിക്കപ്പെടുന്നതുകൊണ്ടാണ് പ്രായോഗിക യന്ത്രത്തിന്റെ ക്ഷമത എപ്പോഴും 100%-ൽ താഴെയായിരിക്കുന്നത്.'
-      }
-    },
-    {
-      q_id: 'q4',
-      type: 'mcq',
-      stem: {
-        en: 'Classify the following into first, second, and third class levers: Scissors, Nutcracker, Tongs.',
-        ml: 'കത്രിക, പാക്കുവെട്ടി, ചവണ എന്നിവയെ ഒന്നാം, രണ്ടാം, മൂന്നാം വർഗ്ഗ ഉത്തോലകങ്ങളായി തരംതിരിക്കുക.'
+      {
+        "k": "C",
+        "text": {
+          "en": "Solar energy",
+          "ml": "സൗര ഊർജ്ജം"
+        }
       },
-      options: [
-        { k: 'A', text: { en: '1st: Nutcracker, 2nd: Scissors, 3rd: Tongs', ml: '1: പാക്കുവെട്ടി, 2: കത്രിക, 3: ചവണ' } },
-        { k: 'B', text: { en: '1st: Scissors, 2nd: Tongs, 3rd: Nutcracker', ml: '1: കത്രിക, 2: ചവണ, 3: പാക്കുവെട്ടി' } },
-        { k: 'C', text: { en: '1st: Scissors, 2nd: Nutcracker, 3rd: Tongs', ml: '1: കത്രിക, 2: പാക്കുവെട്ടി, 3: ചവണ' } },
-        { k: 'D', text: { en: '1st: Tongs, 2nd: Nutcracker, 3rd: Scissors', ml: '1: ചവണ, 2: പാക്കുവെട്ടി, 3: കത്രിക' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'Scissors - First Class Lever; Nutcracker - Second Class Lever; Tongs - Third Class Lever.',
-        ml: 'കത്രിക - ഒന്നാം വർഗ്ഗ ഉത്തോലകം; പാക്കുവെട്ടി - രണ്ടാം വർഗ്ഗ ഉത്തോലകം; ചവണ - മൂന്നാം വർഗ്ഗ ഉത്തോലകം.'
+      {
+        "k": "D",
+        "text": {
+          "en": "Tidal energy",
+          "ml": "വേലിയേറ്റ ഊർജ്ജം"
+        }
       }
-    },
-    {
-      q_id: 'q5',
-      type: 'mcq',
-      stem: {
-        en: 'What is the main advantage of using a single fixed pulley if its Mechanical Advantage is only 1?',
-        ml: 'ഒരു സ്ഥിരകപ്പിയുടെ യാന്ത്രികലാഭം 1 ആണെങ്കിലും അത് ഉപയോഗിക്കുന്നതുകൊണ്ടുള്ള പ്രധാന പ്രയോജനം എന്ത്?'
-      },
-      options: [
-        { k: 'A', text: { en: 'It reduces the effort required to half', ml: 'ഇത് ആവശ്യമായ യത്നം പകുതിയായി കുറയ്ക്കുന്നു' } },
-        { k: 'B', text: { en: 'It changes the direction of effort to a convenient downward direction', ml: 'യത്നം പ്രയോഗിക്കേണ്ട ദിശ സൗകര്യപ്രദമായി താഴേക്ക് മാറ്റാൻ സഹായിക്കുന്നു' } },
-        { k: 'C', text: { en: 'It increases the velocity ratio', ml: 'ഇത് പ്രവേഗ അനുപാതം വർദ്ധിപ്പിക്കുന്നു' } },
-        { k: 'D', text: { en: 'It increases the efficiency to 100%', ml: 'ഇത് ക്ഷമത 100% ആക്കുന്നു' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'Even though it doesn\'t reduce the effort, a single fixed pulley makes work easier by changing the direction of the applied effort to a convenient downward direction.',
-        ml: 'ഇത് പ്രയോഗിക്കേണ്ട യത്നത്തിന്റെ അളവ് കുറയ്ക്കുന്നില്ലെങ്കിലും, യത്നം പ്രയോഗിക്കേണ്ട ദിശ സൗകര്യപ്രദമായി താഴേക്ക് മാറ്റാൻ സഹായിക്കുന്നു എന്നതാണ് ഇതിന്റെ പ്രധാന പ്രയോജനം.'
-      }
-    },
-    {
-      q_id: 'q6',
-      type: 'mcq',
-      stem: {
-        en: 'Which class of lever always has a mechanical advantage less than 1? Why is it useful?',
-        ml: 'ഏത് വർഗ്ഗ ഉത്തോലകത്തിനാണ് യാന്ത്രികലാഭം എപ്പോഴും ഒന്നിൽ കുറവായിട്ടുള്ളത്? പിന്നെ എന്തിനാണ് അത് ഉപയോഗിക്കുന്നത്?'
-      },
-      options: [
-        { k: 'A', text: { en: 'Second class; to multiply force', ml: 'രണ്ടാം വർഗ്ഗം; ബലം വർദ്ധിപ്പിക്കാൻ' } },
-        { k: 'B', text: { en: 'First class; to change direction', ml: 'ഒന്നാം വർഗ്ഗം; ദിശ മാറ്റാൻ' } },
-        { k: 'C', text: { en: 'Third class; to multiply speed and distance', ml: 'മൂന്നാം വർഗ്ഗം; പ്രവേഗവും ദൂരവും വർദ്ധിപ്പിക്കാൻ' } },
-        { k: 'D', text: { en: 'Third class; to reduce effort', ml: 'മൂന്നാം വർഗ്ഗം; യത്നം കുറയ്ക്കാൻ' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'Third class levers always have an MA < 1. They are useful because they multiply speed and increase the distance moved by the load, making it easier to handle things precisely (like using tongs).',
-        ml: 'മൂന്നാം വർഗ്ഗ ഉത്തോലകങ്ങൾക്ക് യാന്ത്രികലാഭം എപ്പോഴും 1 ൽ താഴെയായിരിക്കും. പ്രവേഗം വർദ്ധിപ്പിക്കാനും ഭാരം സഞ്ചരിക്കുന്ന ദൂരം കൂട്ടാനുമാണ് ഇവ ഉപയോഗിക്കുന്നത് (ഉദാഹരണത്തിന് ചവണ ഉപയോഗിച്ച് വസ്തുക്കൾ കൃത്യതയോടെ പിടിക്കാൻ).'
-      }
-    },
-    {
-      q_id: 'q7',
-      type: 'mcq',
-      stem: {
-        en: 'Calculate the Mechanical Advantage if a load of 500 N is lifted using an effort of 100 N.',
-        ml: '100 N യത്നം ഉപയോഗിച്ച് 500 N ഭാരം ഉയർത്തുമ്പോഴുള്ള യാന്ത്രികലാഭം കണക്കാക്കുക.'
-      },
-      options: [
-        { k: 'A', text: { en: '0.2', ml: '0.2' } },
-        { k: 'B', text: { en: '5', ml: '5' } },
-        { k: 'C', text: { en: '50', ml: '50' } },
-        { k: 'D', text: { en: '50000', ml: '50000' } }
-      ],
-      answer: 'B',
-      explanation: {
-        en: 'Load (L) = 500 N, Effort (E) = 100 N. MA = Load / Effort = 500 / 100 = 5.',
-        ml: 'ഭാരം (L) = 500 N, യത്നം (E) = 100 N. യാന്ത്രികലാഭം (MA) = ഭാരം / യത്നം = 500 / 100 = 5.'
-      }
-    },
-    {
-      q_id: 'q8',
-      type: 'mcq',
-      stem: {
-        en: 'Explain how a Wheel and Axle acts as a simple machine with an example.',
-        ml: 'ചക്രവും അച്ചുതണ്ടും ഒരു ലഘുയന്ത്രമായി പ്രവർത്തിക്കുന്നത് എങ്ങനെ എന്ന് ഉദാഹരണസഹിതം വിശദമാക്കുക.'
-      },
-      options: [
-        { k: 'A', text: { en: 'Effort on large wheel rotates small axle to lift heavy load. Ex: Screwdriver', ml: 'വലിയ ചക്രത്തിൽ യത്നം പ്രയോഗിക്കുമ്പോൾ ചെറിയ അച്ചുതണ്ടിലെ ഭാരത്തെ മറികടക്കുന്നു. ഉദാ: സ്ക്രൂഡ്രൈവർ' } },
-        { k: 'B', text: { en: 'Effort on small axle rotates large wheel. Ex: Bicycle wheel', ml: 'ചെറിയ അച്ചുതണ്ടിൽ യത്നം പ്രയോഗിക്കുമ്പോൾ വലിയ ചക്രം കറങ്ങുന്നു. ഉദാ: സൈക്കിൾ ചക്രം' } },
-        { k: 'C', text: { en: 'It changes the direction of force. Ex: Fixed pulley', ml: 'ഇത് ബലത്തിന്റെ ദിശ മാറ്റുന്നു. ഉദാ: സ്ഥിരകപ്പി' } },
-        { k: 'D', text: { en: 'It reduces friction. Ex: Ball bearings', ml: 'ഇത് ഘർഷണം കുറയ്ക്കുന്നു. ഉദാ: ബോൾ ബെയറിംഗുകൾ' } }
-      ],
-      answer: 'A',
-      explanation: {
-        en: 'In a wheel and axle, a small effort applied on the larger wheel can easily rotate the smaller axle to lift or turn a heavy load. Example: A screwdriver, where the thick handle is the wheel and the thin metal rod is the axle.',
-        ml: 'വലിയ ചക്രത്തിൽ കുറഞ്ഞ യത്നം പ്രയോഗിക്കുമ്പോൾ ചെറിയ അച്ചുതണ്ടിലെ വലിയ ഭാരത്തെ എളുപ്പത്തിൽ മറികടക്കാൻ അഥവാ കറക്കാൻ സാധിക്കുന്നു. ഉദാഹരണം: സ്ക്രൂഡ്രൈവർ (ഇതിലെ കട്ടിയുള്ള പിടിയാണ് ചക്രം, നേർത്ത ഇരുമ്പ് ദണ്ഡാണ് അച്ചുതണ്ട്).'
-      }
-    },
-    {
-      q_id: 'q9',
-      type: 'mcq',
-      stem: {
-        en: 'How are speed and turning effect (torque) affected when a smaller gear drives a larger gear?',
-        ml: 'ഒരു ചെറിയ ഗിയർ വലിയ ഗിയറിനെ കറക്കുമ്പോൾ വേഗതയിലും ടോർക്കിലും എന്ത് മാറ്റം സംഭവിക്കുന്നു?'
-      },
-      options: [
-        { k: 'A', text: { en: 'Speed increases, torque increases', ml: 'വേഗത കൂടുന്നു, ടോർക്ക് കൂടുന്നു' } },
-        { k: 'B', text: { en: 'Speed increases, torque decreases', ml: 'വേഗത കൂടുന്നു, ടോർക്ക് കുറയുന്നു' } },
-        { k: 'C', text: { en: 'Speed decreases, torque increases', ml: 'വേഗത കുറയുന്നു, ടോർക്ക് കൂടുന്നു' } },
-        { k: 'D', text: { en: 'Speed decreases, torque decreases', ml: 'വേഗത കുറയുന്നു, ടോർക്ക് കുറയുന്നു' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'When a smaller gear drives a larger gear, the speed of rotation decreases, but the turning effect (torque) increases.',
-        ml: 'ചെറിയ ഗിയർ വലിയ ഗിയറിനെ കറക്കുമ്പോൾ, തിരിയുന്നതിന്റെ വേഗത കുറയുകയും എന്നാൽ കറക്കാനുള്ള ശേഷി (ടോർക്ക്) കൂടുകയും ചെയ്യുന്നു.'
-      }
-    },
-    {
-      q_id: 'q10',
-      type: 'mcq',
-      stem: {
-        en: 'If a pulley block system has 4 pulleys in total, what will be its theoretical Mechanical Advantage?',
-        ml: 'ഒരു കപ്പി വ്യൂഹത്തിൽ (pulley block system) ആകെ 4 കപ്പികൾ ഉണ്ടെങ്കിൽ, അതിന്റെ സൈദ്ധാന്തിക യാന്ത്രികലാഭം എത്രയായിരിക്കും?'
-      },
-      options: [
-        { k: 'A', text: { en: '1', ml: '1' } },
-        { k: 'B', text: { en: '2', ml: '2' } },
-        { k: 'C', text: { en: '4', ml: '4' } },
-        { k: 'D', text: { en: '8', ml: '8' } }
-      ],
-      answer: 'C',
-      explanation: {
-        en: 'For a pulley block system, the theoretical Mechanical Advantage is equal to the total number of pulleys in the system. Therefore, the MA will be 4.',
-        ml: 'ഒരു കപ്പി വ്യൂഹത്തിൽ, സൈദ്ധാന്തിക യാന്ത്രികലാഭം അതിലെ കപ്പികളുടെ ആകെ എണ്ണത്തിന് തുല്യമായിരിക്കും. അതിനാൽ ഇതിന്റെ യാന്ത്രികലാഭം 4 ആയിരിക്കും.'
-      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Fossil fuels (coal, oil, gas) are non-renewable and will eventually be exhausted.",
+      "ml": "ഫോസിൽ ഇന്ധനങ്ങൾ (കൽക്കരി, എണ്ണ, വാതകം) ഒടുക്കം ഇല്ലാതാകും."
     }
-  ],
-  glossary: [
-    {
-      term: { en: 'Simple Machine', ml: 'ലഘുയന്ത്രം' },
-      definition: {
-        en: 'A device that makes work easier by overcoming a large resistance with a small effort.',
-        ml: 'ചെറിയ യത്നം ഉപയോഗിച്ച് വലിയൊരു പ്രതിരോധത്തെ മറികടക്കാൻ സഹായിക്കുന്ന ഉപകരണം.'
-      }
+  },
+  {
+    "q_id": "u7_q2",
+    "type": "mcq",
+    "stem": {
+      "en": "Which is a renewable energy source?",
+      "ml": "ഒരു നവീകരണ ഊർജ്ജ സ്രോതസ്:"
     },
-    {
-      term: { en: 'Mechanical Advantage (MA)', ml: 'യാന്ത്രികലാഭം (MA)' },
-      definition: {
-        en: 'The ratio of the Load to the Effort applied.',
-        ml: 'ഭാരവും യത്നവും തമ്മിലുള്ള അംശബന്ധം.'
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Petroleum",
+          "ml": "കച്ചഎണ്ണ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Coal",
+          "ml": "കൽക്കരി"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Solar energy",
+          "ml": "സൗര ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Natural gas",
+          "ml": "പ്രകൃതി വാതകം"
+        }
       }
-    },
-    {
-      term: { en: 'Velocity Ratio (VR)', ml: 'പ്രവേഗ അനുപാതം (VR)' },
-      definition: {
-        en: 'The ratio of the distance travelled by the effort to the distance travelled by the load.',
-        ml: 'യത്നം സഞ്ചരിച്ച ദൂരവും ഭാരം സഞ്ചരിച്ച ദൂരവും തമ്മിലുള്ള അംശബന്ധം.'
-      }
-    },
-    {
-      term: { en: 'Lever', ml: 'ഉത്തോലകം' },
-      definition: {
-        en: 'A rigid bar that can rotate freely about a fixed point called the fulcrum.',
-        ml: 'ആധാരബിന്ദുവിനെ അടിസ്ഥാനമാക്കി സ്വതന്ത്രമായി കറങ്ങാൻ കഴിയുന്ന ദൃഢമായ ദണ്ഡ്.'
-      }
-    },
-    {
-      term: { en: 'Gears', ml: 'ഗിയറുകൾ' },
-      definition: {
-        en: 'Toothed wheels used to transmit power and motion from one part of a machine to another.',
-        ml: 'പവറും ചലനവും പ്രേഷണം ചെയ്യാൻ ഉപയോഗിക്കുന്ന പല്ലുകളുള്ള ചക്രങ്ങൾ.'
-      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Solar, wind, hydro, and tidal are all renewable sources.",
+      "ml": "ആദ്യ ഊർജ്ജ, കാറ്റ്, ജലം, വേലിയേറ്റം - ഇവ എല്ലാം നവീകരണ ഊർജ്ജ സ്രോതസ്."
     }
-  ]
-};
+  },
+  {
+    "q_id": "u7_q3",
+    "type": "mcq",
+    "stem": {
+      "en": "What is the main cause of the greenhouse effect?",
+      "ml": "ഹരിത ഗൃഹ പ്രഭാവത്തിന്റെ പ്രധാന കാരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Too much oxygen",
+          "ml": "വളരെ കൂടുതൽ ഓക്സിജൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Greenhouse gases like CO₂, CH₄",
+          "ml": "CO₂, CH₄ തുടങ്ങിയ ഹരിത ഗൃഹ വാതകങ്ങൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Ozone formation",
+          "ml": "ഓസോൺ ഉൽദ്ദേശ്യം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Solar flares",
+          "ml": "സൗര ജ്വാലകൾ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Greenhouse gases trap heat in the atmosphere, causing global warming.",
+      "ml": "ഹരിതഗൃഹ വാതകങ്ങൾ ഭൂ താരം ഉൾക്കൊണ്ടിട്ട് ഭൂ ഊഷ്മാവ് ഉയർത്തുന്നു."
+    }
+  },
+  {
+    "q_id": "u7_q4",
+    "type": "mcq",
+    "stem": {
+      "en": "Photovoltaic cells convert:",
+      "ml": "ഫോട്ടോ വൊൾട്ടൈക് (PV) ഘടകം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Heat to electrical energy",
+          "ml": "ചൂട് → വൈദ്യുതം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Light to electrical energy",
+          "ml": "പ്രകാശം → വൈദ്യുതം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Electric to static energy",
+          "ml": "വൈദ്യുതം → സ്ഥിര ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Chemical to mechanical",
+          "ml": "രാസ → യാന്ത്രിക"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Solar PV cells directly convert sunlight into electricity.",
+      "ml": "ഫോട്ടോ വൊൾട്ടൈക് ഘടകം (Solar Panel) സൂര്യ പ്രകാശം → വൈദ്യുതം."
+    }
+  },
+  {
+    "q_id": "u7_q5",
+    "type": "mcq",
+    "stem": {
+      "en": "A solar cooker concentrates sunlight using:",
+      "ml": "ഒരു സൗര ഉടലുകൂട്ടൽ ഉപകരണം (Solar Cooker) ഏതിനെ ഉപയോഗിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Plane mirror",
+          "ml": "പ്ലേൻ ദർപ്പണം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Concave mirror/reflector",
+          "ml": "ആനത ദർപ്പണം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Glass prism",
+          "ml": "ഗ്ലാസ്സ് പ്രിസ്‌മ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Optical fibre",
+          "ml": "ഒപ്റ്റിക്കൽ ഫൈബർ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Solar cookers use concave reflectors to focus sunlight on food.",
+      "ml": "ആനത ദർപ്പണം (Concave reflector) ഉപ‌ കൊണ്ട് ഭക്ഷ്യ ഘട്ടത്ത് സൂര്യ ഊർജ്ജം കേ‌ൻദ്രീകരിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u7_q6",
+    "type": "mcq",
+    "stem": {
+      "en": "Biogas mainly contains:",
+      "ml": "ബയോ ഗ്യാസ് ഏതിൽ ഉൾക്കൊള്ളുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Hydrogen",
+          "ml": "ഹൈഡ്രജൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Methane (CH₄)",
+          "ml": "മീഥേൻ (CH₄)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Oxygen",
+          "ml": "ഓക്സിജൻ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Carbon dioxide",
+          "ml": "CO₂"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Biogas is primarily methane, produced from organic waste.",
+      "ml": "ജൈവ മാലിന്യ ദ്രവ്യ ഭ്രഷ്ടത്തിൽ ഉൽദ്ദേശ്യം, CH₄ ആണ് ബയോ ഗ്യാസ്."
+    }
+  },
+  {
+    "q_id": "u7_q7",
+    "type": "mcq",
+    "stem": {
+      "en": "The law of conservation of energy states that:",
+      "ml": "ഊർജ്ജ സംരക്ഷണ നിയമം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Energy can be created at will",
+          "ml": "ഊർജ്ജം യഥേഷ്ടം സൃഷ്ടിക്കാം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Energy cannot be created or destroyed, only converted",
+          "ml": "ഊർജ്ജം സൃഷ്ടിക്കാൻ അথവ നശിപ്പിക്കാൻ ആവില്ല, മൂർത്തീഭവനം ആകും"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Total energy in universe keeps decreasing",
+          "ml": "ഊർജ്ജ ആകെ കുറഞ്ഞ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Kinetic energy equals potential energy",
+          "ml": "ഗതിക ഊർജ്ജം = ശേഷി ഊർജ്ജം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Energy can only change form, not be created or destroyed.",
+      "ml": "ഊർജ്ജം സൃഷ്ടിക്കാൻ അഥവ നശിപ്പിക്കാൻ ആകില്ല, ഒരു രൂപത്തിൽ നിന്ന് മറ്റൊന്നിലേക്ക് മൂർത്തീഭവനം ആകും."
+    }
+  },
+  {
+    "q_id": "u7_q8",
+    "type": "mcq",
+    "stem": {
+      "en": "Nuclear fission releases energy by:",
+      "ml": "ന്യൂക്ലിയർ ഫിഷൻ ഊർജ്ജം ഉൽദ്ദേശ്യം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Adding protons to a nucleus",
+          "ml": "ഒരു neumകൽ പ്രോട്ടോൺ ചേർക്കൽ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Splitting a heavy nucleus into smaller ones",
+          "ml": "കനം ഉള്ള ന്യൂക്ലിയസ് ചെറിയ ഭാഗ ആകൽ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Combining two light nuclei",
+          "ml": "ലഘു ന്യൂക്ലിയസ് ഒരുമിക്കൽ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Burning in high temperature",
+          "ml": "ഉയർന്ന ഊഷ്മാവ് ദഹനം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "A heavy nucleus (like U-235) splits into smaller nuclei, releasing huge energy.",
+      "ml": "കനം ഉള്ള U-235 ന്യൂക്ലിയസ് ചെറിയ ഭാഗ ആകൽ ഊർജ്ജ ഉൽദ്ദേശ്യം."
+    }
+  },
+  {
+    "q_id": "u7_q9",
+    "type": "mcq",
+    "stem": {
+      "en": "Nuclear fusion involves:",
+      "ml": "ന്യൂക്ലിയർ ഫ്യൂഷൻ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Splitting of heavy nuclei",
+          "ml": "കനം ഉള്ള ന്യൂക്ലിയസ് ഭ്രഷ്ടം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Joining of light nuclei to form heavier ones",
+          "ml": "ലഘു ന്യൂക്ലിയസ് ഒരുമിപ്പ് ഭാരം ഉള്ള ഉൽദ്ദേശ്യം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Burning of fossil fuels",
+          "ml": "ഫോസിൽ ഇന്ധന ദഹനം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Conversion of heat to motion",
+          "ml": "ചൂട് → ചലനം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Fusion is the energy source of the sun (hydrogen nuclei fusing into helium).",
+      "ml": "ഹൈഡ്രജൻ ന്യൂക്ലിയസ് ഒരുമിപ്പ് ഹീലിയം ആകൽ - ഇതാണ് സൂര്യ ഊർജ്ജ ഉൽദ്ദേശ്യ തത്വം."
+    }
+  },
+  {
+    "q_id": "u7_q10",
+    "type": "mcq",
+    "stem": {
+      "en": "The energy stored in fossil fuels is actually:",
+      "ml": "ഫോസിൽ ഇന്ധനത്തിൽ ഉള്ള ഊർജ്ജ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Geothermal energy",
+          "ml": "ഭൂ‌ ഊഷ്‌മ ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Ancient solar energy stored in organic matter",
+          "ml": "ഒരു കാലത്ത് ഓർഗാനിക് ദ്രവ്യ ശ്രേഖരിച്ച ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Nuclear energy",
+          "ml": "ന്യൂക്ലിയർ ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Tide energy",
+          "ml": "വേലിയേറ്റ ഊർജ്ജം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Fossil fuels were formed from ancient organic matter that stored solar energy.",
+      "ml": "ഫോസിൽ ഇന്ധനം ഒരു കോടി വർഷ മുമ്പ് ജൈവ ദ്രവ്യ ആഗിരണം ചെയ്ത ഊർജ്ജം."
+    }
+  },
+  {
+    "q_id": "u7_q11",
+    "type": "mcq",
+    "stem": {
+      "en": "What is the main advantage of nuclear power over fossil fuels?",
+      "ml": "ഫോസിൽ ഇന്ധനേക്കാൾ ന്യൂക്ലിയർ ഊർജ്ജത്തിന്റെ മേൻമ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "No waste produced",
+          "ml": "മാലിന്യം ഇല്ല"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Generates large energy with little fuel and less greenhouse gases",
+          "ml": "കുറഞ്ഞ ഇന്ധനം, ഉയർന്ന ഊർജ്ജം, ഹരിതഗൃഹ വാതകം ഇല്ല"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Available everywhere",
+          "ml": "എല്ലായിടത്തും ലഭ്യം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Completely safe with no radiation",
+          "ml": "ആകർഷ ഗൂഢ, ആർദ്ര ഇല്ല"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Nuclear power releases more energy per kilogram with low greenhouse gas emissions.",
+      "ml": "ന്യൂക്ലിയർ ഊർജ്ജം ഒരു kg ഇന്ധനത്തിൽ നിന്ന് ഫോസിൽ ഇന്ധനേക്കാൾ ഉയർന്ന ഊർജ്ജം ഉൽദ്ദേശ്യം, ഏറ്റ ഗ്രീൻഹൗസ് ഗ്യാസ് ഇല്ലാതെ."
+    }
+  },
+  {
+    "q_id": "u7_q12",
+    "type": "mcq",
+    "stem": {
+      "en": "Wind energy is harnessed using:",
+      "ml": "കാറ്റ് ഊർജ്ജ ഉൾക്കൊള്ളൽ ഉപകരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Turbines (windmills)",
+          "ml": "ടർബൈൻ (കാറ്റ് കൽ ആൽ)"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Solar panels",
+          "ml": "സൗര ഫലക"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Nuclear reactors",
+          "ml": "ന്യൂക്ലിയർ ർൊ..."
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Geothermal pumps",
+          "ml": "ഭൂ‌ ഊഷ്‌മ പമ്പ്"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Wind turbines (windmills) convert kinetic energy of wind into electricity.",
+      "ml": "ടർബൈൻ (windmill) കാറ്റ് ഗതിക ഊർജ്ജം → വൈദ്യുതം."
+    }
+  },
+  {
+    "q_id": "u7_q13",
+    "type": "mcq",
+    "stem": {
+      "en": "In a hydroelectric power plant, energy is converted from:",
+      "ml": "ജലവൈദ്യുതി ജനേ പ്ലാൻ്റ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Chemical to electrical",
+          "ml": "രാസ → വൈദ്യുതം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Gravitational potential energy to electrical",
+          "ml": "ഗതി শক്তி ഊർജ്ജം → ← →ŒVW →"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Nuclear to electrical",
+          "ml": "ന്യൂക്ലിയർ → ←"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Solar to electrical",
+          "ml": "സൗര → ←"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Water at height has potential energy → flows down → drives turbines → produces electricity.",
+      "ml": "ഏത്തം ഉള്ള ജലം ഗുരുത്വ ഊർജ്ജം → ടർബൈൻ → വൈദ്യുതം."
+    }
+  },
+  {
+    "q_id": "u7_q14",
+    "type": "mcq",
+    "stem": {
+      "en": "Which fuel produces the most pollution?",
+      "ml": "ഏത് ഇന്ധനം ഏറ്റ മലിനീകരണം ഉണ്ടാക്കും?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "CNG",
+          "ml": "CNG"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "LPG",
+          "ml": "LPG"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Coal",
+          "ml": "കൽക്കരി"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Solar",
+          "ml": "സൗര ഊർജ്ജം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Coal combustion releases the most greenhouse gases and pollutants.",
+      "ml": "കൽക്കരി ദഹനം ഏറ്റ ഹരിതഗൃഹ വാതകവും മലിനൻ ഉൽദ്ദേശ്യം."
+    }
+  },
+  {
+    "q_id": "u7_q15",
+    "type": "mcq",
+    "stem": {
+      "en": "Tidal energy is generated by:",
+      "ml": "വേലിയേറ്റ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Waves only",
+          "ml": "തരംഗ മാത്രം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Gravity of moon and sun causing tides",
+          "ml": "ചന്ദ്ര ഗ്ര, സൂര്യ ആകർഷ ഉണ്ടാക്കുന്ന വേലിയേറ്റ/ ഇറക്കം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Ocean temperature difference",
+          "ml": "സമുദ്ര ഊഷ്‌മ അന്തരം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Undersea volcanoes",
+          "ml": "കടൽ ഉള്ളിലെ അഗ്‌നിപർ..."
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Tidal energy comes from the gravitational pull of the Moon and Sun creating tidal highs and lows.",
+      "ml": "ചന്ദ്ര-സൂര്യ ആകർഷ ഉണ്ടാക്കുന്ന വേലിയേറ്റം/ഇറക്കം ഉൽദ്ദേശ്യ ഊർജ്ജം ആണ് tidal energy."
+    }
+  },
+  {
+    "q_id": "u7_q16",
+    "type": "mcq",
+    "stem": {
+      "en": "Solar panels must be placed facing:",
+      "ml": "സൗര ഫലക ഏത് ദിശ ഉൾ‌ ഇരിക്കണം?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "North",
+          "ml": "ഉത്തര ദിശ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "South (in northern hemisphere)",
+          "ml": "ദക്ഷിണ ദിശ (ഉത്തര ഗോളം)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "East",
+          "ml": "കിഴക്ക്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "West",
+          "ml": "പടിഞ്ഞാറ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "In the northern hemisphere, south-facing panels receive the most sunlight.",
+      "ml": "ഉത്തര ഗോളം: ദക്ഷിണ ദിശ ഇരിക്കൽ ഏറ്റ ഊർജ്ജ ലഭ്യ."
+    }
+  },
+  {
+    "q_id": "u7_q17",
+    "type": "mcq",
+    "stem": {
+      "en": "Which of the following does NOT emit greenhouse gases during operation?",
+      "ml": "ഊർജ്ജ ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഉൽദ്ദേശ്യം ഇല്ലാത്ത ഊർജ്ജം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Coal plant",
+          "ml": "കൽക്കരി ജ‌ നേ ഘട്ടം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Oil refinery",
+          "ml": "ഓയിൽ റിഫൈൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Solar power",
+          "ml": "സൗര ഊർജ്ജം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Gas turbine",
+          "ml": "ഗ്യാസ് ടർബൈൻ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Solar energy generates no greenhouse gases during operation.",
+      "ml": "സൗര ഊർജ്ജ ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഇല്ല."
+    }
+  },
+  {
+    "q_id": "u7_q18",
+    "type": "mcq",
+    "stem": {
+      "en": "The unit of electrical energy used for billing is:",
+      "ml": "ഊർജ്ജ ബിൽ ഉദ്ദേശ്യ ഊർജ്ജ യൂണിറ്റ്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Watt",
+          "ml": "വാട്ട്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Joule",
+          "ml": "ജൂൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "kWh (kilowatt-hour)",
+          "ml": "kWh (കിലോ‌ വാട്ട്-ആwatch)"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Calorie",
+          "ml": "കലോറി"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Electricity is billed in kilowatt-hours (kWh), also called a 'unit'.",
+      "ml": "ഒരു 'Unit' = 1 kWh = 1000W × 1hr."
+    }
+  },
+  {
+    "q_id": "u7_q19",
+    "type": "mcq",
+    "stem": {
+      "en": "1 kilowatt-hour (kWh) in Joules is:",
+      "ml": "1 kWh = ? Joules:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "1000 J",
+          "ml": "1000 J"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "3,600,000 J",
+          "ml": "36,00,000 J"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "1,000,000 J",
+          "ml": "10,00,000 J"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "360 J",
+          "ml": "360 J"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "1 kWh = 1000W × 3600s = 3,600,000 J = 3.6 × 10⁶ J.",
+      "ml": "1 kWh = 3.6 × 10⁶ J."
+    }
+  },
+  {
+    "q_id": "u7_q20",
+    "type": "mcq",
+    "stem": {
+      "en": "The most environmentally friendly power plant is:",
+      "ml": "ഏറ്റ പരിസ്ഥ‌ ഭ്ര ഊർജ്ജ ഘട്ടം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Coal power plant",
+          "ml": "കൽക്കരി ജ‌നേ ഘട്ടം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Diesel power plant",
+          "ml": "ഡീസൽ ഘട്ടം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Solar or Wind power plant",
+          "ml": "സൗര/ കാറ്റ് ഊർജ്ജ ഘട്ടം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Nuclear power plant",
+          "ml": "ന്യൂക്ലിയർ ഘട്ടം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Solar and wind power produce no emissions during operation.",
+      "ml": "സൗര-കാറ്റ് ഊർജ്ജ ഘട്ടം ഉൽദ്ദേശ്യ ഘടനയിൽ ഹരിത ഗൃഹ വാതകം ഇല്ല."
+    }
+  },
+  {
+    "q_id": "u7_q21",
+    "type": "mcq",
+    "stem": {
+      "en": "The formula for electrical energy consumed is:",
+      "ml": "ഊർജ്ജ ഉൽദ്ദേശ്യ ഉണ്ടാക്കൽ ഫോർമുല:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "E = V/t",
+          "ml": "E = V/t"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "E = P × t",
+          "ml": "E = P × t"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "E = I/t",
+          "ml": "E = I/t"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "E = R × t",
+          "ml": "E = R × t"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Electrical energy E = Power (P) × time (t), where P is in watts and t in seconds.",
+      "ml": "ഊർജ്ജ E = P × t."
+    }
+  },
+  {
+    "q_id": "u7_q22",
+    "type": "mcq",
+    "stem": {
+      "en": "An electric bulb of 100W working for 5 hours consumes how many units of electricity?",
+      "ml": "100W ബൾബ് 5 hrs പ്രവൃത്ത, ഊർജ്ജ:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "5 units",
+          "ml": "5 Units"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "0.5 units",
+          "ml": "0.5 Units"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "500 units",
+          "ml": "500 Units"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "50 units",
+          "ml": "50 Units"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Energy = 100W × 5h = 500Wh = 0.5 kWh = 0.5 units.",
+      "ml": "100W × 5h = 500Wh = 0.5 kWh."
+    }
+  },
+  {
+    "q_id": "u7_q23",
+    "type": "mcq",
+    "stem": {
+      "en": "BEE (Bureau of Energy Efficiency) promotes:",
+      "ml": "BEE ഉദ്ദേശ്യം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Energy wastage",
+          "ml": "ഊർജ്ജ ദ്ര‌ ..."
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Energy conservation and efficient use of energy",
+          "ml": "ഊർജ്ജ സംർ, ഊർജ്ജ ദക്ഷ ഉൽദ്ദേശ്യ ഉദ്ദേശ്യം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Free electricity for all",
+          "ml": "എല്ലാർക്കും ഉൽദ്ദേശ്യ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Nuclear energy only",
+          "ml": "ന്യൂക്ലിയർ ഊർജ്ജ മാത്ര"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "BEE promotes energy efficiency in India through regulations and star ratings appliances.",
+      "ml": "BEE ഊർജ്ജ ദക്ഷ ഉൽദ്ദേശ്യം Star Rating ഉൾദ്ദേശ്യം."
+    }
+  },
+  {
+    "q_id": "u7_q24",
+    "type": "mcq",
+    "stem": {
+      "en": "Geothermal energy comes from:",
+      "ml": "ഭൂ‌ ഊഷ്‌മ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Burning gases",
+          "ml": "വാതക ദഹ‌‌‌"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Heat from inside the Earth",
+          "ml": "ഭൂ ആഭ്യന്തര താൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Sun's heat only",
+          "ml": "സൂര്യ ചൂട്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Ocean tides",
+          "ml": "സമുദ്ര വേലിയേറ്റ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Geothermal energy uses heat from the Earth's interior.",
+      "ml": "ഭൂ ആഭ്യന്തര ഊഷ്‌മ ആണ് ഭൂ‌ ഊഷ്‌മ ഊർജ്ജ ഉൽദ്ദേശ്യ ആധാരം."
+    }
+  },
+  {
+    "q_id": "u7_q25",
+    "type": "mcq",
+    "stem": {
+      "en": "Which gas is considered the primary greenhouse gas?",
+      "ml": "ഏത് വാതകം ആണ് ഹരിത ഗൃഹ ഗ്യാസ് (GHG)?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Oxygen",
+          "ml": "ഓക്സിജൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Carbon dioxide (CO₂)",
+          "ml": "CO₂"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Nitrogen",
+          "ml": "നൈട്രജൻ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Argon",
+          "ml": "ആർഗൺ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "CO₂ is the main greenhouse gas produced by human activities.",
+      "ml": "CO₂ ആണ് മനുഷ്യ ക്രിയ ഉൽദ്ദേശ്യ പ്രധാന GHG."
+    }
+  },
+  {
+    "q_id": "u7_q26",
+    "type": "mcq",
+    "stem": {
+      "en": "Energy star rating on appliances indicates:",
+      "ml": "ഉപകരണ Star Rating ഉദ്ദേശ്യം ‌:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "The power in watts",
+          "ml": "ശക്തി (Watts)"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Energy efficiency (more stars = more efficient)",
+          "ml": "ഊർജ്ജ ദക്ഷ (കൂടുതൽ നക്ഷത്ര = കൂടുതൽ ദക്ഷ)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Durability in years",
+          "ml": "ഉൽദ്ദേശ്യ കാലാവധി"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Country of manufacture",
+          "ml": "ഉൽദ്ദേശ്യ ദേശം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "More stars = higher efficiency = lower electricity bill.",
+      "ml": "കൂടുതൽ Stars = ഊർജ്ജ ദക്ഷ = കുറഞ്ഞ ബിൽ."
+    }
+  },
+  {
+    "q_id": "u7_q27",
+    "type": "mcq",
+    "stem": {
+      "en": "Which of the following is NOT a method to conserve energy?",
+      "ml": "ഊർജ്ജ സംർ ഉൾദ്ദേശ്യ ഉൽദ്ദേശ്യ ഇല്ലാത്ത:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Using CFL instead of incandescent bulbs",
+          "ml": "CFL = Incandescent ്ജ കുറ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Installing solar panels",
+          "ml": "സൗര ഫലക ഹ..."
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Leaving appliances in standby mode",
+          "ml": "ഉൽദ്ദേശ്യ Standby mode"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Using energy-efficient cars",
+          "ml": "ഊ ദ‌ കാർ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Standby mode still consumes power (\"phantom load\"). Always switch off appliances completely.",
+      "ml": "Standby ഘടന ഊർജ്ജ \"phantom load\" ആയ ഉൽദ്ദേശ്യ, off ആകൽ."
+    }
+  }
+]
+} as const;

@@ -1,0 +1,224 @@
+Q: The human eye can adjust its focal length to see objects at different distances. This property is called: | കണ്ണിന്റെ ഫോക്കൽ ദൈർഘ്യം മാറ്റി വ്യത്യസ്ത ദൂരത്ത് കാണുന്ന ശേഷി:
+A) Accommodation | ഉൾക്കൊള്ളൽ ശക്തി (Accommodation)
+B) Persistence of vision | ദർശന സ്ഥിരത
+C) Dispersion | ഡിസ്പർഷൻ
+D) Refraction | അപവർത്തനം
+ANS: A
+DIFF: easy
+EXP: Accommodation is the ability of the eye to adjust to different distances. | വ്യത്യസ്ത ദൂരത്ത് കാണാൻ കണ്ണ് ഫോക്കൽ ദൂരം ക്രമീകരിക്കുന്ന ശേഷിയേ Accommodation (ഉൾക്കൊള്ളൽ ശക്തി) എന്ന് പറയുന്നു.
+
+Q: The image formed on the retina in a human eye is: | മനുഷ്യ കണ്ണിലെ റെറ്റിനയിൽ ഉണ്ടാകുന്ന ചിത്രം:
+A) Erect and virtual | നിവർന്നതും, മിഥ്യയും
+B) Inverted and real | തലകീഴ്, യഥാർത്ഥം
+C) Erect and magnified | നിവർന്നതും, വലുതും
+D) Inverted and virtual | തലകീഴ്, മിഥ്യ
+ANS: B
+DIFF: easy
+EXP: The eye forms a real, inverted, diminished image on the retina. | കണ്ണ് യഥാർത്ഥം, തലകീഴ്, ചെറിയ ചിത്രം റെറ്റിനയിൽ ഉണ്ടാക്കുന്നു.
+
+Q: The defect of vision where distant objects appear blurred is: | ദൂര ദൃഷ്ടി വൈകല്യം (ദൂരെ ഉള്ളത് കാണാൻ ബുദ്ധിമുട്ട്):
+A) Hypermetropia | ദൂരക്കാഴ്ച (Hypermetropia)
+B) Myopia | സമീപ ദോഷക്കാഴ്ച (Myopia)
+C) Astigmatism | ആസ്ടിഗ്‌മാറ്റിസം
+D) Presbyopia | പ്രെസ്ബയോപ്പിയ
+ANS: B
+DIFF: easy
+EXP: Myopia (shortsightedness) is corrected with a concave/diverging lens. | Myopia-ൽ ദൂരത്ത് ഉള്ളത് കാണൻ ബുദ്ധിമുട്ടായ് തോന്നുകയും, ഇത് കോൺകേവ് ലെൻസ് ഉപയോഗിച്ച് ശരിയാക്കാം.
+
+Q: What corrective lens is used for hypermetropia? | ദൂരക്കാഴ്ചക്ക് ഉപയോഗിക്കുന്ന ലെൻസ്:
+A) Concave lens | കോൺകേവ് ലെൻസ്
+B) Convex lens | കോൺവെക്സ് ലെൻസ്
+C) Cylindrical lens | സിലിണ്ടർ ലെൻസ്
+D) Bifocal lens | ബൈഫോക്കൽ ലെൻസ്
+ANS: B
+DIFF: easy
+EXP: Hypermetropia (farsightedness) is corrected with a convex lens. | ദൂരക്കാഴ്ച (Hypermetropia) ശരിയാക്കാൻ കോൺവെക്സ് ലെൻസ് ഉപയോഗിക്കുന്നു.
+
+Q: The cells in the retina responsible for color vision are: | നിറ ദർശനത്തിന് ഉത്തരവാദിയായ റെറ്റിന കോശങ്ങൾ:
+A) Rods | ദണ്ഡ കോശങ്ങൾ
+B) Cones | ശംഖ കോശങ്ങൾ
+C) Bipolar cells | ദ്വിധ്രുവ കോശങ്ങൾ
+D) Amacrine cells | അമക്രൈൻ കോശങ്ങൾ
+ANS: B
+DIFF: medium
+EXP: Cones detect color (need bright light); Rods detect motion in dim light. | ശംഖ കോശങ്ങൾ (Cones) തിളക്കമേറിയ ആലോകത്തിൽ നിറ ദർശനം നൽകുന്നു.
+
+Q: Primary colors of light are: | പ്രകാശത്തിന്റെ പ്രാഥമിക നിറങ്ങൾ:
+A) Red, Green, Blue | ചുവപ്പ്, പച്ച, നീല
+B) Red, Yellow, Blue | ചുവപ്പ്, മഞ്ഞ, നീല
+C) Red, Orange, Yellow | ചുവപ്പ്, ഓറഞ്ച്, മഞ്ഞ
+D) Violet, Green, Red | വയലറ്റ്, പച്ച, ചുവപ്പ്
+ANS: A
+DIFF: easy
+EXP: The three primary colors of light (additive) are Red, Green, and Blue (RGB). | ആദ്ദേഹ(Additive) നിറ സൂചകം: Red + Green + Blue = White.
+
+Q: Night blindness is caused by deficiency of: | രാത്രി അന്ധത ഉണ്ടാകുന്ന കാരണം:
+A) Vitamin A deficiency | വിറ്റാമിൻ A കുറവ്
+B) Vitamin C deficiency | വിറ്റാമിൻ C കുറവ്
+C) Calcium deficiency | കാൽസ്യം കുറവ്
+D) Iron deficiency | ഇരുമ്പ് കുറവ്
+ANS: A
+DIFF: easy
+EXP: Vitamin A is required for producing rhodopsin in rod cells. | ദണ്ഡ കോശങ്ങളിൽ rhodopsin ഉൽദ്ദേശ്യം ഉണ്ടാക്കാൻ വിറ്റാമിൻ A ആവശ്യമാണ്.
+
+Q: Scattering of sunlight by the atmosphere explains why the sky is: | അന്തരീക്ഷം വ്യാപ്ത ചെയ്ത സൂര്യ പ്രകാശം ആകാശം ഏത് നിറത്തിൽ ആകുന്നു?
+A) Red during noon | ഉച്ചക്ക് ചുവപ്പ്
+B) Blue during the day | പകൽ നീല
+C) Green at dawn | ഉദയ സമയം പച്ച
+D) Yellow at dusk | സന്ധ്യക്ക് മഞ്ഞ
+ANS: B
+DIFF: medium
+EXP: Shorter wavelength blue light scatters more, making the sky appear blue. | ചെറിയ തരംഗദൈർഘ്യ ഉള്ള നീല വ്യാപ്ത ആകുന്നതിനാൽ ആകാശം നീലയായ് കാണാം.
+
+Q: At sunrise/sunset, the sun appears red because: | ഉദയ/അസ്‌ത സമയം സൂര്യൻ ചുവപ്പ് കാണപ്പെടുന്നത്:
+A) Sun emits red light only | സൂര്യൻ ചുവപ്പ് മാത്രം ഉദ്‌വമിക്കുന്നു
+B) Other colors are scattered away, leaving red | ചുവപ്പ് ഒഴിയുള്ള നിറ വ്യാപ്ത ചെയ്ത്
+C) Eye perceives red at longer angles | കണ്ണ് ചരിഞ്ഞ കോണിൽ ചുവപ്പ് കാണും
+D) Temperature drops | താപനില കുറയുന്നു
+ANS: B
+DIFF: medium
+EXP: At horizon, light travels through more atmosphere, scattering blue/violet, leaving reddish hues. | ഉദയ/അസ്‌ത ക്ഷിതിജ ദൂരത്ത് നീലയും വയലറ്റ്ഉം കൂടുതൽ വ്യാപ്ത, ചുവപ്പ് ദൃശ്യമാകുന്നു.
+
+Q: The cells responsible for vision in dim light are: | കുറഞ്ഞ വെളിച്ചത്തിൽ ദർശനം നൽകുന്ന കോശങ്ങൾ:
+A) Cones | ശംഖ കോശങ്ങൾ
+B) Rods | ദണ്ഡ കോശങ്ങൾ
+C) Irises | ഐറിസ്
+D) Pupils | ശ്വേതപടലം
+ANS: B
+DIFF: easy
+EXP: Rods work in low light and detect motion. | ദണ്ഡ കോശങ്ങൾ കുറഞ്ഞ ആലോകത്തിൽ ദർശനം നൽകുന്നു.
+
+Q: Persistence of vision means: | ദർശന സ്ഥിരത:
+A) Eye can't see fast motion | കണ്ണ് വേഗ ചലം കണ്ടെത്തില്ല
+B) A visual impression remains for 1/16s after stimulus | ഉത്തേജനം തീർന്നാലും (1/16 s) ദർശനം നൽകുന്നു
+C) Eye adjusts to darkness | ഇരുട്ടിൽ ചേർന്ന കണ്ണ്
+D) Night vision ability | രാത്രി ദർശന ക്ഷമത
+ANS: B
+DIFF: medium
+EXP: A visual image stays on the retina for about 1/16th of a second. | ഒരു ചിത്രം 1/16 സ. വരെ ദർശനം ബാക്കി.
+
+Q: Far point of a normal human eye is at: | ഒരു ആരോഗ്യ കണ്ണിന്റെ ദൂര ബിന്ദു (far point):
+A) 25 cm | 25 cm
+B) 25 m | 25 m
+C) Infinity | അനന്തത
+D) 10 m | 10 m
+ANS: C
+DIFF: medium
+EXP: A normal eye can see clearly from 25 cm (near point) to infinity (far point). | ആരോഗ്യ കണ്ണ് 25 cm (near point) → Infinity (far point) കാണും.
+
+Q: The near point of a normal human eye is at: | ഒരു ആരോഗ്യ കണ്ണിന്റെ സമീപ ബിന്ദു:
+A) 10 cm | 10 cm
+B) 25 cm | 25 cm
+C) 50 cm | 50 cm
+D) 1 m | 1 m
+ANS: B
+DIFF: easy
+EXP: Normal near point is 25 cm (called least distance of distinct vision). | ഒരു ആരോഗ്യ കണ്ണിന്റെ near point 25 cm ആണ്.
+
+Q: Colorblindness is due to deficiency of: | വർണ്ണ അന്ധത ഉണ്ടാകുന്ന കാരണം:
+A) Vitamin B | വിറ്റാ B
+B) Defective or absent cone cells | ശംഖ കോശ ($\text{Cone}$) ദോഷം
+C) Overactive rods | ദണ്ഡ കോശ ഉദ്ദേശ്യ ആധിക്യം
+D) Inflammation of cornea | കോർണിയ ദൗർബ്ബല്യം
+ANS: B
+DIFF: medium
+EXP: Defective or missing cone cells cause colorblindness. | ശംഖ കോശ (Cone) ദോഷം കൊണ്ടാണ് വർണ്ണ അന്ധത ഉണ്ടാകുന്നത്.
+
+Q: A person with myopia should use: | Myopia ശരിയാക്കാൻ ഉപയോഗിക്കുന്ന ലെൻസ്:
+A) Convex lens | കോൺവെക്സ് ലെൻസ്
+B) Concave lens | കോൺകേവ് ലെൻസ്
+C) Bifocal lens | ബൈഫോക്കൽ ലെൻസ്
+D) Prism | പ്രിസ്‌മ്
+ANS: B
+DIFF: easy
+EXP: Myopia is corrected with a concave (diverging) lens. | Myopia ശരിയാക്കാൻ കോൺകേവ് ലെൻസ് ഉപയോഗിക്കുന്നു.
+
+Q: In presbyopia, the problem is with: | Presbyopia-ൽ ഉണ്ടാകുന്ന പ്രശ്നം:
+A) Cornea degeneration | കോർണിയ ദൗർബ്ബല്യം
+B) Loss of accommodation in old age | വൃദ്ധ ഘടനയിൽ കണ്ണ് ഉൾക്കൊള്ളൽ ശക്തി നഷ്ടം
+C) Excess near vision | അതിരിക്കൽ ആശ്ചര്യ ദർശനം
+D) Rod cell damage | ദണ്ഡ കോശ നാശം
+ANS: B
+DIFF: medium
+EXP: Presbyopia is the loss of accommodation due to aging. | ഉൾക്കൊള്ളൽ ശക്തി (Accommodation) വൃദ്ധ ഘടനയിൽ കുറഞ്ഞ് Presbyopia ഉണ്ടാകുന്നു.
+
+Q: Mixing red and blue light gives: | ചുവപ്പ് + നീല പ്രകാശ മിശ്രണം:
+A) Yellow | മഞ്ഞ
+B) Magenta | Magenta
+C) Cyan | Cyan
+D) White | ശ്വേതം
+ANS: B
+DIFF: medium
+EXP: Red + Blue = Magenta (additive colour mixing). | ചുവപ്പ് + നീല = Magenta (ആദ്ദേഹ (Additive) Color mixing).
+
+Q: Red + Green light gives: | ചുവപ്പ് + പച്ച:
+A) Cyan | Cyan
+B) Magenta | Magenta
+C) Yellow | മഞ്ഞ
+D) White | ശ്വേതം
+ANS: C
+DIFF: medium
+EXP: Red + Green = Yellow (additive mixing). | ചുവപ്പ് + പച്ച = മഞ്ഞ.
+
+Q: Red + Green + Blue (light) gives: | ചുവപ്പ് + പച്ച + നീല:
+A) Brown | ബ്രൗൺ
+B) Black | കറുപ്പ്
+C) White | ശ്വേതം
+D) Violet | വയലറ്റ്
+ANS: C
+DIFF: easy
+EXP: RGB additive mixing = White light. | RGB = ശ്വേത പ്രകാശം.
+
+Q: The lens of the eye is made of: | കണ്ണിന്റെ ലെൻസ് ഉണ്ടാക്കുന്ന ദ്രവ്യം:
+A) Corneal tissue | കോർണിയ കോശം
+B) Transparent elastik protein (crystalline lens) | സ്ഫടിക ലെൻസ്
+C) Fluid only | ദ്രാബം മാത്രം
+D) Glass | ഗ്ലാസ്
+ANS: B
+DIFF: medium
+EXP: The eye's lens (crystalline lens) is a transparent, flexible structure. | കണ്ണ് ലെൻസ് (crystalline lens) ഒരു സ്ഫടിക, ഇലാസ്തിക് ഘടനയാണ്.
+
+Q: The change of colors we see in the sky at different times of day is largely due to: | ദിവസം വ്യത്യസ്ത സമയത്ത് ആകാശ നിറ മാറ്റം:
+A) Absorption by clouds | മേഘ ആഗിരണം
+B) Scattering (Rayleigh scattering) | Rayleigh Scattering (വ്യാപ്ത)
+C) Reflection by atmosphere | ആകാശ പ്രതിഫലനം
+D) Thermal emission | ഊഷ്മക ഉദ്‌വമനം
+ANS: B
+DIFF: medium
+EXP: Rayleigh scattering of sunlight by atmospheric particles causes the different sky colors. | Rayleigh Scattering ആണ് ആകാശ നിറ വ്യതിയാനത്തിന് കാരണം.
+
+Q: The cornea of the eye contributes to: | കണ്ണിന്റെ കോർണിയ:
+A) Color detection | നിറ ദർശനം
+B) Most of the eye's focusing power | ദർശനത്തിന്റെ ഭൂരിഭാഗ ഫോക്കസ് ശക്തി
+C) Pupil dilation | ശ്വേതപടലം വികാസം
+D) Tear production | കണ്ണ് ജലം ഉൽദ്ദേശ്യം
+ANS: B
+DIFF: medium
+EXP: Cornea provides about 2/3 of the total focusing power. | കോർണിയ കണ്ണ് ഫോക്കസ് ശക്തിയുടെ 2/3 ഉൽദ്ദേശ്യം.
+
+Q: Scattering of light (Rayleigh) is inversely proportional to: | Rayleigh Scattering ഏതിനോട് വിപരീത അനുപാതത്തിലായിരിക്കും?
+A) Speed of light | പ്രകാശ വേഗം
+B) Fourth power of wavelength | തരംഗദൈർഘ്യത്തിന്റെ നാലാം ഘാതം (λ⁴)
+C) Frequency | ആവൃത്തി
+D) Amplitude | ആയതി
+ANS: B
+DIFF: hard
+EXP: Rayleigh Scattering intensity ∝ 1/λ⁴, so shorter wavelengths scatter more. | Scattering ∝ 1/λ⁴ - ചെറിയ λ = കൂടുതൽ Scattering.
+
+Q: A camera forms an image similar to the human eye. The film/sensor corresponds to: | ഒരു ക്യാമറ ചിത്രം ഉണ്ടാക്കുന്ന ഭാഗം കണ്ണ് ഘടനയിൽ:
+A) Cornea | കോർണിയ
+B) Iris | ഐറിസ്
+C) Retina | റെറ്റിന
+D) Pupil | ശ്വേതപടലം
+ANS: C
+DIFF: easy
+EXP: The film/sensor detects light like the retina does. | ക്യാമറ ഫിലിം = കണ്ണ് റെറ്റിന.
+
+Q: The iris in the eye controls: | കണ്ണ് ഐറിസ്:
+A) Focusing | ഫോക്കസ്
+B) Light entering (pupil size) | കടക്കുന്ന പ്രകാശ അളവ്
+C) Color detection | നിറ ദർശനം
+D) Tear production | കണ്ണ് ദ്രവ ഉൽദ്ദേശ്യം
+ANS: B
+DIFF: easy
+EXP: Iris controls pupil size to regulate the amount of light entering the eye. | ഐറിസ് ശ്വേതപടലം (Pupil) വലിപ്പം ക്രമീകരിച്ച് ഉൾ കടക്കുന്ന പ്രകാശ അളവ് ക്രമീകരിക്കുന്നു.

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, FileText, HelpCircle, Info, ArrowLeft, Clock, GripVertical, Sparkles, Maximize } from 'lucide-react';
+import { BookOpen, FlaskConical, PenTool, Volume2, CheckCircle2, PlayCircle, Play, FileText, HelpCircle, Info, ArrowLeft, Clock, GripVertical, Sparkles, Maximize } from 'lucide-react';
 import { Language } from '../data/curriculum';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -12,6 +12,13 @@ import { TransformerSimulation } from '../labs/physics/TransformerSimulation';
 import { LeverSimulation } from '../labs/mechanics/LeverSimulation';
 import { PulleySimulation } from '../labs/mechanics/PulleySimulation';
 import { BarMagnetSimulation } from '../labs/physics/BarMagnetSimulation';
+import { SwingAnimation } from '../labs/physics/SwingAnimation';
+import { PendulumSimulation } from '../labs/physics/PendulumSimulation';
+import { ResonanceSimulation } from '../labs/physics/ResonanceSimulation';
+import { WavesSimulation } from '../labs/physics/WavesSimulation';
+import { WaveTypesSimulation } from '../labs/physics/WaveTypesSimulation';
+import { ReflectionSimulation } from '../labs/physics/ReflectionSimulation';
+import { UltrasoundSimulation } from '../labs/physics/UltrasoundSimulation';
 import QuizView from './QuizView';
 import SarfPractice from './SarfPractice';
 
@@ -36,6 +43,8 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   
   const isDars = subjectId === 'sub-meezan';
   const isCompact = lesson.id?.startsWith('pl-isl-');
+  const isBilingual = language === 'bilingual';
+  const isNormal = language === 'ar';
 
   const glossaryLabel = isEnglishSubject 
     ? { en: 'Characters', ml: 'കഥാപാത്രങ്ങൾ', ar: 'شخصيات' }
@@ -87,26 +96,36 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   };
 
   const getEmbedUrl = (url: string) => {
-    let videoId = '';
-    if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1].split('?')[0];
-    } else if (url.includes('watch?v=')) {
-      videoId = url.split('watch?v=')[1].split('&')[0];
-    }
-    
+    let videoId = extractVideoId(url);
     if (videoId) {
-      // Modest branding, no related videos from other channels, and custom colors
-      return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3`;
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3`;
     }
     return url;
   };
 
+  const extractVideoId = (url: string) => {
+    if (url.includes('youtu.be/')) {
+      return url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.includes('watch?v=')) {
+      return url.split('watch?v=')[1].split('&')[0];
+    }
+    return null;
+  };
+
+
   const VideoPlayer = ({ video }: { video: any }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [showButton, setShowButton] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [imgError, setImgError] = useState(false);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+    const videoId = extractVideoId(video.url);
+    const primaryImgSrc = videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
+    const fallbackImgSrc = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : ''; // Often needed if maxres doesn't exist
+
     const resetTimer = () => {
+      if (!isLoaded) return; // Keep button invisible logically if not loaded (the actual fullscreen button isn't shown anyway until play starts often, but we'll show it)
       setShowButton(true);
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => {
@@ -119,9 +138,10 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
       return () => {
         if (timerRef.current) clearTimeout(timerRef.current);
       };
-    }, []);
+    }, [isLoaded]);
 
-    const toggleFullScreen = async () => {
+    const toggleFullScreen = async (e: React.MouseEvent) => {
+      e.stopPropagation(); // Prevent clicking play if they happen to hit fullscreen first magically
       if (!containerRef.current) return;
       
       try {
@@ -150,39 +170,73 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
         <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-brand-purple rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
         <div 
           ref={containerRef} 
-          className="relative aspect-video w-full rounded-[2rem] overflow-hidden bg-black shadow-2xl border border-white/10 group/player"
+          className="relative aspect-video w-full rounded-[2rem] overflow-hidden bg-black shadow-2xl border border-white/10 group/player cursor-pointer"
           onMouseMove={resetTimer}
           onTouchStart={resetTimer}
+          onClick={() => !isLoaded && setIsLoaded(true)}
         >
-          <iframe 
-            src={getEmbedUrl(video.url)} 
-            className="w-full h-full"
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen
-          />
-          {/* Fullscreen Landscape Button */}
-          <button 
-            onClick={toggleFullScreen}
-            className={`absolute bottom-4 right-4 z-20 p-3 bg-black/60 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-all duration-500 flex items-center gap-2 ${showButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
-            title="Fullscreen Landscape"
-          >
-            <Maximize className="w-5 h-5" />
-            <span className="text-xs font-bold sm:hidden">Landscape Fullscreen</span>
-          </button>
+          {!isLoaded ? (
+            // Thumbnail Cover
+            <div className="w-full h-full relative flex items-center justify-center bg-slate-900 group-hover:opacity-95 transition-opacity duration-300">
+              {videoId ? (
+                <>
+                  <img 
+                    src={imgError ? fallbackImgSrc : primaryImgSrc} 
+                    alt={video.title || "Video thumbnail"}
+                    onError={() => !imgError && setImgError(true)}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Subtle dark overlay to make play button pop */}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+                  
+                  {/* Glowing Play Button Pulse effect behind actual icon */}
+                  <div className="absolute w-20 h-20 bg-brand-primary/40 rounded-full blur-xl group-hover:bg-brand-primary/60 transition-all duration-500"></div>
+                  
+                  {/* Official-looking Play Button */}
+                  <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 bg-brand-primary/90 group-hover:bg-brand-primary backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-all duration-300">
+                     <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-current ml-2" />
+                  </div>
+                </>
+              ) : (
+                 <div className="text-white text-center">
+                    <Play className="w-12 h-12 text-slate-500 mx-auto mb-2" />
+                    <span>Click to Play</span>
+                 </div>
+              )}
+            </div>
+          ) : (
+            // Actual Video Frame
+            <iframe 
+              src={getEmbedUrl(video.url)} 
+              className="w-full h-full"
+              title={video.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            />
+          )}
+
+          {/* Fullscreen Landscape Button (Only visible after loaded or always bottom corner) */}
+          {isLoaded && (
+            <button 
+              onClick={toggleFullScreen}
+              className={`absolute bottom-4 right-4 z-20 p-3 bg-black/60 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-all duration-500 flex items-center gap-2 ${showButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+              title="Fullscreen Landscape"
+            >
+              <Maximize className="w-5 h-5" />
+              <span className="text-xs font-bold sm:hidden">Landscape Fullscreen</span>
+            </button>
+          )}
         </div>
-        <h3 className="mt-4 text-xl font-bold text-brand-primary dark:text-white px-2">{video.title}</h3>
       </div>
     );
   };
 
   const TextContent = ({ enText, mlText, arText, className = "" }: any) => {
-    const isBilingual = language === 'bilingual';
     const isInline = className.includes('inline') || isCompact;
     
     if (arText) {
       const showAr = true; // Always show Arabic for reference
-      const showEn = (language === 'en' || isBilingual) && enText;
+      const showEn = language === 'en' && enText;
       const showMl = (language === 'ml' || isBilingual) && mlText;
 
       return (
@@ -204,13 +258,13 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
       );
     }
 
-    const showEn = (language === 'en' || isBilingual) && enText;
+    const showEn = (language === 'en' || isBilingual || isNormal) && enText;
     const showMl = (language === 'ml' || isBilingual) && mlText;
 
     return (
       <span className={`${isInline ? "inline" : "block mb-4"} ${className}`}>
         {showEn && (
-          <span className={`${isInline ? "inline" : "block"} ${isBilingual && !isInline ? "text-slate-800 dark:text-slate-200" : ""}`}>
+          <span className={`${isInline ? "inline" : "block"} ${(isBilingual || isNormal) && !isInline ? "text-slate-800 dark:text-slate-200" : ""}`}>
             {enText}
           </span>
         )}
@@ -224,24 +278,36 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
   };
 
   const MarkdownContent = ({ enText, mlText, arText, className = "" }: any) => {
-    const isBilingual = language === 'bilingual';
+    const markdownComponents = {
+      table: ({ node, ...props }: any) => (
+        <div className="w-full my-6 rounded-inset sm:rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+          <table className="w-full text-left border-collapse break-words" {...props} />
+        </div>
+      ),
+      th: ({ node, ...props }: any) => (
+        <th className="px-1.5 py-2 sm:p-4 font-black bg-slate-50 dark:bg-slate-800/80 text-brand-primary dark:text-brand-accent uppercase tracking-widest text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight" {...props} />
+      ),
+      td: ({ node, ...props }: any) => (
+        <td className="px-1.5 py-2 sm:p-4 text-[11px] sm:text-base text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 break-words leading-tight" {...props} />
+      ),
+    };
     
     if (arText) {
       return (
         <div className={`mb-6 ${className} ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
           {(language === 'ar' || language === 'en' || language === 'ml' || isBilingual) && (
             <div className="prose prose-slate dark:prose-invert max-w-none text-2xl mb-4">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{arText}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{arText}</ReactMarkdown>
             </div>
           )}
-          {(language === 'en' || isBilingual) && enText && (
+          {language === 'en' && enText && (
             <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{enText}</ReactMarkdown>
             </div>
           )}
           {(language === 'ml' || isBilingual) && mlText && (
             <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm mt-2">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{mlText}</ReactMarkdown>
             </div>
           )}
         </div>
@@ -259,12 +325,12 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             <div key={i} className="mb-6">
               {enBlocks[i] && (
                 <div className="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-200">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{enBlocks[i]}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{enBlocks[i]}</ReactMarkdown>
                 </div>
               )}
               {mlBlocks[i] && (
                 <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-sm mt-2">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlBlocks[i]}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{mlBlocks[i]}</ReactMarkdown>
                 </div>
               )}
             </div>
@@ -275,14 +341,14 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
 
     return (
       <div className={`mb-4 ${className}`}>
-        {language === 'en' && (
+        {(language === 'en' || isNormal) && enText && (
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{enText}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{enText}</ReactMarkdown>
           </div>
         )}
-        {language === 'ml' && (
+        {language === 'ml' && mlText && (
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{mlText}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{mlText}</ReactMarkdown>
           </div>
         )}
       </div>
@@ -342,6 +408,76 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
           </div>
         );
       case 'img':
+        if (block.customId === 'swing-animation') {
+          return (
+            <div key={idx} className="my-8">
+              <SwingAnimation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'pendulum-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <PendulumSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'resonance-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <ResonanceSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'waves-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <WavesSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'wave-types-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <WaveTypesSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'reflection-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <ReflectionSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'ultrasound-simulation') {
+          return (
+            <div key={idx} className="my-8">
+              <UltrasoundSimulation />
+              <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
         if (block.customId === 'lens-simulation') {
           return (
             <div key={idx} className="my-8">
@@ -422,12 +558,12 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
         );
       case 'table':
         return (
-          <div key={idx} className="my-8 overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-            <table className="w-full text-left border-collapse min-w-[500px]">
+          <div key={idx} className="my-8 rounded-xl sm:rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+            <table className="w-full text-left border-collapse break-words">
               <thead>
                 <tr className="bg-slate-50 dark:bg-slate-800/50">
                   {block.tableData.headers.map((header: any, i: number) => (
-                    <th key={i} className="p-4 font-black text-brand-primary dark:text-brand-accent uppercase tracking-widest text-xs border-b border-slate-200 dark:border-slate-700">
+                    <th key={i} className="px-1.5 py-2 sm:p-4 font-black text-brand-primary dark:text-brand-accent uppercase tracking-widest text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight">
                       <TextContent enText={header.en} mlText={header.ml} />
                     </th>
                   ))}
@@ -437,7 +573,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
                 {block.tableData.rows.map((row: any[], i: number) => (
                   <tr key={i} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
                     {row.map((cell: any, j: number) => (
-                      <td key={j} className="p-4 text-slate-700 dark:text-slate-300"><TextContent enText={cell.en} mlText={cell.ml} /></td>
+                      <td key={j} className="px-1.5 py-2 sm:p-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 break-words leading-tight"><TextContent enText={cell.en} mlText={cell.ml} /></td>
                     ))}
                   </tr>
                 ))}
@@ -457,6 +593,13 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
         <div className="max-w-3xl mx-auto">
           {/* Hero Section */}
           <div className="mb-8">
+            <button 
+              onClick={onBack}
+              className="hidden lg:flex items-center gap-2 text-slate-500 hover:text-brand-primary dark:text-slate-400 dark:hover:text-white transition-colors mb-6 font-bold"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              {language === 'en' ? 'Back to Chapters' : language === 'ml' ? 'തിരികെ പോവുക' : 'Back to Chapters'}
+            </button>
             <div className="flex items-center gap-2 text-sm text-brand-teal font-bold mb-3">
               <span className="bg-brand-teal/10 dark:bg-brand-teal/20 px-2 py-1 rounded-md">
                 {selectedClass === '11' ? 'Class 11' : 'Class 10'}
@@ -467,90 +610,99 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             <h1 className="font-display text-4xl font-extrabold text-brand-primary dark:text-white mb-4 tracking-tight">
               {renderInline(lesson.title)}
             </h1>
-            
-            {/* Learning Objectives */}
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
-              <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                {language === 'en' ? 'Learning Objectives' : language === 'ml' ? 'പഠന ലക്ഷ്യങ്ങൾ' : 'Learning Objectives / പഠന ലക്ഷ്യങ്ങൾ'}
-              </h3>
-              <ul className="space-y-2">
-                {lesson.learning_objectives.map((lo: any, idx: number) => (
-                  <li key={lo.id || idx} className="flex items-start gap-2 text-slate-700 dark:text-slate-300 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 mt-1.5 flex-shrink-0"></span>
-                    <span>{renderInline(lo.text || lo)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
-          {/* Tabs */}
-          <div className="flex border-b border-slate-200 dark:border-slate-700 mb-6 sm:mb-8 overflow-x-auto scrollbar-hide sticky top-0 bg-white dark:bg-slate-900 z-10 -mx-4 sm:-mx-8 px-4 sm:px-8">
-            <button
-              onClick={() => setActiveTab('read')}
-              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'read' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-            >
-              <FileText className="w-4 h-4" />
-              <span className={activeTab === 'read' ? 'inline' : 'hidden sm:inline'}>
-                {language === 'en' ? 'Read' : language === 'ml' ? 'വായിക്കുക' : 'Read / വായിക്കുക'}
-              </span>
-            </button>
-            <button
-              onClick={() => setActiveTab('video')}
-              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'video' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-            >
-              <PlayCircle className="w-4 h-4" />
-              <span className={activeTab === 'video' ? 'inline' : 'hidden sm:inline'}>
-                {language === 'en' ? 'Video' : language === 'ml' ? 'വീഡിയോ' : 'Video / വീഡിയോ'}
-              </span>
-            </button>
-            <button
-              onClick={() => setActiveTab('quiz')}
-              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'quiz' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-            >
-              <HelpCircle className="w-4 h-4" />
-              <span className={activeTab === 'quiz' ? 'inline' : 'hidden sm:inline'}>
-                {language === 'en' ? 'Quiz' : language === 'ml' ? 'ക്വിസ്' : 'Quiz / ക്വിസ്'}
-              </span>
-            </button>
-            {lesson.sample_questions && (
+          {/* Tabs - Enhanced UI */}
+          <div className="sticky top-0 z-20 bg-brand-bg/80 dark:bg-slate-950/80 backdrop-blur-md -mx-4 sm:-mx-8 px-4 sm:px-8 py-4 mb-8">
+            <div className="flex p-1.5 bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-x-auto scrollbar-hide">
               <button
-                onClick={() => setActiveTab('sample_questions')}
-                className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'sample_questions' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                onClick={() => setActiveTab('read')}
+                className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'read' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
               >
-                <HelpCircle className="w-4 h-4" />
-                <span className={activeTab === 'sample_questions' ? 'inline' : 'hidden sm:inline'}>
-                  {language === 'en' ? 'Questions' : language === 'ml' ? 'ചോദ്യങ്ങൾ' : 'Questions / ചോദ്യങ്ങൾ'}
+                <FileText className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'read' ? 'scale-110' : ''}`} />
+                <span>
+                  {language === 'en' ? 'Read' : language === 'ml' ? 'വായിക്കുക' : 'Read / വായിക്കുക'}
                 </span>
               </button>
-            )}
-            {lesson.translation && (
               <button
-                onClick={() => setActiveTab('translation')}
-                className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'translation' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                onClick={() => setActiveTab('video')}
+                className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'video' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
               >
-                <Volume2 className="w-4 h-4" />
-                <span className={activeTab === 'translation' ? 'inline' : 'hidden sm:inline'}>
-                  {language === 'en' ? 'Translation' : language === 'ml' ? 'വിവർത്തനം' : 'Translation / വിവർത്തനം'}
+                <PlayCircle className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'video' ? 'scale-110' : ''}`} />
+                <span>
+                  {language === 'en' ? 'Video' : language === 'ml' ? 'വീഡിയോ' : 'Video / വീഡിയോ'}
                 </span>
               </button>
-            )}
-            <button
-              onClick={() => setActiveTab('glossary')}
-              className={`px-3 sm:px-6 py-3 font-medium text-xs sm:text-sm border-b-2 transition-all flex items-center justify-center gap-2 flex-1 lg:hidden whitespace-nowrap ${activeTab === 'glossary' ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span className={activeTab === 'glossary' ? 'inline' : 'hidden sm:inline'}>
-                {renderInline(glossaryLabel)}
-              </span>
-            </button>
+              <button
+                onClick={() => setActiveTab('quiz')}
+                className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'quiz' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              >
+                <HelpCircle className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'quiz' ? 'scale-110' : ''}`} />
+                <span>
+                  {language === 'en' ? 'Quiz' : language === 'ml' ? 'ക്വിസ്' : 'Quiz / ക്വിസ്'}
+                </span>
+              </button>
+              {lesson.sample_questions && (
+                <button
+                  onClick={() => setActiveTab('sample_questions')}
+                  className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'sample_questions' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                >
+                  <HelpCircle className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'sample_questions' ? 'scale-110' : ''}`} />
+                  <span>
+                    {language === 'en' ? 'Questions' : language === 'ml' ? 'ചോദ്യങ്ങൾ' : 'Questions / ചോദ്യങ്ങൾ'}
+                  </span>
+                </button>
+              )}
+              {lesson.translation && (
+                <button
+                  onClick={() => setActiveTab('translation')}
+                  className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap ${activeTab === 'translation' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                >
+                  <Volume2 className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'translation' ? 'scale-110' : ''}`} />
+                  <span>
+                    {language === 'en' ? 'Translation' : language === 'ml' ? 'വിവർത്തനം' : 'Translation / വിവർത്തനം'}
+                  </span>
+                </button>
+              )}
+              <button
+                onClick={() => setActiveTab('glossary')}
+                className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 lg:hidden whitespace-nowrap ${activeTab === 'glossary' ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-md scale-105' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+              >
+                <BookOpen className={`w-4 h-4 transition-transform duration-300 ${activeTab === 'glossary' ? 'scale-110' : ''}`} />
+                <span>
+                  {renderInline(glossaryLabel)}
+                </span>
+              </button>
+            </div>
           </div>
 
           {/* Tab Content */}
           <div className="pb-20">
             {activeTab === 'read' && (
-              <div className="space-y-4">
+              <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {/* Learning Objectives - Now inside Read tab */}
+                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 sm:p-8 shadow-sm">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-black text-brand-primary dark:text-white leading-tight">
+                        {language === 'en' ? 'Learning Objectives' : language === 'ml' ? 'പഠന ലക്ഷ്യങ്ങൾ' : 'Learning Objectives / പഠന ലക്ഷ്യങ്ങൾ'}
+                      </h3>
+                      <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">What you will learn in this chapter</p>
+                    </div>
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {lesson.learning_objectives.map((lo: any, idx: number) => (
+                      <li key={lo.id || idx} className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-2xl group hover:border-emerald-200 dark:hover:border-emerald-900 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                        <span className="text-slate-700 dark:text-slate-300 text-sm font-medium leading-relaxed">{renderInline(lo.text || lo)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 {!lesson.content.blocks || lesson.content.blocks.length === 0 ? (
                   <div className="prose prose-slate dark:prose-invert max-w-none">
                     <MarkdownContent 

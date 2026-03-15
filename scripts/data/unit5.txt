@@ -1,0 +1,224 @@
+Q: Refraction is the bending of light when it passes: | അപവർത്തനം എന്നത് പ്രകാശം കടന്നുപോകുമ്പോൾ:
+A) Through one medium | ഒരു മാധ്യമത്തിലൂടെ
+B) From one medium to another | ഒരു മാധ്യമത്തിൽ നിന്ന് മറ്റൊരു മാധ്യമത്തിലേക്ക്
+C) Along the same surface | അതേ ഉപരിതലത്തിൽ
+D) Through a mirror | ദർപ്പണത്തിലൂടെ
+ANS: B
+DIFF: easy
+EXP: Refraction occurs when light changes speed as it moves between media. | പ്രകാശം ഒരു മാധ്യമം മാറുമ്പോൾ വേഗം മാറി, ദിശ മാറ്റം ഉണ്ടാക്കുന്നു - ഇതാണ് അപവർത്തനം.
+
+Q: Snell's Law is: | സ്നെൽ നിയമം:
+A) n1 sin θ1 = n2 sin θ2 | n1 sin θ1 = n2 sin θ2
+B) n1 cos θ1 = n2 cos θ2 | n1 cos θ1 = n2 cos θ2
+C) n1/θ1 = n2/θ2 | n1/θ1 = n2/θ2
+D) n1 + n2 = θ1 + θ2 | n1 + n2 = θ1 + θ2
+ANS: A
+DIFF: medium
+EXP: Snell's Law states n1 sinθ1 = n2 sinθ2 at the interface. | stellt n1 sinθ1 = n2 sinθ2 ആണ് Snell's Law.
+
+Q: When light passes from air to glass, it bends: | പ്രകാശം വായുവിൽ നിന്ന് ഗ്ലാസ്സിലേക്ക് കടക്കുമ്പോൾ:
+A) Away from the normal | നോർമലിൽ നിന്ന് അകന്ന്
+B) Toward the normal | നോർമലിലേക്ക് അടുത്ത്
+C) Does not bend | ദിശ മാറ്റമില്ല
+D) Reflects back | തിരകെ പ്രതിഫലിക്കുന്നു
+ANS: B
+DIFF: easy
+EXP: Going from less-dense (air) to more-dense (glass) bends light toward the normal. | കുറഞ്ഞ ഡെൻസിറ്റിയിൽ നിന്ന് കൂടിയ ഡെൻസിറ്റിയിലേക്ക് → നോർമലിലേക്ക് ദിശ മാറ്റം.
+
+Q: The refractive index of a medium is: | ഒരു മാധ്യമത്തിന്റെ അപവർത്തന സൂചിക:
+A) Speed of light in vacuum / speed in medium | ശൂന്യസ്ഥലത്ത് വേഗം / മാധ്യമത്തിൽ വേഗം
+B) Speed of light in medium / speed in vacuum | മാധ്യമത്തിൽ / ശൂന്യസ്ഥലത്ത്
+C) The angle of refraction | അപവർത്തന കോണ
+D) Same as frequency of light | പ്രകാശ ആവൃത്തി
+ANS: A
+DIFF: medium
+EXP: n = c/v where c = speed in vacuum, v = speed in medium. | n = c/v - ഇതാണ് അപവർത്തന സൂചിക.
+
+Q: A medium with higher refractive index is called: | ഉയർന്ന അപവർത്തന സൂചി ഉള്ള മാധ്യമം:
+A) Optically rarer | ഒപ്റ്റിക്കലി റെയർ (Optically rarer)
+B) Optically denser | ഒപ്റ്റിക്കലി ഡെൻസർ (Optically denser)
+C) Electrically conductor | വൈദ്യുത ചാലകം
+D) Magnetically active | കാന്തിക സജീവം
+ANS: B
+DIFF: medium
+EXP: Higher n = optically denser medium. | ഉയർന്ന n = ഒപ്റ്റിക്കലി ഡെൻസർ.
+
+Q: The dispersion of white light through a prism results in: | ഒരു പ്രിസ്മ്, ശ്വേത പ്രകാശം കടന്നുപോകുമ്പോൾ:
+A) Only reflection | പ്രതിഫലനം മാത്രം
+B) A spectrum (rainbow of colours) | ഒരു സ്പെക്ട്രം (നിറ ശ്രേണി)
+C) White light becoming brighter | ശ്വേത പ്രകാശം കൂടുതൽ ശോഭ കൂടുന്നു
+D) Light speeding up | പ്രകാശം വേഗം കൂടുന്നു
+ANS: B
+DIFF: easy
+EXP: A prism disperses white light into its constituent colors (VIBGYOR). | ശ്വേത പ്രകാശം VIBGYOR ഘടകങ്ങളായി വേർതിരിക്കുന്നു.
+
+Q: The order of colors in the visible spectrum from violet to red is called: | ദൃശ്യ സ്പെക്ട്രത്തിൽ നിറ ക്രമം ഉദ്ദേശിക്കുന്ന ചുരുക്കം:
+A) ROYGBIV | ROYGBIV
+B) VIBGYOR | VIBGYOR
+C) VIBGRYO | VIBGRYO
+D) RGBVCYI | RGBVCYI
+ANS: B
+DIFF: easy
+EXP: VIBGYOR: Violet, Indigo, Blue, Green, Yellow, Orange, Red. | VIBGYOR: വയലറ്റ്, ഇൻഡിഗോ, ബ്ലൂ, ഗ്രീൻ, യെല്ലോ, ഓറഞ്ച്, റെഡ്.
+
+Q: A convex lens can be used as a: | ഒരു കോൺവെക്സ് ലെൻസ് ഉപയോഗം:
+A) Diverging lens | വികേന്ദ്രീകരണ ലെൻസ്
+B) Magnifying glass | മാഗ്നിഫൈ ഗ്ലാസ്
+C) Rear-view mirror | പിൻ-കാഴ്ച ദർപ്പണം
+D) Concave mirror | ആനത ദർപ്പണം
+ANS: B
+DIFF: easy
+EXP: A convex lens acts as a magnifying glass when the object is within its focal length. | വസ്തു F-ൻ ഉള്ളിൽ ഇരിക്കുമ്പോൾ കോൺവെക്സ് ലെൻസ് മാഗ്നിഫൈ ഗ്ലാസ്സ് ആയി പ്രവർത്തിക്കുന്നു.
+
+Q: When light goes from glass to air, it bends: | ഗ്ലാസ്സ് → വായു:
+A) Toward the normal | നോർമലിലേക്ക്
+B) Away from the normal | നോർമലിൽ നിന്ന് അകന്ന്
+C) Does not bend | ദിശ മാറ്റമില്ല
+D) Completely reflects | പൂർണ പ്രതിഫലനം
+ANS: B
+DIFF: easy
+EXP: Going from dense (glass) to less-dense (air) bends light away from normal. | ഡെൻസ് → ലൈറ്റ് = നോർമലിൽ നിന്ന് അകലുന്നു.
+
+Q: A rainbow is formed due to: | മഴവില്ല് ഉണ്ടാകുന്നത്:
+A) Reflection only | പ്രതിഫലനം മാത്രം
+B) Refraction, dispersion and internal reflection | അപവർത്തനം, ഡിസ്പർഷൻ, ആന്തരിക പ്രതിഫലനം
+C) Diffraction | ഡിഫ്രാക്ഷൻ
+D) Interference | ഇന്റർഫെറൻസ്
+ANS: B
+DIFF: medium
+EXP: Rainbow forms by water droplets dispersing, refracting and internally reflecting sunlight. | ജലബിന്ദുക്കൾ സൂര്യ പ്രകാശം അപവർത്തനം, ഡിസ്പർഷൻ, ആന്തരിക പ്രതിഫലനം ചെയ്ത് മഴവില്ല് ഉണ്ടാകുന്നു.
+
+Q: Which colour of light is most deviated while passing through a prism? | ഒരു പ്രിസ്മ്ഗണം കടക്കുമ്പോൾ ഏറ്റവും കൂടുതൽ ദിശ മാറ്റം ഉണ്ടാകുന്ന നിറം:
+A) Red | ചുവപ്പ്
+B) Yellow | മഞ്ഞ
+C) Green | പച്ച
+D) Violet | വയലറ്റ്
+ANS: D
+DIFF: medium
+EXP: Violet has the highest refractive index, so it bends the most. | ഏറ്റവും ഉയർന്ന അപവർത്തന സൂചി ഉള്ള വയലറ്റ് ഏറ്റവും കൂടുതൽ ദിശ മാറ്റം ഉണ്ടാകുന്നു.
+
+Q: Refractive index of water is approximately: | ജലത്തിന്റെ അപവർത്തന സൂചിക ഏകദേശം:
+A) 1.0 | 1.0
+B) 1.33 | 1.33
+C) 1.5 | 1.5
+D) 2.4 | 2.4
+ANS: B
+DIFF: medium
+EXP: n of water ≈ 1.33, glass ≈ 1.5, diamond ≈ 2.4. | ജലം ≈ 1.33, ഗ്ലാസ്സ് ≈ 1.5, ഡയമണ്ട് ≈ 2.4.
+
+Q: Lens formula (Cartesian) is: | ലെൻസ് സമവാക്യം (കാർട്ടീഷ്യൻ):
+A) 1/f = 1/v + 1/u | 1/f = 1/v + 1/u
+B) 1/f = 1/v - 1/u | 1/f = 1/v - 1/u
+C) f = v - u | f = v - u
+D) 1/f = v - u | 1/f = v - u
+ANS: B
+DIFF: medium
+EXP: Lens formula: 1/f = 1/v - 1/u | ലെൻസ് സമവാക്യം: 1/f = 1/v - 1/u.
+
+Q: Dioptre is a unit of: | ഡയോപ്റ്റർ ഏതിന്റെ യൂണിറ്റ് ആണ്?
+A) Focal length | ഫോക്കസ് ദൂരം
+B) Power of lens | ലെൻസ് പവർ
+C) Refractive index | അപവർത്തന സൂചിക
+D) Wavelength | തരംഗദൈർഘ്യം
+ANS: B
+DIFF: easy
+EXP: Power is measured in Dioptres (D) = 1/f (f in metres). | ലെൻസ് പവർ D = 1/f (f മീറ്ററിൽ).
+
+Q: An object placed beyond 2F in a convex lens forms an image: | കോൺവെക്സ് ലെൻസിൽ 2F-ൽ വിദൂരത്ത് ഇരിക്കുന്ന വസ്തുവിന്റെ ചിത്രം:
+A) At 2F, same size | 2F-ൽ, ഒരേ വലിപ്പം
+B) Between F and 2F, diminished, real, inverted | F-നും 2F-നും ഇടയിൽ, ചെറുത്, യഥാർത്ഥം, തലകീഴ്
+C) Beyond 2F magnified | 2F-ൽ, വലുത്
+D) Virtual, erect | മിഥ്യ, നിവർന്നത്
+ANS: B
+DIFF: hard
+EXP: Beyond 2F → Image between F and 2F, diminished, real, inverted. | 2F-ൻ അപ്പുറം → F-നും 2F-നും ഇടയിൽ ചിത്രം, ചെറുത്, യഥാർത്ഥം.
+
+Q: Why does a swimming pool appear shallower than its actual depth? | ഒരു നീന്തൽ കുളം അതിന്റെ യഥാർഥ ആഴത്തേക്കാൾ ആഴം കുറഞ്ഞതായി കാണപ്പെടുന്നത് എന്തുകൊണ്ട്?
+A) Reflection of water | ജലത്തിന്റെ പ്രതിഫലനം
+B) Refraction of light at the water surface | ജല ഉപരിതലത്തിൽ അപവർത്തനം
+C) Different depth at ends | അറ്റങ്ങളിൽ ആഴ വ്യത്യാസം
+D) Colour of water | ജലത്തിന്റെ നിറം
+ANS: B
+DIFF: easy
+EXP: Refraction at the air-water surface makes objects appear closer (shallower). | ജല ഉപരിതലത്തിൽ ഉണ്ടാകുന്ന അപവർത്തനം കൊണ്ട് കുളം ആഴം കുറഞ്ഞതായി തോന്നും.
+
+Q: Which color of light travels fastest in glass? | ഗ്ലാസ്സിൽ ഏറ്റവും കൂടുതൽ വേഗതയോടെ സഞ്ചരിക്കുന്ന നിറം:
+A) Violet | വയലറ്റ്
+B) Green | പച്ച
+C) Yellow | മഞ്ഞ
+D) Red | ചുവപ്പ്
+ANS: D
+DIFF: hard
+EXP: Red light has lowest refractive index in glass, hence fastest speed. | ഏറ്റവും കുറഞ്ഞ n ഉള്ള ചുവപ്പ് ഗ്ലാസ്സിൽ ഏറ്റവും വേഗത്തിൽ സഞ്ചരിക്കുന്നു.
+
+Q: A concave lens is also called: | ഒരു കോൺകേവ് ലെൻസ് ഏത് പേരിൽ അറിയപ്പെടുന്നു?
+A) Converging lens | കേന്ദ്രീകരണ ലെൻസ്
+B) Diverging lens | വികേന്ദ്രീകരണ ലെൻസ്
+C) Thick lens | കട്ടി ലെൻസ്
+D) Simple lens | ലളിത ലെൻസ്
+ANS: B
+DIFF: easy
+EXP: Concave lens diverges light. | കോൺകേവ് ലെൻസ് വികേന്ദ്രീകരണ ലെൻസ് ആണ്.
+
+Q: In human eye, refraction mainly occurs at: | മനുഷ്യ കണ്ണിൽ അപവർത്തനം ഉണ്ടാകുന്ന പ്രധാന ഭാഗം:
+A) Retina | റെറ്റിന
+B) Iris | ഐറിസ്
+C) Cornea | കോർണിയ
+D) Pupil | ശ്വേതപടലം
+ANS: C
+DIFF: medium
+EXP: Most refraction in the eye occurs at the cornea (~ 2/3 of total). | കണ്ണിൽ 2/3 അപവർത്തനവും കോർണിയ ഉണ്ടാക്കുന്നു.
+
+Q: If a lens has power +2.5 D, its focal length is: | ഒരു ലെൻസ് +2.5 D ആണെങ്കിൽ f:
+A) 4 m | 4 m
+B) 0.4 m | 0.4 m
+C) 2.5 m | 2.5 m
+D) 1 m | 1 m
+ANS: B
+DIFF: hard
+EXP: f = 1/P = 1/2.5 = 0.4 m. | f = 1/P = 1/2.5 = 0.4 m.
+
+Q: The critical angle for glass-air interface is approximately: | ഗ്ലാസ്-വായു ഇന്റർഫേസിന്റെ ക്രിട്ടിക്കൽ ആംഗിൾ ഏകദേശം:
+A) 90° | 90°
+B) 42° | 42°
+C) 30° | 30°
+D) 60° | 60°
+ANS: B
+DIFF: hard
+EXP: Critical angle for glass-air ≈ 42°. | ഗ്ലാസ്-വായു ക്രിട്ടിക്കൽ ആംഗിൾ ≈ 42°.
+
+Q: What is the main function of optical fibres? | ഒപ്റ്റിക്കൽ ഫൈബർ ഉപയോഗം:
+A) Measuring temperature | താപനില അളക്കൽ
+B) Carrying light/data using TIR | TIR ഉപയോഗിച്ച് ഡേറ്റ/ പ്രകാശം കൊണ്ടുപോകൽ
+C) Generating electricity | വൈദ്യുതി ഉൽപ്പാദനം
+D) Absorbing heat | ചൂട് ആഗിരണം
+ANS: B
+DIFF: easy
+EXP: Optical fibres use total internal reflection (TIR) to transmit light or data. | ഒപ്റ്റിക്കൽ ഫൈബർ ടോട്ടൽ ഇന്റേണൽ റിഫ്ലക്ഷൻ ഉപയോഗിച്ച് ഡേറ്റ കൊണ്ടുപോകുന്നു.
+
+Q: If we combine two lenses of powers P1 and P2, the combined power is: | P1 ഉം P2 ഉം ഉള്ള രണ്ട് ലെൻസ് ചേർക്കുമ്പോൾ:
+A) P1 × P2 | P1 × P2
+B) P1 + P2 | P1 + P2
+C) P1 - P2 | P1 - P2
+D) P1 / P2 | P1 / P2
+ANS: B
+DIFF: medium
+EXP: Combined power P = P1 + P2. | ചേർന്ന ലെൻസ് പവർ P = P1 + P2.
+
+Q: A straw appears bent when placed in water due to: | ജലത്തിൽ ഒരു കമ്പ് ഇരിക്കുമ്പോൾ ഒടിഞ്ഞ് കാണപ്പെടുന്നത്:
+A) Reflection | പ്രതിഫലനം
+B) Refraction | അപവർത്തനം
+C) Dispersion | ഡിസ്പർഷൻ
+D) Diffraction | ഡിഫ്രാക്ഷൻ
+ANS: B
+DIFF: easy
+EXP: Refraction at the water surface makes the straw appear bent. | ജല ഉപരിതലത്തിൽ ഉണ്ടാകുന്ന അപവർത്തനം കൊണ്ട് കമ്പ് ഒടിഞ്ഞ് കാണപ്പെടുന്നു.
+
+Q: A concave lens with f = -25 cm has power: | f = -25 cm ഉള്ള ലെൻസ് പവർ:
+A) +4 D | +4 D
+B) -4 D | -4 D
+C) -25 D | -25 D
+D) +0.25 D | +0.25 D
+ANS: B
+DIFF: hard
+EXP: P = 1/f = 1/(-0.25m) = -4 D. | P = 1/f = 1/(-0.25) = -4 D.

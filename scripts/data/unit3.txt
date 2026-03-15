@@ -1,0 +1,242 @@
+Q: Electromagnetic induction was discovered by: | വൈദ്യുതകാന്തിക ഇൻഡക്ഷൻ കണ്ടെത്തിയ ശാസ്ത്രജ്ഞൻ:
+A) Oersted | ഓർസ്റ്റെഡ്
+B) Maxwell | മാക്സ്വെൽ
+C) Michael Faraday | മൈക്കൽ ഫാരഡേ
+D) Edison | എഡിസൺ
+ANS: C
+DIFF: easy
+EXP: Faraday discovered that a changing magnetic field induces an EMF. | മൈക്കൽ ഫാരഡേ ആണ് 1831-ൽ വൈദ്യുതകാന്തിക ഇൻഡക്ഷൻ കണ്ടെത്തിയത്.
+
+Q: The phenomenon generating electricity by changing magnetic flux through a coil is called: | ഒരു കോയിലിലൂടെ കടന്നുപോകുന്ന കാന്തിക ഫ്ലക്സ് മാറ്റി വൈദ്യുതി ഉൽപ്പാദിക്കുന്ന പ്രതിഭാസം:
+A) Magnetic saturation | കാന്തിക സൂക്ഷ്‌മഘടന
+B) Electromagnetic induction | വൈദ്യുതകാന്തിക ഇൻഡക്ഷൻ
+C) Electric discharge | വൈദ്യുത ഡിസ്ചാർജ്
+D) Galvanism | ഗൽവാനിസം
+ANS: B
+DIFF: easy
+EXP: Electromagnetic induction is the basis of generators and transformers. | ജനറേറ്ററുകളുടെ അടിസ്ഥാനമാണ് ഇൻഡക്ഷൻ.
+
+Q: Faraday's Law states that induced EMF is proportional to: | ഫാരഡേ നിയമം പ്രകാരം ഉൽപ്രേരിത EMF ആനുപാതികമാണ്:
+A) The strength of the magnet | കാന്തത്തിന്റെ ശക്തി
+B) The rate of change of magnetic flux | കാന്തിക ഫ്ലക്സ് മാറ്റത്തിന്റെ നിരക്ക്
+C) The temperature of the coil | കോയിലിന്റെ താപനില
+D) The resistance of the wire | കമ്പിയുടെ പ്രതിരോധം
+ANS: B
+DIFF: medium
+EXP: EMF is proportional to rate of change of flux. | ഫ്ലക്സ് മാറ്റം വേഗത്തിൽ ആകുമ്പോൾ ഉൽപ്രേരിത EMF കൂടുന്നു.
+
+Q: Lenz's Law is related to the conservation of: | ലെൻസ് നിയമം ഏതിന്റെ സംരക്ഷണവുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു?
+A) Charge | ചാർജ്
+B) Momentum | ആക്കം
+C) Energy | ഊർജ്ജം
+D) Mass | ദ്രവ്യമാനം
+ANS: C
+DIFF: hard
+EXP: Lenz's Law says induced current opposes change, conserving energy. | ഊർജ്ജ സംരക്ഷണ നിയമം ഉൾക്കൊള്ളിക്കുന്ന നിയമമാണ് ലെൻസ് നിയമം.
+
+Q: The direction of induced current is determined by: | ഉൽപ്രേരിത വൈദ്യുത പ്രവാഹത്തിന്റെ ദിശ നിർണ്ണയിക്കുന്ന നിയമം:
+A) Fleming's Left Hand Rule | ഫ്ലെമിംഗ് ഇടതുകൈ നിയമം
+B) Lenz's Law | ലെൻസ് നിയമം
+C) Ohm's Law | ഓം നിയമം
+D) Kirchhoff's Law | കിർഹോഫ് നിയമം
+ANS: B
+DIFF: medium
+EXP: Lenz's Law gives the direction of induced current. | ഉൽദ്ദേശകത്തിനെ എതിർക്കുന്ന ദിശയിലായിരിക്കും ഉൽപ്രേരിത ധാര.
+
+Q: A device that converts mechanical energy to electrical energy is: | യാന്ത്രികോർജ്ജം വൈദ്യുതോർജ്ജമാക്കി മാറ്റുന്ന ഉപകരണം:
+A) Motor | മോട്ടോർ
+B) Transformer | ട്രാൻസ്ഫോർമർ
+C) Electric Generator | ഇലക്ട്രിക് ജനറേറ്റർ
+D) Battery | ബാറ്ററി
+ANS: C
+DIFF: easy
+EXP: Generators use electromagnetic induction to produce electricity. | ഇലക്ട്രോ മാഗ്നറ്റിക് ഇൻഡക്ഷൻ ഉപയോഗിച്ചാണ് ജനറേറ്റർ പ്രവർത്തിക്കുന്നത്.
+
+Q: Fleming's Right Hand Rule determines the direction of: | ഫ്ലെമിംഗ് വലതുകൈ നിയമം ഏതിന്റെ ദിശ കണ്ടുപിടിക്കാൻ ഉപയോഗിക്കുന്നു?
+A) Force on a conductor | ചാലകത്തിൽ ഉണ്ടാകുന്ന ബലം
+B) Induced current in a generator | ഉൽപ്രേരിത വൈദ്യുതപ്രവാഹം
+C) Magnetic field direction | കാന്തികമണ്ഡലത്തിന്റെ ദിശ
+D) Voltage polarity | വോൾട്ടേജ് ദ്രുവത
+ANS: B
+DIFF: medium
+EXP: Right Hand Rule applies to generators. | ജനറേറ്ററിലെ ഇൻഡ്യൂഡ് ധാര നിർണ്ണയിക്കാൻ വലതുകൈ നിയമം ഉപയോഗിക്കുന്നു.
+
+Q: AC is produced by: | ആൾടർനേറ്റിംഗ് കറന്റ് ഉൽപ്പാദിപ്പിക്കുന്ന ഉപകരണം:
+A) DC Generator | DC ജനറേറ്റർ
+B) AC Generator (Alternator) | AC ജനറേറ്റർ
+C) Battery | ബാറ്ററി
+D) Transistor | ട്രാൻസിസ്റ്റർ
+ANS: B
+DIFF: easy
+EXP: An alternator uses slip rings to generate AC. | AC ജനറേറ്ററിൽ സ്ലിപ്പ് റിംഗ് ഉപയോഗിക്കുന്നു.
+
+Q: A step-up transformer increases: | ഒരു സ്റ്റെപ്-അപ്പ് ട്രാൻസ്ഫോർമർ ഏതിനെ കൂട്ടുന്നു?
+A) Current only | കറന്റ് മാത്രം
+B) Voltage, while reducing current | വോൾട്ടേജ്, കറന്റ് കുറക്കുന്നു
+C) Both voltage and current | വോൾട്ടേജും കറന്റും
+D) Frequency | ആവൃത്തി
+ANS: B
+DIFF: medium
+EXP: A step-up transformer increases voltage while reducing current. | സ്റ്റെപ്-അപ്പ് ട്രാൻസ്ഫോർമർ വോൾട്ടേജ് കൂട്ടുകയും കറന്റ് കുറക്കുകയും ചെയ്യുന്നു.
+
+Q: Why is power transmitted at high voltage? | ഉയർന്ന വോൾട്ടേജിൽ വൈദ്യുതി പ്രേഷണം ചെയ്യുന്നത് എന്തുകൊണ്ട്?
+A) To reduce current and thereby heat losses | കറന്റ് കുറക്കൽ വഴി ചൂടാകൽ നഷ്ടം കുറക്കാൻ
+B) To increase current | കറന്റ് കൂട്ടാൻ
+C) To make wires bigger | കമ്പികൾ വലിപ്പം കൂട്ടാൻ
+D) To light more bulbs | കൂടുതൽ ബൾബ് കത്തിക്കാൻ
+ANS: A
+DIFF: medium
+EXP: High voltage → low I → low P_loss = I²R. | ഉയർന്ന വോൾട്ടേജ് → കുറഞ്ഞ കറന്റ് → P=I²R കുറഞ്ഞ ചൂടാകൽ നഷ്ടം.
+
+Q: Transformer principle is based on: | ട്രാൻസ്ഫോർമർ ഏത് തത്വത്തെ ആധാരിച്ചിരിക്കുന്നു?
+A) Amplification | ആംപ്ലിഫിക്കേഷൻ
+B) Mutual induction | പരസ്പര ഇൻഡക്ഷൻ
+C) Self-induction | സ്വം ഇൻഡക്ഷൻ
+D) Resonance | അനുനാദം
+ANS: B
+DIFF: medium
+EXP: Mutual induction: flux change in primary induces EMF in secondary. | പ്രൈമറി ഫ്ലക്സ് മാറ്റം സെക്കൻഡറിയിൽ EMF ഉൽപ്രേരിപ്പിക്കുന്നു.
+
+Q: A transformer works with: | ഒരു ട്രാൻസ്ഫോർമർ ഏത് തരം വൈദ്യുതിയിൽ പ്രവർത്തിക്കുന്നു?
+A) DC only | DC മാത്രം
+B) AC only | AC മാത്രം
+C) Both AC and DC | AC ഉം DC ഉം
+D) Static electricity | സ്ഥിര വൈദ്യുതി
+ANS: B
+DIFF: easy
+EXP: Transformers need changing magnetic flux, so only AC works. | DC ഒരു സ്ഥിര ഫ്ലക്സ് ഉണ്ടാക്കുന്നതിനാൽ ട്രാൻസ്ഫോർമർ DC-ൽ പ്രവർത്തിക്കില്ല.
+
+Q: The iron core of a transformer is laminated to: | ട്രാൻസ്ഫോർമർ കോർ ലാമിനേറ്റ് ചെയ്യുന്നത്:
+A) Increase eddy currents | എഡ്ഡി കറന്റ് കൂട്ടാൻ
+B) Reduce eddy current losses | എഡ്ഡി കറന്റ് നഷ്ടം കുറക്കാൻ
+C) Increase magnetic strength | കാന്തിക ശക്തി വർദ്ധിക്കാൻ
+D) Reduce weight | ഭാരം കുറക്കാൻ
+ANS: B
+DIFF: hard
+EXP: Laminated cores reduce eddy current paths, minimizing energy loss. | ഇൻസുലേറ്റഡ് ലേയറുകൾ ഉള്ള ലാമിനേഷൻ എഡ്ഡി കറന്റ് കുറക്കുന്നു.
+
+Q: In a generator coil, if turns are doubled, the EMF: | ജനറേറ്ററിലെ ചുറ്റുകൾ ഇരട്ടിക്കുമ്പോൾ EMF:
+A) Halves | പകുതിയാകുന്നു
+B) Doubles | ഇരട്ടിക്കുന്നു
+C) Remains same | മാറ്റമില്ലാതിരിക്കുന്നു
+D) Becomes zero | പൂജ്യമാകുന്നു
+ANS: B
+DIFF: medium
+EXP: EMF ∝ N (number of turns). | EMF, ചുറ്റുകളുടെ എണ്ണത്തിന് ആനുപാതികമാണ്.
+
+Q: Slip rings in an AC generator: | AC ജനറേറ്ററിലെ സ്ലിപ്പ് റിംഗ็:
+A) Commutate the current | കറന്റ് കമ്മ്യൂട്ടേറ്റ് ചെയ്യുന്നു
+B) Maintain contact with rotating coil | കറങ്ങുന്ന കോയിലുമായി ബന്ധം നൽകുന്നു
+C) Reduce rotation speed | കറക്ക വേഗത കുറക്കുന്നു
+D) Store energy | ഊർജ്ജം ശേഖരിക്കുന്നു
+ANS: B
+DIFF: medium
+EXP: Slip rings allow AC to flow freely from the rotating part. | AC ജനറേറ്ററിൽ കറങ്ങുന്ന കോയിലുമായി ബന്ধം നൽകുന്നത് സ്ലിപ്പ് റിംഗ് ആണ്.
+
+Q: A galvanometer is used to detect: | ഗാൽവനോമീറ്റർ ഉപയോഗം:
+A) Voltage | വോൾട്ടേജ്
+B) Resistance | പ്രതിരോധം
+C) Small electric currents | ചെറിയ വൈദ്യുതി പ്രവാഹം
+D) Magnetic flux | കാന്തിക ഫ്ലക്സ്
+ANS: C
+DIFF: easy
+EXP: A galvanometer detects very small currents. | ഗാൽവനോമീറ്റർ ചെറിയ വൈദ്യുതപ്രവാഹം കണ്ടെത്തുന്നു.
+
+Q: The frequency of AC in India is: | ഇന്ത്യയിൽ AC ആവൃത്തി:
+A) 50 Hz | 50 Hz
+B) 60 Hz | 60 Hz
+C) 100 Hz | 100 Hz
+D) 25 Hz | 25 Hz
+ANS: A
+DIFF: easy
+EXP: India uses 50 Hz AC supply. | ഇന്ത്യയിൽ AC ആവൃത്തി 50 Hz ആണ്.
+
+Q: Which component is NOT in an AC generator? | AC ജനറേറ്ററിൽ കാണാത്ത ഭാഗം:
+A) Slip rings | സ്ലിപ്പ് റിംഗ്
+B) Coil | കോയിൽ
+C) Split rings (Commutator) | സ്പ്ലിറ്റ് റിംഗ്
+D) Carbon brushes | കാർബൺ ബ്രഷ്
+ANS: C
+DIFF: hard
+EXP: Split rings are for DC generators; AC generators use slip rings. | DC ജനറേറ്ററിൽ സ്പ്ലിറ്റ് റിംഗ്, AC ജനറേറ്റിൽ സ്ലിപ്പ് റിംഗ്.
+
+Q: Eddy currents are caused by: | എഡ്ഡി കറന്റ് ഉണ്ടാകുന്ന കാരണം:
+A) Static magnetic field | സ്ഥിര കാന്തികമണ്ഡലം
+B) Changing magnetic flux through a conductor | ചാലകത്തിലൂടെ മാറുന്ന ഫ്ലക്സ്
+C) High voltage | ഉയർന്ന വോൾട്ടേജ്
+D) Chemical reaction | രാസ പ്രക്രിയ
+ANS: B
+DIFF: hard
+EXP: Eddy currents are induced in bulk conductors by changing flux. | ചലിക്കുന്ന കാന്തിക ഫ്ലക്സ് ഒരു ഖര ചാലകത്തിൽ ചെറിയ ചുറ്റുന്ന ധാരകൾ ഉൽദ്ദേശിക്കുന്നു.
+
+Q: An electric generator converts: | ഒരു ഇലക്ട്രിക് ജനറേറ്റർ ഊർജ്ജ മാറ്റം:
+A) Electrical to chemical | വൈദ്യുതം → രാസ ഊർജ്ജം
+B) Chemical to electrical | രാസ ഊർജ്ജം → വൈദ്യുതം
+C) Mechanical to electrical | യാന്ത്രിക ഊർജ്ജം → വൈദ്യുതം
+D) Thermal to electrical | താപ ഊർജ്ജം → വൈദ്യുതം
+ANS: C
+DIFF: easy
+EXP: Generators convert mechanical energy to electrical energy. | ജനറേറ്റർ, യാന്ത്രിക ഊർജ്ജം വൈദ്യുതോർജ്ജമാക്കി മാറ്റുന്നു.
+
+Q: The transformer equation is: | ട്രാൻസ്ഫോർമർ സമവാക്യം:
+A) Vs/Vp = Ns/Np | Vs/Vp = Ns/Np
+B) Vs * Vp = Ns + Np | Vs * Vp = Ns + Np
+C) Vs = Vp + Ns | Vs = Vp + Ns
+D) Ns/Np = Is/Ip | Ns/Np = Is/Ip
+ANS: A
+DIFF: medium
+EXP: The transformer voltage ratio equals the turns ratio. | ട്രാൻസ്ഫോർമർ സമവാക്യം: Vs/Vp = Ns/Np.
+
+Q: The induced EMF can be increased by: | ഉൽപ്രേരിത EMF കൂട്ടാൻ:
+A) Moving the magnet slowly | കാന്തം പതുക്കെ ചലിപ്പിക്കുക
+B) Reducing number of turns | ചുറ്റുകൾ കുറക്കുക
+C) Moving the magnet faster | കാന്തം വേഗത്തിൽ ചലിപ്പിക്കുക
+D) Using a smaller coil | ചെറിയ കോയിൽ ഉപയോഗിക്കുക
+ANS: C
+DIFF: medium
+EXP: Faster flux change = greater induced EMF. | ഫ്ലക്സ് മാറ്റം വേഗത്തിൽ ആകുമ്പോൾ ഉൽപ്രേരിത EMF കൂടുന്നു.
+
+Q: The rotating part of a generator is called: | ജനറേറ്ററിലെ കറങ്ങുന്ന ഭാഗം:
+A) Stator | സ്റ്റേറ്റർ
+B) Commutator | കമ്മ്യൂട്ടേറ്റർ
+C) Armature (Rotor) | ആർമേച്ചർ (റോട്ടർ)
+D) Brush | ബ്രഷ്
+ANS: C
+DIFF: easy
+EXP: The rotating coil assembly is the armature or rotor. | ജനറേറ്ററിൽ കറങ്ങുന്ن ഭാഗമാണ് ആർമേച്ചർ.
+
+Q: What is the purpose of using a step-down transformer at homes? | വീടുകളിൽ സ്റ്റെപ്-ഡൌൺ ട്രാൻസ്ഫോർമർ ഉപയോഗിക്കുന്നത് എന്തിനാണ്?
+A) To increase frequency | ആവൃത്തി കൂട്ടാൻ
+B) To reduce the voltage to safe levels | സുരക്ഷിത നിലയ്ക്ക് വോൾട്ടേജ് കുറക്കാൻ
+C) To convert AC to DC | AC-നെ DC-ആക്കാൻ
+D) To store electricity | വൈദ്യുതി ശേഖരിക്കാൻ
+ANS: B
+DIFF: medium
+EXP: Step-down transformers reduce high transmission voltage to safe household levels. | ദൂര പ്രേഷണ ശേഷം ഗൃഹ ഉദ്ദേശ്യത്തിന് സ്റ്റെപ്-ഡൌൺ ട്രാൻസ്ഫോർമർ വോൾട്ടേജ് കുറക്കുന്നു.
+
+Q: When the number of secondary coil turns is less than primary in a transformer: | ഒരു ട്രാൻസ്ഫോർമറിൽ സെക്കൻഡറിയിലെ ചുറ്റുകൾ പ്രൈമറിയേക്കാൾ കുറവാണെങ്കിൽ:
+A) It is a step-up transformer | ഇത് ഒരു സ്റ്റെപ്-അപ്പ് ട്രാൻസ്ഫോർമർ ആണ്
+B) It is a step-down transformer | ഇത് ഒരു സ്റ്റെപ്-ഡൌൺ ട്രാൻസ്ഫോർമർ ആണ്
+C) Voltage remains same | വോൾട്ടേജ് മാറ്റമില്ലാതെ തുടരുന്നു
+D) The transformer stops working | ട്രാൻസ്ഫോർമർ പ്രവർത്തനം നിർത്തുന്നു
+ANS: B
+DIFF: medium
+EXP: Secondary turns < Primary turns → Voltage is stepped down. | സെക്കൻഡറി ചുറ്റുകൾ < പ്രൈമറി ചുറ്റുകൾ → സ്റ്റെപ്-ഡൌൺ ട്രാൻസ്ഫോർമർ.
+
+Q: Induced current direction opposes the motion causing it. This is known as: | ഉൽദ്ദേശകമാകുന്ന ചലനത്തിനെ ഉൽപ്രേരിത ധാര എതിർക്കുന്ന നിയമം:
+A) Faraday's first law | ഫാരഡേ ഒന്നാം നിയമം
+B) Lenz's Law | ലെൻസ് നിയമം
+C) Ampere's Law | ആമ്പിയർ നിയമം
+D) Joule's Law | ജൂൾ നിയമം
+ANS: B
+DIFF: medium
+EXP: Lenz's law: Induced current direction opposes the cause. | ഉൽദ്ദേശകത്തിനെ ഉൽപ്രേരിത ധാര എതിർക്കുന്നു - ഇത് ലെൻസ് നിയമമാണ്.
+
+Q: In an ideal transformer, if primary power input is 1000W and secondary power output is: | ഒരു ഇഡ്ഡൽ ട്രാൻസ്ഫോർമറിൽ പ്രൈമറി ഇൻ‌പുട്ട് 1000W ആണെങ്കിൽ സെക്കൻഡറി ഔട്ട്‌പുട്ട്:
+A) 500W | 500 W
+B) 2000W | 2000 W
+C) 1000W | 1000 W
+D) 250W | 250 W
+ANS: C
+DIFF: hard
+EXP: An ideal transformer has 100% efficiency (no losses), so output = input = 1000W. | ഒരു ഇഡ്ഡൽ ട്രാൻസ്ഫോർമർ ഊർജ്ജ നഷ്ടം ഇല്ലാതെ പ്രവർത്തിക്കും.

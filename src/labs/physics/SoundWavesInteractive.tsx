@@ -35,8 +35,14 @@ export default function SoundWavesInteractive({ language }: { language: Language
 
   const renderInline = (str: any) => {
     if (!str) return '';
+    if (str.ar) {
+      if (language === 'bilingual') return `${str.ar} / ${str.ml}`;
+      if (language === 'ar') return str.ar;
+      if (language === 'en') return `${str.ar} (${str.en})`;
+      if (language === 'ml') return `${str.ar} (${str.ml})`;
+    }
     if (language === 'bilingual') return `${str.en} / ${str.ml}`;
-    return str[language];
+    return str[language] || str.en;
   };
 
   return (

@@ -58,7 +58,7 @@ export default function SubjectHome() {
   const renderInline = (str: any) => {
     if (!str) return '';
     if (str.ar) {
-      if (language === 'bilingual') return `${str.ar} / ${str.en} / ${str.ml}`;
+      if (language === 'bilingual') return `${str.ar} / ${str.ml}`;
       if (language === 'ar') return str.ar;
       if (language === 'en') return `${str.ar} (${str.en})`;
       if (language === 'ml') return `${str.ar} (${str.ml})`;
@@ -70,53 +70,47 @@ export default function SubjectHome() {
   const Icon = iconMap[subject.icon] || BookOpen;
 
   return (
-    <div className={`mx-auto max-w-4xl ${activeTab === 'sampleQuestions' ? 'p-0 sm:p-4 md:p-8' : 'p-2 sm:p-4 md:p-8'}`}>
+    <div className={`mx-auto max-w-4xl ${activeTab === 'sampleQuestions' ? 'p-0 sm:p-2' : 'p-0 sm:p-2'}`}>
       {/* Header */}
-      <div className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-6 sm:mb-10 bg-white dark:bg-slate-800 p-4 sm:p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300 ${activeTab === 'sampleQuestions' ? 'rounded-none sm:rounded-3xl' : 'rounded-2xl sm:rounded-3xl'}`}>
-        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-slate-50 dark:bg-slate-700 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner text-brand-primary dark:text-brand-accent">
-          <Icon className="w-10 h-10 sm:w-12 sm:h-12" />
+      <div className={`flex flex-row items-center gap-4 mb-5 sm:mb-8 bg-white dark:bg-slate-800 p-4 sm:p-5 shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300 ${activeTab === 'sampleQuestions' ? 'rounded-none sm:rounded-2xl' : 'rounded-xl sm:rounded-2xl'}`}>
+        <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-slate-50 dark:bg-slate-700 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner text-brand-primary dark:text-brand-accent flex-shrink-0">
+          <Icon className="w-7 h-7 sm:w-9 sm:h-9 lg:w-12 lg:h-12" />
         </div>
-        <div className="text-center sm:text-left">
-          <h2 className="font-display text-xl sm:text-3xl font-extrabold text-brand-primary dark:text-white">{renderInline(subject.title)}</h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1">
-            {subject.units.length} {language === 'en' ? 'Units' : language === 'ml' ? 'യൂണിറ്റുകൾ' : 'Units / യൂണിറ്റുകൾ'}
-          </p>
+        <div className="text-left min-w-0">
+          <h2 className="font-display text-lg sm:text-2xl lg:text-3xl font-extrabold text-brand-primary dark:text-white leading-tight truncate">{renderInline(subject.title)}</h2>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+            <span className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider">
+              {subject.units.length} {language === 'en' ? 'Units' : language === 'ml' ? 'യൂണിറ്റുകൾ' : 'Units'}
+            </span>
+            <span className="text-[10px] sm:text-xs font-black text-slate-300 dark:text-slate-600">•</span>
+            <span className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider">
+              {subject.units.reduce((n, u) => n + u.lessons.length, 0)} {language === 'ml' ? 'പാഠങ്ങൾ' : 'Lessons'}
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Tabs */}
       {(subjectId === 'sub-malayalam-ii' || subjectId === 'sub-hindi') && (
-        <div className={`flex flex-wrap gap-2 sm:gap-4 mb-6 ${activeTab === 'sampleQuestions' ? 'px-4 sm:px-0' : ''}`}>
-          <button
-            onClick={() => setActiveTab('lessons')}
-            className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base transition-colors ${activeTab === 'lessons' ? 'bg-brand-primary text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'}`}
-          >
-            {subjectId === 'sub-hindi' 
-              ? (language === 'en' ? 'Notes' : 'നോട്ടുകൾ') 
-              : (language === 'en' ? 'Lessons' : 'പാഠങ്ങൾ')}
-          </button>
-          {subjectId === 'sub-malayalam-ii' && (
+        <div className="flex items-center gap-2 mb-5 overflow-x-auto no-scrollbar pb-1">
+          {[
+            { key: 'lessons', label: subjectId === 'sub-hindi' ? (language === 'ml' ? 'നോട്ടുകൾ' : 'Notes') : (language === 'ml' ? 'പാഠങ്ങൾ' : 'Lessons'), show: true },
+            { key: 'samplePaper', label: language === 'ml' ? 'മാതൃകാ ചോദ്യം' : 'Sample Paper', show: subjectId === 'sub-malayalam-ii' },
+            { key: 'formats', label: language === 'ml' ? 'ഫോർമാറ്റ്' : 'Formats', show: true },
+            { key: 'sampleQuestions', label: language === 'ml' ? 'മാതൃകാ ചോദ്യങ്ങൾ' : 'Sample Q.', show: subjectId === 'sub-hindi' },
+          ].filter(t => t.show).map(t => (
             <button
-              onClick={() => setActiveTab('samplePaper')}
-              className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base transition-colors ${activeTab === 'samplePaper' ? 'bg-brand-primary text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'}`}
+              key={t.key}
+              onClick={() => setActiveTab(t.key as any)}
+              className={`px-3.5 sm:px-4 py-2 rounded-xl font-black text-xs sm:text-sm transition-all whitespace-nowrap flex-shrink-0 ${
+                activeTab === t.key
+                  ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/20'
+                  : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-brand-primary/30'
+              }`}
             >
-              {language === 'en' ? 'Sample Question Paper' : 'മാതൃകാ ചോദ്യപേപ്പർ'}
+              {t.label}
             </button>
-          )}
-          <button
-            onClick={() => setActiveTab('formats')}
-            className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base transition-colors ${activeTab === 'formats' ? 'bg-brand-primary text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'}`}
-          >
-            {language === 'en' ? 'Formats' : 'ഫോർമാറ്റുകൾ'}
-          </button>
-          {subjectId === 'sub-hindi' && (
-            <button
-              onClick={() => setActiveTab('sampleQuestions')}
-              className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base transition-colors ${activeTab === 'sampleQuestions' ? 'bg-brand-primary text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'}`}
-            >
-              {language === 'en' ? 'Sample Questions' : 'മാതൃകാ ചോദ്യങ്ങൾ'}
-            </button>
-          )}
+          ))}
         </div>
       )}
 
@@ -189,40 +183,84 @@ export default function SubjectHome() {
                     </span>
                     <div className="space-y-4 flex-grow">
                       <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
-                        <div className="flex-grow prose prose-slate dark:prose-invert max-w-none">
+                        <div className="flex-grow prose prose-slate dark:prose-invert max-w-none w-full max-w-[100%] overflow-x-hidden">
                           <div className="text-slate-900 dark:text-white text-base sm:text-lg leading-relaxed">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{q.question_hindi}</ReactMarkdown>
+                            <ReactMarkdown 
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                table: ({ node, ...props }: any) => (
+                                  <div className="w-full my-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col">
+                                    <table className="w-full text-left border-collapse break-words" {...props} />
+                                  </div>
+                                ),
+                                th: ({ node, ...props }: any) => <th className="px-1.5 py-2 sm:p-3 font-bold bg-slate-50 dark:bg-slate-800/80 text-brand-primary dark:text-brand-accent text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight" {...props} />,
+                                td: ({ node, ...props }: any) => <td className="px-1.5 py-2 sm:p-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 break-words leading-tight" {...props} />
+                              }}
+                            >{q.question_hindi}</ReactMarkdown>
                           </div>
                           {language !== 'ar' && (
-                            <div className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 italic opacity-80 border-l-2 border-slate-200 dark:border-slate-700 pl-2 sm:pl-3">
-                              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            <div className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 italic opacity-80 border-l-2 border-slate-200 dark:border-slate-700 pl-2 sm:pl-3 w-full">
+                              <ReactMarkdown 
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  table: ({ node, ...props }: any) => (
+                                    <div className="w-full my-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col">
+                                      <table className="w-full text-left border-collapse break-words" {...props} />
+                                    </div>
+                                  ),
+                                  th: ({ node, ...props }: any) => <th className="px-1.5 py-2 sm:p-3 font-bold bg-slate-50 dark:bg-slate-800/80 text-brand-primary dark:text-brand-accent text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight" {...props} />,
+                                  td: ({ node, ...props }: any) => <td className="px-1.5 py-2 sm:p-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 break-words leading-tight" {...props} />
+                                }}
+                              >
                                 {language === 'ml' ? (q.question_malayalam || '') : q.question_english}
                               </ReactMarkdown>
                             </div>
                           )}
                         </div>
                         {q.marks && (
-                          <span className="flex-shrink-0 text-[9px] sm:text-[10px] uppercase tracking-wider font-black bg-white dark:bg-slate-800 text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg shadow-sm">
+                          <span className="flex-shrink-0 text-[9px] sm:text-[10px] uppercase tracking-wider font-black bg-white dark:bg-slate-800 text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg shadow-sm mt-1 sm:mt-0">
                             {q.marks} {language === 'en' ? 'Marks' : language === 'ml' ? 'മാർക്ക്' : 'अंक'}
                           </span>
                         )}
                       </div>
 
                       {showHindiAnswers && (
-                        <div className="bg-brand-teal/5 dark:bg-brand-teal/10 p-5 rounded-2xl border border-brand-teal/20 animate-in fade-in slide-in-from-top-2 duration-500">
+                        <div className="bg-brand-teal/5 dark:bg-brand-teal/10 p-5 rounded-2xl border border-brand-teal/20 animate-in fade-in slide-in-from-top-2 duration-500 w-full overflow-hidden">
                           <div className="flex items-center gap-2 mb-3">
                             <span className="w-2 h-2 bg-brand-teal rounded-full animate-pulse"></span>
                             <p className="text-xs font-black text-brand-teal uppercase tracking-widest">
                               {language === 'en' ? 'Model Answer' : language === 'ml' ? 'മാതൃകാ ഉത്തരം' : 'आदर्श उत्तर'}
                             </p>
                           </div>
-                          <div className="prose prose-slate dark:prose-invert max-w-none">
+                          <div className="prose prose-slate dark:prose-invert max-w-none w-full flex flex-col">
                             <div className="text-slate-800 dark:text-slate-200 font-medium">
-                              <ReactMarkdown remarkPlugins={[remarkGfm]}>{q.answer_hindi}</ReactMarkdown>
+                              <ReactMarkdown 
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  table: ({ node, ...props }: any) => (
+                                    <div className="w-full my-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col">
+                                      <table className="w-full text-left border-collapse break-words" {...props} />
+                                    </div>
+                                  ),
+                                  th: ({ node, ...props }: any) => <th className="px-1.5 py-2 sm:p-3 font-bold bg-slate-50 dark:bg-slate-800/80 text-brand-teal text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight" {...props} />,
+                                  td: ({ node, ...props }: any) => <td className="px-1.5 py-2 sm:p-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 break-words leading-tight" {...props} />
+                                }}
+                              >{q.answer_hindi}</ReactMarkdown>
                             </div>
                             {language !== 'ar' && (
-                              <div className="mt-3 text-xs text-slate-500 dark:text-slate-400 italic pt-3 border-t border-brand-teal/10">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                              <div className="mt-3 text-xs text-slate-500 dark:text-slate-400 italic pt-3 border-t border-brand-teal/10 w-full flex flex-col">
+                                <ReactMarkdown 
+                                  remarkPlugins={[remarkGfm]}
+                                  components={{
+                                    table: ({ node, ...props }: any) => (
+                                      <div className="w-full my-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col">
+                                        <table className="w-full text-left border-collapse break-words" {...props} />
+                                      </div>
+                                    ),
+                                    th: ({ node, ...props }: any) => <th className="px-1.5 py-2 sm:p-3 font-bold bg-slate-50 dark:bg-slate-800/80 text-brand-teal text-[10px] sm:text-xs border-b border-slate-200 dark:border-slate-700 leading-tight" {...props} />,
+                                    td: ({ node, ...props }: any) => <td className="px-1.5 py-2 sm:p-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 break-words leading-tight" {...props} />
+                                  }}
+                                >
                                   {language === 'ml' ? (q.answer_malayalam || '') : q.answer_english}
                                 </ReactMarkdown>
                               </div>
@@ -246,8 +284,14 @@ function SamplePaperView({ paper, language }: { paper: any, language: Language }
   const [showAnswers, setShowAnswers] = useState(false);
   const renderInline = (str: any) => {
     if (!str) return '';
+    if (str.ar) {
+      if (language === 'bilingual') return `${str.ar} / ${str.ml}`;
+      if (language === 'ar') return str.ar;
+      if (language === 'en') return `${str.ar} (${str.en})`;
+      if (language === 'ml') return `${str.ar} (${str.ml})`;
+    }
     if (language === 'bilingual') return `${str.en} / ${str.ml}`;
-    return str[language];
+    return str[language] || str.en;
   };
 
   let currentQuestionNumber = 1;

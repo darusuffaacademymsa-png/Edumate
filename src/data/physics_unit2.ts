@@ -4,6 +4,12 @@ export const physicsUnit2: Lesson = {
   id: "sc-phy-10-lenses",
   title: { en: "Lenses", ml: "ലെൻസുകൾ" },
   estimated_time_mins: 90,
+  videos: [
+    {
+      title: "Quick revision (Exam oriented)",
+      url: "https://www.youtube.com/watch?v=FrrtuVQgwZ8"
+    }
+  ],
   learning_objectives: [
     { id: "lo1", text: { en: "Identify different types of lenses and their characteristics.", ml: "വിവിധ തരം ലെൻസുകളെയും അവയുടെ സവിശേഷതകളെയും തിരിച്ചറിയുക." } },
     { id: "lo2", text: { en: "Understand key terms like optic centre, principal focus, and focal length.", ml: "പ്രകാശിക കേന്ദ്രം, മുഖ്യ ഫോക്കസ്, ഫോക്കസ് ദൂരം തുടങ്ങിയ പദങ്ങൾ മനസ്സിലാക്കുക." } },
@@ -121,47 +127,1325 @@ export const physicsUnit2: Lesson = {
     { term: { en: "Dioptre", ml: "ഡയോപ്റ്റർ" }, definition: { en: "The SI unit of power of a lens.", ml: "ലെൻസിന്റെ പവറിന്റെ SI യൂണിറ്റ്." } }
   ],
   quiz: [
-    {
-      q_id: "q1",
-      type: "mcq",
-      stem: { en: "Which lens is called a converging lens?", ml: "ഏത് ലെൻസിനെയാണ് കൺവെർജിംഗ് ലെൻസ് എന്ന് വിളിക്കുന്നത്?" },
-      options: [
-        { k: "A", text: { en: "Concave Lens", ml: "കോൺകേവ് ലെൻസ്" } },
-        { k: "B", text: { en: "Convex Lens", ml: "കോൺവെക്സ് ലെൻസ്" } },
-        { k: "C", text: { en: "Plane Glass", ml: "പ്ലെയിൻ ഗ്ലാസ്" } },
-        { k: "D", text: { en: "Cylindrical Lens", ml: "സിലിണ്ടർ ലെൻസ്" } }
-      ],
-      answer: "B",
-      difficulty: "easy",
-      explanation: { en: "Convex lenses converge light rays to a point.", ml: "കോൺവെക്സ് ലെൻസുകൾ പ്രകാശകിരണങ്ങളെ ഒരു ബിന്ദുവിലേക്ക് കേന്ദ്രീകരിപ്പിക്കുന്നു." }
+  {
+    "q_id": "u2_q1",
+    "type": "mcq",
+    "stem": {
+      "en": "Who discovered the magnetic effect of electric current?",
+      "ml": "വൈദ്യുതിയുടെ കാന്തിക ഫലം കണ്ടെത്തിയത് ആര്?"
     },
-    {
-      q_id: "q2",
-      type: "mcq",
-      stem: { en: "The SI unit of power of a lens is:", ml: "ലെൻസിന്റെ പവറിന്റെ SI യൂണിറ്റ്:" },
-      options: [
-        { k: "A", text: { en: "Metre", ml: "മീറ്റർ" } },
-        { k: "B", text: { en: "Watt", ml: "വാട്ട്" } },
-        { k: "C", text: { en: "Dioptre", ml: "ഡയോപ്റ്റർ" } },
-        { k: "D", text: { en: "Joule", ml: "ജൂൾ" } }
-      ],
-      answer: "C",
-      difficulty: "easy",
-      explanation: { en: "Power is measured in Dioptres (D).", ml: "പവർ അളക്കുന്നത് ഡയോപ്റ്ററിലാണ് (D)." }
-    },
-    {
-      q_id: "q3",
-      type: "mcq",
-      stem: { en: "A concave lens always forms an image that is:", ml: "ഒരു കോൺകേവ് ലെൻസ് എപ്പോഴും രൂപീകരിക്കുന്ന പ്രതിബിംബം:" },
-      options: [
-        { k: "A", text: { en: "Real and Inverted", ml: "യഥാർത്ഥവും തലകീഴായതും" } },
-        { k: "B", text: { en: "Virtual and Erect", ml: "മിഥ്യയും നിവർന്നതും" } },
-        { k: "C", text: { en: "Real and Erect", ml: "യഥാർത്ഥവും നിവർന്നതും" } },
-        { k: "D", text: { en: "Virtual and Inverted", ml: "മിഥ്യയും തലകീഴായതും" } }
-      ],
-      answer: "B",
-      difficulty: "medium",
-      explanation: { en: "Concave lenses always produce virtual, erect, and diminished images.", ml: "കോൺകേവ് ലെൻസുകൾ എപ്പോഴും മിഥ്യയും നിവർന്നതും ചെറുതുമായ പ്രതിബിംബങ്ങൾ നിർമ്മിക്കുന്നു." }
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Hans Christian Oersted",
+          "ml": "ഹാൻസ് ക്രിസ്റ്റ്യൻ ഓർസ്റ്റെഡ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Michael Faraday",
+          "ml": "മൈക്കൽ ഫാരഡേ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Nikola Tesla",
+          "ml": "നിക്കോള ടെസ്‌ല"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Thomas Edison",
+          "ml": "തോമസ് എഡിസൺ"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Oersted discovered that an electric current creates a magnetic field.",
+      "ml": "വൈദ്യുതി ഒരു കാന്തികമണ്ഡലം സൃഷ്ടിക്കുന്നുവെന്ന് കണ്ടെത്തിയത് ഓർസ്റ്റെഡാണ്."
     }
-  ]
+  },
+  {
+    "q_id": "u2_q2",
+    "type": "mcq",
+    "stem": {
+      "en": "The direction of the magnetic field around a straight current-carrying conductor is given by:",
+      "ml": "വൈദ്യുതി കടന്നുപോകുന്ന നേരായ ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തികമണ്ഡലത്തിന്റെ ദിശ നിർണ്ണയിക്കുന്നത്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Fleming's Left Hand Rule",
+          "ml": "ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Fleming's Right Hand Rule",
+          "ml": "ഫ്ലെമിംഗിന്റെ വലതുകൈ നിയമം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Right Hand Thumb Rule",
+          "ml": "വലതുകൈ പെരുവിരൽ നിയമം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Ampere's Swimming Rule",
+          "ml": "ആമ്പിയറുടെ നീന്തൽ നിയമം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Right Hand Thumb Rule shows field lines wrapping around the conductor.",
+      "ml": "കാന്തികമണ്ഡലത്തിന്റെ ദിശ കണ്ടുപിടിക്കാൻ വലതുകൈ പെരുവിരൽ നിയമം ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q3",
+    "type": "mcq",
+    "stem": {
+      "en": "In the Right Hand Thumb Rule, what does the thumb indicate?",
+      "ml": "വലതുകൈ പെരുവിരൽ നിയമത്തിൽ, പെരുവിരൽ എന്തിനെ സൂചിപ്പിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Direction of magnetic field",
+          "ml": "കാന്തികമണ്ഡലത്തിന്റെ ദിശ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Direction of electric current",
+          "ml": "വൈദ്യുത പ്രവാഹത്തിന്റെ ദിശ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Direction of force",
+          "ml": "ബലത്തിന്റെ ദിശ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Direction of motion",
+          "ml": "ചലനത്തിന്റെ ദിശ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The thumb points in the direction of the current.",
+      "ml": "പെരുവിരൽ വൈദ്യുത പ്രവാഹത്തിന്റെ ദിശയെ സൂചിപ്പിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q4",
+    "type": "mcq",
+    "stem": {
+      "en": "Magnetic field lines around a straight current bearing conductor are in the shape of:",
+      "ml": "നേരായ ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തിക ബലരേഖകളുടെ ആകൃതി എന്താണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Straight lines parallel to the wire",
+          "ml": "കമ്പിക്ക് സമാന്തരമായ നേർരേഖകൾ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Concentric circles",
+          "ml": "ഏകാക്ഷ വൃത്തങ്ങൾ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Ellipses",
+          "ml": "ദീർഘവൃത്തങ്ങൾ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Parabolas",
+          "ml": "പരാബോളകൾ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Field lines around a wire form concentric circles.",
+      "ml": "ചാലകത്തിന് ചുറ്റുമുള്ള കാന്തിക ബലരേഖകൾ ഏകാക്ഷ വൃത്തങ്ങളാണ്."
+    }
+  },
+  {
+    "q_id": "u2_q5",
+    "type": "mcq",
+    "stem": {
+      "en": "Inside a current-carrying solenoid, the magnetic field is:",
+      "ml": "വൈദ്യുതി കടന്നുപോകുന്ന സോളിനോയിഡിനുള്ളിലെ കാന്തികമണ്ഡലം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Zero",
+          "ml": "പൂജ്യം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Uniform everywhere",
+          "ml": "എല്ലായിടത്തും സമാനം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Non-uniform",
+          "ml": "അസമാനം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Strongest at the ends",
+          "ml": "അറ്റങ്ങളിൽ ഏറ്റവും ശക്തം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "A solenoid creates a uniform magnetic field inside it, similar to a bar magnet.",
+      "ml": "സോളിനോയിഡിനുള്ളിൽ എല്ലായിടത്തും കാന്തികമണ്ഡലം സമാനമായിരിക്കും."
+    }
+  },
+  {
+    "q_id": "u2_q6",
+    "type": "mcq",
+    "stem": {
+      "en": "What material is best for the core of an electromagnet?",
+      "ml": "വൈദ്യുതകാന്തത്തിന്റെ കോർ ആയി ഉപയോഗിക്കാൻ ഏറ്റവും അനുയോജ്യമായ പദാർത്ഥം ഏത്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Steel",
+          "ml": "സ്റ്റീൽ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Copper",
+          "ml": "ചെമ്പ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Soft iron",
+          "ml": "പച്ചிரുമ്പ് (സോഫ്റ്റ് അയൺ)"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Aluminum",
+          "ml": "അലുമിനിയം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Soft iron gains and loses magnetism quickly, making it ideal.",
+      "ml": "പച്ചിരുമ്പിന് വേഗത്തിൽ കാന്തികശക്തി ലഭിക്കാനും നഷ്ടപ്പെടാനുമുള്ള കഴിവുള്ളതിനാൽ ഇത് ഏറ്റവും അനുയോജ്യമാണ്."
+    }
+  },
+  {
+    "q_id": "u2_q7",
+    "type": "mcq",
+    "stem": {
+      "en": "When a current-carrying conductor is placed in a magnetic field, it experiences a mechanical force. This is the working principle of:",
+      "ml": "ഒരു കാന്തികമണ്ഡലത്തിൽ ഇരിക്കുന്ന വൈദ്യുതി കടന്നുപോകുന്ന ചാലകത്തിൽ ഒരു ബലം അനുഭവപ്പെടുന്നു. ഇത് എന്തിന്റെ പ്രവർത്തന തത്വമാണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Dynamo",
+          "ml": "ഡൈനാമോ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Generator",
+          "ml": "ജനറേറ്റർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "DC Motor",
+          "ml": "ഡി.സി മോട്ടോർ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Transformer",
+          "ml": "ട്രാൻസ്ഫോർമർ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "DC motors convert electrical energy to mechanical energy via this motor principle.",
+      "ml": "മോട്ടോർ തത്വം ഉപയോഗിച്ചാണ് ഡി.സി മോട്ടോർ പ്രവർത്തിക്കുന്നത്."
+    }
+  },
+  {
+    "q_id": "u2_q8",
+    "type": "mcq",
+    "stem": {
+      "en": "Which rule is used to find the direction of force on a conductor in a magnetic field?",
+      "ml": "കാന്തികമണ്ഡലത്തിലിരിക്കുന്ന ചാലകത്തിലുണ്ടാകുന്ന ബലത്തിന്റെ ദിശ കണ്ടെത്താൻ ഉപയോഗിക്കുന്ന നിയമം ഏത്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Fleming's Right Hand Rule",
+          "ml": "ഫ്ലെമിംഗിന്റെ വലതുകൈ നിയമം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Fleming's Left Hand Rule",
+          "ml": "ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Right Hand Thumb Rule",
+          "ml": "വലതുകൈ പെരുവിരൽ നിയമം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Corkscrew Rule",
+          "ml": "കോർക്ക്സ്ക്രൂ നിയമം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Fleming's Left Hand Rule gives the direction of motion/force.",
+      "ml": "ബലത്തിന്റെ ദിശ കണ്ടുപിടിക്കാൻ ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമം ഉപയോഗിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q9",
+    "type": "mcq",
+    "stem": {
+      "en": "In Fleming's Left Hand Rule, the forefinger represents the direction of:",
+      "ml": "ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമത്തിൽ ചൂണ്ടുവിരൽ എന്തിനെ സൂചിപ്പിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Current",
+          "ml": "വൈദ്യുത പ്രവാഹം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Motion (Force)",
+          "ml": "ചലനം (ബലം)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Magnetic Field",
+          "ml": "കാന്തികമണ്ഡലം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Voltage",
+          "ml": "വോൾട്ടേജ്"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Forefinger = Magnetic Field, Middle finger = Current, Thumb = Motion.",
+      "ml": "ചൂണ്ടുവിരൽ കാന്തികമണ്ഡലത്തെയും, നടുവിരൽ വൈദ്യുതപ്രവാഹത്തെയും സൂചിപ്പിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q10",
+    "type": "mcq",
+    "stem": {
+      "en": "A device that converts electrical energy into mechanical energy is:",
+      "ml": "വൈദ്യുതോർജ്ജത്തെ യാന്ത്രികോർജ്ജമാക്കി മാറ്റുന്ന ഉപകരണം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Generator",
+          "ml": "ജനറേറ്റർ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Motor",
+          "ml": "മോട്ടോർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Galvanometer",
+          "ml": "ഗാൽവനോമീറ്റർ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Transformer",
+          "ml": "ട്രാൻസ്ഫോർമർ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Electric motors provide mechanical work using electricity.",
+      "ml": "വൈദ്യുതോർജ്ജം യാന്ത്രികോർജ്ജമാക്കി മാറ്റുന്നത് മോട്ടോർ ആണ്."
+    }
+  },
+  {
+    "q_id": "u2_q11",
+    "type": "mcq",
+    "stem": {
+      "en": "Commutator rings (split rings) in a DC motor are used to:",
+      "ml": "ഡി.സി മോട്ടോറിലെ സ്പ്ലിറ്റ് റിംഗുകളുടെ (കമ്മ്യൂട്ടേറ്റർ) ധർമ്മം എന്താണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Increase the speed",
+          "ml": "വേഗത കൂട്ടാൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Reverse the current direction in the coil",
+          "ml": "കോയിലിലെ വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറ്റാൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Create the magnetic field",
+          "ml": "കാന്തികമണ്ഡലം നിർമ്മിക്കാൻ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Prevent overheating",
+          "ml": "ചൂടാകുന്നത് തടയാൻ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "They reverse the current direction every half cycle to ensure continuous rotation.",
+      "ml": "കോയിലിന്റെ തുടർച്ചയായ കറക്കത്തിന് വൈദ്യുത ദിശ മാറ്റാനാണ് ഇവ ഉപയോഗിക്കുന്നത്."
+    }
+  },
+  {
+    "q_id": "u2_q12",
+    "type": "mcq",
+    "stem": {
+      "en": "The carbon brushes in a DC motor help to:",
+      "ml": "ഡി.സി മോട്ടോറിലെ കാർബൺ ബ്രഷുകളുടെ ഉപയോഗം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Maintain electrical contact with the rotating split rings",
+          "ml": "കറങ്ങുന്ന സ്പ്ലിറ്റ് റിംഗുകളുമായി വൈദ്യുത ബന്ധം നിലനിർത്താൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Generate the magnetic field",
+          "ml": "കാന്തികമണ്ഡലം ഉണ്ടാക്കാൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Reduce friction only",
+          "ml": "ഘർഷണം കുറയ്ക്കാൻ മാത്രം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Cool down the armature",
+          "ml": "ആർമേച്ചർ തണുപ്പിക്കാൻ"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Brushes transfer current from the external circuit to the rotating commutator.",
+      "ml": "കറങ്ങുന്ന ഭാഗത്തേക്ക് വൈദ്യുതി എത്തിക്കാൻ ബ്രഷുകൾ സഹായിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q13",
+    "type": "mcq",
+    "stem": {
+      "en": "Which of the following devices relies on the magnetic effect of current?",
+      "ml": "വൈദ്യുതിയുടെ കാന്തിക ഫലം അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്ന ഉപകരണം ഏത്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Electric iron",
+          "ml": "ഇലക്ട്രിക് അയേൺ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Loudspeaker",
+          "ml": "ഉച്ചഭാഷിണി"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Light bulb",
+          "ml": "ലൈറ്റ് ബൾബ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Electric heater",
+          "ml": "ഇലക്ട്രിക് ഹീറ്റർ"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Loudspeakers use electromagnets interacting with permanent magnets to vibrate a cone.",
+      "ml": "കാന്തികഫലം ഉപയോഗിച്ച് ശബ്ദമുണ്ടാക്കുന്ന ഉപകരണമാണ് ലൗഡ്സ്പീക്കർ."
+    }
+  },
+  {
+    "q_id": "u2_q14",
+    "type": "mcq",
+    "stem": {
+      "en": "In a moving coil loudspeaker, electrical signals are converted into:",
+      "ml": "ചലിക്കുന്ന കോയിൽ ലൗഡ്സ്പീക്കറിൽ വൈദ്യുത സിഗ്നലുകളെ ഏതായി മാറ്റുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Light energy",
+          "ml": "പ്രകാശോർജ്ജം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Heat energy",
+          "ml": "താപോർജ്ജം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Sound energy",
+          "ml": "ശബ്ദോർജ്ജം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Chemical energy",
+          "ml": "രാസോർജ്ജം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Loudspeakers convert electrical impulses (signal) into sound.",
+      "ml": "ലൗഡ്സ്പീക്കർ വൈദ്യുതോർജ്ജത്തെ ശബ്ദോർജ്ജമാക്കി മാറ്റുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q15",
+    "type": "mcq",
+    "stem": {
+      "en": "The strength of an electromagnet can be increased by:",
+      "ml": "ഒരു വൈദ്യുതകാന്തത്തിന്റെ ശക്തി കൂട്ടാൻ കഴിയുന്ന മാർഗ്ഗം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Decreasing the current",
+          "ml": "വൈദ്യുതപ്രവാഹം കുറയ്ക്കുക"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Decreasing the number of turns in the coil",
+          "ml": "കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കുറയ്ക്കുക"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Increasing the number of turns in the coil",
+          "ml": "കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കൂട്ടുക"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Removing the soft iron core",
+          "ml": "പച്ചിരുമ്പ് കോർ മാറ്റുക"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "More turns and more current both increase magnetic strength.",
+      "ml": "കോയിലിലെ ചുറ്റുകളുടെ എണ്ണം കൂടുമ്പോൾ കാന്തികശക്തി വർദ്ധിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q16",
+    "type": "mcq",
+    "stem": {
+      "en": "If the direction of current in a wire is reversed, the magnetic field around it:",
+      "ml": "ഒരു ചാലകത്തിലൂടെയുള്ള വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറ്റിയാൽ കാന്തികമണ്ഡലത്തിന് എന്ത് സംഭവിക്കും?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Disappears",
+          "ml": "ഇല്ലാതാകുന്നു"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Reverses its direction",
+          "ml": "ദിശ മാറുന്നു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Remains exactly the same",
+          "ml": "മാറ്റമില്ലാതെ തുടരുന്നു"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Doubles in strength",
+          "ml": "ശക്തി ഇരട്ടിയാകുന്നു"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Current direction directly dictates the direction of the magnetic field (Right Hand Rule).",
+      "ml": "വൈദ്യുതപ്രവാഹത്തിന്റെ ദിശ മാറുന്നതിനനുസരിച്ച് കാന്തികമണ്ഡലത്തിന്റെ ദിശയും മാറുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q17",
+    "type": "mcq",
+    "stem": {
+      "en": "What happens to the magnetic field when current through a conductor increases?",
+      "ml": "ചാലകത്തിലൂടെയുള്ള വൈദ്യുതപ്രവാഹം കൂടുമ്പോൾ കാന്തികമണ്ഡലത്തിൽ ഉണ്ടാകുന്ന മാറ്റം:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Field strength decreases",
+          "ml": "കാന്തികശക്തി കുറയുന്നു"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Field strength increases",
+          "ml": "കാന്തികശക്തി വർദ്ധിക്കുന്നു"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Direction changes",
+          "ml": "ദിശ മാറുന്നു"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "No change occurs",
+          "ml": "ഒരു മാറ്റവും ഉണ്ടാകുന്നില്ല"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Field strength is directly proportional to the magnitude of the electric current.",
+      "ml": "വൈദ്യുതപ്രവാഹം വർദ്ധിക്കുമ്പോൾ കാന്തികമണ്ഡലത്തിന്റെ ശക്തിയും വർദ്ധിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q18",
+    "type": "mcq",
+    "stem": {
+      "en": "The armature of a DC motor is placed between:",
+      "ml": "ഡി.സി മോട്ടോറിലെ ആർമേച്ചർ എവിടെയാണ് സ്ഥാപിച്ചിരിക്കുന്നത്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Two resistors",
+          "ml": "രണ്ട് പ്രതിരോധകങ്ങൾക്കിടയിൽ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Two carbon brushes only",
+          "ml": "രണ്ട് കാർബൺ ബ്രഷുകൾക്കിടയിൽ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "The poles of a strong magnet",
+          "ml": "ശക്തമായ കാന്തത്തിന്റെ ധ്രുവങ്ങൾക്കിടയിൽ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Two slip rings",
+          "ml": "രണ്ട് സ്ലിപ്പ് റിംഗുകൾക്കിടയിൽ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "The armature rotates in the magnetic field created by the permanent magnets.",
+      "ml": "ശക്തമായ കാന്തത്തിന്റെ ധ്രുവങ്ങൾക്കിടയിലാണ് ആർമേച്ചർ ഇരിക്കുന്നത്."
+    }
+  },
+  {
+    "q_id": "u2_q19",
+    "type": "mcq",
+    "stem": {
+      "en": "Which sub-system of a loudspeaker physically moves the air to create sound?",
+      "ml": "ഒരു ലൗഡ്സ്പീക്കറിൽ വായുവിനെ കമ്പനം ചെയ്യിപ്പിച്ച് ശബ്ദമുണ്ടാക്കുന്ന ഭാഗം ഏത്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Voice coil",
+          "ml": "വോയ്സ് കോയിൽ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Permanent magnet",
+          "ml": "സ്ഥിരകാന്തം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Diaphragm (Cone)",
+          "ml": "ഡയഫ്രം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Wires",
+          "ml": "വയറുകൾ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "The vibrating diaphragm pushes air waves, creating sound.",
+      "ml": "ഡയഫ്രം കമ്പനം ചെയ്യുമ്പോഴാണ് വായുവിൽ ശബ്ദതരംഗങ്ങൾ ഉണ്ടാകുന്നത്."
+    }
+  },
+  {
+    "q_id": "u2_q20",
+    "type": "mcq",
+    "stem": {
+      "en": "If you look at a circular loop and current is flowing clockwise, that face acts as a:",
+      "ml": "ഒരു വൃത്താകാര കോയിലിലൂടെ ക്ലോക്ക് വൈസ് ദിശയിൽ വൈദ്യുതി ഒഴുകുമ്പോൾ ആ പ്രതലം ഏത് ധ്രുവമായി പ്രവർത്തിക്കും?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "North pole",
+          "ml": "ഉത്തര ധ്രുവം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "South pole",
+          "ml": "ദക്ഷിണ ധ്രുവം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "East pole",
+          "ml": "ഈസ്റ്റ് പോൾ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Neutral point",
+          "ml": "ന്യൂട്രൽ പോയിന്റ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "Clockwise = South pole. Anti-clockwise = North pole. (Clock face rule).",
+      "ml": "ക്ലോക്ക് വൈസ് ദിശയിൽ ഒഴുകുമ്പോൾ ദക്ഷിണ ധ്രുവമായി പ്രവർത്തിക്കുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q21",
+    "type": "mcq",
+    "stem": {
+      "en": "A solenoid behaves like a:",
+      "ml": "ഒരു സോളിനോയിഡ് എന്തിനെപ്പോലെ പ്രവർത്തിക്കുന്നു?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Compass needle",
+          "ml": "കോമ്പസ് സൂചി"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Horseshoe magnet",
+          "ml": "ലാടകാന്തം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Bar magnet",
+          "ml": "ബാർ കാന്തം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Disc magnet",
+          "ml": "ഡിസ്ക് കാന്തം"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "A current-carrying solenoid produces field lines exactly like a bar magnet.",
+      "ml": "ഒരു സോളിനോയിഡിന്റെ കാന്തികമണ്ഡലം ബാർ കാന്തത്തിന് സമാനമാണ്."
+    }
+  },
+  {
+    "q_id": "u2_q22",
+    "type": "mcq",
+    "stem": {
+      "en": "According to Fleming's Left Hand Rule, the fingers are held:",
+      "ml": "ഫ്ലെമിംഗിന്റെ ഇടതുകൈ നിയമപ്രകാരം വിരലുകൾ എങ്ങനെ പിടിക്കണം?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Parallel to each other",
+          "ml": "പരസ്പരം സമാന്തരമായി"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Mutually perpendicular to each other",
+          "ml": "പരസ്പരം ലംബമായി"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "At 45 degrees",
+          "ml": "45 ഡിഗ്രി കോണിൽ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Clenched in a fist",
+          "ml": "ചുരുട്ടിപ്പിടിച്ച്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The thumb, forefinger, and middle finger must be mutually perpendicular (at right angles).",
+      "ml": "പെരുവിരൽ, ചൂണ്ടുവിരൽ, നടുവിരൽ എന്നിവ പരസ്പരം ലംബമായി പിടിക്കണം."
+    }
+  },
+  {
+    "q_id": "u2_q23",
+    "type": "mcq",
+    "stem": {
+      "en": "True or False: Earth's magnetic field affects moving charges.",
+      "ml": "ഭൂമിയുടെ കാന്തികമണ്ഡലം ചലിക്കുന്ന ചാർജുകളെ സ്വാധീനിക്കുന്നു. ശരിയോ തെറ്റോ?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "True",
+          "ml": "ശരി"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "False",
+          "ml": "തെറ്റ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Only at the equator",
+          "ml": "ഭൂമധ്യരേഖയിൽ മാത്രം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Only inside the earth",
+          "ml": "ഭൂമിക്കുള്ളിൽ മാത്രം"
+        }
+      }
+    ],
+    "answer": "A",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "Moving charges in any magnetic field (including Earth's) experience a Lorentz force.",
+      "ml": "ഏതൊരു കാന്തികമണ്ഡലത്തിലും ചലിക്കുന്ന ചാർജുകളിൽ ബലം അനുഭവപ്പെടും."
+    }
+  },
+  {
+    "q_id": "u2_q24",
+    "type": "mcq",
+    "stem": {
+      "en": "Who formulated the Left Hand Rule?",
+      "ml": "ഇടതുകൈ നിയമം ആവിഷ്കരിച്ചത് ആര്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Michael Faraday",
+          "ml": "മൈക്കൽ ഫാരഡേ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "John Ambrose Fleming",
+          "ml": "ജോൺ ആംബ്രോസ് ഫ്ലെമിംഗ്"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "James Clerk Maxwell",
+          "ml": "ജെയിംസ് ക്ലാർക്ക് മാക്സ്വെൽ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Heinrich Hertz",
+          "ml": "ഹെൻറിച്ച് ഹെർട്സ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "John Ambrose Fleming invented the hand rules for motors and generators.",
+      "ml": "മോട്ടോറുകളുടെയും ജനറേറ്ററുകളുടെയും പ്രവൃത്തി വിശദീകരിക്കുന്ന നിയമങ്ങൾ ആവിഷ്കരിച്ചത് ഫ്ലെമിംഗ് ആണ്."
+    }
+  },
+  {
+    "q_id": "u2_q25",
+    "type": "mcq",
+    "stem": {
+      "en": "The coil of wire wound around a cylinder to form a magnetic field is called a:",
+      "ml": "കാന്തികമണ്ഡലം ഉണ്ടാക്കുന്നതിനായി സിലിണ്ടർ ആകൃതിയിൽ ചുറ്റിയെടുക്കുന്ന കമ്പി:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Capacitor",
+          "ml": "കപ്പാസിറ്റർ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Commutator",
+          "ml": "കമ്മ്യൂട്ടേറ്റർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Solenoid",
+          "ml": "സോളിനോയിഡ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Armature",
+          "ml": "ആർമേച്ചർ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "A solenoid is a cylindrical coil of wire acting as a magnet when carrying electric current.",
+      "ml": "വൈദ്യുതി കടന്നുപോകുമ്പോൾ കാന്തമായി പ്രവർത്തിക്കുന്ന ചുരുളുകളുള്ള കമ്പിയാണ് സോളിനോയിഡ്."
+    }
+  },
+  {
+    "q_id": "u2_q26",
+    "type": "mcq",
+    "stem": {
+      "en": "In a DC motor, what is the rotating part called?",
+      "ml": "ഡി.സി മോട്ടോറിലെ കറങ്ങുന്ന ഭാഗം ഏതാണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Stator",
+          "ml": "സ്റ്റേറ്റർ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Armature (Rotor)",
+          "ml": "ആർമേച്ചർ (റോട്ടർ)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Brush",
+          "ml": "ബ്രഷ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Magnet",
+          "ml": "കാന്തം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "The armature is the central coil assembly that spins under magnetic force.",
+      "ml": "കാന്തിക ബലം കാരണം കറങ്ങുന്ന മോട്ടോറിലെ പ്രധാന ഭാഗമാണ് ആർമേച്ചർ."
+    }
+  },
+  {
+    "q_id": "u2_q27",
+    "type": "mcq",
+    "stem": {
+      "en": "What is the primary function of a magnetic compass?",
+      "ml": "ഒരു മാഗ്നെറ്റിക് കോമ്പസിന്റെ പ്രധാന ഉപയോഗം എന്താണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "To measure current",
+          "ml": "വൈദ്യുതപ്രവാഹം അളക്കാൻ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "To find geographic directions using Earth's magnetic field",
+          "ml": "ഭൂമിയുടെ കാന്തികമണ്ഡലം ഉപയോഗിച്ച് ദിശ കണ്ടെത്താൻ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "To measure voltage",
+          "ml": "വോൾട്ടേജ് അളക്കാൻ"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "To locate iron strictly",
+          "ml": "ഇരുമ്പ് കണ്ടെത്താൻ മാത്രം"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "A compass aligns with magnetic fields, historically used for Earth navigation.",
+      "ml": "കാന്തികമണ്ഡലത്തിനനുസരിച്ച് ദിശ കാണിക്കുന്ന ഉപകരണമാണ് കോമ്പസ്."
+    }
+  },
+  {
+    "q_id": "u2_q28",
+    "type": "mcq",
+    "stem": {
+      "en": "The magnitude of the magnetic field produced by a straight current-carrying wire is inversely proportional to:",
+      "ml": "ഒരു നേരായ ചാലകം ഉണ്ടാക്കുന്ന കാന്തികമണ്ഡലത്തിന്റെ ശക്തി എന്തിനോട് വിപരീത അനുപാതത്തിലാണ്?"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Length of wire",
+          "ml": "കമ്പിയുടെ നീളം"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Disctance from the wire",
+          "ml": "കമ്പിയിൽ നിന്നുള്ള അകലം"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Current in the wire",
+          "ml": "കമ്പിയിലെ വൈദ്യുതപ്രവാഹം"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Voltage",
+          "ml": "വോൾട്ടേജ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "hard",
+    "explanation": {
+      "en": "As you move further away from the wire (increase distance), the magnetic field gets weaker.",
+      "ml": "ചാലകത്തിൽ നിന്നുള്ള അകലം കൂടുമ്പോൾ കാന്തികശക്തി കുറയുന്നു."
+    }
+  },
+  {
+    "q_id": "u2_q29",
+    "type": "mcq",
+    "stem": {
+      "en": "An electromagnet's magnetism is:",
+      "ml": "ഒരു വൈദ്യുതകാന്തത്തിന്റെ കാന്തികശക്തി:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Permanent",
+          "ml": "സ്ഥിരമാണ്"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Temporary (can be turned on/off)",
+          "ml": "താൽക്കാലികമാണ് (ഓൺ/ഓഫ് ചെയ്യാൻ കഴിയും)"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Exactly same as Earth's",
+          "ml": "ഭൂമിയുടേതിന് തുല്യമാണ്"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Unpredictable",
+          "ml": "പ്രവചനാതീതമാണ്"
+        }
+      }
+    ],
+    "answer": "B",
+    "difficulty": "easy",
+    "explanation": {
+      "en": "Electromagnets only produce a field while electric current is flowing.",
+      "ml": "വൈദ്യുതി പ്രവഹിക്കുമ്പോൾ മാത്രം കാന്തമായി പ്രവർത്തിക്കുന്നവയാണ് വൈദ്യുതകാന്തങ്ങൾ."
+    }
+  },
+  {
+    "q_id": "u2_q30",
+    "type": "mcq",
+    "stem": {
+      "en": "The stationary magnets in an electric motor are generally known as the:",
+      "ml": "മോട്ടോറിനുള്ളിലെ സ്ഥിരമായി നിൽക്കുന്ന കാന്തങ്ങളെ വിളിക്കുന്ന പേര്:"
+    },
+    "options": [
+      {
+        "k": "A",
+        "text": {
+          "en": "Rotor",
+          "ml": "റോട്ടർ"
+        }
+      },
+      {
+        "k": "B",
+        "text": {
+          "en": "Armature",
+          "ml": "ആർമേച്ചർ"
+        }
+      },
+      {
+        "k": "C",
+        "text": {
+          "en": "Stator (Field magnet)",
+          "ml": "സ്റ്റേറ്റർ (ഫീൽഡ് കാന്തം)"
+        }
+      },
+      {
+        "k": "D",
+        "text": {
+          "en": "Commutator",
+          "ml": "കമ്മ്യൂട്ടേറ്റർ"
+        }
+      }
+    ],
+    "answer": "C",
+    "difficulty": "medium",
+    "explanation": {
+      "en": "The stationary magnetic field generator is the stator.",
+      "ml": "മോട്ടോറിനുള്ളിലെ കറങ്ങാത്ത കാന്തിക ഭാഗമാണ് സ്റ്റേറ്റർ."
+    }
+  }
+]
 } as const;

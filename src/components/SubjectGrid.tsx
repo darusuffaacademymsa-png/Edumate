@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Subject, Language } from '../data/curriculum';
 import { 
   BookOpen, 
@@ -28,11 +29,12 @@ import {
   Scale,
   BookOpen
   };
+
 export default function SubjectGrid({ subjects, language, onSelectSubject, isVideos = false }: { subjects: Subject[], language: Language, onSelectSubject: (id: string) => void, isVideos?: boolean }) {
   const renderInline = (str: any) => {
     if (!str) return '';
     if (str.ar) {
-      if (language === 'bilingual') return `${str.ar} / ${str.en} / ${str.ml}`;
+      if (language === 'bilingual') return `${str.ar} / ${str.ml}`;
       if (language === 'ar') return str.ar;
       if (language === 'en') return `${str.ar} (${str.en})`;
       if (language === 'ml') return `${str.ar} (${str.ml})`;
@@ -54,49 +56,68 @@ export default function SubjectGrid({ subjects, language, onSelectSubject, isVid
     'text-brand-coral bg-brand-coral/10',
     'text-brand-green bg-brand-green/10',
     'text-brand-sky bg-brand-sky/10',
-    'text-brand-accent bg-brand-accent/20'
+    'text-amber-500 bg-amber-50 dark:bg-amber-900/20'
   ];
 
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.05 } }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 16, scale: 0.97 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] } }
+  };
+
   return (
-    <div className="p-2 sm:p-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6">
+    <div className="px-0 sm:px-4 py-2 sm:py-4 max-w-7xl mx-auto">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-5"
+      >
         {subjects.map((subject, idx) => {
           const Icon = iconMap[subject.icon] || BookOpen;
           const colorClass = iconColors[idx % iconColors.length];
+          const bgColor = colorClass.split(' ')[0].replace('text-', 'bg-');
           
           return (
-            <div 
+            <motion.div 
               key={subject.id}
+              variants={item}
               onClick={() => onSelectSubject(subject.id)}
-              className={`group relative bg-white dark:bg-slate-800 rounded-xl sm:rounded-[2.5rem] p-3 sm:p-6 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-slate-100 dark:border-slate-700 ${isVideos ? 'hover:border-indigo-500/20' : 'hover:border-brand-primary/20'} dark:hover:border-brand-accent/20 flex flex-col overflow-hidden`}
+              className={`group relative bg-white dark:bg-slate-800/80 rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-slate-100 dark:border-slate-700/60 ${isVideos ? 'hover:border-indigo-400/30' : 'hover:border-brand-primary/20'} dark:hover:border-brand-accent/20 flex flex-col overflow-hidden active:scale-[0.97]`}
             >
-              {/* Decorative Gradient Background */}
-              <div className={`absolute -top-12 -right-12 w-24 h-24 blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 ${colorClass.split(' ')[0].replace('text-', 'bg-')}`} />
+              {/* Hover glow */}
+              <div className={`absolute -top-8 -right-8 w-20 h-20 sm:w-28 sm:h-28 blur-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 ${bgColor}`} />
               
-              <div className="relative z-10 flex flex-col items-center text-center">
-                <div className={`mb-2 sm:mb-6 w-10 h-10 sm:w-20 sm:h-20 rounded-xl sm:rounded-[2rem] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm ${colorClass}`}>
-                  <Icon className="w-5 h-5 sm:w-10 sm:h-10 transition-all" />
+              <div className="relative z-10 flex flex-col items-center text-center gap-3 sm:gap-4">
+                {/* Icon */}
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl lg:rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-sm ${colorClass}`}>
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 transition-all" />
                 </div>
                 
-                <h3 className={`font-display text-[10px] sm:text-2xl font-black mb-1 sm:mb-2 line-clamp-2 leading-tight ${isVideos ? 'text-indigo-900 dark:text-white group-hover:text-indigo-600' : 'text-brand-primary dark:text-white group-hover:text-brand-primary'} dark:group-hover:text-brand-accent transition-colors px-1`}>
+                {/* Title */}
+                <h3 className={`font-display text-sm sm:text-base lg:text-lg font-black leading-tight line-clamp-2 ${isVideos ? 'text-indigo-900 dark:text-white group-hover:text-indigo-600' : 'text-brand-primary dark:text-white group-hover:text-brand-primary'} dark:group-hover:text-brand-accent transition-colors`}>
                   {renderInline(subject.title)}
                 </h3>
-                
-                <div className="hidden sm:flex items-center gap-2">
-                  <span className={`px-3 py-1 rounded-full bg-slate-50 dark:bg-white/5 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 ${isVideos ? 'group-hover:bg-indigo-50' : 'group-hover:bg-brand-primary/5'} transition-colors`}>
-                    {subject.units.length} Units
-                  </span>
-                </div>
 
-                <div className={`mt-2 sm:mt-6 flex items-center gap-1 sm:gap-2 ${isVideos ? 'text-indigo-600' : 'text-brand-primary'} dark:text-brand-accent opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0`}>
-                  <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em]">Explore</span>
-                  <ChevronRight className="w-3 h-3 sm:w-4 h-4" />
+                {/* Units badge */}
+                <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-slate-50 dark:bg-white/5 text-slate-400 dark:text-slate-500 ${isVideos ? 'group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/20' : 'group-hover:bg-brand-primary/5'} transition-colors`}>
+                  {subject.units.length} Units
+                </span>
+
+                {/* Arrow reveal */}
+                <div className={`flex items-center gap-1 ${isVideos ? 'text-indigo-500' : 'text-brand-primary'} dark:text-brand-accent opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-all duration-200`}>
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em]">Explore</span>
+                  <ChevronRight className="w-3 h-3" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

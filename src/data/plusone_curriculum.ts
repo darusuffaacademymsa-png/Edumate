@@ -34,8 +34,125 @@ import {
   plusOneUrduUnit3Chapter7, plusOneUrduUnit3Chapter8, plusOneUrduUnit3Chapter9,
   plusOneUrduUnit4Chapter10, plusOneUrduUnit4Chapter11, plusOneUrduUnit4Chapter12, plusOneUrduUnit4Chapter13
 } from './plusone_urdu';
+import {
+  plusOnePoliticalSciencePart1Unit1, plusOnePoliticalSciencePart1Unit2, plusOnePoliticalSciencePart1Unit3,
+  plusOnePoliticalSciencePart1Unit4, plusOnePoliticalSciencePart1Unit5, plusOnePoliticalSciencePart1Unit6,
+  plusOnePoliticalSciencePart1Unit7, plusOnePoliticalSciencePart1Unit8, plusOnePoliticalSciencePart1Unit9,
+  plusOnePoliticalSciencePart1Unit10, plusOnePoliticalSciencePart2Unit1, plusOnePoliticalSciencePart2Unit2,
+  plusOnePoliticalSciencePart2Unit3, plusOnePoliticalSciencePart2Unit4, plusOnePoliticalSciencePart2Unit5,
+  plusOnePoliticalSciencePart2Unit6, plusOnePoliticalSciencePart2Unit7, plusOnePoliticalSciencePart2Unit8,
+  plusOnePoliticalSciencePart2Unit9, plusOnePoliticalSciencePart2Unit10
+} from './plusone_political_science';
 
 export const plusOneCurriculum: Subject[] = [
+  {
+    id: "sub-political-science",
+    title: { en: "Political Science", ml: "പൊളിറ്റിക്കൽ സയൻസ്" },
+    icon: "Scale",
+    color: "bg-[#455a64]",
+    units: [
+      {
+        id: "u-ps-1",
+        title: { en: "Constitution: Why and How?", ml: "ഭരണഘടന: എന്തിന്? എങ്ങനെ?" },
+        lessons: [plusOnePoliticalSciencePart1Unit1]
+      },
+      {
+        id: "u-ps-2",
+        title: { en: "Rights in the Indian Constitution", ml: "ഇന്ത്യൻ ഭരണഘടനയിലെ അവകാശങ്ങൾ" },
+        lessons: [plusOnePoliticalSciencePart1Unit2]
+      },
+      {
+        id: "u-ps-3",
+        title: { en: "Election and Representation", ml: "തിരഞ്ഞെടുപ്പും പ്രാതിനിധ്യവും" },
+        lessons: [plusOnePoliticalSciencePart1Unit3]
+      },
+      {
+        id: "u-ps-4",
+        title: { en: "Executive", ml: "കാര്യനിർവ്വഹണ വിഭാഗം" },
+        lessons: [plusOnePoliticalSciencePart1Unit4]
+      },
+      {
+        id: "u-ps-5",
+        title: { en: "Legislature", ml: "നിയമനിർമ്മാണ വിഭാഗം" },
+        lessons: [plusOnePoliticalSciencePart1Unit5]
+      },
+      {
+        id: "u-ps-6",
+        title: { en: "Judiciary", ml: "നീതിനായക വിഭാഗം" },
+        lessons: [plusOnePoliticalSciencePart1Unit6]
+      },
+      {
+        id: "u-ps-7",
+        title: { en: "Federalism", ml: "ഫെഡറലിസം" },
+        lessons: [plusOnePoliticalSciencePart1Unit7]
+      },
+      {
+        id: "u-ps-8",
+        title: { en: "Local Governments", ml: "പ്രാദേശിക ഗവൺമെന്റുകൾ" },
+        lessons: [plusOnePoliticalSciencePart1Unit8]
+      },
+      {
+        id: "u-ps-9",
+        title: { en: "Constitution as a Living Document", ml: "ഭരണഘടന ഒരു ജീവസ്സുറ്റ രേഖ" },
+        lessons: [plusOnePoliticalSciencePart1Unit9]
+      },
+      {
+        id: "u-ps-10",
+        title: { en: "The Philosophy of the Constitution", ml: "ഭരണഘടനയുടെ ദർശനം" },
+        lessons: [plusOnePoliticalSciencePart1Unit10]
+      },
+      {
+        id: "u-ps-11",
+        title: { en: "Political Theory: An Introduction", ml: "രാഷ്ട്രീയ സിദ്ധാന്തം: ഒരു ആമുഖം" },
+        lessons: [plusOnePoliticalSciencePart2Unit1]
+      },
+      {
+        id: "u-ps-12",
+        title: { en: "Freedom", ml: "സ്വാതന്ത്ര്യം" },
+        lessons: [plusOnePoliticalSciencePart2Unit2]
+      },
+      {
+        id: "u-ps-13",
+        title: { en: "Equality", ml: "സമത്വം" },
+        lessons: [plusOnePoliticalSciencePart2Unit3]
+      },
+      {
+        id: "u-ps-14",
+        title: { en: "Social Justice", ml: "സാമൂഹിക നീതി" },
+        lessons: [plusOnePoliticalSciencePart2Unit4]
+      },
+      {
+        id: "u-ps-15",
+        title: { en: "Rights", ml: "അവകാശങ്ങൾ" },
+        lessons: [plusOnePoliticalSciencePart2Unit5]
+      },
+      {
+        id: "u-ps-16",
+        title: { en: "Citizenship", ml: "പൗരത്വം" },
+        lessons: [plusOnePoliticalSciencePart2Unit6]
+      },
+      {
+        id: "u-ps-17",
+        title: { en: "Nationalism", ml: "ദേശീയത" },
+        lessons: [plusOnePoliticalSciencePart2Unit7]
+      },
+      {
+        id: "u-ps-18",
+        title: { en: "Secularism", ml: "മതേതരത്വം" },
+        lessons: [plusOnePoliticalSciencePart2Unit8]
+      },
+      {
+        id: "u-ps-19",
+        title: { en: "Peace", ml: "സമാധാനം" },
+        lessons: [plusOnePoliticalSciencePart2Unit9]
+      },
+      {
+        id: "u-ps-20",
+        title: { en: "Development", ml: "വികസനം" },
+        lessons: [plusOnePoliticalSciencePart2Unit10]
+      }
+    ]
+  },
   {
     id: "sub-urdu",
     title: { ar: "اردو", en: "Urdu", ml: "ഉറുദു" },

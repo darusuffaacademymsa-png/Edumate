@@ -1,0 +1,269 @@
+Q: Sound travels as which type of wave in air? | വായുവിലൂടെ ശബ്ദം ഏത് തരം തരംഗമായാണ് സഞ്ചരിക്കുന്നത്?
+A) Transverse wave | അനുപ്രസ്ഥ തരംഗം
+B) Longitudinal wave | അനുദൈർഘ്യ തരംഗം
+C) Electromagnetic wave | വൈദ്യുതകാന്തിക തരംഗം
+D) Non-mechanical wave | അയാന്ത്രിക തരംഗം
+ANS: B
+DIFF: easy
+EXP: In air, sound travels as compressions and rarefactions, making it a longitudinal wave. | വായുവിൽ ശബ്ദം കംപ്രഷനുകളായും റെയർഫാക്ഷനുകളായുമാണ് സഞ്ചരിക്കുന്നത്, അതിനാൽ ഇത് അനുദൈർഘ്യ തരംഗമാണ്.
+
+Q: The maximum displacement of a particle from its mean position is called: | ഒരു കണികയ്ക്ക് അതിന്റെ മധ്യസ്ഥാനത്തുനിന്നുണ്ടാകുന്ന പരമാവധി സ്ഥാനാന്തരമാണ്:
+A) Wavelength | തരംഗദൈർഘ്യം
+B) Frequency | ആവൃത്തി
+C) Amplitude | ആയതി
+D) Time period | പിരിയഡ്
+ANS: C
+DIFF: easy
+EXP: Amplitude marks the maximum displacement of the oscillating particle. | ദോലനം ചെയ്യുന്ന കണികയുടെ പരമാവധി സ്ഥാനാന്തരത്തെ ആയതി എന്ന് വിളിക്കുന്നു.
+
+Q: What is the relation between frequency (f) and period (T)? | ആവൃത്തിയും (f) പിരിയഡും (T) തമ്മിലുള്ള ബന്ധമെന്ത്?
+A) f = T | f = T
+B) f = 1/T | f = 1/T
+C) f = T² | f = T²
+D) f = 2T | f = 2T
+ANS: B
+DIFF: medium
+EXP: Frequency is the reciprocal of the time period. | ആവൃത്തി പിരിയഡിന്റെ വ്യുൽക്രമമാണ്.
+
+Q: The number of oscillations in one second is termed as: | ഒരു സെക്കൻഡിലുണ്ടാകുന്ന ദോലനങ്ങളുടെ എണ്ണമാണ്:
+A) Time period | പിരിയഡ്
+B) Frequency | ആവൃത്തി
+C) Wavelength | തരംഗദൈർഘ്യം
+D) Amplitude | ആയതി
+ANS: B
+DIFF: easy
+EXP: This is the definition of frequency. | ഇത് ആവൃത്തിയുടെ നിർവചനമാണ്.
+
+Q: Which factor distinguishes a shrill sound from a hoarse sound? | കൂർത്ത ശബ്ദത്തെയും പരുക്കൻ ശബ്ദത്തെയും വേർതിരിക്കുന്ന ഘടകം ഏതാണ്?
+A) Pitch | പിച്ച്
+B) Loudness | ഉച്ചത
+C) Speed | വേഗത
+D) Echo | പ്രതിധ്വനി
+ANS: A
+DIFF: medium
+EXP: Pitch (frequency) helps us identify the sharpness of a sound. | ശബ്ദത്തിന്റെ കൂർമത തിരിച്ചറിയാൻ പിച്ച് (ആവൃത്തി) സഹായിക്കുന്നു.
+
+Q: Which of the following determines the loudness of a sound? | താഴെ പറയുന്നവയിൽ ഏതാണ് ശബ്ദത്തിന്റെ ഉച്ചത നിർണ്ണയിക്കുന്നത്?
+A) Frequency | ആവൃത്തി
+B) Time period | പിരിയഡ്
+C) Amplitude | ആയതി
+D) Wave speed | തരംഗ വേഗത
+ANS: C
+DIFF: medium
+EXP: A higher amplitude results in a louder sound. | ഉയർന്ന ആയതി കൂടിയ ശബ്ദത്തിന് കാരണമാകുന്നു.
+
+Q: What is the normal human hearing frequency range? | മനുഷ്യന്റെ സാധാരണ ശ്രവണ പരിധി എത്രയാണ്?
+A) 20 Hz - 20,000 Hz | 20 Hz - 20,000 Hz
+B) 10 Hz - 10,000 Hz | 10 Hz - 10,000 Hz
+C) 50 Hz - 50,000 Hz | 50 Hz - 50,000 Hz
+D) 100 Hz - 10,000 Hz | 100 Hz - 10,000 Hz
+ANS: A
+DIFF: easy
+EXP: Humans can only hear frequencies between 20 Hz and 20 kHz. | മനുഷ്യർക്ക് 20 Hz നും 20,000 Hz നും ഇടയിലുള്ള ആവൃത്തികൾ മാത്രമേ കേൾക്കാൻ കഴിയൂ.
+
+Q: Frequencies above 20,000 Hz are known as: | 20,000 Hz ന് മുകളിലുള്ള ആവൃത്തികൾ അറിയപ്പെടുന്നത്:
+A) Infrasonic | ഇൻഫ്രാസോണിക്
+B) Supersonic | സൂപ്പർസോണിക്
+C) Ultrasonic | അൾട്രാസോണിക്
+D) Megasonic | മെഗാസോണിക്
+ANS: C
+DIFF: easy
+EXP: Sounds above the human hearing limit are called ultrasonic. | മനുഷ്യന്റെ ശ്രവണ പരിധിക്ക് മുകളിലുള്ള ശബ്ദങ്ങളെ അൾട്രാസോണിക് എന്ന് വിളിക്കുന്നു.
+
+Q: Which animal relies on ultrasonic waves to navigate? | സഞ്ചരിക്കാൻ അൾട്രാസോണിക് തരംഗങ്ങളെ ആശ്രയിക്കുന്ന മൃഗം ഏതാണ്?
+A) Elephant | ആന
+B) Bat | വവ്വാൽ
+C) Lion | സിംഹം
+D) Eagle | കഴുകൻ
+ANS: B
+DIFF: easy
+EXP: Bats use echolocation via ultrasonic waves to find prey. | ഇരപിടിക്കാൻ വവ്വാലുകൾ അൾട്രാസോണിക് തരംഗങ്ങൾ ഉപയോഗിച്ച് എക്കോലൊക്കേഷൻ നടത്തുന്നു.
+
+Q: What is the speed of sound in air at 25°C roughly? | 25°C ൽ വായുവിൽ കൂടെയുള്ള ശബ്ദത്തിന്റെ വേഗത ഏകദേശം എത്രയാണ്?
+A) 1500 m/s | 1500 മീ/സെക്കൻഡ്
+B) 300,000 m/s | 300,000 മീ/സെക്കൻഡ്
+C) 346 m/s | 346 മീ/സെക്കൻഡ്
+D) 5000 m/s | 5000 മീ/സെക്കൻഡ്
+ANS: C
+DIFF: medium
+EXP: Sound travels faster in warmer air, usually around 346 m/s at 25°C. | ഊഷ്മാവ് കൂടുമ്പോൾ ശബ്ദ വേഗത വർദ്ധിക്കുന്നു, 25°C-ൽ ഇത് ഏകദേശം 346 m/s ആണ്.
+
+Q: In which medium does sound travel the fastest? | ഏത് മാധ്യമത്തിലാണ് ശബ്ദം ഏറ്റവും വേഗത്തിൽ സഞ്ചരിക്കുന്നത്?
+A) Oxygen Gas | ഓക്സിജൻ വാതകം
+B) Water | ജലം
+C) Steel | സ്റ്റീൽ
+D) Vacuum | ശൂന്യസ്ഥലം
+ANS: C
+DIFF: easy
+EXP: Sound travels much faster in solids (like steel) compared to liquids or gases. | ദ്രാവകങ്ങളെയോ വാതകങ്ങളെയോ അപേക്ഷിച്ച് ഖരവസ്തുക്കളിൽ (സ്റ്റീൽ പോലെയുള്ള) ശബ്ദം വേഗത്തിൽ സഞ്ചരിക്കുന്നു.
+
+Q: The persistence of hearing in a normal human ear is: | സാധാരണ മനുഷ്യന്റെ ചെവിയിലെ ശ്രവണസ്ഥിരത എത്രയാണ്?
+A) 0.1 second | 0.1 സെക്കൻഡ്
+B) 0.5 second | 0.5 സെക്കൻഡ്
+C) 1 second | 1 സെക്കൻഡ്
+D) 2 seconds | 2 സെക്കൻഡ്
+ANS: A
+DIFF: medium
+EXP: The sensation of sound remains in ear for 1/10th of a second. | ശബ്ദത്തിന്റെ അനുഭവം ചെവിയിൽ 1/10 സെക്കൻഡ് നീണ്ടുനിൽക്കുന്നു.
+
+Q: To hear a distinct echo, what must be the minimum distance of the obstacle? | വ്യക്തമായ പ്രതിധ്വനി കേൾക്കണമെങ്കിൽ തടസ്സത്തിലേക്കുള്ള കുറഞ്ഞ അകലം എത്രയായിരിക്കണം?
+A) 10 m | 10 മീറ്റർ
+B) 17 m | 17 മീറ്റർ
+C) 34 m | 34 മീറ്റർ
+D) 50 m | 50 മീറ്റർ
+ANS: B
+DIFF: hard
+EXP: Sound must travel back and forth in >0.1s. (340 * 0.1)/2 = 17m. | പ്രതിധ്വനി കേൾക്കാൻ ദൂരം കുറഞ്ഞത് 17 മീറ്റർ ആയിരിക്കണം.
+
+Q: Multiple reflections of sound in a closed room causing a lingering effect is called: | അടഞ്ഞ മുറിയിൽ ശബ്ദം പലതവണ പ്രതിപതിച്ചുണ്ടാകുന്ന നീണ്ടുനിൽക്കുന്ന അവസ്ഥയെ പറയുന്ന പേര്:
+A) Echo | പ്രതിധ്വനി
+B) Resonance | അനുനാദം
+C) Reverberation | അനുരണനം
+D) Interference | ഇടപെടൽ
+ANS: C
+DIFF: medium
+EXP: Reverberation is the continuation of sound due to multiple reflections. | ഒന്നിലധികം പ്രതിപതനം മൂലം ശബ്ദം നീണ്ടുനിൽക്കുന്നതാണ് അനുരണനം.
+
+Q: Which medical instrument relies on multiple reflection of sound? | ശബ്ദത്തിന്റെ ബഹുല പ്രതിപതനം അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്ന വൈദ്യ ഉപകരണം ഏത്?
+A) Thermometer | തെർമോമീറ്റർ
+B) Stethoscope | സ്റ്റെതസ്കോപ്പ്
+C) Endoscope | എൻഡോസ്കോപ്പ്
+D) Barometer | ബാരോമീറ്റർ
+ANS: B
+DIFF: easy
+EXP: A stethoscope uses multiple reflections to channel heartbeats to the ear. | ഹൃദയമിടിപ്പ് കൂടുതൽ വ്യക്തമായി കേൾക്കാൻ സ്റ്റെതസ്കോപ്പിൽ ശബ്ദത്തിന്റെ ബഹുല പ്രതിപതനം ഉപയോഗിക്കുന്നു.
+
+Q: SONAR stands for: | SONAR-ന്റെ പൂർണ്ണരൂപം:
+A) Sound Navigation and Ranging | സൗണ്ട് നാവിഗേഷൻ ആൻഡ് റേഞ്ചിംഗ്
+B) Sound Note and Radius | സൗണ്ട് നോട്ട് ആൻഡ് റേഡിയസ്
+C) Sonic Natural Resonance | സോണിക് നാച്ചുറൽ റെസൊണൻസ്
+D) Solar Navigation and Radar | സോളാർ നാവിഗേഷൻ ആൻഡ് റഡാർ
+ANS: A
+DIFF: medium
+EXP: SONAR uses ultrasonic waves for Sound Navigation And Ranging. | അൾട്രാസോണിക് തരംഗങ്ങൾ ഉപയോഗിക്കുന്ന സൗണ്ട് നാവിഗേഷൻ ആൻഡ് റേഞ്ചിംഗ് ആണ് SONAR.
+
+Q: If a wave has a frequency of 50 Hz, what is its period? | ഒരു തരംഗത്തിന്റെ ആവൃത്തി 50 Hz ആണെങ്കിൽ അതിന്റെ പിരിയഡ് എത്ര?
+A) 2 seconds | 2 സെക്കൻഡ്
+B) 0.5 second | 0.5 സെക്കൻഡ്
+C) 0.02 second | 0.02 സെക്കൻഡ്
+D) 50 seconds | 50 സെക്കൻഡ്
+ANS: C
+DIFF: hard
+EXP: Period T = 1/f = 1/50 = 0.02 s. | പിരിയഡ് T = 1/f = 1/50 = 0.02 സെക്കൻഡ്.
+
+Q: Natural frequency depends on: | തനത് ആവൃത്തി എന്തിനെയൊക്കെ ആശ്രയിച്ചിരിക്കുന്നു?
+A) Nature, shape and dimensions of the body | വസ്തുവിന്റെ പ്രകൃതം, ആകൃതി, വലിപ്പം
+B) Speed of sound | ശബ്ദ വേഗത
+C) Time context alone | സമയത്തിന്റെ ഘടകം മാത്രം
+D) Atmospheric pressure | അന്തരീക്ഷമർദ്ദം
+ANS: A
+DIFF: medium
+EXP: Natural frequency is inherent to the object's physical dimensions and material. | തനത് ആവൃത്തി വസ്തുവിന്റെ ഭൗതിക അളവുകളെയും മെറ്റീരിയലിനെയുമാണ് ആശ്രയിച്ചിരിക്കുന്നത്.
+
+Q: When an external force vibrates a body exactly at its natural frequency, it leads to: | ഒരു ബാഹ്യബലം ഒരു വസ്തുവിനെ അതിന്റെ തനത് ആവൃത്തിയിൽ കമ്പനം ചെയ്യിക്കുമ്പോൾ ഉണ്ടാകുന്നത്:
+A) Damping | ഡാംപിംഗ്
+B) Resonance | അനുനാദം
+C) Dispersion | ഡിസ്പർഷൻ
+D) Refraction | അപവർത്തനം
+ANS: B
+DIFF: hard
+EXP: Resonance occurs when the driving frequency matches the natural frequency. | ബാഹ്യബലത്തിന്റെ ആവൃത്തി തനത് ആവൃത്തിയോട് സമമാകുമ്പോഴാണ് അനുനാദം ഉണ്ടാകുന്നത്.
+
+Q: Why do soldiers break steps while crossing a bridge? | സൈനികർ ഒരു പാലം കടക്കുമ്പോൾ ക്രമബദ്ധമായി നടക്കാത്തത് എന്തുകൊണ്ട്?
+A) To avoid causing resonance with the bridge | പാലത്തിൽ അനുനാദം ഉണ്ടാക്കാതിരിക്കാൻ
+B) To walk faster | വേഗത്തിൽ നടക്കാൻ
+C) To save energy | ഊർജ്ജം സംരക്ഷിക്കാൻ
+D) To avoid slipping | വഴുതാതിരിക്കാൻ
+ANS: A
+DIFF: medium
+EXP: Synchronized marching can hit the bridge's natural frequency, causing resonant collapse. | എല്ലാവരും ഒരേ താളത്തിൽ നടക്കുന്നത് പാലത്തിന്റെ തനത് ആവൃത്തിയിൽ അനുനാദമുണ്ടാക്കി അതിനെ തകർക്കാൻ സാധ്യതയുണ്ട്.
+
+Q: Ultrasonic waves are commonly used in which scanning technology? | ഏത് സ്കാനിംഗ് സാങ്കേതികവിദ്യയിലാണ് അൾട്രാസോണിക് തരംഗങ്ങൾ ഉപയോഗിക്കുന്നത്?
+A) MRI | എം.ആർ.ഐ
+B) X-Ray | എക്സ്-റേ
+C) CT Scan | സി.ടി സ്കാൻ
+D) Ultrasound Scanning (Sonography) | അൾട്രാസൗണ്ട് സ്കാനിംഗ്
+ANS: D
+DIFF: easy
+EXP: Sonography uses high-frequency sound to image soft tissues. | സോണോഗ്രാഫിയിൽ മൃദുകോശങ്ങളുടെ ചിത്രം പകർത്താൻ ഉയർന്ന ആവൃത്തിയുള്ള ശബ്ദം ഉപയോഗിക്കുന്നു.
+
+Q: Distance calculation in SONAR is given by: | SONAR-ൽ ദൂരം കാണ്ടെത്താനുള്ള സമവാക്യം:
+A) d = v * t | d = v * t
+B) d = (v * t) / 2 | d = (v * t) / 2
+C) d = v / t | d = v / t
+D) d = 2 * v * t | d = 2 * v * t
+ANS: B
+DIFF: hard
+EXP: Distance is vt/2 because the sound travels to the object and back. | തരംഗം പോയി വരുന്ന ദൂരമായതുകൊണ്ട് ദൂരം സമം വേഗത * സമയം ഭാഗം 2 ആയിരിക്കും.
+
+Q: Bats locate their prey using the principle of: | ഇരയെ കണ്ടെത്താൻ വവ്വാലുകൾ ഉപയോഗിക്കുന്ന തത്വം:
+A) Refraction | അപവർത്തനം
+B) Absorption | ആഗിരണം
+C) Echo | പ്രതിധ്വനി (എക്കോലൊക്കേഷൻ)
+D) Interference | ഇന്റർഫെറൻസ്
+ANS: C
+DIFF: easy
+EXP: Echolocation relies on recording echos of ultrasonic squeaks. | അൾട്രാസോണിക് ശബ്ദങ്ങളുടെ പ്രതിധ്വനിയാണ് എക്കോലൊക്കേഷന് സഹായിക്കുന്നത്.
+
+Q: True or False: Pitch depends directly on Amplitude. | പിച്ച് (Pitch) ആയതിയെ (Amplitude) നേരിട്ട് ആശ്രയിക്കുന്നു. ശരിയോ തെറ്റോ?
+A) True | ശരി
+B) False | തെറ്റ്
+C) Only in vacuum | ശൂന്യസ്ഥലത്ത് മാത്രം
+D) Only in liquids | ദ്രാവകങ്ങളിൽ മാത്രം
+ANS: B
+DIFF: medium
+EXP: Pitch depends on Frequency, while Loudness depends on Amplitude. | പിച്ച് ആവൃത്തിയെയും ഉച്ചത ആയതിയെയും ആശ്രയിക്കുന്നു.
+
+Q: The property of a sound wave that determines its color/identity (timbre) is: | വ്യത്യസ്ത വാദ്യോപകരണങ്ങളുടെ ഒരേപോലെയുള്ള ശബ്ദം വേർതിരിച്ചറിയാൻ സഹായിക്കുന്ന സവിശേഷത:
+A) Waveform | തരംഗ രൂപം
+B) Amplitude | ആയതി
+C) Wavelength | തരംഗദൈർഘ്യം
+D) Velocity | പ്രവേഗം
+ANS: A
+DIFF: hard
+EXP: Timbre (quality) depends on the exact shape or mixture of waveforms. | ശബ്ദത്തിന്റെ ഗുണനിലവാരം (ടിമ്പർ) തരംഗങ്ങളുടെ കൃത്യമായ രൂപത്തെ ആശ്രയിച്ചിരിക്കുന്നു.
+
+Q: A tuning fork marked ‘512’ indicates: | ഒരു ട്യൂണിംഗ് ഫോർക്കിൽ '512' എന്ന് രേഖപ്പെടുത്തിയിരിക്കുന്നത് എന്തിനെ സൂചിപ്പിക്കുന്നു?
+A) Its weight in grams | അതിന്റെ ഭാരം (ഗ്രാമി)
+B) Its length in mm | അതിന്റെ നീളം (മി.മീ)
+C) Its resonant frequency is 512 Hz | അതിന്റെ തനത് ആവൃത്തി 512 Hz ആണ്
+D) Its maximum amplitude | അതിന്റെ പരമാവധി ആയതി
+ANS: C
+DIFF: medium
+EXP: It oscillates 512 times per second. | ഇത് ഒരു സെക്കൻഡിൽ 512 തവണ ദോലനം ചെയ്യുന്നു എന്നാണ് അർത്ഥമാക്കുന്നത്.
+
+Q: Megaphones and horns operate on the basis of: | മെഗാഫോണുകളും ഹോണുകളും പ്രവർത്തിക്കുന്നതിന്റെ അടിസ്ഥാനം:
+A) Repeated reflection of sound | ശബ്ദത്തിന്റെ ബഹുല പ്രതിപതനം
+B) Refraction | അപവർത്തനം
+C) Resonance | അനുനാദം
+D) Dispersion | വിസരണം
+ANS: A
+DIFF: medium
+EXP: A horn aims sound forward by restricting it via multiple reflections inside the tube. | കുഴലിലൂടെയുള്ള ബഹുല പ്രതിപതനം വഴിയാണ് ഇത്തരം ഉപകരണങ്ങൾ ശബ്ദം ഒരു പ്രത്യേക ദിശയിലേക്ക് അയക്കുന്നത്.
+
+Q: During a thunderstorm, why is lightning seen before thunder is heard? | ഇടിമിന്നൽ ഉണ്ടാകുമ്പോൾ ഇടിശബ്ദം കേൾക്കുന്നതിനേക്കാൾ മുമ്പ് മിന്നൽ കാണുന്നത് എന്തുകൊണ്ട്?
+A) Sound is produced later | ശബ്ദം വൈകി ഉണ്ടാകുന്നു
+B) Eyes react faster than ears | കണ്ണുകൾ കൂടുതൽ വേഗത്തിൽ പ്രതികരിക്കുന്നു
+C) Light travels significantly faster than sound | പ്രകാശം ശബ്ദത്തേക്കാൾ വളരെ വേഗത്തിൽ സഞ്ചരിക്കുന്നു
+D) Sound gets absorbed | ശബ്ദം ആഗിരണം ചെയ്യപ്പെടുന്നു
+ANS: C
+DIFF: easy
+EXP: Light speed (3x10^8 m/s) is vastly greater than sound speed (~340 m/s). | പ്രകാശവേഗത ശബ്ദവേഗതയേക്കാൾ ലക്ഷക്കണക്കിന് മടങ്ങ് കൂടുതലാണെന്നതാണ് കാരണം.
+
+Q: The SI unit of Amplitude is: | ആയതിയുടെ SI യൂണിറ്റ് എന്താണ്?
+A) Hertz | ഹെർട്സ്
+B) Metre | മീറ്റർ
+C) Second | സെക്കൻഡ്
+D) Decibel | ഡെസിബെൽ
+ANS: B
+DIFF: medium
+EXP: Amplitude is a measure of displacement (distance), so its SI unit is the metre (m). | ആയതി എന്നത് മാക്സിമം സ്ഥാനാന്തരമായതിനാൽ (ദൂരം) അത് മീറ്ററിലാണ് അളക്കുന്നത്.
+
+Q: Which phenomenon proves that sound requires a medium to travel? | ശബ്ദത്തിന് സഞ്ചരിക്കാൻ മാധ്യമം ആവശ്യമാണെന്ന് തെളിയിക്കുന്ന പരീക്ഷണം ഏത്?
+A) Bell jar experiment | ബെൽ ജാർ പരീക്ഷണം
+B) Prism experiment | പ്രിസം പരീക്ഷണം
+C) Double slit experiment | ഡബിൾ സ്ളിറ്റ് പരീക്ഷണം
+D) Newton's rings | ന്യൂട്ടൺസ് റിംഗ്സ്
+ANS: A
+DIFF: easy
+EXP: The vacuum bell jar experiment demonstrates that without air, the bell's sound cannot be heard. | വായു ഇല്ലാത്ത ശൂന്യസ്ഥലത്ത് ഘടികാര ശബ്ദം കേൾക്കാനാകില്ല എന്ന് ബെൽ ജാർ പരീക്ഷണം തെളിയിക്കുന്നു.

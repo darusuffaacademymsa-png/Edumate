@@ -1,53 +1,39 @@
 import React from 'react';
-import { Type, ZoomIn, ZoomOut } from 'lucide-react';
-import { useTextSize, TextSize } from './TextSizeProvider';
+import { Type } from 'lucide-react';
+import { useTextSize } from './TextSizeProvider';
 
 export default function TextSizeToggle() {
   const { textSize, setTextSize } = useTextSize();
 
-  const cycleTextSize = () => {
-    const sizes: TextSize[] = ['normal', 'large', 'xlarge'];
-    const currentIndex = sizes.indexOf(textSize);
-    const nextIndex = (currentIndex + 1) % sizes.length;
-    setTextSize(sizes[nextIndex]);
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTextSize(Number(e.target.value));
   };
 
   return (
-    <>
-      {/* Mobile: Single cycling button */}
-      <button
-        onClick={cycleTextSize}
-        className="sm:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-        title={`Text Size: ${textSize}`}
-        aria-label="Toggle text size"
-      >
-        <Type className={`w-4 h-4 ${textSize === 'large' ? 'scale-110' : textSize === 'xlarge' ? 'scale-125' : 'scale-100'} transition-transform`} />
-      </button>
-
-      {/* Desktop: Full toggle */}
-      <div className="hidden sm:flex items-center bg-white dark:bg-slate-800 rounded-full p-1 border border-slate-200 dark:border-slate-700 shadow-sm">
-        <button
-          onClick={() => setTextSize('normal')}
-          className={`p-1.5 rounded-full transition-all ${textSize === 'normal' ? 'bg-brand-primary text-white dark:bg-brand-accent dark:text-slate-900 shadow-md' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-          title="Normal Text Size"
-        >
-          <Type className="w-4 h-4 scale-90" />
-        </button>
-        <button
-          onClick={() => setTextSize('large')}
-          className={`p-1.5 rounded-full transition-all ${textSize === 'large' ? 'bg-brand-primary text-white dark:bg-brand-accent dark:text-slate-900 shadow-md' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-          title="Large Text Size"
-        >
-          <Type className="w-4 h-4 scale-105" />
-        </button>
-        <button
-          onClick={() => setTextSize('xlarge')}
-          className={`p-1.5 rounded-full transition-all ${textSize === 'xlarge' ? 'bg-brand-primary text-white dark:bg-brand-accent dark:text-slate-900 shadow-md' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
-          title="Extra Large Text Size"
-        >
-          <Type className="w-4 h-4 scale-125" />
-        </button>
+    <div className="flex items-center gap-3 w-full sm:w-auto px-4 py-2 bg-white dark:bg-slate-800 rounded-2xl sm:rounded-full border border-slate-200 dark:border-slate-700 shadow-sm group">
+      <Type className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary transition-colors flex-shrink-0" />
+      
+      <div className="flex flex-col w-full sm:w-32 min-w-[80px]">
+        <input 
+          type="range" 
+          min="8" 
+          max="48" 
+          step="1"
+          value={textSize}
+          onChange={handleSliderChange}
+          className="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-primary dark:accent-brand-accent hover:accent-brand-primary/80 transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
+          title={`Text Size: ${textSize}px`}
+          aria-label="Adjust text size"
+        />
+        <div className="flex justify-between items-center mt-1 px-1">
+          <span className="text-[8px] font-black text-slate-400">8</span>
+          <span className="text-[10px] font-bold text-brand-primary dark:text-brand-accent">{textSize}px</span>
+          <span className="text-[8px] font-black text-slate-400">48</span>
+        </div>
       </div>
-    </>
+      
+      <Type className="w-5 h-5 text-slate-400 group-hover:text-brand-primary transition-colors flex-shrink-0" />
+    </div>
   );
 }
+
