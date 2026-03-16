@@ -1,17 +1,25 @@
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { darsCurriculum } from '../../data/dars_curriculum';
 import { Language } from '../../data/curriculum';
 import SubjectGrid from '../../components/SubjectGrid';
+import { useCurriculum } from '../../hooks/useCurriculum';
 
 export default function DARSHome() {
   const navigate = useNavigate();
   const { language } = useOutletContext<{ language: Language }>();
+  const { subjects, loading } = useCurriculum('dars');
 
   const handleSelectSubject = (id: string) => {
     navigate(`/dars/${id}`);
   };
 
   return (
-    <SubjectGrid subjects={darsCurriculum} language={language} onSelectSubject={handleSelectSubject} />
+    <div className="relative">
+      {loading && (
+        <div className="absolute top-0 right-0 p-4">
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-primary"></div>
+        </div>
+      )}
+      <SubjectGrid subjects={subjects} language={language} onSelectSubject={handleSelectSubject} />
+    </div>
   );
 }

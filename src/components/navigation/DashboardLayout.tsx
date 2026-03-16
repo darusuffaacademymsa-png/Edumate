@@ -37,9 +37,8 @@ const iconMap: Record<string, any> = {
 import { Language } from '../../data/curriculum';
 import ThemeToggle from '../ThemeToggle';
 import TextSizeToggle from '../TextSizeToggle';
-import { sslcCurriculum } from '../../data/curriculum';
-import { plusOneCurriculum } from '../../data/plusone_curriculum';
-import { darsCurriculum } from '../../data/dars_curriculum';
+import { useCurriculum } from '../../hooks/useCurriculum';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function DashboardLayout() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -51,12 +50,14 @@ export default function DashboardLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const { language, setLanguage } = useOutletContext<{ language: Language, setLanguage: (l: Language) => void }>();
+  const { user, login } = useAuth();
 
   const isSSLC = location.pathname.startsWith('/sslc');
   const isPlusOne = location.pathname.startsWith('/plusone');
   const isDars = location.pathname.startsWith('/dars');
   
-  const curriculum = isPlusOne ? plusOneCurriculum : isDars ? darsCurriculum : sslcCurriculum;
+  const curriculumType = isPlusOne ? 'plusone' : isDars ? 'dars' : 'sslc';
+  const { subjects: curriculum } = useCurriculum(curriculumType);
   const currentClass = isPlusOne ? '11' : isDars ? 'Dars' : '10';
   const basePath = isSSLC ? 'sslc' : isPlusOne ? 'plusone' : 'dars';
 
@@ -146,6 +147,15 @@ export default function DashboardLayout() {
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
             </button>
+            {user?.isAdmin && (
+              <button
+                onClick={() => navigate('/admin')}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/10 transition-all"
+              >
+                <Settings className="w-3.5 h-3.5" />
+                <span>Admin</span>
+              </button>
+            )}
             <button className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5 transition-all cursor-not-allowed opacity-60">
               <BrainCircuit className="w-3.5 h-3.5" />
               <span>AI Mentor</span>
@@ -169,7 +179,30 @@ export default function DashboardLayout() {
             <Bell className="w-4 h-4" />
             <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
           </button>
-          <div className="w-8 h-8 rounded-xl bg-brand-primary flex items-center justify-center text-white text-[10px] font-black shadow-md cursor-pointer">JD</div>
+          
+          {user ? (
+            <div className="flex items-center gap-3 ml-1 group cursor-pointer" onClick={() => setIsSettingsOpen(true)}>
+              <div className="text-right hidden lg:block">
+                <p className="text-[10px] font-black text-slate-900 dark:text-white leading-none mb-0.5">{user.displayName || 'User'}</p>
+                <p className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Student</p>
+              </div>
+              {user.photoURL ? (
+                <img src={user.photoURL} alt="User" className="w-9 h-9 rounded-xl border-2 border-white dark:border-slate-800 shadow-sm" />
+              ) : (
+                <div className="w-9 h-9 rounded-xl bg-brand-primary flex items-center justify-center text-white text-[10px] font-black shadow-md uppercase">
+                  {user.displayName?.substring(0, 2) || 'US'}
+                </div>
+              )}
+            </div>
+          ) : (
+            <button 
+              onClick={login}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20"
+            >
+              <User className="w-3.5 h-3.5" />
+              <span>Login</span>
+            </button>
+          )}
         </div>
       </header>
 
@@ -408,23 +441,54 @@ export default function DashboardLayout() {
 
               {activeTab === 'account' && (
                 <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
-                  <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-3xl flex flex-col items-center text-center">
-                    <div className="w-20 h-20 rounded-3xl bg-brand-primary flex items-center justify-center text-white text-3xl font-black mb-4 shadow-xl shadow-brand-primary/20">JD</div>
-                    <h4 className="text-xl font-black text-brand-primary dark:text-white mb-1">Student User</h4>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 px-3 py-1 bg-slate-100 dark:bg-white/5 rounded-full">Class {currentClass} • Kerala Board</p>
-                    <div className="w-full space-y-2">
+                  {user ? (
+                    <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-3xl flex flex-col items-center text-center">
+                      <div className="w-20 h-20 rounded-3xl overflow-hidden mb-4 shadow-xl">
+                        {user.photoURL ? (
+                          <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full bg-brand-primary flex items-center justify-center text-white text-3xl font-black">
+                            {user.displayName?.substring(0, 2) || 'US'}
+                          </div>
+                        )}
+                      </div>
+                      <h4 className="text-xl font-black text-brand-primary dark:text-white mb-1">{user.displayName || 'Student User'}</h4>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 px-3 py-1 bg-slate-100 dark:bg-white/5 rounded-full">
+                        {user.isAdmin ? 'Admin' : 'Student'} • Kerala Board
+                      </p>
+                      <div className="w-full space-y-2">
+                        <button
+                          onClick={() => { navigate('/'); setIsSettingsOpen(false); }}
+                          className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-700 text-brand-primary dark:text-white font-black text-sm active:scale-95 transition-all"
+                        >
+                          <Home className="w-5 h-5" />
+                          Home
+                        </button>
+                        <button 
+                          onClick={() => { logout(); setIsSettingsOpen(false); }}
+                          className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl border border-rose-100 dark:border-rose-900/30 text-rose-500 font-bold text-sm active:scale-95 transition-all"
+                        >
+                          <LogOut className="w-5 h-5" />
+                          Logout
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-3xl flex flex-col items-center text-center">
+                      <div className="w-20 h-20 rounded-3xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-400 mb-4">
+                        <User className="w-10 h-10" />
+                      </div>
+                      <h4 className="text-xl font-black text-brand-primary dark:text-white mb-2">Not Logged In</h4>
+                      <p className="text-sm text-slate-500 mb-6">Login to sync your progress across devices.</p>
                       <button
-                        onClick={() => { navigate('/'); setIsSettingsOpen(false); }}
-                        className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-700 text-brand-primary dark:text-white font-black text-sm active:scale-95 transition-all"
+                        onClick={login}
+                        className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl bg-brand-primary text-white font-black text-sm shadow-xl shadow-brand-primary/20 active:scale-95 transition-all"
                       >
-                        <LogOut className="w-5 h-5 text-rose-500" />
-                        Switch Class
-                      </button>
-                      <button className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 text-slate-400 font-bold text-sm active:scale-95 transition-all">
-                        Logout Account
+                        <User className="w-5 h-5" />
+                        Login with Google
                       </button>
                     </div>
-                  </div>
+                  )}
                 </motion.div>
               )}
             </div>

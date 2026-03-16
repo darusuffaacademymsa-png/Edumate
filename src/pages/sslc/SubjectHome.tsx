@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useParams, useNavigate, useOutletContext } from 'react-router-dom';
-import { sslcCurriculum, Language } from '../../data/curriculum';
+import { Language } from '../../data/curriculum';
 import ChapterList from '../../components/ChapterList';
 import { malayalamIISamplePapers } from '../../data/malayalam_ii_sample_paper';
 import FormatsView from '../../components/FormatsView';
 import { hindiSampleQuestions, hindiSampleQuestionsSets } from '../../data/hindi_sample_questions';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useCurriculum } from '../../hooks/useCurriculum';
 
 import { 
   Calculator, 
@@ -43,9 +44,19 @@ export default function SubjectHome() {
   const [selectedHindiSetIndex, setSelectedHindiSetIndex] = useState(0);
   const [showHindiAnswers, setShowHindiAnswers] = useState(false);
 
-  const subject = sslcCurriculum.find(s => s.id === subjectId);
+  const { subjects, loading } = useCurriculum('sslc');
+  const subject = subjects.find(s => s.id === subjectId);
 
-  if (!subject) return <div>Subject not found</div>;
+  if (loading && !subject) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-primary mb-4"></div>
+        <p className="text-slate-500 font-bold">Loading subject data...</p>
+      </div>
+    );
+  }
+
+  if (!subject) return <div className="p-8 text-center font-bold text-red-500">Subject not found</div>;
 
   const handleSelectLesson = (id: string) => {
     navigate(`/sslc/${subjectId}/${id}`);

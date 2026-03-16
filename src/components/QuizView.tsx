@@ -61,15 +61,28 @@ export default function QuizView({ questions, language, quizId = 'default_quiz' 
 
   // Helper to normalize question data
   const normalizeQuestion = (q: any): QuizQuestion => {
+    const options = q.options?.map((opt: any, idx: number) => ({
+      k: (opt.k || opt.id || idx).toString(),
+      text: opt.text || opt
+    })) || [];
+
+    let answerKey = '0';
+    if (typeof q.correctAnswer === 'number') {
+      answerKey = q.correctAnswer.toString();
+    } else if (typeof q.answer === 'number') {
+      answerKey = q.answer.toString();
+    } else if (typeof q.answer === 'string') {
+      answerKey = q.answer;
+    } else if (typeof q.correctAnswer === 'string') {
+      answerKey = q.correctAnswer;
+    }
+
     return {
       q_id: q.q_id || q.id || Math.random().toString(36).substring(7),
       type: q.type || (q.options ? 'mcq' : 'short_answer'),
       stem: q.stem || q.question,
-      options: q.options?.map((opt: any) => ({
-        k: opt.k || opt.id,
-        text: opt.text
-      })) || [],
-      answer: typeof q.answer === 'object' && q.answer.id ? q.answer.id : (q.answer || q.correctAnswer),
+      options: options,
+      answer: answerKey,
       explanation: q.explanation
     };
   };

@@ -11,6 +11,7 @@ import PlusOneChapterPage from '../pages/plusone/ChapterPage';
 import DARSHome from '../pages/dars/DARSHome';
 import DARSSubjectHome from '../pages/dars/SubjectHome';
 import DARSChapterPage from '../pages/dars/ChapterPage';
+import AdminPage from '../pages/admin/AdminPage';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage />,
+      },
+      {
+        path: '/admin',
+        element: <AdminPage />,
       },
       {
         path: '/sslc',

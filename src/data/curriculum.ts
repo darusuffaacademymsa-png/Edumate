@@ -64,6 +64,8 @@ import {
   lessonVijnanaBhasha
 } from './malayalam_ii_unit3';
 import { hindiUnits } from './hindi_sslc';
+import { secondDegreeEquations } from './sslc/mathematics/second_degree_equations';
+import { trigonometry } from './sslc/mathematics/trigonometry';
 
 export type BilingualString = {
   en: string;
@@ -125,6 +127,28 @@ export interface Subject {
   units: Unit[];
 }
 
+export interface Category {
+  id: string;
+  name: string;
+  mode: string; // 'School' | 'Degree' | 'Dars' etc.
+  active: boolean;
+  icon: string;
+  color: string;
+  students: string;
+  lessons: number;
+  path: string;
+}
+
+export interface UserProgress {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  isAdmin: boolean;
+  currentClass?: string;
+  lastLogin: number;
+}
+
 export const sslcCurriculum: Subject[] = [
   {
     id: "sub-maths",
@@ -134,17 +158,27 @@ export const sslcCurriculum: Subject[] = [
     units: [
       {
         id: "u-math-1",
-        title: { en: "Arithmetic Sequences", ml: "സമാന്തര ശ്രേണികൾ" },
+        title: { en: "Part 1", ml: "ഭാഗം 1" },
         lessons: [
-          {
-            id: "ma-math-10-arithmetic-progression",
-            title: { en: "Introduction to Arithmetic Progressions", ml: "സമാന്തര ശ്രേണികൾ: ഒരാമുഖം" },
-            estimated_time_mins: 60,
-            learning_objectives: [],
-            content: { intro: { en: "Coming soon...", ml: "ഉടൻ വരുന്നു..." }, core: { en: "", ml: "" } },
-            glossary: [],
-            quiz: []
-          }
+          { id: "math-ch1", title: { en: "Arithmetic Sequences", ml: "സമാന്തരശ്രേണികൾ" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch2", title: { en: "Circles and Angles", ml: "വൃത്തങ്ങളും കോണുകളും" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch3", title: { en: "Arithmetic Sequences and Algebra", ml: "സമാന്തരശ്രേണികളും ബീജഗണിതവും" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch4", title: { en: "Mathematics of Chance", ml: "സാധ്യതകളുടെ ഗണിതം" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          secondDegreeEquations,
+          trigonometry
+        ]
+      },
+      {
+        id: "u-math-2",
+        title: { en: "Part 2", ml: "ഭാഗം 2" },
+        lessons: [
+          { id: "math-ch7", title: { en: "Coordinates", ml: "സൂചകസംഖ്യകൾ" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch8", title: { en: "Tangents", ml: "തൊടുവരകൾ" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch9", title: { en: "Polynomials And Equations", ml: "ബഹുപദങ്ങളും സമവാക്യങ്ങളും" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch10", title: { en: "Circles And Lines", ml: "വൃത്തങ്ങളും വരകളും" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch11", title: { en: "Geometry And Algebra", ml: "ജ്യാമിതിയും ബീജഗണിതവും" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch12", title: { en: "Solids", ml: "ഘനരൂപങ്ങൾ" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] },
+          { id: "math-ch13", title: { en: "Statistics", ml: "സ്ഥിതിവിവരക്കണക്കുകൾ" }, estimated_time_mins: 60, learning_objectives: [], content: { intro: { en: "", ml: "" }, core: { en: "", ml: "" } }, glossary: [], quiz: [] }
         ]
       }
     ]

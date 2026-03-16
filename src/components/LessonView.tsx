@@ -19,6 +19,11 @@ import { WavesSimulation } from '../labs/physics/WavesSimulation';
 import { WaveTypesSimulation } from '../labs/physics/WaveTypesSimulation';
 import { ReflectionSimulation } from '../labs/physics/ReflectionSimulation';
 import { UltrasoundSimulation } from '../labs/physics/UltrasoundSimulation';
+import CircleAnglesInteractive from '../labs/geometry/CircleAnglesInteractive';
+import SequenceAlgebraLab from '../labs/geometry/SequenceAlgebraLab';
+import QuadraticLab from '../labs/geometry/QuadraticLab';
+import TrigonometryLab from '../labs/geometry/TrigonometryLab';
+import ProbabilityLab from '../labs/geometry/ProbabilityLab';
 import QuizView from './QuizView';
 import SarfPractice from './SarfPractice';
 
@@ -385,7 +390,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             className={`group/p relative text-lg leading-relaxed text-slate-700 dark:text-slate-300 transition-all hover:bg-white dark:hover:bg-slate-800/50 hover:shadow-sm border border-transparent hover:border-slate-100 dark:hover:border-slate-700 ${isCompact ? 'my-1 p-2 rounded-xl hyphens-auto text-justify' : 'my-4 p-4 rounded-2xl'}`}
             style={{ hyphens: 'auto', WebkitHyphens: 'auto' } as any}
           >
-            <TextContent enText={en} mlText={ml} arText={ar} />
+            <MarkdownContent enText={en} mlText={ml} arText={ar} />
           </div>
         );
       case 'ul':
@@ -395,7 +400,7 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
               <li key={i} className={`flex items-start ${isCompact ? 'gap-2' : 'gap-3'} group/li`}>
                 <div className={`${isCompact ? 'mt-2 w-1.5 h-1.5' : 'mt-2 w-2 h-2'} rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)] group-hover/li:scale-125 transition-transform flex-shrink-0`} />
                 <div className={`text-lg text-slate-700 dark:text-slate-300 leading-relaxed ${isCompact ? 'hyphens-auto' : ''}`} style={isCompact ? { hyphens: 'auto', WebkitHyphens: 'auto' } as any : {}}>
-                  <TextContent enText={item.en} mlText={item.ml} arText={item.ar} className="inline" />
+                  <MarkdownContent enText={item.en} mlText={item.ml} arText={item.ar} className="inline" />
                 </div>
               </li>
             ))}
@@ -543,6 +548,56 @@ export default function LessonView({ lesson, language, onBack, subjectId, select
             <div key={idx} className="my-8">
               <PulleySimulation />
               <div className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3 italic font-medium">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'circle-angles-lab') {
+          return (
+            <div key={idx} className="my-12">
+              <CircleAnglesInteractive />
+              <div className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400 mt-6">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'sequence-algebra-lab') {
+          return (
+            <div key={idx} className="my-12">
+              <SequenceAlgebraLab />
+              <div className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400 mt-6">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'quadratic-lab') {
+          return (
+            <div key={idx} className="my-12">
+              <QuadraticLab />
+              <div className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400 mt-6">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'trig-lab') {
+          return (
+            <div key={idx} className="my-12">
+              <TrigonometryLab />
+              <div className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400 mt-6">
+                <TextContent enText={en} mlText={ml} />
+              </div>
+            </div>
+          );
+        }
+        if (block.customId === 'probability-lab') {
+          return (
+            <div key={idx} className="my-12">
+              <ProbabilityLab />
+              <div className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate-400 mt-6">
                 <TextContent enText={en} mlText={ml} />
               </div>
             </div>

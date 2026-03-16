@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+.firebase/
+wiselearnonline-firebase-adminsdk-fbsvc-a2e1848b0f.json
+generated_questions.ts
+interleave.ts
+tmp_update_1.cjs

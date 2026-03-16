@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Globe, 
@@ -23,20 +23,55 @@ import {
   Search,
   Settings,
   ChevronRight,
-  MessageCircle
+  MessageCircle,
+  Calculator,
+  Zap,
+  FlaskConical,
+  Leaf,
+  Globe2,
+  Map,
+  BarChart3,
+  Scale,
+  User
 } from 'lucide-react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { Language } from '../../data/curriculum';
+import { Language, Category } from '../../data/curriculum';
 import ThemeToggle from '../../components/ThemeToggle';
 import TextSizeToggle from '../../components/TextSizeToggle';
+import { fetchCategoriesFromFirestore } from '../../utils/firestoreData';
+import { useAuth } from '../../hooks/useAuth';
 
-type Mode = 'School' | 'Degree' | 'PG' | 'PSC' | 'Net' | 'Dars';
+const iconMap: Record<string, any> = {
+  GraduationCap, BookOpen, Layers, Target, Monitor, Languages, Star, TrendingUp, Award,
+  Calculator, Zap, FlaskConical, Leaf, Globe2, Map, BarChart3, Scale
+};
+
+type Mode = 'School' | 'Degree' | 'PSC' | 'Net' | 'Dars';
 
 export default function HomePage() {
   const navigate = useNavigate();
   const { language, setLanguage } = useOutletContext<{ language: Language, setLanguage: (l: Language) => void }>();
   const [selectedMode, setSelectedMode] = useState<Mode>('School');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  
+  const { user, login, logout } = useAuth();
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      const data = await fetchCategoriesFromFirestore();
+      if (data.length > 0) {
+        setCategories(data);
+      } else {
+        // Fallback or initial data if Firestore is empty
+        // This is where you'd put the default categories if needed
+      }
+      setLoading(false);
+    }
+    load();
+  }, []);
 
   const modes: { id: Mode; icon: any; label: string }[] = [
     { id: 'School', icon: GraduationCap, label: 'School' },
@@ -45,33 +80,6 @@ export default function HomePage() {
     { id: 'Net', icon: Monitor, label: 'NET' },
     { id: 'Dars', icon: BookOpen, label: 'Dars' },
   ];
-
-  const schoolClasses = [
-    { id: '8', name: 'Class 8', active: false, icon: BookOpen, color: 'blue', students: '12k', lessons: 45 },
-    { id: '9', name: 'Class 9', active: false, icon: Sparkles, color: 'purple', students: '15k', lessons: 52 },
-    { id: '10', name: 'Class 10\n(SSLC)', active: true, icon: Star, color: 'amber', students: '45k', lessons: 124, path: '/sslc' },
-    { id: '11', name: 'Class 11\n(+1)', active: true, icon: TrendingUp, color: 'emerald', students: '28k', lessons: 98, path: '/plusone' },
-    { id: '12', name: 'Class 12\n(+2)', active: false, icon: Award, color: 'rose', students: '30k', lessons: 110 },
-  ];
-
-  const darsBooks = [
-    { id: 'meezan', name: 'Meezan\nميزان', active: true, icon: Languages, color: 'teal', students: '2k', lessons: 40, path: '/dars' },
-    { id: 'ajnaas', name: 'Ajnaas\nأجناس', active: false, icon: BookOpen, color: 'cyan', students: '1k', lessons: 30 },
-  ];
-
-  const degreeUniversities = [
-    { id: 'sgou', name: 'SGOU', active: false, icon: GraduationCap, color: 'indigo', students: '5k', lessons: 20 },
-    { id: 'ignou', name: 'IGNOU', active: false, icon: Layers, color: 'blue', students: '10k', lessons: 25 },
-  ];
-
-  const getModeItems = () => {
-    switch (selectedMode) {
-      case 'School': return schoolClasses;
-      case 'Dars': return darsBooks;
-      case 'Degree': return degreeUniversities;
-      default: return [];
-    }
-  };
 
   const cycleLanguage = () => {
     if (language === 'en') setLanguage('ml');
@@ -98,7 +106,7 @@ export default function HomePage() {
     teal:    { bg: 'bg-teal-500',    text: 'text-teal-500',    accent: 'bg-teal-50 dark:bg-teal-950/40',     glow: 'shadow-teal-500/20' },
   };
 
-  const items = getModeItems();
+  const items = categories.filter(c => c.mode === selectedMode);
 
   return (
     <div className="min-h-screen bg-[#FDFDFF] dark:bg-[#020617] flex flex-col font-sans text-slate-900 dark:text-slate-100 transition-colors duration-500 relative overflow-x-hidden">
@@ -170,6 +178,50 @@ export default function HomePage() {
         </div>
       </motion.div>
 
+      {/* Login Modal */}
+      <AnimatePresence>
+        {isLoginModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }}
+              onClick={() => setIsLoginModalOpen(false)}
+              className="absolute inset-0 bg-slate-950/60 backdrop-blur-md" 
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden"
+            >
+              <div className="p-8 sm:p-12 text-center">
+                <div className="w-20 h-20 bg-brand-primary/10 dark:bg-brand-accent/10 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="w-10 h-10 text-brand-primary dark:text-brand-accent" />
+                </div>
+                <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-3 tracking-tight">Welcome Back</h2>
+                <p className="text-slate-500 dark:text-slate-400 font-bold text-sm mb-10">Sign in to sync your progress and access premium learning materials.</p>
+                
+                <button
+                  onClick={() => { login(); setIsLoginModalOpen(false); }}
+                  className="w-full flex items-center justify-center gap-4 p-5 bg-[#1E293B] dark:bg-white text-white dark:text-[#1E293B] rounded-2xl font-black text-sm hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-slate-200 dark:shadow-none mb-4"
+                >
+                  <Globe className="w-5 h-5" />
+                  Continue with Google
+                </button>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Secure OAuth 2.0 Encryption</p>
+              </div>
+              <button 
+                onClick={() => setIsLoginModalOpen(false)}
+                className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* ===== HEADER ===== */}
       <header className="px-4 sm:px-8 lg:px-12 py-4 flex justify-between items-center z-30 sticky top-0 bg-white/80 dark:bg-[#020617]/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800/50">
         <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => navigate('/')}>
@@ -184,7 +236,17 @@ export default function HomePage() {
           <div className="hidden md:flex items-center gap-2 pr-3 border-r border-slate-200 dark:border-slate-800">
             <TextSizeToggle />
             <ThemeToggle />
+            {user?.isAdmin && (
+              <button 
+                onClick={() => navigate('/admin')}
+                className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 hover:scale-105 transition-all shadow-sm border border-amber-100 dark:border-amber-800/50"
+                title="Admin Settings"
+              >
+                <Settings className="w-5 h-5" />
+              </button>
+            )}
           </div>
+
           <button
             onClick={cycleLanguage}
             className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white dark:bg-slate-900 text-xs font-black border border-slate-200 dark:border-slate-800 hover:bg-slate-50 transition-all shadow-sm uppercase tracking-wider"
@@ -192,6 +254,34 @@ export default function HomePage() {
             <Globe className="w-3.5 h-3.5 text-brand-primary dark:text-brand-accent" />
             <span>{getLanguageLabel()}</span>
           </button>
+
+          {user ? (
+            <div className="flex items-center gap-3 pl-1 group cursor-pointer" onClick={() => setIsSidebarOpen(true)}>
+              <div className="text-right hidden sm:block">
+                <p className="text-[10px] font-black text-slate-900 dark:text-white leading-none mb-0.5">{user.displayName || 'User'}</p>
+                <p className="text-[8px] font-black text-brand-primary dark:text-brand-accent uppercase tracking-tighter">{user.isAdmin ? 'Admin' : 'Student'}</p>
+              </div>
+              <div className="relative">
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt="User" className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border-2 border-white dark:border-slate-800 shadow-lg" />
+                ) : (
+                  <div className="w-9 h-9 rounded-xl bg-brand-primary flex items-center justify-center text-white text-[10px] font-black shadow-md uppercase">
+                    {user.displayName?.substring(0, 2) || 'US'}
+                  </div>
+                )}
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full" />
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={() => setIsLoginModalOpen(true)}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-primary text-white text-[11px] font-black uppercase tracking-[0.15em] hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20 hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <User className="w-4 h-4" />
+              <span>Sign In</span>
+            </button>
+          )}
+
           <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden p-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
             <Menu className="w-5 h-5" />
           </button>
@@ -240,7 +330,7 @@ export default function HomePage() {
             </div>
             <input
               type="text"
-              placeholder={language === 'en' ? "Search classes, subjects..." : "ക്ലാസുകൾ, വിഷയങ്ങൾ തിരയുക..."}
+              placeholder={language === 'en' ? "Search classes, subjects..." : "ക്ലാസുകൾ, विषयों തിരയുക..."}
               className="w-full py-4 sm:py-5 pl-11 sm:pl-14 pr-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none text-sm font-bold focus:ring-2 focus:ring-brand-primary transition-all outline-none"
             />
           </motion.div>
@@ -272,87 +362,93 @@ export default function HomePage() {
 
         {/* ===== Cards Grid ===== */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedMode}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            {items.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
-                {items.map((c: any, i: number) => {
-                  const col = colorMap[c.color] || colorMap.blue;
-                  return (
-                    <motion.button
-                      key={c.id}
-                      initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ delay: i * 0.06, duration: 0.22 }}
-                      disabled={!c.active}
-                      onClick={() => c.active && navigate(c.path)}
-                      className={`group relative w-full bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all duration-300 flex flex-col justify-between border text-left ${
-                        c.active
-                          ? 'border-slate-100 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-brand-primary/20 dark:hover:border-brand-accent/30 cursor-pointer hover:-translate-y-1 active:scale-[.97]'
-                          : 'border-slate-50 dark:border-slate-800 opacity-50 cursor-not-allowed grayscale'
-                      }`}
-                    >
-                      <div className="flex flex-col gap-3">
-                        <div className="flex justify-between items-start">
-                          {/* Icon */}
-                          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${col.accent} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                            <c.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${col.text}`} />
+          {loading ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+               {[1,2,3,4,5].map(i => <div key={i} className="h-48 rounded-3xl bg-slate-100 dark:bg-slate-900 animate-pulse" />)}
+            </div>
+          ) : (
+            <motion.div
+              key={selectedMode}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              {items.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+                  {items.map((c: Category, i: number) => {
+                    const col = colorMap[c.color] || colorMap.blue;
+                    const Icon = iconMap[c.icon] || BookOpen;
+                    return (
+                      <motion.button
+                        key={c.id}
+                        initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ delay: i * 0.06, duration: 0.22 }}
+                        disabled={!c.active}
+                        onClick={() => c.active && navigate(c.path)}
+                        className={`group relative w-full bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all duration-300 flex flex-col justify-between border text-left ${
+                          c.active
+                            ? 'border-slate-100 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-brand-primary/20 dark:hover:border-brand-accent/30 cursor-pointer hover:-translate-y-1 active:scale-[.97]'
+                            : 'border-slate-50 dark:border-slate-800 opacity-50 cursor-not-allowed grayscale'
+                        }`}
+                      >
+                        <div className="flex flex-col gap-3">
+                          <div className="flex justify-between items-start">
+                            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${col.accent} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                              <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${col.text}`} />
+                            </div>
+                            {c.active && (
+                              <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 text-[8px] sm:text-[9px] font-black uppercase tracking-wider border border-emerald-100/50">
+                                Live
+                              </div>
+                            )}
                           </div>
+                          <div>
+                            <h3 className="text-sm sm:text-base lg:text-lg font-black text-slate-900 dark:text-white tracking-tight leading-tight group-hover:text-brand-primary dark:group-hover:text-brand-accent transition-colors whitespace-pre-line">
+                              {c.name}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0.5 mt-1.5">
+                              <div className="flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-slate-400">
+                                <Book className="w-2.5 h-2.5" />
+                                {c.lessons}
+                              </div>
+                              <div className="flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-slate-400">
+                                <Users className="w-2.5 h-2.5" />
+                                {c.students}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mt-3 sm:mt-4 flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-slate-800/60">
+                          <span className="text-[8px] sm:text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest group-hover:text-brand-primary dark:group-hover:text-brand-accent transition-colors">
+                            {c.active ? 'Explore' : 'Soon'}
+                          </span>
                           {c.active && (
-                            <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 text-[8px] sm:text-[9px] font-black uppercase tracking-wider border border-emerald-100/50">
-                              Live
+                            <div className="w-6 h-6 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-brand-primary group-hover:text-white dark:group-hover:bg-brand-accent dark:group-hover:text-brand-primary transition-all duration-300 group-hover:-rotate-45">
+                              <ArrowUpRight className="w-3 h-3" />
                             </div>
                           )}
                         </div>
-                        <div>
-                          <h3 className="text-sm sm:text-base lg:text-lg font-black text-slate-900 dark:text-white tracking-tight leading-tight group-hover:text-brand-primary dark:group-hover:text-brand-accent transition-colors whitespace-pre-line">
-                            {c.name}
-                          </h3>
-                          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0.5 mt-1.5">
-                            <div className="flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-slate-400">
-                              <Book className="w-2.5 h-2.5" />
-                              {c.lessons}
-                            </div>
-                            <div className="flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-slate-400">
-                              <Users className="w-2.5 h-2.5" />
-                              {c.students}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-3 sm:mt-4 flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-slate-800/60">
-                        <span className="text-[8px] sm:text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest group-hover:text-brand-primary dark:group-hover:text-brand-accent transition-colors">
-                          {c.active ? 'Explore' : 'Soon'}
-                        </span>
-                        {c.active && (
-                          <div className="w-6 h-6 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-brand-primary group-hover:text-white dark:group-hover:bg-brand-accent dark:group-hover:text-brand-primary transition-all duration-300 group-hover:-rotate-45">
-                            <ArrowUpRight className="w-3 h-3" />
-                          </div>
-                        )}
-                      </div>
-                    </motion.button>
-                  );
-                })}
-              </div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto mb-4">
-                  <Sparkles className="w-7 h-7 text-slate-300 dark:text-slate-600" />
+                      </motion.button>
+                    );
+                  })}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest">Coming Soon</h2>
-                <p className="text-slate-400 dark:text-slate-600 mt-2 font-bold text-sm">{selectedMode} materials are under development.</p>
-              </motion.div>
-            )}
-          </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto mb-4">
+                    <Sparkles className="w-7 h-7 text-slate-300 dark:text-slate-600" />
+                  </div>
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest">Coming Soon</h2>
+                  <p className="text-slate-400 dark:text-slate-600 mt-2 font-bold text-sm">{selectedMode} materials are under development.</p>
+                </motion.div>
+              )}
+            </motion.div>
+          )}
         </AnimatePresence>
       </main>
 
@@ -362,11 +458,9 @@ export default function HomePage() {
           href="https://wa.me/917902520097"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-500/35 active:scale-95"
+          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-500/35 active:scale-[.98]"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
+          <MessageCircle className="w-5 h-5" />
           Contact Us
         </a>
         <p className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase tracking-[0.4em]">Wiselearn Education • 2026</p>
